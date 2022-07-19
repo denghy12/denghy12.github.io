@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"denghy12.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="一. 转换数据类型的作用input()接收用户输入的数据都是字符串类型 转换数据类型–将字符串类型  转换为程序中需要用到的数据类型。 二. 转换数据类型的函数   函数 说明    int(x) 将x转换为一个整数   float(x ) 将x转换为一个浮点数   complex(real [,imag ]) 创建一个复数，real为实部，imag为虚部   str(x ) 将对象 x 转换为字">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python-转换数据类型">
+<meta property="og:url" content="https://denghy12.github.io/2022/07/19/python-%E8%BD%AC%E6%8D%A2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一. 转换数据类型的作用input()接收用户输入的数据都是字符串类型 转换数据类型–将字符串类型  转换为程序中需要用到的数据类型。 二. 转换数据类型的函数   函数 说明    int(x) 将x转换为一个整数   float(x ) 将x转换为一个浮点数   complex(real [,imag ]) 创建一个复数，real为实部，imag为虚部   str(x ) 将对象 x 转换为字">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-19T12:52:20.000Z">
+<meta property="article:modified_time" content="2022-07-19T12:53:32.702Z">
+<meta property="article:author" content="Adams">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://denghy12.github.io/2022/07/19/python-%E8%BD%AC%E6%8D%A2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>python-转换数据类型 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/07/19/python-%E8%BD%AC%E6%8D%A2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Adams">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          python-转换数据类型
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-07-19 20:52:20 / 修改时间：20:53:32" itemprop="dateCreated datePublished" datetime="2022-07-19T20:52:20+08:00">2022-07-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Python基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="一-转换数据类型的作用"><a href="#一-转换数据类型的作用" class="headerlink" title="一. 转换数据类型的作用"></a>一. 转换数据类型的作用</h1><p>input()接收用户输入的数据都是字符串类型</p>
+<p>转换数据类型–将字符串类型  转换为程序中需要用到的数据类型。</p>
+<h1 id="二-转换数据类型的函数"><a href="#二-转换数据类型的函数" class="headerlink" title="二. 转换数据类型的函数"></a>二. 转换数据类型的函数</h1><table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">int(x)</td>
+<td align="center">将x转换为一个整数</td>
+</tr>
+<tr>
+<td align="center">float(x )</td>
+<td align="center">将x转换为一个浮点数</td>
+</tr>
+<tr>
+<td align="center">complex(real [,imag ])</td>
+<td align="center">创建一个复数，real为实部，imag为虚部</td>
+</tr>
+<tr>
+<td align="center">str(x )</td>
+<td align="center">将对象 x 转换为字符串</td>
+</tr>
+<tr>
+<td align="center">repr(x )</td>
+<td align="center">将对象 x 转换为表达式字符串</td>
+</tr>
+<tr>
+<td align="center">eval(str)</td>
+<td align="center">用来计算在字符串中的有效Python表达式,并返回一个对象</td>
+</tr>
+<tr>
+<td align="center">tuple(s )</td>
+<td align="center">将序列 s 转换为一个元组</td>
+</tr>
+<tr>
+<td align="center">list(s )</td>
+<td align="center">将序列 s 转换为一个列表</td>
+</tr>
+<tr>
+<td align="center">chr(x )</td>
+<td align="center">将一个整数转换为一个Unicode字符</td>
+</tr>
+<tr>
+<td align="center">ord(x )</td>
+<td align="center">将一个字符转换为它的ASCII整数值</td>
+</tr>
+<tr>
+<td align="center">hex(x )</td>
+<td align="center">将一个整数转换为一个十六进制字符串</td>
+</tr>
+<tr>
+<td align="center">oct(x )</td>
+<td align="center">将一个整数转换为一个八进制字符串</td>
+</tr>
+<tr>
+<td align="center">bin(x )</td>
+<td align="center">将一个整数转换为一个二进制字符串</td>
+</tr>
+</tbody></table>
+<h1 id="三-方法"><a href="#三-方法" class="headerlink" title="三. 方法"></a>三. 方法</h1><p>需求：input接收用户输入，用户输入“1”，将这个数据1转换成整型。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 接收用户输入</span></span><br><span class="line">num = <span class="built_in">input</span>(<span class="string">&#x27;请输入您的学号：&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 打印结果</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;您的学号是<span class="subst">&#123;num&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 检测接收到的用户输入的数据类型 -- str类型</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 转换数据类型为整型 -- int类型</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">int</span>(num)))</span><br></pre></td></tr></table></figure>
+
+<h1 id="四-实验"><a href="#四-实验" class="headerlink" title="四. 实验"></a>四. 实验</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. float() -- 转换成浮点型</span></span><br><span class="line">num1 = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">float</span>(num1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">float</span>(num1)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. str() -- 转换成字符串类型</span></span><br><span class="line">num2 = <span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">str</span>(num2)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. tuple() -- 将一个序列转换成元组</span></span><br><span class="line">list1 = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">tuple</span>(list1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">tuple</span>(list1)))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. list() -- 将一个序列转换成列表</span></span><br><span class="line">t1 = (<span class="number">100</span>, <span class="number">200</span>, <span class="number">300</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(t1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">list</span>(t1)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. eval() -- 将字符串中的数据转换成Python表达式原本类型</span></span><br><span class="line"><span class="comment">#    eval()中的变量不可以是文字类型的字符串，如 &#x27;Hello world&#x27;</span></span><br><span class="line">str1 = <span class="string">&#x27;10&#x27;</span></span><br><span class="line">str2 = <span class="string">&#x27;[1, 2, 3]&#x27;</span></span><br><span class="line">str3 = <span class="string">&#x27;(1000, 2000, 3000)&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">eval</span>(str1)))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">eval</span>(str2)))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">eval</span>(str3)))</span><br></pre></td></tr></table></figure>
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>转换数据类型常用的函数<ul>
+<li>int()</li>
+<li>float()</li>
+<li>str()</li>
+<li>list()</li>
+<li>tuple()</li>
+<li>eval()</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/07/19/python-%E8%BE%93%E5%85%A5/" rel="prev" title="python-输入">
+      <i class="fa fa-chevron-left"></i> python-输入
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80-%E8%BD%AC%E6%8D%A2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">一. 转换数据类型的作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C-%E8%BD%AC%E6%8D%A2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">二. 转换数据类型的函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89-%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">三. 方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B-%E5%AE%9E%E9%AA%8C"><span class="nav-number">4.</span> <span class="nav-text">四. 实验</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Adams</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Adams</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
