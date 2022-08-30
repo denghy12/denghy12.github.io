@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"denghy12.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="一. 认识字符串字符串是 Python 中最常用的数据类型。 1.1 字符串特征 一对引号字符串  12name1 &#x3D; &amp;#x27;Adams&amp;#x27;name2 &#x3D; &quot;Rose&quot;   三引号字符串  12a &#x3D; &amp;#x27;&amp;#x27;&amp;#x27; I am Adams,         nice to meet you! &amp;#x27;&amp;#x27;&amp;#x27;   注意：三">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 数据序列-字符串">
+<meta property="og:url" content="https://denghy12.github.io/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一. 认识字符串字符串是 Python 中最常用的数据类型。 1.1 字符串特征 一对引号字符串  12name1 &#x3D; &amp;#x27;Adams&amp;#x27;name2 &#x3D; &quot;Rose&quot;   三引号字符串  12a &#x3D; &amp;#x27;&amp;#x27;&amp;#x27; I am Adams,         nice to meet you! &amp;#x27;&amp;#x27;&amp;#x27;   注意：三">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://denghy12.github.io/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/1.png">
+<meta property="og:image" content="https://denghy12.github.io/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/2.png">
+<meta property="article:published_time" content="2022-08-02T03:39:02.000Z">
+<meta property="article:modified_time" content="2022-08-30T03:45:04.433Z">
+<meta property="article:author" content="Adams">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://denghy12.github.io/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/1.png">
+
+<link rel="canonical" href="https://denghy12.github.io/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Python 数据序列-字符串 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Adams">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python 数据序列-字符串
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-02 11:39:02" itemprop="dateCreated datePublished" datetime="2022-08-02T11:39:02+08:00">2022-08-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-30 11:45:04" itemprop="dateModified" datetime="2022-08-30T11:45:04+08:00">2022-08-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Python基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="一-认识字符串"><a href="#一-认识字符串" class="headerlink" title="一. 认识字符串"></a>一. 认识字符串</h1><p>字符串是 Python 中最常用的数据类型。</p>
+<h2 id="1-1-字符串特征"><a href="#1-1-字符串特征" class="headerlink" title="1.1 字符串特征"></a>1.1 字符串特征</h2><ul>
+<li>一对引号字符串</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name1 = <span class="string">&#x27;Adams&#x27;</span></span><br><span class="line">name2 = <span class="string">&quot;Rose&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>三引号字符串</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27;&#x27;&#x27; I am Adams, </span></span><br><span class="line"><span class="string">        nice to meet you! &#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：三引号形式的字符串支持换行。</p>
+</blockquote>
+<h2 id="1-2-字符串输出"><a href="#1-2-字符串输出" class="headerlink" title="1.2 字符串输出"></a>1.2 字符串输出</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line">name = <span class="string">&#x27;Adams&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;我的名字是%s&#x27;</span> % name)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;我的名字是<span class="subst">&#123;name&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="1-3-字符串输入"><a href="#1-3-字符串输入" class="headerlink" title="1.3 字符串输入"></a>1.3 字符串输入</h2><p>在Python中，使用<code>input()</code>接收用户输入。</p>
+<ul>
+<li>演示</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="built_in">input</span>(<span class="string">&#x27;请输入您的名字：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;您输入的名字是<span class="subst">&#123;name&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(name))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：一开始输入的都是字符串格式</p>
+</blockquote>
+<h1 id="二、下标"><a href="#二、下标" class="headerlink" title="二、下标"></a>二、下标</h1><p><code>“下标”</code>又叫<code>“索引”</code>，就是编号。下标的作用即是通过下标快速找到对应的数据。</p>
+<img src="/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/1.png" class="" title="This is an test image">
+
+<h2 id="2-1-演示"><a href="#2-1-演示" class="headerlink" title="2.1 演示"></a>2.1 演示</h2><p>字符串<code>name = &quot;abcdef&quot;</code>，取到不同下标对应的数据。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;abcdef&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">0</span>])</span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>输出结果</li>
+</ul>
+<img src="/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/2.png" class="" title="This is an test image">
+
+<blockquote>
+<p>注意：下标从0开始。</p>
+</blockquote>
+<h1 id="三、切片"><a href="#三、切片" class="headerlink" title="三、切片"></a>三、切片</h1><p>切片是指对操作的对象截取其中一部分的操作。<strong>字符串、列表、元组</strong>都支持切片操作。</p>
+<h2 id="3-1-语法"><a href="#3-1-语法" class="headerlink" title="3.1 语法"></a>3.1 语法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">序列[开始位置下标:结束位置下标:步长]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意</p>
+</blockquote>
+<pre><code> 1. 不包含结束位置下标对应的数据， 正负整数均可；
+ 2. 步长是选取间隔，正负整数均可，默认步长为1。
+</code></pre>
+<h2 id="3-2-演示"><a href="#3-2-演示" class="headerlink" title="3.2 演示"></a>3.2 演示</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;abcdefg&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>:<span class="number">5</span>:<span class="number">1</span>])  <span class="comment"># cde</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>:<span class="number">5</span>])  <span class="comment"># cde</span></span><br><span class="line"><span class="built_in">print</span>(name[:<span class="number">5</span>])  <span class="comment"># abcde</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">1</span>:])  <span class="comment"># bcdefg</span></span><br><span class="line"><span class="built_in">print</span>(name[:])  <span class="comment"># abcdefg</span></span><br><span class="line"><span class="built_in">print</span>(name[::<span class="number">2</span>])  <span class="comment"># aceg</span></span><br><span class="line"><span class="built_in">print</span>(name[:-<span class="number">1</span>])  <span class="comment"># abcdef, 负1表示倒数第一个数据</span></span><br><span class="line"><span class="built_in">print</span>(name[-<span class="number">4</span>:-<span class="number">1</span>])  <span class="comment"># def</span></span><br><span class="line"><span class="built_in">print</span>(name[::-<span class="number">1</span>])  <span class="comment"># gfedcba</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="四、常用操作方法"><a href="#四、常用操作方法" class="headerlink" title="四、常用操作方法"></a>四、常用操作方法</h1><p>字符串的常用操作方法有查找、修改和判断三大类。</p>
+<h2 id="4-1-查找"><a href="#4-1-查找" class="headerlink" title="4.1 查找"></a>4.1 查找</h2><p>所谓字符串查找方法即是查找子串在字符串中的位置或出现的次数。</p>
+<ul>
+<li>find()：检测某个子串是否包含在这个字符串中，如果在返回这个子串开始的位置下标，否则则返回-1。</li>
+<li>index()：检测某个子串是否包含在这个字符串中，如果在返回这个子串开始的位置下标，否则则报异常。</li>
+<li>rfind()： 和find()功能相同，但查找方向为&#x3D;&#x3D;右侧&#x3D;&#x3D;开始。</li>
+<li>rindex()：和index()功能相同，但查找方向为&#x3D;&#x3D;右侧&#x3D;&#x3D;开始。</li>
+</ul>
+<h3 id="1-语法"><a href="#1-语法" class="headerlink" title="1. 语法"></a>1. 语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">字符串序列.find(子串, 开始位置下标, 结束位置下标)</span><br><span class="line">字符串序列.index(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
+</blockquote>
+<h3 id="2-演示"><a href="#2-演示" class="headerlink" title="2. 演示"></a>2. 演示</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mystr1 = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"><span class="built_in">print</span>(mystr1.find(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 12</span></span><br><span class="line"><span class="built_in">print</span>(mystr1.find(<span class="string">&#x27;and&#x27;</span>, <span class="number">15</span>, <span class="number">30</span>))  <span class="comment"># 23</span></span><br><span class="line"><span class="built_in">print</span>(mystr1.find(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># -1</span></span><br><span class="line"></span><br><span class="line">mystr2 = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"><span class="built_in">print</span>(mystr2.index(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 12</span></span><br><span class="line"><span class="built_in">print</span>(mystr2.index(<span class="string">&#x27;and&#x27;</span>, <span class="number">15</span>, <span class="number">30</span>))  <span class="comment"># 23</span></span><br><span class="line"><span class="built_in">print</span>(mystr2.index(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># 报错</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
+</blockquote>
+<h2 id="4-2-计数"><a href="#4-2-计数" class="headerlink" title="4.2 计数"></a>4.2 计数</h2><ul>
+<li>count()：返回某个子串在字符串中出现的次数</li>
+</ul>
+<h3 id="1-语法-1"><a href="#1-语法-1" class="headerlink" title="1. 语法"></a>1. 语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串序列.count(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
+</blockquote>
+<h3 id="2-演示-1"><a href="#2-演示-1" class="headerlink" title="2. 演示"></a>2. 演示</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 3</span></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># 0</span></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;and&#x27;</span>, <span class="number">0</span>, <span class="number">20</span>))  <span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-3-修改"><a href="#4-3-修改" class="headerlink" title="4.3 修改"></a>4.3 修改</h2><p>所谓修改字符串，指的就是通过函数的形式修改字符串中的数据。</p>
+<ul>
+<li>replace()：替换</li>
+</ul>
+<h3 id="1-语法-2"><a href="#1-语法-2" class="headerlink" title="1. 语法"></a>1. 语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串序列.replace(旧子串, 新子串, 替换次数)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：替换次数如果查出子串出现次数，则替换次数为该子串出现次数。</p>
+</blockquote>
+<h3 id="2-演示-2"><a href="#2-演示-2" class="headerlink" title="2. 演示"></a>2. 演示</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.replace(<span class="string">&#x27;and&#x27;</span>, <span class="string">&#x27;he&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：hello world he Readers he Adams he Python</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.replace(<span class="string">&#x27;and&#x27;</span>, <span class="string">&#x27;he&#x27;</span>, <span class="number">10</span>))</span><br><span class="line"><span class="comment"># 结果：hello world he Readers he Adams he Python</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr)</span><br><span class="line"><span class="comment"># 结果：hello world and Readers and Adams and Python</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：数据按照是否能直接修改分为&#x3D;&#x3D;可变类型&#x3D;&#x3D;和&#x3D;&#x3D;不可变类型&#x3D;&#x3D;两种。</p>
+<p>字符串类型的数据修改的时，不能改变原有字符串，属于不能直接修改数据的类型即是不可变类型。</p>
+</blockquote>
+<ul>
+<li>split()：按照指定字符分割字符串。</li>
+</ul>
+<h3 id="1-语法-3"><a href="#1-语法-3" class="headerlink" title="1. 语法"></a>1. 语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串序列.split(分割字符, num)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：num表示的是分割字符出现的次数，即将来返回数据个数为num+1个。</p>
+</blockquote>
+<h3 id="2-演示-3"><a href="#2-演示-3" class="headerlink" title="2. 演示"></a>2. 演示</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27;and&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello world &#x27;, &#x27; Readers &#x27;, &#x27; Adams &#x27;, &#x27; Python&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27;and&#x27;</span>, <span class="number">2</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello world &#x27;, &#x27; Readers &#x27;, &#x27; Adams and Python&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27; &#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello&#x27;, &#x27;world&#x27;, &#x27;and&#x27;, &#x27;Readers&#x27;, &#x27;and&#x27;, &#x27;Adams&#x27;, &#x27;and&#x27;, &#x27;Python&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27; &#x27;</span>, <span class="number">2</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello&#x27;, &#x27;world&#x27;, &#x27;and Readers and Adams and Python&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：如果分割字符是原有字符串中的子串，分割后则丢失该子串。</p>
+</blockquote>
+<ul>
+<li>join()：用一个字符或子串合并字符串，即是将多个字符串合并为一个新的字符串。</li>
+</ul>
+<h3 id="1-语法-4"><a href="#1-语法-4" class="headerlink" title="1. 语法"></a>1. 语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符或子串.join(多字符串组成的序列)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-演示-4"><a href="#2-演示-4" class="headerlink" title="2. 演示"></a>2. 演示</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="string">&#x27;hello&#x27;</span>, <span class="string">&#x27;how&#x27;</span>, <span class="string">&#x27;are&#x27;</span>, <span class="string">&#x27;you&#x27;</span>]</span><br><span class="line">t1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;ddd&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;_&#x27;</span>.join(list1))</span><br><span class="line"><span class="comment"># 结果：hello_how_are_you</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;...&#x27;</span>.join(t1))</span><br><span class="line"><span class="comment"># 结果：aa...b...cc...ddd</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>capitalize()：将字符串第一个字符转换成大写。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.capitalize())</span><br><span class="line"><span class="comment"># 结果：Hello world and readers and adams and python</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：capitalize()函数转换后，只字符串第一个字符大写，其他的字符全都小写。</p>
+</blockquote>
+<ul>
+<li>title()：将字符串每个单词首字母转换成大写。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.title())</span><br><span class="line"><span class="comment"># 结果：Hello World And Readers And Adams And Python</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>lower()：将字符串中大写转小写。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.lower())</span><br><span class="line"><span class="comment"># 结果：hello world and readers and adams and python</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>upper()：将字符串中小写转大写。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.upper())</span><br><span class="line"><span class="comment"># 结果：HELLO WORLD AND READERS AND ADAMS AND PYTHON</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><p>lstrip()：删除字符串左侧空白字符。</p>
+</li>
+<li><p>rstrip()：删除字符串右侧空白字符。</p>
+</li>
+<li><p>strip()：删除字符串两侧空白字符。</p>
+</li>
+<li><p>ljust()：返回一个原字符串左对齐,并使用指定字符(默认空格)填充至对应长度 的新字符串。</p>
+</li>
+</ul>
+<h3 id="1-语法-5"><a href="#1-语法-5" class="headerlink" title="1. 语法"></a>1. 语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串序列.ljust(长度, 填充字符)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-输出效果"><a href="#2-输出效果" class="headerlink" title="2. 输出效果"></a>2. 输出效果</h3><ul>
+<li><p>rjust()：返回一个原字符串右对齐,并使用指定字符(默认空格)填充至对应长度 的新字符串，语法和ljust()相同。</p>
+</li>
+<li><p>center()：返回一个原字符串居中对齐,并使用指定字符(默认空格)填充至对应长度 的新字符串，语法和ljust()相同。</p>
+</li>
+</ul>
+<h2 id="4-3-判断"><a href="#4-3-判断" class="headerlink" title="4.3 判断"></a>4.3 判断</h2><p>所谓判断即是判断真假，返回的结果是布尔型数据类型：True 或 False。</p>
+<ul>
+<li>startswith()：检查字符串是否是以指定子串开头，是则返回 True，否则返回 False。如果设置开始和结束位置下标，则在指定范围内检查。</li>
+</ul>
+<h3 id="1-语法-6"><a href="#1-语法-6" class="headerlink" title="1. 语法"></a>1. 语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串序列.startswith(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-演示-5"><a href="#2-演示-5" class="headerlink" title="2. 演示"></a>2. 演示</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Readers and Adams and Python   &quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.startswith(<span class="string">&#x27;hello&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：True</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.startswith(<span class="string">&#x27;hello&#x27;</span>, <span class="number">5</span>, <span class="number">20</span>))</span><br><span class="line"><span class="comment"># 结果False</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>endswith()：：检查字符串是否是以指定子串结尾，是则返回 True，否则返回 False。如果设置开始和结束位置下标，则在指定范围内检查。</li>
+</ul>
+<h3 id="1-语法-7"><a href="#1-语法-7" class="headerlink" title="1. 语法"></a>1. 语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串序列.endswith(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-演示-6"><a href="#2-演示-6" class="headerlink" title="2. 演示"></a>2. 演示</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.endswith(<span class="string">&#x27;Python&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：True</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.endswith(<span class="string">&#x27;python&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：False</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.endswith(<span class="string">&#x27;Python&#x27;</span>, <span class="number">2</span>, <span class="number">20</span>))</span><br><span class="line"><span class="comment"># 结果：False</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>isalpha()：如果字符串至少有一个字符并且所有字符都是字母则返回 True, 否则返回 False。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mystr1 = <span class="string">&#x27;hello&#x27;</span></span><br><span class="line">mystr2 = <span class="string">&#x27;hello12345&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr1.isalpha())</span><br><span class="line"><span class="comment"># 结果：True</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr2.isalpha())</span><br><span class="line"><span class="comment"># 结果：False</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>isdigit()：如果字符串只包含数字则返回 True 否则返回 False。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mystr1 = <span class="string">&#x27;aaa12345&#x27;</span></span><br><span class="line">mystr2 = <span class="string">&#x27;12345&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr1.isdigit())</span><br><span class="line"><span class="comment"># 结果： False</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr2.isdigit())</span><br><span class="line"><span class="comment"># 结果：False</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>isalnum()：如果字符串至少有一个字符并且所有字符都是字母或数字则返 回 True,否则返回 False。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mystr1 = <span class="string">&#x27;aaa12345&#x27;</span></span><br><span class="line">mystr2 = <span class="string">&#x27;12345-&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr1.isalnum())</span><br><span class="line"><span class="comment"># 结果：True</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr2.isalnum())</span><br><span class="line"><span class="comment"># 结果：False</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>isspace()：如果字符串中只包含空白，则返回 True，否则返回 False。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mystr1 = <span class="string">&#x27;1 2 3 4 5&#x27;</span></span><br><span class="line">mystr2 = <span class="string">&#x27;     &#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr1.isspace())</span><br><span class="line"><span class="comment"># 结果：False</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr2.isspace())</span><br><span class="line"><span class="comment"># 结果：True</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="五-总结"><a href="#五-总结" class="headerlink" title="五. 总结"></a>五. 总结</h1><ul>
+<li>下标<ul>
+<li>计算机为数据序列中每个元素分配的从0开始的编号</li>
+</ul>
+</li>
+<li>切片</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">序列名[开始位置下标:结束位置下标:步长]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>常用操作方法<ul>
+<li>find()</li>
+<li>index()</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/07/31/python-%E5%BE%AA%E7%8E%AF/" rel="prev" title="Python 循环">
+      <i class="fa fa-chevron-left"></i> Python 循环
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80-%E8%AE%A4%E8%AF%86%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.</span> <span class="nav-text">一. 认识字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%89%B9%E5%BE%81"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 字符串特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%87%BA"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 字符串输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%85%A5"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 字符串输入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E4%B8%8B%E6%A0%87"><span class="nav-number">2.</span> <span class="nav-text">二、下标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E6%BC%94%E7%A4%BA"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 演示</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%88%87%E7%89%87"><span class="nav-number">3.</span> <span class="nav-text">三、切片</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E8%AF%AD%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E6%BC%94%E7%A4%BA"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 演示</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">四、常用操作方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-%E6%9F%A5%E6%89%BE"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 查找</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%AF%AD%E6%B3%95"><span class="nav-number">4.1.1.</span> <span class="nav-text">1. 语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%BC%94%E7%A4%BA"><span class="nav-number">4.1.2.</span> <span class="nav-text">2. 演示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-%E8%AE%A1%E6%95%B0"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 计数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%AF%AD%E6%B3%95-1"><span class="nav-number">4.2.1.</span> <span class="nav-text">1. 语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%BC%94%E7%A4%BA-1"><span class="nav-number">4.2.2.</span> <span class="nav-text">2. 演示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-%E4%BF%AE%E6%94%B9"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 修改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%AF%AD%E6%B3%95-2"><span class="nav-number">4.3.1.</span> <span class="nav-text">1. 语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%BC%94%E7%A4%BA-2"><span class="nav-number">4.3.2.</span> <span class="nav-text">2. 演示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%AF%AD%E6%B3%95-3"><span class="nav-number">4.3.3.</span> <span class="nav-text">1. 语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%BC%94%E7%A4%BA-3"><span class="nav-number">4.3.4.</span> <span class="nav-text">2. 演示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%AF%AD%E6%B3%95-4"><span class="nav-number">4.3.5.</span> <span class="nav-text">1. 语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%BC%94%E7%A4%BA-4"><span class="nav-number">4.3.6.</span> <span class="nav-text">2. 演示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%AF%AD%E6%B3%95-5"><span class="nav-number">4.3.7.</span> <span class="nav-text">1. 语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%BE%93%E5%87%BA%E6%95%88%E6%9E%9C"><span class="nav-number">4.3.8.</span> <span class="nav-text">2. 输出效果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-%E5%88%A4%E6%96%AD"><span class="nav-number">4.4.</span> <span class="nav-text">4.3 判断</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%AF%AD%E6%B3%95-6"><span class="nav-number">4.4.1.</span> <span class="nav-text">1. 语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%BC%94%E7%A4%BA-5"><span class="nav-number">4.4.2.</span> <span class="nav-text">2. 演示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%AF%AD%E6%B3%95-7"><span class="nav-number">4.4.3.</span> <span class="nav-text">1. 语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%BC%94%E7%A4%BA-6"><span class="nav-number">4.4.4.</span> <span class="nav-text">2. 演示</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94-%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">五. 总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Adams</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/denghy12" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;denghy12" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Adams</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
