@@ -155,6 +155,123 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/07/10/python-%E6%B3%A8%E9%87%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Adams">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/07/10/python-%E6%B3%A8%E9%87%8A/" class="post-title-link" itemprop="url">Python 注释</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-07-10 21:21:48" itemprop="dateCreated datePublished" datetime="2022-07-10T21:21:48+08:00">2022-07-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-07 15:36:42" itemprop="dateModified" datetime="2022-08-07T15:36:42+08:00">2022-08-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Python基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="一-注释的作用"><a href="#一-注释的作用" class="headerlink" title="一. 注释的作用"></a>一. 注释的作用</h1><ul>
+<li>通过用自己熟悉的语言，在程序中对某些代码进行标注说明，这就是注释的作用，能够大大增强程序的可读性。</li>
+</ul>
+<h1 id="二-注释的分类及语法"><a href="#二-注释的分类及语法" class="headerlink" title="二. 注释的分类及语法"></a>二. 注释的分类及语法</h1><p>注释分为两类：单行注释 和 多行注释。</p>
+<ul>
+<li>单行注释</li>
+</ul>
+<p>只能注释一行内容，语法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注释内容</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多行注释</li>
+</ul>
+<p>可以注释多行内容，一般用在注释一段代码的情况， 语法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	第一行注释</span></span><br><span class="line"><span class="string">	第二行注释</span></span><br><span class="line"><span class="string">	第三行注释</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">	注释1</span></span><br><span class="line"><span class="string">	注释2</span></span><br><span class="line"><span class="string">	注释3</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>快捷键： ctrl + &#x2F;</p>
+</blockquote>
+<h2 id="2-1-示例"><a href="#2-1-示例" class="headerlink" title="2.1 示例"></a>2.1 示例</h2><ul>
+<li>单行注释</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输出hello world</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)  <span class="comment"># 输出(简单的说明可以放到一行代码的后面，一般习惯代码后面添加两个空格再书写注释文字)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多行注释</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello world</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello reader</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：解释器不执行任何的注释内容。</p>
+</blockquote>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>注释的作用</li>
+</ul>
+<p>用人类熟悉的语言对代码进行解释说明，方便后期维护。</p>
+<ul>
+<li>注释的分类<ul>
+<li>单行： <code># 注释内容</code>，快捷键ctrl+&#x2F;</li>
+<li>多行：<code>&quot;&quot;&quot; 注释内容 &quot;&quot;&quot;</code> 或 <code>&#39;&#39;&#39; 注释内容 &#39;&#39;&#39;</code></li>
+</ul>
+</li>
+<li>解释器不执行注释内容</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/07/06/MarkDown%E8%AF%AD%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -516,7 +633,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
