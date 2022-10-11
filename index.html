@@ -155,6 +155,188 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/10/11/mysql-sql%E8%AF%AD%E5%8F%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="阿邓(Adams)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/10/11/mysql-sql%E8%AF%AD%E5%8F%A5/" class="post-title-link" itemprop="url">MySQL sql语句</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-10-11 21:56:16 / 修改时间：22:38:22" itemprop="dateCreated datePublished" datetime="2022-10-11T21:56:16+08:00">2022-10-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="一-MySQL数据库的介绍"><a href="#一-MySQL数据库的介绍" class="headerlink" title="一. MySQL数据库的介绍"></a>一. MySQL数据库的介绍</h1><p>MySQL是一个关系型数据库管理系统，在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件，它是由瑞典MySQL AB 公司开发，目前属于 Oracle 旗下产品，MySQL 是最流行的关系型数据库管理系统中的一个。</p>
+<p><strong>MySQL的特点:</strong></p>
+<ol>
+<li><p>MySQL是开源的，所以你不需要支付额外的费用。</p>
+</li>
+<li><p>MySQL支持大型的数据库。可以处理拥有上千万条记录的大型数据库。</p>
+</li>
+<li><p>MySQL使用标准的SQL数据语言形式。</p>
+</li>
+<li><p>MySQL可以安装在不同的操作系统，并且提供多种编程语言的操作接口。这些编程语言包括C、C++、Python、Java、Ruby等等。</p>
+</li>
+</ol>
+<h1 id="二-SQL语句"><a href="#二-SQL语句" class="headerlink" title="二 .SQL语句"></a>二 .SQL语句</h1><h2 id="2-1-数据库操作的SQL语句"><a href="#2-1-数据库操作的SQL语句" class="headerlink" title="2.1 数据库操作的SQL语句"></a>2.1 数据库操作的SQL语句</h2><ol>
+<li><p>查看所有数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> databases;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> database 数据库名 charset<span class="operator">=</span>utf8;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use 数据库名;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看当前使用的数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> database();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> database 数据库名;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="2-2-表结构操作的SQL语句"><a href="#2-2-表结构操作的SQL语句" class="headerlink" title="2.2 表结构操作的SQL语句"></a>2.2 表结构操作的SQL语句</h2><ol>
+<li><p>查看当前数据库中所有表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> tables;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> students(</span><br><span class="line"> id <span class="type">int</span> unsigned <span class="keyword">primary</span> key auto_increment <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line"> name <span class="type">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line"> age tinyint unsigned <span class="keyword">default</span> <span class="number">0</span>,</span><br><span class="line"> height <span class="type">decimal</span>(<span class="number">5</span>,<span class="number">2</span>),</span><br><span class="line"> gender enum(<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,<span class="string">&#x27;保密&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明:</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名(</span><br><span class="line">字段名称 数据类型  可选的约束条件,</span><br><span class="line">column1 datatype contrai,</span><br><span class="line">...</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改表-添加字段</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> 列名 类型 约束;</span><br><span class="line">例：</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> students <span class="keyword">add</span> birthday datetime;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改表-修改字段类型</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 modify 列名 类型 约束;</span><br><span class="line">例：</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> students modify birthday <span class="type">date</span> <span class="keyword">not</span> <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明:</strong></p>
+<ul>
+<li>modify: 只能修改字段类型或者约束，不能修改字段名</li>
+</ul>
+</li>
+<li><p>修改表-修改字段名和字段类型</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 change 原名 新名 类型及约束;</span><br><span class="line">例：</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> students change birthday birth datetime <span class="keyword">not</span> <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明:</strong></p>
+<ul>
+<li>change: 既能对字段重命名又能修改字段类型还能修改约束</li>
+</ul>
+</li>
+<li><p>修改表-删除字段</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">drop</span> 列名;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看创表SQL语句</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">table</span> 表名;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看创库SQL语句</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">create</span> database 数据库名;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> 表名;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="2-3-表数据操作的SQL语句"><a href="#2-3-表数据操作的SQL语句" class="headerlink" title="2.3 表数据操作的SQL语句"></a>2.3 表数据操作的SQL语句</h2><ol>
+<li><p>查询数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 1. 查询所有列</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名;</span><br><span class="line"><span class="comment">-- 2. 查询指定列</span></span><br><span class="line"><span class="keyword">select</span> 列<span class="number">1</span>,列<span class="number">2</span>,... <span class="keyword">from</span> 表名;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 1. 全列插入：值的顺序与表结构字段的顺序完全一一对应</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名 <span class="keyword">values</span> (...)</span><br><span class="line">例:</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> students <span class="keyword">values</span>(<span class="number">0</span>, <span class="string">&#x27;xx&#x27;</span>, <span class="keyword">default</span>, <span class="keyword">default</span>, <span class="string">&#x27;男&#x27;</span>);</span><br><span class="line"><span class="comment">-- 2. 部分列插入：值的顺序与给出的列顺序对应</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名 (列<span class="number">1</span>,...) <span class="keyword">values</span>(值<span class="number">1</span>,...)</span><br><span class="line">例:</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> students(name, age) <span class="keyword">values</span>(<span class="string">&#x27;王二小&#x27;</span>, <span class="number">15</span>);</span><br><span class="line"><span class="comment">-- 3. 全列多行插入</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名 <span class="keyword">values</span>(...),(...)...;</span><br><span class="line">例:</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> students <span class="keyword">values</span>(<span class="number">0</span>, <span class="string">&#x27;张飞&#x27;</span>, <span class="number">55</span>, <span class="number">1.75</span>, <span class="string">&#x27;男&#x27;</span>),(<span class="number">0</span>, <span class="string">&#x27;关羽&#x27;</span>, <span class="number">58</span>, <span class="number">1.85</span>, <span class="string">&#x27;男&#x27;</span>);</span><br><span class="line"><span class="comment">-- 4. 部分列多行插入</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名(列<span class="number">1</span>,...) <span class="keyword">values</span>(值<span class="number">1</span>,...),(值<span class="number">1</span>,...)...;</span><br><span class="line">例：</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> students(name, height) <span class="keyword">values</span>(<span class="string">&#x27;刘备&#x27;</span>, <span class="number">1.75</span>),(<span class="string">&#x27;曹操&#x27;</span>, <span class="number">1.6</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明:</strong></p>
+<ul>
+<li>主键列是自动增长，但是在全列插入时需要占位，通常使用空值(0或者null或者default)</li>
+<li>在全列插入时，如果字段列有默认值可以使用 default 来占位，插入后的数据就是之前设置的默认值</li>
+</ul>
+</li>
+<li><p>修改数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> 表名 <span class="keyword">set</span> 列<span class="number">1</span><span class="operator">=</span>值<span class="number">1</span>,列<span class="number">2</span><span class="operator">=</span>值<span class="number">2.</span>.. <span class="keyword">where</span> 条件</span><br><span class="line">例：</span><br><span class="line"><span class="keyword">update</span> students <span class="keyword">set</span> age <span class="operator">=</span> <span class="number">18</span>, gender <span class="operator">=</span> <span class="string">&#x27;女&#x27;</span> <span class="keyword">where</span> id <span class="operator">=</span> <span class="number">6</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> 表名 <span class="keyword">where</span> 条件</span><br><span class="line">例：</span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> students <span class="keyword">where</span> id<span class="operator">=</span><span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+
+<p>问题:</p>
+<p>上面的操作称之为物理删除，一旦删除就不容易恢复，我们可以使用逻辑删除的方式来解决这个问题。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 添加删除表示字段，0表示未删除 1表示删除</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> students <span class="keyword">add</span> isdelete bit <span class="keyword">default</span> <span class="number">0</span>;</span><br><span class="line"><span class="comment">-- 逻辑删除数据</span></span><br><span class="line"><span class="keyword">update</span> students <span class="keyword">set</span> isdelete <span class="operator">=</span> <span class="number">1</span> <span class="keyword">where</span> id <span class="operator">=</span> <span class="number">8</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明:</strong></p>
+<ul>
+<li>逻辑删除，本质就是修改操作</li>
+</ul>
+</li>
+</ol>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><ul>
+<li>登录数据库: mysql -uroot -p</li>
+<li>退出数据库: quit 或者 exit 或者 ctr + d</li>
+<li>创建数据库: create database 数据库名 charset&#x3D;utf8;</li>
+<li>使用数据库: use 数据库名;</li>
+<li>删除数据库: drop database 数据库名;</li>
+<li>创建表: create table 表名(字段名 字段类型 约束, …);</li>
+<li>修改表-添加字段: alter table 表名 add 字段名 字段类型 约束</li>
+<li>修改表-修改字段类型: alter table 表名 modify 字段名 字段类型 约束</li>
+<li>修改表-修改字段名和字段类型: alter table 表名 change 原字段名 新字段名 字段类型 约束</li>
+<li>修改表-删除字段: alter table 表名 drop 字段名;</li>
+<li>删除表: drop table 表名;</li>
+<li>查询数据: select * from 表名; 或者 select 列1,列2,… from 表名;</li>
+<li>插入数据: insert into 表名 values (…) 或者 insert into 表名 (列1,…) values(值1,…)</li>
+<li>修改数据: update 表名 set 列1&#x3D;值1,列2&#x3D;值2… where 条件</li>
+<li>删除数据: delete from 表名 where 条件</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/10/09/python-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1881,316 +2063,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="阿邓(Adams)">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="post-title-link" itemprop="url">Python 数据序列-字符串</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-08-02 11:39:02" itemprop="dateCreated datePublished" datetime="2022-08-02T11:39:02+08:00">2022-08-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-09-26 21:23:26" itemprop="dateModified" datetime="2022-09-26T21:23:26+08:00">2022-09-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Python基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="一-认识字符串"><a href="#一-认识字符串" class="headerlink" title="一. 认识字符串"></a>一. 认识字符串</h1><p>字符串是 Python 中最常用的数据类型。</p>
-<h2 id="1-1-字符串特征"><a href="#1-1-字符串特征" class="headerlink" title="1.1 字符串特征"></a>1.1 字符串特征</h2><ul>
-<li>一对引号字符串</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name1 = <span class="string">&#x27;Adams&#x27;</span></span><br><span class="line">name2 = <span class="string">&quot;Rose&quot;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>三引号字符串</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27;&#x27;&#x27; I am Adams, </span></span><br><span class="line"><span class="string">        nice to meet you! &#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：三引号形式的字符串支持换行。</p>
-</blockquote>
-<h2 id="1-2-字符串输出"><a href="#1-2-字符串输出" class="headerlink" title="1.2 字符串输出"></a>1.2 字符串输出</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line">name = <span class="string">&#x27;Adams&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;我的名字是%s&#x27;</span> % name)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;我的名字是<span class="subst">&#123;name&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="1-3-字符串输入"><a href="#1-3-字符串输入" class="headerlink" title="1.3 字符串输入"></a>1.3 字符串输入</h2><p>在Python中，使用<code>input()</code>接收用户输入。</p>
-<ul>
-<li>演示</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="built_in">input</span>(<span class="string">&#x27;请输入您的名字：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;您输入的名字是<span class="subst">&#123;name&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(name))</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：一开始输入的都是字符串格式</p>
-</blockquote>
-<h1 id="二、下标"><a href="#二、下标" class="headerlink" title="二、下标"></a>二、下标</h1><p><code>“下标”</code>又叫<code>“索引”</code>，就是编号。下标的作用即是通过下标快速找到对应的数据。</p>
-<img src="/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/1.png" class="" title="This is an test image">
-
-<h2 id="2-1-演示"><a href="#2-1-演示" class="headerlink" title="2.1 演示"></a>2.1 演示</h2><p>字符串<code>name = &quot;abcdef&quot;</code>，取到不同下标对应的数据。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;abcdef&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">0</span>])</span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>输出结果</li>
-</ul>
-<img src="/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/2.png" class="" title="This is an test image">
-
-<blockquote>
-<p>注意：下标从0开始。</p>
-</blockquote>
-<h1 id="三、切片"><a href="#三、切片" class="headerlink" title="三、切片"></a>三、切片</h1><p>切片是指对操作的对象截取其中一部分的操作。<strong>字符串、列表、元组</strong>都支持切片操作。</p>
-<h2 id="3-1-语法"><a href="#3-1-语法" class="headerlink" title="3.1 语法"></a>3.1 语法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">序列[开始位置下标:结束位置下标:步长]</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意</p>
-</blockquote>
-<pre><code> 1. 不包含结束位置下标对应的数据， 正负整数均可；
- 2. 步长是选取间隔，正负整数均可，默认步长为1。
-</code></pre>
-<h2 id="3-2-演示"><a href="#3-2-演示" class="headerlink" title="3.2 演示"></a>3.2 演示</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;abcdefg&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>:<span class="number">5</span>:<span class="number">1</span>])  <span class="comment"># cde</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>:<span class="number">5</span>])  <span class="comment"># cde</span></span><br><span class="line"><span class="built_in">print</span>(name[:<span class="number">5</span>])  <span class="comment"># abcde</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">1</span>:])  <span class="comment"># bcdefg</span></span><br><span class="line"><span class="built_in">print</span>(name[:])  <span class="comment"># abcdefg</span></span><br><span class="line"><span class="built_in">print</span>(name[::<span class="number">2</span>])  <span class="comment"># aceg</span></span><br><span class="line"><span class="built_in">print</span>(name[:-<span class="number">1</span>])  <span class="comment"># abcdef, 负1表示倒数第一个数据</span></span><br><span class="line"><span class="built_in">print</span>(name[-<span class="number">4</span>:-<span class="number">1</span>])  <span class="comment"># def</span></span><br><span class="line"><span class="built_in">print</span>(name[::-<span class="number">1</span>])  <span class="comment"># gfedcba</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="3-3-易错点"><a href="#3-3-易错点" class="headerlink" title="3.3 易错点"></a>3.3 易错点</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">aList = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line"><span class="built_in">print</span>(aList)</span><br><span class="line"><span class="comment"># 1. 替换</span></span><br><span class="line">aList[:<span class="number">4</span>] = [<span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(aList)</span><br></pre></td></tr></table></figure>
-<p>执行结果：<img src="/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/3.png" class="" title="This is an test image"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">aList = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line"><span class="built_in">print</span>(aList)</span><br><span class="line"><span class="comment"># 2. 插入（增加）</span></span><br><span class="line">aList[<span class="number">3</span>:<span class="number">3</span>] = [<span class="number">9</span>]</span><br><span class="line"><span class="built_in">print</span>(aList)</span><br></pre></td></tr></table></figure>
-<p>执行结果：<img src="/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/4.png" class="" title="This is an test image"></p>
-<blockquote>
-<p>注意：第二个替换可以理解为 aList[3:3] 是一个空列表，选中的是原来下标为3的数字前的空隙，将新的数据插入空列表中。</p>
-<p>所以得到的列表也比之前多了一个数据。</p>
-</blockquote>
-<h1 id="四、常用操作方法"><a href="#四、常用操作方法" class="headerlink" title="四、常用操作方法"></a>四、常用操作方法</h1><p>字符串的常用操作方法有查找、修改和判断三大类。</p>
-<h2 id="4-1-查找"><a href="#4-1-查找" class="headerlink" title="4.1 查找"></a>4.1 查找</h2><p>所谓字符串查找方法即是查找子串在字符串中的位置或出现的次数。</p>
-<ul>
-<li>find()：检测某个子串是否包含在这个字符串中，如果在返回这个子串开始的位置下标，否则则返回-1。</li>
-<li>index()：检测某个子串是否包含在这个字符串中，如果在返回这个子串开始的位置下标，否则则报异常。</li>
-<li>rfind()： 和find()功能相同，但查找方向为&#x3D;&#x3D;右侧&#x3D;&#x3D;开始。</li>
-<li>rindex()：和index()功能相同，但查找方向为&#x3D;&#x3D;右侧&#x3D;&#x3D;开始。</li>
-</ul>
-<h3 id="1-语法"><a href="#1-语法" class="headerlink" title="1. 语法"></a>1. 语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">字符串序列.find(子串, 开始位置下标, 结束位置下标)</span><br><span class="line">字符串序列.index(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
-</blockquote>
-<h3 id="2-演示"><a href="#2-演示" class="headerlink" title="2. 演示"></a>2. 演示</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mystr1 = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"><span class="built_in">print</span>(mystr1.find(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 12</span></span><br><span class="line"><span class="built_in">print</span>(mystr1.find(<span class="string">&#x27;and&#x27;</span>, <span class="number">15</span>, <span class="number">30</span>))  <span class="comment"># 23</span></span><br><span class="line"><span class="built_in">print</span>(mystr1.find(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># -1</span></span><br><span class="line"></span><br><span class="line">mystr2 = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"><span class="built_in">print</span>(mystr2.index(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 12</span></span><br><span class="line"><span class="built_in">print</span>(mystr2.index(<span class="string">&#x27;and&#x27;</span>, <span class="number">15</span>, <span class="number">30</span>))  <span class="comment"># 23</span></span><br><span class="line"><span class="built_in">print</span>(mystr2.index(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># 报错</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
-</blockquote>
-<h2 id="4-2-计数"><a href="#4-2-计数" class="headerlink" title="4.2 计数"></a>4.2 计数</h2><ul>
-<li>count()：返回某个子串在字符串中出现的次数</li>
-</ul>
-<h3 id="1-语法-1"><a href="#1-语法-1" class="headerlink" title="1. 语法"></a>1. 语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串序列.count(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
-</blockquote>
-<h3 id="2-演示-1"><a href="#2-演示-1" class="headerlink" title="2. 演示"></a>2. 演示</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 3</span></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># 0</span></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;and&#x27;</span>, <span class="number">0</span>, <span class="number">20</span>))  <span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="4-3-修改"><a href="#4-3-修改" class="headerlink" title="4.3 修改"></a>4.3 修改</h2><p>所谓修改字符串，指的就是通过函数的形式修改字符串中的数据。</p>
-<ul>
-<li>replace()：替换</li>
-</ul>
-<h3 id="1-语法-2"><a href="#1-语法-2" class="headerlink" title="1. 语法"></a>1. 语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串序列.replace(旧子串, 新子串, 替换次数)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：替换次数如果查出子串出现次数，则替换次数为该子串出现次数。</p>
-</blockquote>
-<h3 id="2-演示-2"><a href="#2-演示-2" class="headerlink" title="2. 演示"></a>2. 演示</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.replace(<span class="string">&#x27;and&#x27;</span>, <span class="string">&#x27;he&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：hello world he Readers he Adams he Python</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.replace(<span class="string">&#x27;and&#x27;</span>, <span class="string">&#x27;he&#x27;</span>, <span class="number">10</span>))</span><br><span class="line"><span class="comment"># 结果：hello world he Readers he Adams he Python</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr)</span><br><span class="line"><span class="comment"># 结果：hello world and Readers and Adams and Python</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：数据按照是否能直接修改分为&#x3D;&#x3D;可变类型&#x3D;&#x3D;和&#x3D;&#x3D;不可变类型&#x3D;&#x3D;两种。</p>
-<p>字符串类型的数据修改的时，不能改变原有字符串，属于不能直接修改数据的类型即是不可变类型。</p>
-</blockquote>
-<ul>
-<li>split()：按照指定字符分割字符串。</li>
-</ul>
-<h3 id="1-语法-3"><a href="#1-语法-3" class="headerlink" title="1. 语法"></a>1. 语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串序列.split(分割字符, num)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：num表示的是分割字符出现的次数，即将来返回数据个数为num+1个。</p>
-</blockquote>
-<h3 id="2-演示-3"><a href="#2-演示-3" class="headerlink" title="2. 演示"></a>2. 演示</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27;and&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello world &#x27;, &#x27; Readers &#x27;, &#x27; Adams &#x27;, &#x27; Python&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27;and&#x27;</span>, <span class="number">2</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello world &#x27;, &#x27; Readers &#x27;, &#x27; Adams and Python&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27; &#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello&#x27;, &#x27;world&#x27;, &#x27;and&#x27;, &#x27;Readers&#x27;, &#x27;and&#x27;, &#x27;Adams&#x27;, &#x27;and&#x27;, &#x27;Python&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27; &#x27;</span>, <span class="number">2</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello&#x27;, &#x27;world&#x27;, &#x27;and Readers and Adams and Python&#x27;]</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：如果分割字符是原有字符串中的子串，分割后则丢失该子串。</p>
-</blockquote>
-<ul>
-<li>join()：用一个字符或子串合并字符串，即是将多个字符串合并为一个新的字符串。</li>
-</ul>
-<h3 id="1-语法-4"><a href="#1-语法-4" class="headerlink" title="1. 语法"></a>1. 语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符或子串.join(多字符串组成的序列)</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-演示-4"><a href="#2-演示-4" class="headerlink" title="2. 演示"></a>2. 演示</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="string">&#x27;hello&#x27;</span>, <span class="string">&#x27;how&#x27;</span>, <span class="string">&#x27;are&#x27;</span>, <span class="string">&#x27;you&#x27;</span>]</span><br><span class="line">t1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;ddd&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;_&#x27;</span>.join(list1))</span><br><span class="line"><span class="comment"># 结果：hello_how_are_you</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;...&#x27;</span>.join(t1))</span><br><span class="line"><span class="comment"># 结果：aa...b...cc...ddd</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>capitalize()：将字符串第一个字符转换成大写。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.capitalize())</span><br><span class="line"><span class="comment"># 结果：Hello world and readers and adams and python</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：capitalize()函数转换后，只字符串第一个字符大写，其他的字符全都小写。</p>
-</blockquote>
-<ul>
-<li>title()：将字符串每个单词首字母转换成大写。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.title())</span><br><span class="line"><span class="comment"># 结果：Hello World And Readers And Adams And Python</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>lower()：将字符串中大写转小写。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.lower())</span><br><span class="line"><span class="comment"># 结果：hello world and readers and adams and python</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>upper()：将字符串中小写转大写。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.upper())</span><br><span class="line"><span class="comment"># 结果：HELLO WORLD AND READERS AND ADAMS AND PYTHON</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li><p>lstrip()：删除字符串左侧空白字符。</p>
-</li>
-<li><p>rstrip()：删除字符串右侧空白字符。</p>
-</li>
-<li><p>strip()：删除字符串两侧空白字符。</p>
-</li>
-<li><p>ljust()：返回一个原字符串左对齐,并使用指定字符(默认空格)填充至对应长度 的新字符串。</p>
-</li>
-</ul>
-<h3 id="1-语法-5"><a href="#1-语法-5" class="headerlink" title="1. 语法"></a>1. 语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串序列.ljust(长度, 填充字符)</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-输出效果"><a href="#2-输出效果" class="headerlink" title="2. 输出效果"></a>2. 输出效果</h3><ul>
-<li><p>rjust()：返回一个原字符串右对齐,并使用指定字符(默认空格)填充至对应长度 的新字符串，语法和ljust()相同。</p>
-</li>
-<li><p>center()：返回一个原字符串居中对齐,并使用指定字符(默认空格)填充至对应长度 的新字符串，语法和ljust()相同。</p>
-</li>
-</ul>
-<h2 id="4-3-判断"><a href="#4-3-判断" class="headerlink" title="4.3 判断"></a>4.3 判断</h2><p>所谓判断即是判断真假，返回的结果是布尔型数据类型：True 或 False。</p>
-<ul>
-<li>startswith()：检查字符串是否是以指定子串开头，是则返回 True，否则返回 False。如果设置开始和结束位置下标，则在指定范围内检查。</li>
-</ul>
-<h3 id="1-语法-6"><a href="#1-语法-6" class="headerlink" title="1. 语法"></a>1. 语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串序列.startswith(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-演示-5"><a href="#2-演示-5" class="headerlink" title="2. 演示"></a>2. 演示</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Readers and Adams and Python   &quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.startswith(<span class="string">&#x27;hello&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：True</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.startswith(<span class="string">&#x27;hello&#x27;</span>, <span class="number">5</span>, <span class="number">20</span>))</span><br><span class="line"><span class="comment"># 结果False</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>endswith()：：检查字符串是否是以指定子串结尾，是则返回 True，否则返回 False。如果设置开始和结束位置下标，则在指定范围内检查。</li>
-</ul>
-<h3 id="1-语法-7"><a href="#1-语法-7" class="headerlink" title="1. 语法"></a>1. 语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串序列.endswith(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-演示-6"><a href="#2-演示-6" class="headerlink" title="2. 演示"></a>2. 演示</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Readers and Adams and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.endswith(<span class="string">&#x27;Python&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：True</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.endswith(<span class="string">&#x27;python&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：False</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.endswith(<span class="string">&#x27;Python&#x27;</span>, <span class="number">2</span>, <span class="number">20</span>))</span><br><span class="line"><span class="comment"># 结果：False</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>isalpha()：如果字符串至少有一个字符并且所有字符都是字母则返回 True, 否则返回 False。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mystr1 = <span class="string">&#x27;hello&#x27;</span></span><br><span class="line">mystr2 = <span class="string">&#x27;hello12345&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr1.isalpha())</span><br><span class="line"><span class="comment"># 结果：True</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr2.isalpha())</span><br><span class="line"><span class="comment"># 结果：False</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>isdigit()：如果字符串只包含数字则返回 True 否则返回 False。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mystr1 = <span class="string">&#x27;aaa12345&#x27;</span></span><br><span class="line">mystr2 = <span class="string">&#x27;12345&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr1.isdigit())</span><br><span class="line"><span class="comment"># 结果： False</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr2.isdigit())</span><br><span class="line"><span class="comment"># 结果：False</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>isalnum()：如果字符串至少有一个字符并且所有字符都是字母或数字则返 回 True,否则返回 False。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mystr1 = <span class="string">&#x27;aaa12345&#x27;</span></span><br><span class="line">mystr2 = <span class="string">&#x27;12345-&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr1.isalnum())</span><br><span class="line"><span class="comment"># 结果：True</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr2.isalnum())</span><br><span class="line"><span class="comment"># 结果：False</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>isspace()：如果字符串中只包含空白，则返回 True，否则返回 False。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mystr1 = <span class="string">&#x27;1 2 3 4 5&#x27;</span></span><br><span class="line">mystr2 = <span class="string">&#x27;     &#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr1.isspace())</span><br><span class="line"><span class="comment"># 结果：False</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr2.isspace())</span><br><span class="line"><span class="comment"># 结果：True</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="五-总结"><a href="#五-总结" class="headerlink" title="五. 总结"></a>五. 总结</h1><ul>
-<li>下标<ul>
-<li>计算机为数据序列中每个元素分配的从0开始的编号</li>
-</ul>
-</li>
-<li>切片</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">序列名[开始位置下标:结束位置下标:步长]</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>常用操作方法<ul>
-<li>find()</li>
-<li>index()</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2260,20 +2132,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
