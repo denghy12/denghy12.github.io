@@ -155,6 +155,326 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwx2.sinaimg.cn%2Fmw690%2F002Ywxupgy1h35r6zau4jj60p00zdaea02.jpg&refer=http%3A%2F%2Fwx2.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668178729&t=3402b55b5a0800099c88dfc112af46e1">
+      <meta itemprop="name" content="阿邓(Adams)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/" class="post-title-link" itemprop="url">Python 数据序列-字典</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-09 12:59:07" itemprop="dateCreated datePublished" datetime="2022-08-09T12:59:07+08:00">2022-08-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-22 13:03:07" itemprop="dateModified" datetime="2022-09-22T13:03:07+08:00">2022-09-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Python基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="一-创建字典的语法"><a href="#一-创建字典的语法" class="headerlink" title="一. 创建字典的语法"></a>一. 创建字典的语法</h1><p>字典特点：</p>
+<ul>
+<li>符号为大括号</li>
+<li>数据为键值对形式出现</li>
+<li>各个键值对之间用逗号隔开</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 有数据字典</span></span><br><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 空字典</span></span><br><span class="line">dict2 = &#123;&#125;</span><br><span class="line"></span><br><span class="line">dict3 = <span class="built_in">dict</span>()</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：一般称冒号前面的为键(key)，简称k；冒号后面的为值(value)，简称v。</p>
+</blockquote>
+<h1 id="二-字典常见操作"><a href="#二-字典常见操作" class="headerlink" title="二. 字典常见操作"></a>二. 字典常见操作</h1><h2 id="2-1-增-x2F-改"><a href="#2-1-增-x2F-改" class="headerlink" title="2.1 增&#x2F;改"></a>2.1 增&#x2F;改</h2><p>写法：字典序列[key] &#x3D; 值</p>
+<blockquote>
+<p>注意：如果key存在则修改这个key对应的值；如果key不存在则新增此键值对。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 增</span></span><br><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line">dict1[<span class="string">&#x27;name&#x27;</span>] = <span class="string">&#x27;Rose&#x27;</span></span><br><span class="line"><span class="comment"># 结果：&#123;&#x27;name&#x27;: &#x27;Rose&#x27;, &#x27;age&#x27;: 20, &#x27;gender&#x27;: &#x27;男&#x27;&#125;</span></span><br><span class="line"><span class="built_in">print</span>(dict1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#改</span></span><br><span class="line">dict1[<span class="string">&#x27;id&#x27;</span>] = <span class="number">110</span></span><br><span class="line"><span class="comment"># &#123;&#x27;name&#x27;: &#x27;Rose&#x27;, &#x27;age&#x27;: 20, &#x27;gender&#x27;: &#x27;男&#x27;, &#x27;id&#x27;: 110&#125;</span></span><br><span class="line"><span class="built_in">print</span>(dict1)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：字典为可变类型。</p>
+</blockquote>
+<h2 id="2-2-删"><a href="#2-2-删" class="headerlink" title="2.2 删"></a>2.2 删</h2><ul>
+<li>del() &#x2F; del：删除字典或删除字典中指定键值对。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> dict1[<span class="string">&#x27;gender&#x27;</span>]</span><br><span class="line"><span class="comment"># 结果：&#123;&#x27;name&#x27;: &#x27;Tom&#x27;, &#x27;age&#x27;: 20&#125;</span></span><br><span class="line"><span class="built_in">print</span>(dict1)</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>clear()：清空字典</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line">dict1.clear()</span><br><span class="line"><span class="built_in">print</span>(dict1)  <span class="comment"># &#123;&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-3-查"><a href="#2-3-查" class="headerlink" title="2.3 查"></a>2.3 查</h2><h3 id="2-3-1-key值查找"><a href="#2-3-1-key值查找" class="headerlink" title="2.3.1 key值查找"></a>2.3.1 key值查找</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1[<span class="string">&#x27;name&#x27;</span>])  <span class="comment"># Tom</span></span><br><span class="line"><span class="built_in">print</span>(dict1[<span class="string">&#x27;id&#x27;</span>])  <span class="comment"># 报错</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果当前查找的key存在，则返回对应的值；否则则报错。</p>
+</blockquote>
+<h3 id="2-3-2-get-–-查value"><a href="#2-3-2-get-–-查value" class="headerlink" title="2.3.2 get() – 查value"></a>2.3.2 get() – 查value</h3><ul>
+<li>语法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字典序列.get(key, 默认值)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：如果当前查找的key不存在则返回第二个参数(默认值)，如果省略第二个参数，则返回None。</p>
+</blockquote>
+<ul>
+<li>快速体验</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1.get(<span class="string">&#x27;name&#x27;</span>))  <span class="comment"># Tom</span></span><br><span class="line"><span class="built_in">print</span>(dict1.get(<span class="string">&#x27;id&#x27;</span>, <span class="number">110</span>))  <span class="comment"># 110</span></span><br><span class="line"><span class="built_in">print</span>(dict1.get(<span class="string">&#x27;id&#x27;</span>))  <span class="comment"># None</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-3-keys-–-查找全部key"><a href="#2-3-3-keys-–-查找全部key" class="headerlink" title="2.3.3 keys() – 查找全部key"></a>2.3.3 keys() – 查找全部key</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1.keys())  <span class="comment"># dict_keys([&#x27;name&#x27;, &#x27;age&#x27;, &#x27;gender&#x27;])</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-3-4-values-–-查找全部value"><a href="#2-3-4-values-–-查找全部value" class="headerlink" title="2.3.4 values() – 查找全部value"></a>2.3.4 values() – 查找全部value</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1.values())  <span class="comment"># dict_values([&#x27;Tom&#x27;, 20, &#x27;男&#x27;])</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-3-5-items-–-以元组的形式输出"><a href="#2-3-5-items-–-以元组的形式输出" class="headerlink" title="2.3.5 items() – 以元组的形式输出"></a>2.3.5 items() – 以元组的形式输出</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1.items())  <span class="comment"># dict_items([(&#x27;name&#x27;, &#x27;Tom&#x27;), (&#x27;age&#x27;, 20), (&#x27;gender&#x27;, &#x27;男&#x27;)])</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三-字典的循环遍历"><a href="#三-字典的循环遍历" class="headerlink" title="三. 字典的循环遍历"></a>三. 字典的循环遍历</h1><h2 id="3-1-遍历字典的key"><a href="#3-1-遍历字典的key" class="headerlink" title="3.1 遍历字典的key"></a>3.1 遍历字典的key</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> dict1.keys():</span><br><span class="line">    <span class="built_in">print</span>(key)</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/01.png" class="" title="This is an test image">
+
+
+
+<h2 id="3-2-遍历字典的value"><a href="#3-2-遍历字典的value" class="headerlink" title="3.2 遍历字典的value"></a>3.2 遍历字典的value</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> dict1.values():</span><br><span class="line">    <span class="built_in">print</span>(value)</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/02.png" class="" title="This is an test image">
+
+
+
+<h2 id="3-3-遍历字典的元素"><a href="#3-3-遍历字典的元素" class="headerlink" title="3.3 遍历字典的元素"></a>3.3 遍历字典的元素</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> dict1.items():</span><br><span class="line">    <span class="built_in">print</span>(item)</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/03.png" class="" title="This is an test image">
+
+
+
+<h2 id="3-4-遍历字典的键值对"><a href="#3-4-遍历字典的键值对" class="headerlink" title="3.4 遍历字典的键值对"></a>3.4 遍历字典的键值对</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> dict1.items():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;key&#125;</span> = <span class="subst">&#123;value&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/04.png" class="" title="This is an test image">
+
+
+
+<h1 id="四-总结"><a href="#四-总结" class="headerlink" title="四. 总结"></a>四. 总结</h1><ul>
+<li>定义字典</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Python&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">30</span>&#125;</span><br><span class="line"></span><br><span class="line">dict2 = &#123;&#125;</span><br><span class="line"></span><br><span class="line">dict3 = <span class="built_in">dict</span>()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>常见操作<ul>
+<li>增&#x2F;改</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字典序列[key] = 值</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查找<ul>
+<li>字典序列[key]</li>
+<li>keys()</li>
+<li>values()</li>
+<li>items()</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/08/07/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%85%83%E7%BB%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwx2.sinaimg.cn%2Fmw690%2F002Ywxupgy1h35r6zau4jj60p00zdaea02.jpg&refer=http%3A%2F%2Fwx2.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668178729&t=3402b55b5a0800099c88dfc112af46e1">
+      <meta itemprop="name" content="阿邓(Adams)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/08/07/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%85%83%E7%BB%84/" class="post-title-link" itemprop="url">Python 数据序列-元组</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-07 12:21:08" itemprop="dateCreated datePublished" datetime="2022-08-07T12:21:08+08:00">2022-08-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-22 12:22:26" itemprop="dateModified" datetime="2022-09-22T12:22:26+08:00">2022-09-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Python基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="一-元组"><a href="#一-元组" class="headerlink" title="一. 元组"></a>一. 元组</h1><p>一个元组可以存储多个数据，元组内的数据是不能修改的。</p>
+<p>元组特点：定义元组使用小括号，且逗号隔开各个数据，数据可以是不同的数据类型。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 多个数据元组</span></span><br><span class="line">t1 = (<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 单个数据元组</span></span><br><span class="line">t2 = (<span class="number">10</span>,)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：如果定义的元组只有一个数据，那么这个数据后面也好添加逗号，否则数据类型为唯一的这个数据的数据类型！！！！</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">t2 = (<span class="number">10</span>,)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(t2))  <span class="comment"># tuple</span></span><br><span class="line"></span><br><span class="line">t3 = (<span class="number">20</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(t3))  <span class="comment"># int</span></span><br><span class="line"></span><br><span class="line">t4 = (<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(t4))  <span class="comment"># str</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="二-元组的常见操作"><a href="#二-元组的常见操作" class="headerlink" title="二. 元组的常见操作"></a>二. 元组的常见操作</h1><p>元组数据不支持修改，只支持查找</p>
+<ul>
+<li>按下标查找数据</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(tuple1[<span class="number">0</span>])  <span class="comment"># aa</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>index()：查找某个数据，如果数据存在返回对应的下标，否则报错，语法和列表、字符串的index方法相同。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(tuple1.index(<span class="string">&#x27;aa&#x27;</span>))  <span class="comment"># 0</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>count()：统计某个数据在当前元组出现的次数。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(tuple1.count(<span class="string">&#x27;bb&#x27;</span>))  <span class="comment"># 2</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>len()：统计元组中数据的个数。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(tuple1))  <span class="comment"># 4</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：元组内的直接数据如果修改则立即报错！！！！！</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line">tuple1[<span class="number">0</span>] = <span class="string">&#x27;aaa&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>但是如果元组里面有列表</p>
+<p>修改列表里面的数据则是支持的！！！！</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tuple2 = (<span class="number">10</span>, <span class="number">20</span>, [<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>], <span class="number">50</span>, <span class="number">30</span>)</span><br><span class="line"><span class="built_in">print</span>(tuple2[<span class="number">2</span>])  <span class="comment"># 访问到列表</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：(10, 20, [&#x27;aaaaa&#x27;, &#x27;bb&#x27;, &#x27;cc&#x27;], 50, 30)</span></span><br><span class="line">tuple2[<span class="number">2</span>][<span class="number">0</span>] = <span class="string">&#x27;aaaaa&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(tuple2)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三-总结"><a href="#三-总结" class="headerlink" title="三. 总结"></a>三. 总结</h1><ul>
+<li>定义元组</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t1 = (<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>)</span><br><span class="line"></span><br><span class="line">t2 = (<span class="number">10</span>,)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>常用操作方法<ul>
+<li>index()</li>
+<li>count()</li>
+<li>len()</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/08/05/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%88%97%E8%A1%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1789,352 +2109,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/07/16/python-%E8%BE%93%E5%87%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwx2.sinaimg.cn%2Fmw690%2F002Ywxupgy1h35r6zau4jj60p00zdaea02.jpg&refer=http%3A%2F%2Fwx2.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668178729&t=3402b55b5a0800099c88dfc112af46e1">
-      <meta itemprop="name" content="阿邓(Adams)">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/07/16/python-%E8%BE%93%E5%87%BA/" class="post-title-link" itemprop="url">Python 输出</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-07-16 16:15:03" itemprop="dateCreated datePublished" datetime="2022-07-16T16:15:03+08:00">2022-07-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-07 15:37:03" itemprop="dateModified" datetime="2022-08-07T15:37:03+08:00">2022-08-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Python基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><p>作用：程序输出内容给用户</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Hello Python&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h1 id="一-格式化输出"><a href="#一-格式化输出" class="headerlink" title="一.  格式化输出"></a>一.  格式化输出</h1><p>所谓的格式化输出即按照一定的格式输出内容。</p>
-<h3 id="1-1-格式化符号"><a href="#1-1-格式化符号" class="headerlink" title="1.1 格式化符号"></a>1.1 格式化符号</h3><table>
-<thead>
-<tr>
-<th align="center">格式符号</th>
-<th align="center">转换</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">%s</td>
-<td align="center">字符串</td>
-</tr>
-<tr>
-<td align="center">%d</td>
-<td align="center">有符号的十进制整数</td>
-</tr>
-<tr>
-<td align="center">%f</td>
-<td align="center">浮点数</td>
-</tr>
-<tr>
-<td align="center">%c</td>
-<td align="center">字符</td>
-</tr>
-<tr>
-<td align="center">%u</td>
-<td align="center">无符号十进制整数</td>
-</tr>
-<tr>
-<td align="center">%o</td>
-<td align="center">八进制整数</td>
-</tr>
-<tr>
-<td align="center">%x</td>
-<td align="center">十六进制整数（小写ox）</td>
-</tr>
-<tr>
-<td align="center">%X</td>
-<td align="center">十六进制整数（大写OX）</td>
-</tr>
-<tr>
-<td align="center">%e</td>
-<td align="center">科学计数法（小写’e’）</td>
-</tr>
-<tr>
-<td align="center">%E</td>
-<td align="center">科学计数法（大写’E’）</td>
-</tr>
-<tr>
-<td align="center">%g</td>
-<td align="center">%f和%e的简写</td>
-</tr>
-<tr>
-<td align="center">%G</td>
-<td align="center">%f和%E的简写</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>技巧</p>
-</blockquote>
-<ul>
-<li>%06d，表示输出的整数显示位数，不足以0补全，超出当前位数则原样输出</li>
-<li>%.2f，表示小数点后显示的小数位数。</li>
-</ul>
-<h3 id="1-2-示例"><a href="#1-2-示例" class="headerlink" title="1.2 示例"></a>1.2 示例</h3><ul>
-<li>格式化字符串%s</li>
-<li><code>f&#39;&#123;表达式&#125;&#39;</code></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">age = <span class="number">19</span> </span><br><span class="line">name = <span class="string">&#x27;Adams&#x27;</span></span><br><span class="line">weight = <span class="number">62.50</span></span><br><span class="line">stu_id = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 我的名字是Adams</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;我的名字是%s&#x27;</span> % name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 我的学号是0002</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;我的学号是%4d&#x27;</span> % stu_id)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 我的体重是62.50公斤</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;我的体重是%.2f公斤&#x27;</span> % weight)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 我的名字是Adams，今年19岁了</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;我的名字是%s，今年%d岁了&#x27;</span> % (name, age))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 我的名字是Adams，明年20岁了</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;我的名字是%s，明年%d岁了&#x27;</span> % (name, age + <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 我的名字是Adams，明年20岁了</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;我的名字是<span class="subst">&#123;name&#125;</span>, 明年<span class="subst">&#123;age + <span class="number">1</span>&#125;</span>岁了&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>f-格式化字符串是Python3.6中新增的格式化方法，该方法更简单易读。</p>
-</blockquote>
-<h3 id="1-3-转义字符"><a href="#1-3-转义字符" class="headerlink" title="1.3 转义字符"></a>1.3 转义字符</h3><ul>
-<li><code>\n</code>：换行。</li>
-<li><code>\t</code>：制表符，一个tab键（4个空格）的距离。</li>
-</ul>
-<h3 id="1-4-结束符"><a href="#1-4-结束符" class="headerlink" title="1.4 结束符"></a>1.4 结束符</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;输出的内容&#x27;</span>, end=<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;输出的内容&#x27;</span>, end=<span class="string">&quot;...&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>在Python中，print()， 默认自带<code>end=&quot;\n&quot;</code>这个换行结束符，所以导致每两个<code>print</code>直接会换行展示</p>
-<p>用户可以按需求更改结束符,不仅用转义字符更改，也可以用其他普通字符更改。</p>
-</blockquote>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
-<li>格式化符号<ul>
-<li>%s：格式化输出字符串</li>
-<li>%d：格式化输出整数</li>
-<li>%f：格式化输出浮点数</li>
-</ul>
-</li>
-<li>f-字符串<ul>
-<li>f’{表达式}’</li>
-</ul>
-</li>
-<li>转义字符<ul>
-<li>\n：换行</li>
-<li>\t：制表符</li>
-</ul>
-</li>
-<li>print结束符</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;内容&#x27;</span>, end=<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/07/15/python-%E5%8F%98%E9%87%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwx2.sinaimg.cn%2Fmw690%2F002Ywxupgy1h35r6zau4jj60p00zdaea02.jpg&refer=http%3A%2F%2Fwx2.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668178729&t=3402b55b5a0800099c88dfc112af46e1">
-      <meta itemprop="name" content="阿邓(Adams)">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/07/15/python-%E5%8F%98%E9%87%8F/" class="post-title-link" itemprop="url">Python 变量</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-07-15 11:05:26" itemprop="dateCreated datePublished" datetime="2022-07-15T11:05:26+08:00">2022-07-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-09 16:59:12" itemprop="dateModified" datetime="2022-10-09T16:59:12+08:00">2022-10-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Python基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="一-变量的作用"><a href="#一-变量的作用" class="headerlink" title="一.  变量的作用"></a>一.  变量的作用</h1><p>程序中，数据都是临时存储在内存中，为了更快速的查找或使用这个数据，通常我们把这个数据在内存中存储之后定义一个名称，这个名称就是变量。</p>
-<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/image-20190122123202213.png" class="" title="This is an test image">
-
-
-
-<blockquote>
-<p>变量就是一个存储数据的的时候当前数据所在的内存地址的名字而已。</p>
-</blockquote>
-<h1 id="二-定义变量"><a href="#二-定义变量" class="headerlink" title="二.  定义变量"></a>二.  定义变量</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">变量名 = 值</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>变量名自定义，要满足标识符命名规则。</p>
-</blockquote>
-<h2 id="2-1-标识符"><a href="#2-1-标识符" class="headerlink" title="2.1  标识符"></a>2.1  标识符</h2><p>标识符命名规则是Python中定义各种名字的时候的统一规范，具体如下：</p>
-<ul>
-<li>由数字、字母、下划线组成</li>
-<li>不能数字开头</li>
-<li>不能使用内置关键字</li>
-<li>严格区分大小写</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">False     None    True   and      as       assert   break     class  </span><br><span class="line">continue  def     del    elif     else     except   finally   for</span><br><span class="line">from      global  if     import   in       is       lambda    nonlocal</span><br><span class="line">not       or      pass   raise    return   try      while     with  </span><br><span class="line">yield</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-2-命名习惯"><a href="#2-2-命名习惯" class="headerlink" title="2.2 命名习惯"></a>2.2 命名习惯</h2><ul>
-<li>见名知义。</li>
-<li>大驼峰：即每个单词首字母都大写，例如：<code>MyName</code>。</li>
-<li>小驼峰：第二个（含）以后的单词首字母大写，例如：<code>myName</code>。</li>
-<li>下划线：例如：<code>my_name</code>。</li>
-</ul>
-<h2 id="2-3-使用变量"><a href="#2-3-使用变量" class="headerlink" title="2.3 使用变量"></a>2.3 使用变量</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">my_name = <span class="string">&#x27;Adams&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(my_name)</span><br><span class="line"></span><br><span class="line">schoolName = <span class="string">&#x27;NJIT&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(schoolName)</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-4-认识bug"><a href="#2-4-认识bug" class="headerlink" title="2.4 认识bug"></a>2.4 认识bug</h2><p>所谓bug，就是程序中的错误。如果程序有错误，需要程序员排查问题，纠正错误。</p>
-<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/03.png" class="" title="This is an test image">
-
-<h1 id="三-Debug工具"><a href="#三-Debug工具" class="headerlink" title="三. Debug工具"></a>三. Debug工具</h1><p>Debug工具是PyCharm IDE中集成的用来调试程序的工具，在这里程序员可以查看程序的执行细节和流程或者调解bug。</p>
-<p>Debug工具使用步骤：</p>
-<ol>
-<li>打断点</li>
-<li>Debug调试</li>
-</ol>
-<h2 id="3-1-打断点"><a href="#3-1-打断点" class="headerlink" title="3.1 打断点"></a>3.1 打断点</h2><ul>
-<li>断点位置</li>
-</ul>
-<p>目标要调试的代码块的第一行代码即可，即一个断点即可。</p>
-<ul>
-<li>打断点的方法</li>
-</ul>
-<p>单击目标代码的行号右侧空白位置。</p>
-<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/2.png" class="" title="This is an test image">
-
-<h2 id="3-2-Debug调试"><a href="#3-2-Debug调试" class="headerlink" title="3.2 Debug调试"></a>3.2 Debug调试</h2><p>打成功断点后，在文件内部任意位置 — 右键 – Debug’文件名’ — 即可调出Debug工具面板 – 单击Step Over&#x2F;F8，即可按步执行代码。</p>
-<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/1.png" class="" title="This is an test image">
-
-<h3 id="3-2-1-Debug输出面板分类"><a href="#3-2-1-Debug输出面板分类" class="headerlink" title="3.2.1 Debug输出面板分类"></a>3.2.1 Debug输出面板分类</h3><ul>
-<li>Debugger<ul>
-<li>显示变量和变量的细节</li>
-</ul>
-</li>
-<li>Console<ul>
-<li>输出内容</li>
-</ul>
-</li>
-</ul>
-<h1 id="四-认识数据类型"><a href="#四-认识数据类型" class="headerlink" title="四. 认识数据类型"></a>四. 认识数据类型</h1><p><strong>在 Python 里为了应对不同的业务需求，也把数据分为不同的类型。</strong></p>
-<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/image-20190111124628584-7181988.png" class="" title="This is an test image">
-
-<blockquote>
-<p>检测数据类型的方法：<code>type()</code></p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))  <span class="comment"># &lt;class &#x27;int&#x27;&gt; -- 整型</span></span><br><span class="line"></span><br><span class="line">b = <span class="number">1.1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(b))  <span class="comment"># &lt;class &#x27;float&#x27;&gt; -- 浮点型</span></span><br><span class="line"></span><br><span class="line">c = <span class="literal">True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(c))  <span class="comment"># &lt;class &#x27;bool&#x27;&gt; -- 布尔型</span></span><br><span class="line"></span><br><span class="line">d = <span class="string">&#x27;12345&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(d))  <span class="comment"># &lt;class &#x27;str&#x27;&gt; -- 字符串</span></span><br><span class="line"></span><br><span class="line">e = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(e))  <span class="comment"># &lt;class &#x27;list&#x27;&gt; -- 列表</span></span><br><span class="line"></span><br><span class="line">f = (<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(f))  <span class="comment"># &lt;class &#x27;tuple&#x27;&gt; -- 元组</span></span><br><span class="line"></span><br><span class="line">h = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(h))  <span class="comment"># &lt;class &#x27;set&#x27;&gt; -- 集合</span></span><br><span class="line"></span><br><span class="line">g = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;TOM&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(g))  <span class="comment"># &lt;class &#x27;dict&#x27;&gt; -- 字典</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
-<li>定义变量的语法</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">变量名 = 值</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>标识符<ul>
-<li>由数字、字母、下划线组成</li>
-<li>不能数字开头</li>
-<li>不能使用内置关键字</li>
-<li>严格区分大小写</li>
-</ul>
-</li>
-<li>数据类型<ul>
-<li>整型：int</li>
-<li>浮点型：float</li>
-<li>字符串：str</li>
-<li>布尔型：bool</li>
-<li>元组：tuple</li>
-<li>集合：set</li>
-<li>字典：dict</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2206,20 +2180,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

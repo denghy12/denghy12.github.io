@@ -155,6 +155,226 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/10/14/html-%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwx2.sinaimg.cn%2Fmw690%2F002Ywxupgy1h35r6zau4jj60p00zdaea02.jpg&refer=http%3A%2F%2Fwx2.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668178729&t=3402b55b5a0800099c88dfc112af46e1">
+      <meta itemprop="name" content="阿邓(Adams)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/10/14/html-%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" class="post-title-link" itemprop="url">html 常用标签</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-10-14 11:14:47 / 修改时间：11:40:01" itemprop="dateCreated datePublished" datetime="2022-10-14T11:14:47+08:00">2022-10-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html/" itemprop="url" rel="index"><span itemprop="name">html</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="一-标签类型"><a href="#一-标签类型" class="headerlink" title="一.标签类型"></a>一.标签类型</h1><p>单标签：只有一个标签，没有标签内容<br>双标签：成对出现的标签</p>
+<h1 id="二-常用标签"><a href="#二-常用标签" class="headerlink" title="二.常用标签"></a>二.常用标签</h1><h3 id="双标签"><a href="#双标签" class="headerlink" title="双标签"></a>双标签</h3><p><code>&lt;h1&gt;&lt;/h1&gt;</code>, <code>&lt;h2&gt;&lt;/h2&gt;</code>, <code>&lt;h3&gt;&lt;/h3&gt;</code>—标题标签</p>
+<blockquote>
+<p>对应一级，二级，三级标签，类似于 MarkDown 语法中的 <code>#</code>, <code> ##</code>, <code> ###</code></p>
+</blockquote>
+<p><code>&lt;p&gt;&lt;/p&gt;</code> —段落标签</p>
+<p><code>&lt;div&gt;&lt;/div&gt;</code> —容器标题</p>
+<blockquote>
+<p>可以包括其他标签内容</p>
+</blockquote>
+<p><code>&lt;a href=URL&quot;&quot;&gt;&lt;/a&gt;</code>— 超链接标签</p>
+<blockquote>
+<p>每一个<a>元素一般都会存在一个href属性，该属性的作用是来设置跳转到指定HTML页面或其他链接的地址。如果使用<a>元素时没有设置href属性的话，那么<a>元素将是无效的。</p>
+</blockquote>
+<h3 id="单标签"><a href="#单标签" class="headerlink" title="单标签"></a>单标签</h3><p> <code>&lt;hr&gt;</code>—分割线<br> <code>&lt;br&gt;</code>—空行<br> <code>&lt;img src=&quot;&quot; alt=&quot;&quot;&gt;</code>—图片标签</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 1、成对出现的标签：--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>h1标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>这是一个div标签<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>这个一个段落标签<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 2、单个出现的标签： --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/pic.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;图片&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 3、带属性的标签，如src、alt 和 href等都是属性 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/pic.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;图片&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://www.baidu.com&quot;</span>&gt;</span>百度网<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 4、标签的嵌套 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/pic.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;图片&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://www.baidu.com&quot;</span>&gt;</span>百度网<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>提示:</p>
+<ol>
+<li><p>标签不区分大小写，但是推荐使用小写。</p>
+</li>
+<li><p>根据标签的书写形式，标签分为双标签(闭合标签)和单标签(空标签)<br> 2.1 双标签是指由开始标签和结束标签组成的一对标签，这种标签允许嵌套和承载内容，比如: div标签<br> 2.2 单标签是一个标签组成，没有标签内容， 比如: img标签</p>
+</li>
+</ol>
+</blockquote>
+<h1 id="三-总结"><a href="#三-总结" class="headerlink" title="三. 总结"></a>三. 总结</h1><ul>
+<li>学习 html 语言就是学习标签的用法，常用的标签有20多个。</li>
+<li>编写 html 标签建议使用小写</li>
+<li>根据书写形式，html 标签分为双标签和单标签</li>
+<li>单标签没有标签内容，双标签可以嵌套其它标签和承载文本内容</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/10/14/css-%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwx2.sinaimg.cn%2Fmw690%2F002Ywxupgy1h35r6zau4jj60p00zdaea02.jpg&refer=http%3A%2F%2Fwx2.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668178729&t=3402b55b5a0800099c88dfc112af46e1">
+      <meta itemprop="name" content="阿邓(Adams)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/10/14/css-%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F/" class="post-title-link" itemprop="url">CSS 引入方式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-10-14 10:52:45 / 修改时间：11:14:10" itemprop="dateCreated datePublished" datetime="2022-10-14T10:52:45+08:00">2022-10-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index"><span itemprop="name">css</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="一-css-的定义"><a href="#一-css-的定义" class="headerlink" title="一. css 的定义"></a>一. css 的定义</h1><p> css(Cascading Style Sheet)层叠样式表，它是用来美化页面的一种语言。</p>
+<h1 id="二-css-的作用"><a href="#二-css-的作用" class="headerlink" title="二. css 的作用"></a>二. css 的作用</h1><p>css(Cascading Style Sheet)层叠样式表，它是用来美化页面的一种语言。<br>美化界面, 比如: 设置标签文字大小、颜色、字体加粗等样式。<br>控制页面布局, 比如: 设置浮动、定位等样式。</p>
+<h1 id="三-css-的基本语法"><a href="#三-css-的基本语法" class="headerlink" title="三. css 的基本语法"></a>三. css 的基本语法</h1><p>选择器{</p>
+<p>样式规则</p>
+<p>}</p>
+<p>样式规则：</p>
+<p>属性名1：属性值1;</p>
+<p>属性名2：属性值2;</p>
+<p>属性名3：属性值3;</p>
+<p>…</p>
+<p>选择器:是用来选择标签的，选出来以后给标签加样式。</p>
+<p>代码示例:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">div&#123; </span><br><span class="line">    width:100px; </span><br><span class="line">    height:100px; </span><br><span class="line">    background:gold; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>说明</p>
+<p>css 是由两个主要的部分构成：选择器和一条或多条样式规则，注意:样式规则需要放到大括号里面。</p>
+<h1 id="四-css的三种引入方式"><a href="#四-css的三种引入方式" class="headerlink" title="四. css的三种引入方式"></a>四. css的三种引入方式</h1><blockquote>
+<ol>
+<li>行内式</li>
+<li>内嵌式（内部样式）</li>
+<li>外链式</li>
+</ol>
+</blockquote>
+<h3 id="4-1-行内式"><a href="#4-1-行内式" class="headerlink" title="4.1 行内式"></a>4.1 行内式</h3><blockquote>
+<p>直接在标签的 style 属性中添加 css 样式</p>
+</blockquote>
+<p>演示</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;width:100px; height:100px; background:red &quot;</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>优点：方便、直观。 缺点：缺乏可重用性。</p>
+<h3 id="4-2-内嵌式（内部样式）"><a href="#4-2-内嵌式（内部样式）" class="headerlink" title="4.2 内嵌式（内部样式）"></a>4.2 内嵌式（内部样式）</h3><blockquote>
+<p>在<code>&lt;head&gt;</code>标签内加入<code>&lt;style&gt;</code>标签，在<code>&lt;style&gt;</code>标签中编写css代码。</p>
+</blockquote>
+<p>演示</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">      <span class="selector-tag">h3</span>&#123;</span></span><br><span class="line"><span class="language-css">         <span class="attribute">color</span>:red;</span></span><br><span class="line"><span class="language-css">      &#125;</span></span><br><span class="line"><span class="language-css">   </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>优点：在同一个页面内部便于复用和维护。 缺点：在多个页面之间的可重用性不够高。</p>
+<h3 id="4-3-外链式"><a href="#4-3-外链式" class="headerlink" title="4.3 外链式"></a>4.3 外链式</h3><blockquote>
+<p>将css代码写在一个单独的.css文件中，在<code>&lt;head&gt;</code>标签中使用<code>&lt;link&gt;</code>标签直接引入该文件到页面中。</p>
+</blockquote>
+<p>演示</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;css/main.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>优点：使得css样式与html页面分离，便于整个页面系统的规划和维护，可重用性高。 缺点：css代码由于分离到单独的css文件，容易出现css代码过于集中，若维护不当则极容易造成混乱。</p>
+<h1 id="五-css引入方式选择"><a href="#五-css引入方式选择" class="headerlink" title="五. css引入方式选择"></a>五. css引入方式选择</h1><ol>
+<li>行内式几乎不用</li>
+<li>内嵌式在学习css样式的阶段使用</li>
+<li>外链式在公司开发的阶段使用，可以对 css 样式和 html 页面分别进行开发。</li>
+</ol>
+<h1 id="六-css引入方式选择"><a href="#六-css引入方式选择" class="headerlink" title="六. css引入方式选择"></a>六. css引入方式选择</h1><ol>
+<li>行内式几乎不用</li>
+<li>内嵌式在学习css样式的阶段使用</li>
+<li>外链式在公司开发的阶段使用，可以对 css 样式和 html 页面分别进行开发。</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/10/12/html-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1500,326 +1720,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwx2.sinaimg.cn%2Fmw690%2F002Ywxupgy1h35r6zau4jj60p00zdaea02.jpg&refer=http%3A%2F%2Fwx2.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668178729&t=3402b55b5a0800099c88dfc112af46e1">
-      <meta itemprop="name" content="阿邓(Adams)">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/" class="post-title-link" itemprop="url">Python 数据序列-字典</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-08-09 12:59:07" itemprop="dateCreated datePublished" datetime="2022-08-09T12:59:07+08:00">2022-08-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-09-22 13:03:07" itemprop="dateModified" datetime="2022-09-22T13:03:07+08:00">2022-09-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Python基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="一-创建字典的语法"><a href="#一-创建字典的语法" class="headerlink" title="一. 创建字典的语法"></a>一. 创建字典的语法</h1><p>字典特点：</p>
-<ul>
-<li>符号为大括号</li>
-<li>数据为键值对形式出现</li>
-<li>各个键值对之间用逗号隔开</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 有数据字典</span></span><br><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 空字典</span></span><br><span class="line">dict2 = &#123;&#125;</span><br><span class="line"></span><br><span class="line">dict3 = <span class="built_in">dict</span>()</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：一般称冒号前面的为键(key)，简称k；冒号后面的为值(value)，简称v。</p>
-</blockquote>
-<h1 id="二-字典常见操作"><a href="#二-字典常见操作" class="headerlink" title="二. 字典常见操作"></a>二. 字典常见操作</h1><h2 id="2-1-增-x2F-改"><a href="#2-1-增-x2F-改" class="headerlink" title="2.1 增&#x2F;改"></a>2.1 增&#x2F;改</h2><p>写法：字典序列[key] &#x3D; 值</p>
-<blockquote>
-<p>注意：如果key存在则修改这个key对应的值；如果key不存在则新增此键值对。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 增</span></span><br><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line">dict1[<span class="string">&#x27;name&#x27;</span>] = <span class="string">&#x27;Rose&#x27;</span></span><br><span class="line"><span class="comment"># 结果：&#123;&#x27;name&#x27;: &#x27;Rose&#x27;, &#x27;age&#x27;: 20, &#x27;gender&#x27;: &#x27;男&#x27;&#125;</span></span><br><span class="line"><span class="built_in">print</span>(dict1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#改</span></span><br><span class="line">dict1[<span class="string">&#x27;id&#x27;</span>] = <span class="number">110</span></span><br><span class="line"><span class="comment"># &#123;&#x27;name&#x27;: &#x27;Rose&#x27;, &#x27;age&#x27;: 20, &#x27;gender&#x27;: &#x27;男&#x27;, &#x27;id&#x27;: 110&#125;</span></span><br><span class="line"><span class="built_in">print</span>(dict1)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：字典为可变类型。</p>
-</blockquote>
-<h2 id="2-2-删"><a href="#2-2-删" class="headerlink" title="2.2 删"></a>2.2 删</h2><ul>
-<li>del() &#x2F; del：删除字典或删除字典中指定键值对。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> dict1[<span class="string">&#x27;gender&#x27;</span>]</span><br><span class="line"><span class="comment"># 结果：&#123;&#x27;name&#x27;: &#x27;Tom&#x27;, &#x27;age&#x27;: 20&#125;</span></span><br><span class="line"><span class="built_in">print</span>(dict1)</span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>clear()：清空字典</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line">dict1.clear()</span><br><span class="line"><span class="built_in">print</span>(dict1)  <span class="comment"># &#123;&#125;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-3-查"><a href="#2-3-查" class="headerlink" title="2.3 查"></a>2.3 查</h2><h3 id="2-3-1-key值查找"><a href="#2-3-1-key值查找" class="headerlink" title="2.3.1 key值查找"></a>2.3.1 key值查找</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1[<span class="string">&#x27;name&#x27;</span>])  <span class="comment"># Tom</span></span><br><span class="line"><span class="built_in">print</span>(dict1[<span class="string">&#x27;id&#x27;</span>])  <span class="comment"># 报错</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>如果当前查找的key存在，则返回对应的值；否则则报错。</p>
-</blockquote>
-<h3 id="2-3-2-get-–-查value"><a href="#2-3-2-get-–-查value" class="headerlink" title="2.3.2 get() – 查value"></a>2.3.2 get() – 查value</h3><ul>
-<li>语法</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字典序列.get(key, 默认值)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：如果当前查找的key不存在则返回第二个参数(默认值)，如果省略第二个参数，则返回None。</p>
-</blockquote>
-<ul>
-<li>快速体验</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1.get(<span class="string">&#x27;name&#x27;</span>))  <span class="comment"># Tom</span></span><br><span class="line"><span class="built_in">print</span>(dict1.get(<span class="string">&#x27;id&#x27;</span>, <span class="number">110</span>))  <span class="comment"># 110</span></span><br><span class="line"><span class="built_in">print</span>(dict1.get(<span class="string">&#x27;id&#x27;</span>))  <span class="comment"># None</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-3-3-keys-–-查找全部key"><a href="#2-3-3-keys-–-查找全部key" class="headerlink" title="2.3.3 keys() – 查找全部key"></a>2.3.3 keys() – 查找全部key</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1.keys())  <span class="comment"># dict_keys([&#x27;name&#x27;, &#x27;age&#x27;, &#x27;gender&#x27;])</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="2-3-4-values-–-查找全部value"><a href="#2-3-4-values-–-查找全部value" class="headerlink" title="2.3.4 values() – 查找全部value"></a>2.3.4 values() – 查找全部value</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1.values())  <span class="comment"># dict_values([&#x27;Tom&#x27;, 20, &#x27;男&#x27;])</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="2-3-5-items-–-以元组的形式输出"><a href="#2-3-5-items-–-以元组的形式输出" class="headerlink" title="2.3.5 items() – 以元组的形式输出"></a>2.3.5 items() – 以元组的形式输出</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1.items())  <span class="comment"># dict_items([(&#x27;name&#x27;, &#x27;Tom&#x27;), (&#x27;age&#x27;, 20), (&#x27;gender&#x27;, &#x27;男&#x27;)])</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="三-字典的循环遍历"><a href="#三-字典的循环遍历" class="headerlink" title="三. 字典的循环遍历"></a>三. 字典的循环遍历</h1><h2 id="3-1-遍历字典的key"><a href="#3-1-遍历字典的key" class="headerlink" title="3.1 遍历字典的key"></a>3.1 遍历字典的key</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> dict1.keys():</span><br><span class="line">    <span class="built_in">print</span>(key)</span><br></pre></td></tr></table></figure>
-
-<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/01.png" class="" title="This is an test image">
-
-
-
-<h2 id="3-2-遍历字典的value"><a href="#3-2-遍历字典的value" class="headerlink" title="3.2 遍历字典的value"></a>3.2 遍历字典的value</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> dict1.values():</span><br><span class="line">    <span class="built_in">print</span>(value)</span><br></pre></td></tr></table></figure>
-
-<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/02.png" class="" title="This is an test image">
-
-
-
-<h2 id="3-3-遍历字典的元素"><a href="#3-3-遍历字典的元素" class="headerlink" title="3.3 遍历字典的元素"></a>3.3 遍历字典的元素</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> dict1.items():</span><br><span class="line">    <span class="built_in">print</span>(item)</span><br></pre></td></tr></table></figure>
-
-<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/03.png" class="" title="This is an test image">
-
-
-
-<h2 id="3-4-遍历字典的键值对"><a href="#3-4-遍历字典的键值对" class="headerlink" title="3.4 遍历字典的键值对"></a>3.4 遍历字典的键值对</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> dict1.items():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;key&#125;</span> = <span class="subst">&#123;value&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/04.png" class="" title="This is an test image">
-
-
-
-<h1 id="四-总结"><a href="#四-总结" class="headerlink" title="四. 总结"></a>四. 总结</h1><ul>
-<li>定义字典</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Python&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">30</span>&#125;</span><br><span class="line"></span><br><span class="line">dict2 = &#123;&#125;</span><br><span class="line"></span><br><span class="line">dict3 = <span class="built_in">dict</span>()</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>常见操作<ul>
-<li>增&#x2F;改</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字典序列[key] = 值</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查找<ul>
-<li>字典序列[key]</li>
-<li>keys()</li>
-<li>values()</li>
-<li>items()</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/08/07/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%85%83%E7%BB%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwx2.sinaimg.cn%2Fmw690%2F002Ywxupgy1h35r6zau4jj60p00zdaea02.jpg&refer=http%3A%2F%2Fwx2.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668178729&t=3402b55b5a0800099c88dfc112af46e1">
-      <meta itemprop="name" content="阿邓(Adams)">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/08/07/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%85%83%E7%BB%84/" class="post-title-link" itemprop="url">Python 数据序列-元组</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-08-07 12:21:08" itemprop="dateCreated datePublished" datetime="2022-08-07T12:21:08+08:00">2022-08-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-09-22 12:22:26" itemprop="dateModified" datetime="2022-09-22T12:22:26+08:00">2022-09-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Python基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="一-元组"><a href="#一-元组" class="headerlink" title="一. 元组"></a>一. 元组</h1><p>一个元组可以存储多个数据，元组内的数据是不能修改的。</p>
-<p>元组特点：定义元组使用小括号，且逗号隔开各个数据，数据可以是不同的数据类型。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 多个数据元组</span></span><br><span class="line">t1 = (<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 单个数据元组</span></span><br><span class="line">t2 = (<span class="number">10</span>,)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：如果定义的元组只有一个数据，那么这个数据后面也好添加逗号，否则数据类型为唯一的这个数据的数据类型！！！！</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">t2 = (<span class="number">10</span>,)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(t2))  <span class="comment"># tuple</span></span><br><span class="line"></span><br><span class="line">t3 = (<span class="number">20</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(t3))  <span class="comment"># int</span></span><br><span class="line"></span><br><span class="line">t4 = (<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(t4))  <span class="comment"># str</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="二-元组的常见操作"><a href="#二-元组的常见操作" class="headerlink" title="二. 元组的常见操作"></a>二. 元组的常见操作</h1><p>元组数据不支持修改，只支持查找</p>
-<ul>
-<li>按下标查找数据</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(tuple1[<span class="number">0</span>])  <span class="comment"># aa</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>index()：查找某个数据，如果数据存在返回对应的下标，否则报错，语法和列表、字符串的index方法相同。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(tuple1.index(<span class="string">&#x27;aa&#x27;</span>))  <span class="comment"># 0</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>count()：统计某个数据在当前元组出现的次数。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(tuple1.count(<span class="string">&#x27;bb&#x27;</span>))  <span class="comment"># 2</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>len()：统计元组中数据的个数。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(tuple1))  <span class="comment"># 4</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：元组内的直接数据如果修改则立即报错！！！！！</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line">tuple1[<span class="number">0</span>] = <span class="string">&#x27;aaa&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>但是如果元组里面有列表</p>
-<p>修改列表里面的数据则是支持的！！！！</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tuple2 = (<span class="number">10</span>, <span class="number">20</span>, [<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>], <span class="number">50</span>, <span class="number">30</span>)</span><br><span class="line"><span class="built_in">print</span>(tuple2[<span class="number">2</span>])  <span class="comment"># 访问到列表</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：(10, 20, [&#x27;aaaaa&#x27;, &#x27;bb&#x27;, &#x27;cc&#x27;], 50, 30)</span></span><br><span class="line">tuple2[<span class="number">2</span>][<span class="number">0</span>] = <span class="string">&#x27;aaaaa&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(tuple2)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="三-总结"><a href="#三-总结" class="headerlink" title="三. 总结"></a>三. 总结</h1><ul>
-<li>定义元组</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t1 = (<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>)</span><br><span class="line"></span><br><span class="line">t2 = (<span class="number">10</span>,)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>常用操作方法<ul>
-<li>index()</li>
-<li>count()</li>
-<li>len()</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1891,20 +1791,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
