@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"denghy12.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"denghy12.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
@@ -100,6 +100,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -129,11 +130,38 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -305,24 +333,24 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">enumerate</span>(list1):</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> index, char <span class="keyword">in</span> <span class="built_in">enumerate</span>(list1, start=<span class="number">1</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;下标是<span class="subst">&#123;index&#125;</span>, 对应的字符是<span class="subst">&#123;char&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-<img src="/2022/08/13/python-%E5%85%AC%E5%85%B1%E6%93%8D%E4%BD%9C/01.png" class="" title="This is an test image">
+<img src="/.io//08/13/python-%E5%85%AC%E5%85%B1%E6%93%8D%E4%BD%9C/01.png" class title="This is an test image">
 
 
 
 <h1 id="三-容器类型转换"><a href="#三-容器类型转换" class="headerlink" title="三. 容器类型转换"></a>三. 容器类型转换</h1><h2 id="3-1-tuple"><a href="#3-1-tuple" class="headerlink" title="3.1 tuple()"></a>3.1 tuple()</h2><p>作用：将某个序列转换成元组</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>, <span class="number">20</span>]</span><br><span class="line">s1 = &#123;<span class="number">100</span>, <span class="number">200</span>, <span class="number">300</span>, <span class="number">400</span>, <span class="number">500</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">tuple</span>(list1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">tuple</span>(s1))</span><br></pre></td></tr></table></figure>
 
-<img src="/2022/08/13/python-%E5%85%AC%E5%85%B1%E6%93%8D%E4%BD%9C/02.png" class="" title="This is an test image">
+<img src="/.io//08/13/python-%E5%85%AC%E5%85%B1%E6%93%8D%E4%BD%9C/02.png" class title="This is an test image">
 
 <h2 id="3-2-list"><a href="#3-2-list" class="headerlink" title="3.2 list()"></a>3.2 list()</h2><p>作用：将某个序列转换成列表</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">t1 = (<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>)</span><br><span class="line">s1 = &#123;<span class="number">100</span>, <span class="number">200</span>, <span class="number">300</span>, <span class="number">400</span>, <span class="number">500</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(t1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(s1))</span><br></pre></td></tr></table></figure>
 
-<img src="/2022/08/13/python-%E5%85%AC%E5%85%B1%E6%93%8D%E4%BD%9C/03.png" class="" title="This is an test image">
+<img src="/.io//08/13/python-%E5%85%AC%E5%85%B1%E6%93%8D%E4%BD%9C/03.png" class title="This is an test image">
 
 <h2 id="3-3-set"><a href="#3-3-set" class="headerlink" title="3.3 set()"></a>3.3 set()</h2><p>作用：将某个序列转换成集合</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>, <span class="number">20</span>]</span><br><span class="line">t1 = (<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">set</span>(list1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">set</span>(t1))</span><br></pre></td></tr></table></figure>
 
-<img src="/2022/08/13/python-%E5%85%AC%E5%85%B1%E6%93%8D%E4%BD%9C/04.png" class="" title="This is an test image">
+<img src="/.io//08/13/python-%E5%85%AC%E5%85%B1%E6%93%8D%E4%BD%9C/04.png" class title="This is an test image">
 <blockquote>
 <p>注意：</p>
 </blockquote>
@@ -448,7 +476,7 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s1 = &#123;<span class="number">10</span>, <span class="number">20</span>&#125;</span><br><span class="line"><span class="comment"># s1.update(100)  # 报错</span></span><br><span class="line">s1.update([<span class="number">100</span>, <span class="number">200</span>])</span><br><span class="line">s1.update(<span class="string">&#x27;abc&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(s1)</span><br></pre></td></tr></table></figure>
 
-<p>执行结果：<img src="/2022/08/11/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E9%9B%86%E5%90%88/01.png" class="" title="This is an test image"></p>
+<p>执行结果：<img src="/.io//08/11/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E9%9B%86%E5%90%88/01.png" class title="This is an test image"></p>
 <h2 id="2-2-删除数据"><a href="#2-2-删除数据" class="headerlink" title="2.2 删除数据"></a>2.2 删除数据</h2><ul>
 <li>remove()，删除集合中的指定数据，如果数据不存在则报错。</li>
 </ul>
@@ -644,25 +672,25 @@
 
 <h1 id="三-字典的循环遍历"><a href="#三-字典的循环遍历" class="headerlink" title="三. 字典的循环遍历"></a>三. 字典的循环遍历</h1><h2 id="3-1-遍历字典的key"><a href="#3-1-遍历字典的key" class="headerlink" title="3.1 遍历字典的key"></a>3.1 遍历字典的key</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> dict1.keys():</span><br><span class="line">    <span class="built_in">print</span>(key)</span><br></pre></td></tr></table></figure>
 
-<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/01.png" class="" title="This is an test image">
+<img src="/.io//08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/01.png" class title="This is an test image">
 
 
 
 <h2 id="3-2-遍历字典的value"><a href="#3-2-遍历字典的value" class="headerlink" title="3.2 遍历字典的value"></a>3.2 遍历字典的value</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> dict1.values():</span><br><span class="line">    <span class="built_in">print</span>(value)</span><br></pre></td></tr></table></figure>
 
-<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/02.png" class="" title="This is an test image">
+<img src="/.io//08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/02.png" class title="This is an test image">
 
 
 
 <h2 id="3-3-遍历字典的元素"><a href="#3-3-遍历字典的元素" class="headerlink" title="3.3 遍历字典的元素"></a>3.3 遍历字典的元素</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> dict1.items():</span><br><span class="line">    <span class="built_in">print</span>(item)</span><br></pre></td></tr></table></figure>
 
-<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/03.png" class="" title="This is an test image">
+<img src="/.io//08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/03.png" class title="This is an test image">
 
 
 
 <h2 id="3-4-遍历字典的键值对"><a href="#3-4-遍历字典的键值对" class="headerlink" title="3.4 遍历字典的键值对"></a>3.4 遍历字典的键值对</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> dict1.items():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;key&#125;</span> = <span class="subst">&#123;value&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/04.png" class="" title="This is an test image">
+<img src="/.io//08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/04.png" class title="This is an test image">
 
 
 
@@ -1101,7 +1129,7 @@
 <ul>
 <li>执行结果</li>
 </ul>
-<img src="/2022/08/05/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%88%97%E8%A1%A8/01.png" class="" title="This is an test image">
+<img src="/.io//08/05/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%88%97%E8%A1%A8/01.png" class title="This is an test image">
 
 
 
@@ -1113,7 +1141,7 @@
 <ul>
 <li>执行结果</li>
 </ul>
-<img src="/2022/08/05/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%88%97%E8%A1%A8/02.png" class="" title="This is an test image">
+<img src="/.io//08/05/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%88%97%E8%A1%A8/02.png" class title="This is an test image">
 
 <h1 id="四-列表嵌套"><a href="#四-列表嵌套" class="headerlink" title="四. 列表嵌套"></a>四. 列表嵌套</h1><p>所谓列表嵌套指的就是一个列表里面包含了其他的子列表。</p>
 <p>应用场景：要存储班级一、二、三三个班级学生姓名，且每个班级的学生姓名在一个列表。</p>
@@ -1246,7 +1274,7 @@
 <p>注意：一开始输入的都是字符串格式</p>
 </blockquote>
 <h1 id="二、下标"><a href="#二、下标" class="headerlink" title="二、下标"></a>二、下标</h1><p><code>“下标”</code>又叫<code>“索引”</code>，就是编号。下标的作用即是通过下标快速找到对应的数据。</p>
-<img src="/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/1.png" class="" title="This is an test image">
+<img src="/.io//08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/1.png" class title="This is an test image">
 
 <h2 id="2-1-演示"><a href="#2-1-演示" class="headerlink" title="2.1 演示"></a>2.1 演示</h2><p>字符串<code>name = &quot;abcdef&quot;</code>，取到不同下标对应的数据。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;abcdef&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">0</span>])</span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
@@ -1254,7 +1282,7 @@
 <ul>
 <li>输出结果</li>
 </ul>
-<img src="/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/2.png" class="" title="This is an test image">
+<img src="/.io//08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/2.png" class title="This is an test image">
 
 <blockquote>
 <p>注意：下标从0开始。</p>
@@ -1271,9 +1299,9 @@
 <h2 id="3-2-演示"><a href="#3-2-演示" class="headerlink" title="3.2 演示"></a>3.2 演示</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;abcdefg&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>:<span class="number">5</span>:<span class="number">1</span>])  <span class="comment"># cde</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>:<span class="number">5</span>])  <span class="comment"># cde</span></span><br><span class="line"><span class="built_in">print</span>(name[:<span class="number">5</span>])  <span class="comment"># abcde</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">1</span>:])  <span class="comment"># bcdefg</span></span><br><span class="line"><span class="built_in">print</span>(name[:])  <span class="comment"># abcdefg</span></span><br><span class="line"><span class="built_in">print</span>(name[::<span class="number">2</span>])  <span class="comment"># aceg</span></span><br><span class="line"><span class="built_in">print</span>(name[:-<span class="number">1</span>])  <span class="comment"># abcdef, 负1表示倒数第一个数据</span></span><br><span class="line"><span class="built_in">print</span>(name[-<span class="number">4</span>:-<span class="number">1</span>])  <span class="comment"># def</span></span><br><span class="line"><span class="built_in">print</span>(name[::-<span class="number">1</span>])  <span class="comment"># gfedcba</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="3-3-易错点"><a href="#3-3-易错点" class="headerlink" title="3.3 易错点"></a>3.3 易错点</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">aList = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line"><span class="built_in">print</span>(aList)</span><br><span class="line"><span class="comment"># 1. 替换</span></span><br><span class="line">aList[:<span class="number">4</span>] = [<span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(aList)</span><br></pre></td></tr></table></figure>
-<p>执行结果：<img src="/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/3.png" class="" title="This is an test image"></p>
+<p>执行结果：<img src="/.io//08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/3.png" class title="This is an test image"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">aList = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line"><span class="built_in">print</span>(aList)</span><br><span class="line"><span class="comment"># 2. 插入（增加）</span></span><br><span class="line">aList[<span class="number">3</span>:<span class="number">3</span>] = [<span class="number">9</span>]</span><br><span class="line"><span class="built_in">print</span>(aList)</span><br></pre></td></tr></table></figure>
-<p>执行结果：<img src="/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/4.png" class="" title="This is an test image"></p>
+<p>执行结果：<img src="/.io//08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/4.png" class title="This is an test image"></p>
 <blockquote>
 <p>注意：第二个替换可以理解为 aList[3:3] 是一个空列表，选中的是原来下标为3的数字前的空隙，将新的数据插入空列表中。</p>
 <p>所以得到的列表也比之前多了一个数据。</p>
@@ -1545,18 +1573,18 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重复打印5行星星</span></span><br><span class="line"><span class="comment"># j表示行号</span></span><br><span class="line">j = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> j &lt;= <span class="number">4</span>:</span><br><span class="line">    <span class="comment"># 一行星星的打印</span></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="comment"># i表示每行里面星星的个数，这个数字要和行号相等所以i要和j联动</span></span><br><span class="line">    <span class="keyword">while</span> i &lt;= j:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;*&#x27;</span>, end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">    <span class="built_in">print</span>()</span><br><span class="line">    j += <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 <p>执行结果：</p>
-<img src="/2022/07/31/python-%E5%BE%AA%E7%8E%AF/03.png" class="" title="This is an test image">
+<img src="/.io//07/31/python-%E5%BE%AA%E7%8E%AF/03.png" class title="This is an test image">
 
 
 
-<h3 id="2-2-2-九九乘法表"><a href="#2-2-2-九九乘法表" class="headerlink" title="2.2.2 九九乘法表"></a>2.2.2 九九乘法表</h3><h4 id="需求-1"><a href="#需求-1" class="headerlink" title="需求"></a>需求</h4><img src="/2022/07/31/python-%E5%BE%AA%E7%8E%AF/01.png" class="" title="This is an test image">
+<h3 id="2-2-2-九九乘法表"><a href="#2-2-2-九九乘法表" class="headerlink" title="2.2.2 九九乘法表"></a>2.2.2 九九乘法表</h3><h4 id="需求-1"><a href="#需求-1" class="headerlink" title="需求"></a>需求</h4><img src="/.io//07/31/python-%E5%BE%AA%E7%8E%AF/01.png" class title="This is an test image">
 
 
 
 <h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重复打印9行表达式</span></span><br><span class="line">j = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> j &lt;= <span class="number">9</span>:</span><br><span class="line">    <span class="comment"># 打印一行里面的表达式 a * b = a*b</span></span><br><span class="line">    i = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> i &lt;= j:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;i&#125;</span>*<span class="subst">&#123;j&#125;</span>=<span class="subst">&#123;j*i&#125;</span>&#x27;</span>, end=<span class="string">&#x27;\t&#x27;</span>)</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">    <span class="built_in">print</span>()</span><br><span class="line">    j += <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 <p>执行结果：</p>
-<img src="/2022/07/31/python-%E5%BE%AA%E7%8E%AF/02.png" class="" title="This is an test image">
+<img src="/.io//07/31/python-%E5%BE%AA%E7%8E%AF/02.png" class title="This is an test image">
 
 
 
@@ -1565,7 +1593,7 @@
 <h2 id="3-2-示例"><a href="#3-2-示例" class="headerlink" title="3.2 示例"></a>3.2 示例</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">&#x27;Hello&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> str1:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
 
 <p>执行结果：</p>
-<img src="/2022/07/31/python-%E5%BE%AA%E7%8E%AF/04.png" class="" title="This is an test image">
+<img src="/.io//07/31/python-%E5%BE%AA%E7%8E%AF/04.png" class title="This is an test image">
 
 
 
@@ -1579,12 +1607,12 @@
 <h2 id="4-1-break-吃5个苹果"><a href="#4-1-break-吃5个苹果" class="headerlink" title="4.1 break (吃5个苹果)"></a>4.1 break (吃5个苹果)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> i &lt;= <span class="number">5</span>:</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">4</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;吃饱了不吃了&#x27;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;吃了第<span class="subst">&#123;i&#125;</span>个苹果&#x27;</span>)</span><br><span class="line">    i += <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 <p>执行结果：</p>
-<img src="/2022/07/31/python-%E5%BE%AA%E7%8E%AF/05.png" class="" title="This is an test image">
+<img src="/.io//07/31/python-%E5%BE%AA%E7%8E%AF/05.png" class title="This is an test image">
 
 <h2 id="4-2-continue-吃5个苹果"><a href="#4-2-continue-吃5个苹果" class="headerlink" title="4.2 continue (吃5个苹果)"></a>4.2 continue (吃5个苹果)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> i &lt;= <span class="number">5</span>:</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">3</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;烂了，第<span class="subst">&#123;i&#125;</span>个不吃了&#x27;</span>)</span><br><span class="line">        <span class="comment"># 在continue之前一定要修改计数器，否则会陷入死循环</span></span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;吃了第<span class="subst">&#123;i&#125;</span>个苹果&#x27;</span>)</span><br><span class="line">    i += <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 <p>执行结果：</p>
-<img src="/2022/07/31/python-%E5%BE%AA%E7%8E%AF/06.png" class="" title="This is an test image">
+<img src="/.io//07/31/python-%E5%BE%AA%E7%8E%AF/06.png" class title="This is an test image">
 
 
 
@@ -1964,7 +1992,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">num1, float1, str1 = <span class="number">10</span>, <span class="number">0.5</span>, <span class="string">&#x27;hello world&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(num1)</span><br><span class="line"><span class="built_in">print</span>(float1)</span><br><span class="line"><span class="built_in">print</span>(str1)</span><br></pre></td></tr></table></figure>
 
 <p>结果如下：</p>
-<img src="/2022/07/22/python-%E8%BF%90%E7%AE%97%E7%AC%A6/01.png" class="" title="This is an test image">
+<img src="/.io//07/22/python-%E8%BF%90%E7%AE%97%E7%AC%A6/01.png" class title="This is an test image">
 
 
 
@@ -1974,7 +2002,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = b = <span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br></pre></td></tr></table></figure>
 
 <p>结果如下：</p>
-<img src="/2022/07/22/python-%E8%BF%90%E7%AE%97%E7%AC%A6/02.png" class="" title="This is an test image">
+<img src="/.io//07/22/python-%E8%BF%90%E7%AE%97%E7%AC%A6/02.png" class title="This is an test image">
 
 
 
@@ -2210,10 +2238,10 @@
 </li>
 </ul>
 <h1 id="二-打开"><a href="#二-打开" class="headerlink" title="二.  打开"></a>二.  打开</h1><p>在PyCharm页面左下角Python控制台(Python Console)<br>自动加载PyCharm已经调试过的解释器</p>
-<img src="/2022/07/19/python-Pycharm%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%BC%80%E5%8F%91/console.png" class="" title="This is an test image">
+<img src="/.io//07/19/python-Pycharm%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%BC%80%E5%8F%91/console.png" class title="This is an test image">
 
 <h1 id="三-清空"><a href="#三-清空" class="headerlink" title="三.  清空"></a>三.  清空</h1><p>Python交互式只适合简单程序的调试，代码储存在内存中，将其清空需要关闭项目，再次即清空</p>
-<img src="/2022/07/19/python-Pycharm%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%BC%80%E5%8F%91/clean.png" class="" title="This is an test image">
+<img src="/.io//07/19/python-Pycharm%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%BC%80%E5%8F%91/clean.png" class title="This is an test image">
 
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
 <li>Python交互式适合临时简单程序测试，不适合储存代码</li>
@@ -2361,6 +2389,26 @@
   </div>
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
@@ -2394,6 +2442,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
