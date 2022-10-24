@@ -2045,6 +2045,98 @@
       </tags>
   </entry>
   <entry>
+    <title>Python 数据序列-集合</title>
+    <url>/2022/08/11/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E9%9B%86%E5%90%88/</url>
+    <content><![CDATA[<h1 id="一-创建集合"><a href="#一-创建集合" class="headerlink" title="一. 创建集合"></a>一. 创建集合</h1><p>创建集合使用<code>&#123;&#125;</code>或<code>set()</code>， 但是如果要创建空集合只能使用<code>set()</code>，因为<code>&#123;&#125;</code>用来创建空字典。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(s1)</span><br><span class="line"></span><br><span class="line">s4 = <span class="built_in">set</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(s4))  <span class="comment"># set</span></span><br><span class="line"></span><br><span class="line">s5 = &#123;&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(s5))  <span class="comment"># dict</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>特点：</p>
+<ol>
+<li>集合可以去掉重复数据；</li>
+<li>集合数据是无序的，故不支持下标</li>
+</ol>
+</blockquote>
+<span id="more"></span>
+<h1 id="二-集合常见操作方法"><a href="#二-集合常见操作方法" class="headerlink" title="二. 集合常见操作方法"></a>二. 集合常见操作方法</h1><h2 id="2-1-增加数据"><a href="#2-1-增加数据" class="headerlink" title="2.1 增加数据"></a>2.1 增加数据</h2><ul>
+<li>add()</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = &#123;<span class="number">10</span>, <span class="number">20</span>&#125;</span><br><span class="line">s1.add(<span class="number">100</span>)</span><br><span class="line">s1.add(<span class="number">10</span>)</span><br><span class="line"><span class="built_in">print</span>(s1)  <span class="comment"># &#123;100, 10, 20&#125;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>因为集合有去重功能，所以，当向集合内追加的数据是当前集合已有数据的话，则不进行任何操作。</p>
+</blockquote>
+<ul>
+<li>update() – 追加的数据是序列。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = &#123;<span class="number">10</span>, <span class="number">20</span>&#125;</span><br><span class="line"><span class="comment"># s1.update(100)  # 报错</span></span><br><span class="line">s1.update([<span class="number">100</span>, <span class="number">200</span>])</span><br><span class="line">s1.update(<span class="string">&#x27;abc&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(s1)</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：<img src="/2022/08/11/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E9%9B%86%E5%90%88/01.png" class title="This is an test image"></p>
+<h2 id="2-2-删除数据"><a href="#2-2-删除数据" class="headerlink" title="2.2 删除数据"></a>2.2 删除数据</h2><ul>
+<li>remove()，删除集合中的指定数据，如果数据不存在则报错。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = &#123;<span class="number">10</span>, <span class="number">20</span>&#125;</span><br><span class="line"></span><br><span class="line">s1.remove(<span class="number">10</span>)</span><br><span class="line"><span class="built_in">print</span>(s1)</span><br><span class="line"></span><br><span class="line">s1.remove(<span class="number">10</span>)  <span class="comment"># 报错（原因：已经删除）</span></span><br><span class="line"><span class="built_in">print</span>(s1)</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>discard()，删除集合中的指定数据，如果数据不存在也不会报错。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = &#123;<span class="number">10</span>, <span class="number">20</span>&#125;</span><br><span class="line"></span><br><span class="line">s1.discard(<span class="number">10</span>)</span><br><span class="line"><span class="built_in">print</span>(s1)</span><br><span class="line"></span><br><span class="line">s1.discard(<span class="number">10</span>) <span class="comment"># 再删一次，测试是否报错</span></span><br><span class="line"><span class="built_in">print</span>(s1)</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>pop()，随机删除集合中的某个数据，并返回这个数据。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>&#125;</span><br><span class="line"></span><br><span class="line">del_num = s1.pop()</span><br><span class="line"><span class="built_in">print</span>(del_num)</span><br><span class="line"><span class="built_in">print</span>(s1)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-3-查找数据"><a href="#2-3-查找数据" class="headerlink" title="2.3 查找数据"></a>2.3 查找数据</h2><ul>
+<li>in：判断数据在集合序列</li>
+<li>not in：判断数据不在集合序列</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="number">10</span> <span class="keyword">in</span> s1)</span><br><span class="line"><span class="built_in">print</span>(<span class="number">10</span> <span class="keyword">not</span> <span class="keyword">in</span> s1)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三-总结"><a href="#三-总结" class="headerlink" title="三. 总结"></a>三. 总结</h1><ul>
+<li><p>创建集合</p>
+<ul>
+<li>有数据集合</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = &#123;数据<span class="number">1</span>, 数据<span class="number">2</span>, ...&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>无数据集合</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = <span class="built_in">set</span>()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>常见操作</p>
+<ul>
+<li>增加数据<ul>
+<li>add()</li>
+<li>update()</li>
+</ul>
+</li>
+<li>删除数据<ul>
+<li>remove()</li>
+<li>discard()</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python基础</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python 数据序列-字符串</title>
     <url>/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
     <content><![CDATA[<h1 id="一-认识字符串"><a href="#一-认识字符串" class="headerlink" title="一. 认识字符串"></a>一. 认识字符串</h1><p>字符串是 Python 中最常用的数据类型。</p>
@@ -2281,98 +2373,6 @@
 <li>常用操作方法<ul>
 <li>find()</li>
 <li>index()</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Python基础</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 数据序列-集合</title>
-    <url>/2022/08/11/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E9%9B%86%E5%90%88/</url>
-    <content><![CDATA[<h1 id="一-创建集合"><a href="#一-创建集合" class="headerlink" title="一. 创建集合"></a>一. 创建集合</h1><p>创建集合使用<code>&#123;&#125;</code>或<code>set()</code>， 但是如果要创建空集合只能使用<code>set()</code>，因为<code>&#123;&#125;</code>用来创建空字典。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(s1)</span><br><span class="line"></span><br><span class="line">s4 = <span class="built_in">set</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(s4))  <span class="comment"># set</span></span><br><span class="line"></span><br><span class="line">s5 = &#123;&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(s5))  <span class="comment"># dict</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>特点：</p>
-<ol>
-<li>集合可以去掉重复数据；</li>
-<li>集合数据是无序的，故不支持下标</li>
-</ol>
-</blockquote>
-<span id="more"></span>
-<h1 id="二-集合常见操作方法"><a href="#二-集合常见操作方法" class="headerlink" title="二. 集合常见操作方法"></a>二. 集合常见操作方法</h1><h2 id="2-1-增加数据"><a href="#2-1-增加数据" class="headerlink" title="2.1 增加数据"></a>2.1 增加数据</h2><ul>
-<li>add()</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = &#123;<span class="number">10</span>, <span class="number">20</span>&#125;</span><br><span class="line">s1.add(<span class="number">100</span>)</span><br><span class="line">s1.add(<span class="number">10</span>)</span><br><span class="line"><span class="built_in">print</span>(s1)  <span class="comment"># &#123;100, 10, 20&#125;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>因为集合有去重功能，所以，当向集合内追加的数据是当前集合已有数据的话，则不进行任何操作。</p>
-</blockquote>
-<ul>
-<li>update() – 追加的数据是序列。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = &#123;<span class="number">10</span>, <span class="number">20</span>&#125;</span><br><span class="line"><span class="comment"># s1.update(100)  # 报错</span></span><br><span class="line">s1.update([<span class="number">100</span>, <span class="number">200</span>])</span><br><span class="line">s1.update(<span class="string">&#x27;abc&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(s1)</span><br></pre></td></tr></table></figure>
-
-<p>执行结果：<img src="/2022/08/11/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E9%9B%86%E5%90%88/01.png" class title="This is an test image"></p>
-<h2 id="2-2-删除数据"><a href="#2-2-删除数据" class="headerlink" title="2.2 删除数据"></a>2.2 删除数据</h2><ul>
-<li>remove()，删除集合中的指定数据，如果数据不存在则报错。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = &#123;<span class="number">10</span>, <span class="number">20</span>&#125;</span><br><span class="line"></span><br><span class="line">s1.remove(<span class="number">10</span>)</span><br><span class="line"><span class="built_in">print</span>(s1)</span><br><span class="line"></span><br><span class="line">s1.remove(<span class="number">10</span>)  <span class="comment"># 报错（原因：已经删除）</span></span><br><span class="line"><span class="built_in">print</span>(s1)</span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>discard()，删除集合中的指定数据，如果数据不存在也不会报错。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = &#123;<span class="number">10</span>, <span class="number">20</span>&#125;</span><br><span class="line"></span><br><span class="line">s1.discard(<span class="number">10</span>)</span><br><span class="line"><span class="built_in">print</span>(s1)</span><br><span class="line"></span><br><span class="line">s1.discard(<span class="number">10</span>) <span class="comment"># 再删一次，测试是否报错</span></span><br><span class="line"><span class="built_in">print</span>(s1)</span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>pop()，随机删除集合中的某个数据，并返回这个数据。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>&#125;</span><br><span class="line"></span><br><span class="line">del_num = s1.pop()</span><br><span class="line"><span class="built_in">print</span>(del_num)</span><br><span class="line"><span class="built_in">print</span>(s1)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-3-查找数据"><a href="#2-3-查找数据" class="headerlink" title="2.3 查找数据"></a>2.3 查找数据</h2><ul>
-<li>in：判断数据在集合序列</li>
-<li>not in：判断数据不在集合序列</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="number">10</span> <span class="keyword">in</span> s1)</span><br><span class="line"><span class="built_in">print</span>(<span class="number">10</span> <span class="keyword">not</span> <span class="keyword">in</span> s1)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="三-总结"><a href="#三-总结" class="headerlink" title="三. 总结"></a>三. 总结</h1><ul>
-<li><p>创建集合</p>
-<ul>
-<li>有数据集合</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = &#123;数据<span class="number">1</span>, 数据<span class="number">2</span>, ...&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>无数据集合</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = <span class="built_in">set</span>()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>常见操作</p>
-<ul>
-<li>增加数据<ul>
-<li>add()</li>
-<li>update()</li>
-</ul>
-</li>
-<li>删除数据<ul>
-<li>remove()</li>
-<li>discard()</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -2679,6 +2679,61 @@
       </tags>
   </entry>
   <entry>
+    <title>Python 注释</title>
+    <url>/2022/07/10/python-%E6%B3%A8%E9%87%8A/</url>
+    <content><![CDATA[<h1 id="一-注释的作用"><a href="#一-注释的作用" class="headerlink" title="一. 注释的作用"></a>一. 注释的作用</h1><ul>
+<li>通过用自己熟悉的语言，在程序中对某些代码进行标注说明，这就是注释的作用，能够大大增强程序的可读性。<span id="more"></span></li>
+</ul>
+<h1 id="二-注释的分类及语法"><a href="#二-注释的分类及语法" class="headerlink" title="二. 注释的分类及语法"></a>二. 注释的分类及语法</h1><p>注释分为两类：单行注释 和 多行注释。</p>
+<ul>
+<li>单行注释</li>
+</ul>
+<p>只能注释一行内容，语法如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 注释内容</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多行注释</li>
+</ul>
+<p>可以注释多行内容，一般用在注释一段代码的情况， 语法如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	第一行注释</span></span><br><span class="line"><span class="string">	第二行注释</span></span><br><span class="line"><span class="string">	第三行注释</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">	注释1</span></span><br><span class="line"><span class="string">	注释2</span></span><br><span class="line"><span class="string">	注释3</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>快捷键： ctrl + &#x2F;</p>
+</blockquote>
+<h2 id="2-1-示例"><a href="#2-1-示例" class="headerlink" title="2.1 示例"></a>2.1 示例</h2><ul>
+<li>单行注释</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输出hello world</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)  <span class="comment"># 输出(简单的说明可以放到一行代码的后面，一般习惯代码后面添加两个空格再书写注释文字)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多行注释</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello world</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello reader</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：解释器不执行任何的注释内容。</p>
+</blockquote>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>注释的作用</li>
+</ul>
+<p>用人类熟悉的语言对代码进行解释说明，方便后期维护。</p>
+<ul>
+<li>注释的分类<ul>
+<li>单行： <code># 注释内容</code>，快捷键ctrl+&#x2F;</li>
+<li>多行：<code>&quot;&quot;&quot; 注释内容 &quot;&quot;&quot;</code> 或 <code>&#39;&#39;&#39; 注释内容 &#39;&#39;&#39;</code></li>
+</ul>
+</li>
+<li>解释器不执行注释内容</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python基础</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python 转换数据类型</title>
     <url>/2022/07/19/python-%E8%BD%AC%E6%8D%A2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
     <content><![CDATA[<h1 id="一-转换数据类型的作用"><a href="#一-转换数据类型的作用" class="headerlink" title="一. 转换数据类型的作用"></a>一. 转换数据类型的作用</h1><p>input()接收用户输入的数据都是字符串类型</p>
@@ -2759,61 +2814,6 @@
 <li>eval()</li>
 </ul>
 </li>
-</ul>
-]]></content>
-      <categories>
-        <category>Python基础</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 注释</title>
-    <url>/2022/07/10/python-%E6%B3%A8%E9%87%8A/</url>
-    <content><![CDATA[<h1 id="一-注释的作用"><a href="#一-注释的作用" class="headerlink" title="一. 注释的作用"></a>一. 注释的作用</h1><ul>
-<li>通过用自己熟悉的语言，在程序中对某些代码进行标注说明，这就是注释的作用，能够大大增强程序的可读性。<span id="more"></span></li>
-</ul>
-<h1 id="二-注释的分类及语法"><a href="#二-注释的分类及语法" class="headerlink" title="二. 注释的分类及语法"></a>二. 注释的分类及语法</h1><p>注释分为两类：单行注释 和 多行注释。</p>
-<ul>
-<li>单行注释</li>
-</ul>
-<p>只能注释一行内容，语法如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 注释内容</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>多行注释</li>
-</ul>
-<p>可以注释多行内容，一般用在注释一段代码的情况， 语法如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	第一行注释</span></span><br><span class="line"><span class="string">	第二行注释</span></span><br><span class="line"><span class="string">	第三行注释</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">	注释1</span></span><br><span class="line"><span class="string">	注释2</span></span><br><span class="line"><span class="string">	注释3</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>快捷键： ctrl + &#x2F;</p>
-</blockquote>
-<h2 id="2-1-示例"><a href="#2-1-示例" class="headerlink" title="2.1 示例"></a>2.1 示例</h2><ul>
-<li>单行注释</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输出hello world</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)  <span class="comment"># 输出(简单的说明可以放到一行代码的后面，一般习惯代码后面添加两个空格再书写注释文字)</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>多行注释</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello world</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello reader</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：解释器不执行任何的注释内容。</p>
-</blockquote>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
-<li>注释的作用</li>
-</ul>
-<p>用人类熟悉的语言对代码进行解释说明，方便后期维护。</p>
-<ul>
-<li>注释的分类<ul>
-<li>单行： <code># 注释内容</code>，快捷键ctrl+&#x2F;</li>
-<li>多行：<code>&quot;&quot;&quot; 注释内容 &quot;&quot;&quot;</code> 或 <code>&#39;&#39;&#39; 注释内容 &#39;&#39;&#39;</code></li>
-</ul>
-</li>
-<li>解释器不执行注释内容</li>
 </ul>
 ]]></content>
       <categories>
@@ -2975,6 +2975,18 @@
       <tags>
         <tag>Python</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>第一篇博客</title>
+    <url>/2022/07/05/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>创建文章草稿<br>hexo new draft 文章草稿名字</p>
+<p>发布草稿<br>hexo publish 草稿名</p>
+<p>直接发布文章<br>hexo new 文章名</p>
+<p>清理缓存<br>hexo clean</p>
+<p>生产静态文件<br>hexo generate   简写 hexo g</p>
+<p>本地开启一个服务器测试查看效果<br>hexo serve 简写 hexo s</p>
+<p>推送到github，即更新网站文章<br>hexo deploy 简写 hexo d<br>这个推送很有可能不成功，多试几次或者第二天再推送就可以了</p>
+]]></content>
   </entry>
   <entry>
     <title>Python 运算符</title>
@@ -3245,17 +3257,5 @@
       <tags>
         <tag>Python</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>第一篇博客</title>
-    <url>/2022/07/05/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>创建文章草稿<br>hexo new draft 文章草稿名字</p>
-<p>发布草稿<br>hexo publish 草稿名</p>
-<p>直接发布文章<br>hexo new 文章名</p>
-<p>清理缓存<br>hexo clean</p>
-<p>生产静态文件<br>hexo generate   简写 hexo g</p>
-<p>本地开启一个服务器测试查看效果<br>hexo serve 简写 hexo s</p>
-<p>推送到github，即更新网站文章<br>hexo deploy 简写 hexo d<br>这个推送很有可能不成功，多试几次或者第二天再推送就可以了</p>
-]]></content>
   </entry>
 </search>
