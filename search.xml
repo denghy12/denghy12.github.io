@@ -576,140 +576,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Python 函数（一）</title>
-    <url>/2022/08/17/python-%E5%87%BD%E6%95%B01/</url>
-    <content><![CDATA[<h1 id="一-函数的作用"><a href="#一-函数的作用" class="headerlink" title="一. 函数的作用"></a>一. 函数的作用</h1><p>函数就是将一段具有独立功能的代码块 整合到一个整体并命名，在需要的位置调用这个名称即可完成对应的需求。</p>
-<blockquote>
-<p>函数在开发过程中，可以更高效的实现代码重用。</p>
-</blockquote>
-<h1 id="二-函数的使用步骤"><a href="#二-函数的使用步骤" class="headerlink" title="二. 函数的使用步骤"></a>二. 函数的使用步骤</h1><h2 id="2-1-定义函数"><a href="#2-1-定义函数" class="headerlink" title="2.1 定义函数"></a>2.1 定义函数</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>(<span class="params">参数</span>):</span><br><span class="line">    代码<span class="number">1</span></span><br><span class="line">    代码<span class="number">2</span></span><br><span class="line">    ......</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>搭建整体框架(复现需求)</li>
-<li>确定“选择功能”界面内容</li>
-<li>封装”选择功能”</li>
-<li>调用函数<span id="more"></span></li>
-</ol>
-<h2 id="2-2-调用函数"><a href="#2-2-调用函数" class="headerlink" title="2.2 调用函数"></a>2.2 调用函数</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">函数名(参数)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：</p>
-<ol>
-<li>不同的需求，参数可有可无。</li>
-<li>在Python中，函数必须先定义后使用。</li>
-</ol>
-</blockquote>
-<h1 id="三-函数的返回值作用"><a href="#三-函数的返回值作用" class="headerlink" title="三.函数的返回值作用"></a>三.函数的返回值作用</h1><p>在函数中，如果需要返回结果给用户需要使用函数返回值。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用变量保存函数返回值</span></span><br><span class="line">a = hello()</span><br><span class="line"><span class="built_in">print</span>(a) <span class="comment">#5</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="3-1-应用"><a href="#3-1-应用" class="headerlink" title="3.1 应用"></a>3.1 应用</h2><p>需求：制作一个计算器，计算任意两数字之和，并保存结果。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sum_num</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用result变量保存函数返回值</span></span><br><span class="line">result = sum_num(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(result) <span class="comment">#3</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="四-函数的说明文档"><a href="#四-函数的说明文档" class="headerlink" title="四.函数的说明文档"></a>四.函数的说明文档</h1><blockquote>
-<p>函数的说明文档也叫函数的文档说明。</p>
-</blockquote>
-<h2 id="4-1-语法"><a href="#4-1-语法" class="headerlink" title="4.1 语法"></a>4.1 语法</h2><ul>
-<li>定义函数的说明文档</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>(<span class="params">参数</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot; 说明文档的位置 &quot;&quot;&quot;</span></span><br><span class="line">    代码</span><br><span class="line">    ......</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查看函数的说明文档</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">help</span>(函数名)</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-2-演示"><a href="#4-2-演示" class="headerlink" title="4.2 演示"></a>4.2 演示</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sum_num</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot; 求和函数 &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="built_in">help</span>(sum_num)</span><br></pre></td></tr></table></figure>
-
-<img src="/2022/08/17/python-%E5%87%BD%E6%95%B01/04.png" class title="This is an test image">
-
-<h1 id="五-函数嵌套调用"><a href="#五-函数嵌套调用" class="headerlink" title="五.函数嵌套调用"></a>五.函数嵌套调用</h1><p>所谓函数嵌套调用指的是一个函数里面又调用了另外一个函数。</p>
-<ul>
-<li>示例</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">testB</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;---- testB start----&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;这里是testB函数执行的代码...(省略)...&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;---- testB end----&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">testA</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;---- testA start----&#x27;</span>)</span><br><span class="line">    testB()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;---- testA end----&#x27;</span>)</span><br><span class="line"></span><br><span class="line">testA()</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>效果</li>
-</ul>
-<img src="/2022/08/17/python-%E5%87%BD%E6%95%B01/01.png" class title="This is an test image">
-
-<blockquote>
-<ul>
-<li>如果函数A中，调用了另外一个函数B，那么先把函数B中的任务都执行完毕之后才会回到上次 函数A执行的位置。</li>
-</ul>
-</blockquote>
-<h1 id="六-函数应用"><a href="#六-函数应用" class="headerlink" title="六. 函数应用"></a>六. 函数应用</h1><h2 id="6-1-打印图形"><a href="#6-1-打印图形" class="headerlink" title="6.1 打印图形"></a>6.1 打印图形</h2><ol>
-<li>打印一条横线</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print_line</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;-&#x27;</span> * <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print_line()</span><br></pre></td></tr></table></figure>
-
-<img src="/2022/08/17/python-%E5%87%BD%E6%95%B01/02.png" class title="This is an test image">
-
-<ol start="2">
-<li>打印多条横线</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print_line</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;-&#x27;</span> * <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">print_lines</span>(<span class="params">num</span>):</span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; num:</span><br><span class="line">        print_line()</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print_lines(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-
-<img src="/2022/08/17/python-%E5%87%BD%E6%95%B01/03.png" class title="This is an test image">
-
-<h2 id="6-2-函数计算"><a href="#6-2-函数计算" class="headerlink" title="6.2 函数计算"></a>6.2 函数计算</h2><ol>
-<li>求三个数之和</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sum_num</span>(<span class="params">a, b, c</span>):</span><br><span class="line">    <span class="keyword">return</span> a + b + c</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result = sum_num(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 6</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>求三个数平均值</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">average_num</span>(<span class="params">a, b, c</span>):</span><br><span class="line">    sumResult = sum_num(a, b, c)</span><br><span class="line">    <span class="keyword">return</span> sumResult / <span class="number">3</span></span><br><span class="line"></span><br><span class="line">result = average_num(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 2.0</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="七-总结"><a href="#七-总结" class="headerlink" title="七. 总结"></a>七. 总结</h1><ul>
-<li><p>函数的作用：封装代码，高效的代码重用</p>
-</li>
-<li><p>函数使用步骤</p>
-<ul>
-<li>定义函数</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>():</span><br><span class="line">    代码<span class="number">1</span></span><br><span class="line">    代码<span class="number">2</span></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>调用函数</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">函数名()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>函数的参数：函数调用的时候可以传入真实数据，增大函数的使用的灵活性</p>
-<ul>
-<li>形参：函数定义时书写的参数(非真实数据)</li>
-<li>实参：函数调用时书写的参数(真实数据)</li>
-</ul>
-</li>
-<li><p>函数的返回值</p>
-<ul>
-<li>作用：函数调用后，返回需要的计算结果</li>
-<li>写法</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> 表达式</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>函数的说明文档</p>
-<ul>
-<li>作用：保存函数解释说明的信息</li>
-<li>写法</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot; 函数说明文档 &quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>函数嵌套调用：一个函数内部嵌套调用另外一个函数</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Python基础</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python 公共操作</title>
     <url>/2022/08/13/python-%E5%85%AC%E5%85%B1%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h1 id="一-运算符"><a href="#一-运算符" class="headerlink" title="一. 运算符"></a>一. 运算符</h1><table>
@@ -853,6 +719,140 @@
 <li>list()</li>
 <li>set()</li>
 </ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python基础</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 函数（一）</title>
+    <url>/2022/08/17/python-%E5%87%BD%E6%95%B01/</url>
+    <content><![CDATA[<h1 id="一-函数的作用"><a href="#一-函数的作用" class="headerlink" title="一. 函数的作用"></a>一. 函数的作用</h1><p>函数就是将一段具有独立功能的代码块 整合到一个整体并命名，在需要的位置调用这个名称即可完成对应的需求。</p>
+<blockquote>
+<p>函数在开发过程中，可以更高效的实现代码重用。</p>
+</blockquote>
+<h1 id="二-函数的使用步骤"><a href="#二-函数的使用步骤" class="headerlink" title="二. 函数的使用步骤"></a>二. 函数的使用步骤</h1><h2 id="2-1-定义函数"><a href="#2-1-定义函数" class="headerlink" title="2.1 定义函数"></a>2.1 定义函数</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>(<span class="params">参数</span>):</span><br><span class="line">    代码<span class="number">1</span></span><br><span class="line">    代码<span class="number">2</span></span><br><span class="line">    ......</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>搭建整体框架(复现需求)</li>
+<li>确定“选择功能”界面内容</li>
+<li>封装”选择功能”</li>
+<li>调用函数<span id="more"></span></li>
+</ol>
+<h2 id="2-2-调用函数"><a href="#2-2-调用函数" class="headerlink" title="2.2 调用函数"></a>2.2 调用函数</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">函数名(参数)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：</p>
+<ol>
+<li>不同的需求，参数可有可无。</li>
+<li>在Python中，函数必须先定义后使用。</li>
+</ol>
+</blockquote>
+<h1 id="三-函数的返回值作用"><a href="#三-函数的返回值作用" class="headerlink" title="三.函数的返回值作用"></a>三.函数的返回值作用</h1><p>在函数中，如果需要返回结果给用户需要使用函数返回值。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用变量保存函数返回值</span></span><br><span class="line">a = hello()</span><br><span class="line"><span class="built_in">print</span>(a) <span class="comment">#5</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-1-应用"><a href="#3-1-应用" class="headerlink" title="3.1 应用"></a>3.1 应用</h2><p>需求：制作一个计算器，计算任意两数字之和，并保存结果。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sum_num</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用result变量保存函数返回值</span></span><br><span class="line">result = sum_num(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(result) <span class="comment">#3</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="四-函数的说明文档"><a href="#四-函数的说明文档" class="headerlink" title="四.函数的说明文档"></a>四.函数的说明文档</h1><blockquote>
+<p>函数的说明文档也叫函数的文档说明。</p>
+</blockquote>
+<h2 id="4-1-语法"><a href="#4-1-语法" class="headerlink" title="4.1 语法"></a>4.1 语法</h2><ul>
+<li>定义函数的说明文档</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>(<span class="params">参数</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot; 说明文档的位置 &quot;&quot;&quot;</span></span><br><span class="line">    代码</span><br><span class="line">    ......</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看函数的说明文档</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">help</span>(函数名)</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-2-演示"><a href="#4-2-演示" class="headerlink" title="4.2 演示"></a>4.2 演示</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sum_num</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot; 求和函数 &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="built_in">help</span>(sum_num)</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/17/python-%E5%87%BD%E6%95%B01/04.png" class title="This is an test image">
+
+<h1 id="五-函数嵌套调用"><a href="#五-函数嵌套调用" class="headerlink" title="五.函数嵌套调用"></a>五.函数嵌套调用</h1><p>所谓函数嵌套调用指的是一个函数里面又调用了另外一个函数。</p>
+<ul>
+<li>示例</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">testB</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;---- testB start----&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;这里是testB函数执行的代码...(省略)...&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;---- testB end----&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">testA</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;---- testA start----&#x27;</span>)</span><br><span class="line">    testB()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;---- testA end----&#x27;</span>)</span><br><span class="line"></span><br><span class="line">testA()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>效果</li>
+</ul>
+<img src="/2022/08/17/python-%E5%87%BD%E6%95%B01/01.png" class title="This is an test image">
+
+<blockquote>
+<ul>
+<li>如果函数A中，调用了另外一个函数B，那么先把函数B中的任务都执行完毕之后才会回到上次 函数A执行的位置。</li>
+</ul>
+</blockquote>
+<h1 id="六-函数应用"><a href="#六-函数应用" class="headerlink" title="六. 函数应用"></a>六. 函数应用</h1><h2 id="6-1-打印图形"><a href="#6-1-打印图形" class="headerlink" title="6.1 打印图形"></a>6.1 打印图形</h2><ol>
+<li>打印一条横线</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print_line</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;-&#x27;</span> * <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print_line()</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/17/python-%E5%87%BD%E6%95%B01/02.png" class title="This is an test image">
+
+<ol start="2">
+<li>打印多条横线</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print_line</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;-&#x27;</span> * <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">print_lines</span>(<span class="params">num</span>):</span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; num:</span><br><span class="line">        print_line()</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print_lines(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/17/python-%E5%87%BD%E6%95%B01/03.png" class title="This is an test image">
+
+<h2 id="6-2-函数计算"><a href="#6-2-函数计算" class="headerlink" title="6.2 函数计算"></a>6.2 函数计算</h2><ol>
+<li>求三个数之和</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sum_num</span>(<span class="params">a, b, c</span>):</span><br><span class="line">    <span class="keyword">return</span> a + b + c</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result = sum_num(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 6</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>求三个数平均值</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">average_num</span>(<span class="params">a, b, c</span>):</span><br><span class="line">    sumResult = sum_num(a, b, c)</span><br><span class="line">    <span class="keyword">return</span> sumResult / <span class="number">3</span></span><br><span class="line"></span><br><span class="line">result = average_num(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 2.0</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="七-总结"><a href="#七-总结" class="headerlink" title="七. 总结"></a>七. 总结</h1><ul>
+<li><p>函数的作用：封装代码，高效的代码重用</p>
+</li>
+<li><p>函数使用步骤</p>
+<ul>
+<li>定义函数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>():</span><br><span class="line">    代码<span class="number">1</span></span><br><span class="line">    代码<span class="number">2</span></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>调用函数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">函数名()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数的参数：函数调用的时候可以传入真实数据，增大函数的使用的灵活性</p>
+<ul>
+<li>形参：函数定义时书写的参数(非真实数据)</li>
+<li>实参：函数调用时书写的参数(真实数据)</li>
+</ul>
+</li>
+<li><p>函数的返回值</p>
+<ul>
+<li>作用：函数调用后，返回需要的计算结果</li>
+<li>写法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> 表达式</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数的说明文档</p>
+<ul>
+<li>作用：保存函数解释说明的信息</li>
+<li>写法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot; 函数说明文档 &quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数嵌套调用：一个函数内部嵌套调用另外一个函数</p>
 </li>
 </ul>
 ]]></content>
@@ -1042,6 +1042,111 @@
       </tags>
   </entry>
   <entry>
+    <title>Python 变量</title>
+    <url>/2022/07/15/python-%E5%8F%98%E9%87%8F/</url>
+    <content><![CDATA[<h1 id="一-变量的作用"><a href="#一-变量的作用" class="headerlink" title="一.  变量的作用"></a>一.  变量的作用</h1><p>程序中，数据都是临时存储在内存中，为了更快速的查找或使用这个数据，通常我们把这个数据在内存中存储之后定义一个名称，这个名称就是变量。</p>
+<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/image-20190122123202213.png" class title="This is an test image">
+
+
+
+<blockquote>
+<p>变量就是一个存储数据的的时候当前数据所在的内存地址的名字而已。</p>
+</blockquote>
+<h1 id="二-定义变量"><a href="#二-定义变量" class="headerlink" title="二.  定义变量"></a>二.  定义变量</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">变量名 = 值</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>变量名自定义，要满足标识符命名规则。</p>
+</blockquote>
+<h2 id="2-1-标识符"><a href="#2-1-标识符" class="headerlink" title="2.1  标识符"></a>2.1  标识符</h2><p>标识符命名规则是Python中定义各种名字的时候的统一规范，具体如下：</p>
+<ul>
+<li>由数字、字母、下划线组成</li>
+<li>不能数字开头</li>
+<li>不能使用内置关键字</li>
+<li>严格区分大小写</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">False     None    True   and      as       assert   break     class  </span><br><span class="line">continue  def     del    elif     else     except   finally   for</span><br><span class="line">from      global  if     import   in       is       lambda    nonlocal</span><br><span class="line">not       or      pass   raise    return   try      while     with  </span><br><span class="line">yield</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h2 id="2-2-命名习惯"><a href="#2-2-命名习惯" class="headerlink" title="2.2 命名习惯"></a>2.2 命名习惯</h2><ul>
+<li>见名知义。</li>
+<li>大驼峰：即每个单词首字母都大写，例如：<code>MyName</code>。</li>
+<li>小驼峰：第二个（含）以后的单词首字母大写，例如：<code>myName</code>。</li>
+<li>下划线：例如：<code>my_name</code>。</li>
+</ul>
+<h2 id="2-3-使用变量"><a href="#2-3-使用变量" class="headerlink" title="2.3 使用变量"></a>2.3 使用变量</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">my_name = <span class="string">&#x27;Adams&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(my_name)</span><br><span class="line"></span><br><span class="line">schoolName = <span class="string">&#x27;NJIT&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(schoolName)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-4-认识bug"><a href="#2-4-认识bug" class="headerlink" title="2.4 认识bug"></a>2.4 认识bug</h2><p>所谓bug，就是程序中的错误。如果程序有错误，需要程序员排查问题，纠正错误。</p>
+<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/03.png" class title="This is an test image">
+
+<h1 id="三-Debug工具"><a href="#三-Debug工具" class="headerlink" title="三. Debug工具"></a>三. Debug工具</h1><p>Debug工具是PyCharm IDE中集成的用来调试程序的工具，在这里程序员可以查看程序的执行细节和流程或者调解bug。</p>
+<p>Debug工具使用步骤：</p>
+<ol>
+<li>打断点</li>
+<li>Debug调试</li>
+</ol>
+<h2 id="3-1-打断点"><a href="#3-1-打断点" class="headerlink" title="3.1 打断点"></a>3.1 打断点</h2><ul>
+<li>断点位置</li>
+</ul>
+<p>目标要调试的代码块的第一行代码即可，即一个断点即可。</p>
+<ul>
+<li>打断点的方法</li>
+</ul>
+<p>单击目标代码的行号右侧空白位置。</p>
+<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/2.png" class title="This is an test image">
+
+<h2 id="3-2-Debug调试"><a href="#3-2-Debug调试" class="headerlink" title="3.2 Debug调试"></a>3.2 Debug调试</h2><p>打成功断点后，在文件内部任意位置 — 右键 – Debug’文件名’ — 即可调出Debug工具面板 – 单击Step Over&#x2F;F8，即可按步执行代码。</p>
+<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/1.png" class title="This is an test image">
+
+<h3 id="3-2-1-Debug输出面板分类"><a href="#3-2-1-Debug输出面板分类" class="headerlink" title="3.2.1 Debug输出面板分类"></a>3.2.1 Debug输出面板分类</h3><ul>
+<li>Debugger<ul>
+<li>显示变量和变量的细节</li>
+</ul>
+</li>
+<li>Console<ul>
+<li>输出内容</li>
+</ul>
+</li>
+</ul>
+<h1 id="四-认识数据类型"><a href="#四-认识数据类型" class="headerlink" title="四. 认识数据类型"></a>四. 认识数据类型</h1><p><strong>在 Python 里为了应对不同的业务需求，也把数据分为不同的类型。</strong></p>
+<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/image-20190111124628584-7181988.png" class title="This is an test image">
+
+<blockquote>
+<p>检测数据类型的方法：<code>type()</code></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))  <span class="comment"># &lt;class &#x27;int&#x27;&gt; -- 整型</span></span><br><span class="line"></span><br><span class="line">b = <span class="number">1.1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(b))  <span class="comment"># &lt;class &#x27;float&#x27;&gt; -- 浮点型</span></span><br><span class="line"></span><br><span class="line">c = <span class="literal">True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(c))  <span class="comment"># &lt;class &#x27;bool&#x27;&gt; -- 布尔型</span></span><br><span class="line"></span><br><span class="line">d = <span class="string">&#x27;12345&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(d))  <span class="comment"># &lt;class &#x27;str&#x27;&gt; -- 字符串</span></span><br><span class="line"></span><br><span class="line">e = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(e))  <span class="comment"># &lt;class &#x27;list&#x27;&gt; -- 列表</span></span><br><span class="line"></span><br><span class="line">f = (<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(f))  <span class="comment"># &lt;class &#x27;tuple&#x27;&gt; -- 元组</span></span><br><span class="line"></span><br><span class="line">h = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(h))  <span class="comment"># &lt;class &#x27;set&#x27;&gt; -- 集合</span></span><br><span class="line"></span><br><span class="line">g = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;TOM&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(g))  <span class="comment"># &lt;class &#x27;dict&#x27;&gt; -- 字典</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>定义变量的语法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">变量名 = 值</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>标识符<ul>
+<li>由数字、字母、下划线组成</li>
+<li>不能数字开头</li>
+<li>不能使用内置关键字</li>
+<li>严格区分大小写</li>
+</ul>
+</li>
+<li>数据类型<ul>
+<li>整型：int</li>
+<li>浮点型：float</li>
+<li>字符串：str</li>
+<li>布尔型：bool</li>
+<li>元组：tuple</li>
+<li>集合：set</li>
+<li>字典：dict</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python基础</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python 函数加强</title>
     <url>/2022/08/21/python-%E5%87%BD%E6%95%B0%E5%8A%A0%E5%BC%BA/</url>
     <content><![CDATA[<h1 id="函数加强"><a href="#函数加强" class="headerlink" title="函数加强"></a>函数加强</h1><h3 id="1-递归"><a href="#1-递归" class="headerlink" title="1. 递归"></a>1. 递归</h3><h3 id="2-lambda-表达式"><a href="#2-lambda-表达式" class="headerlink" title="2. lambda 表达式"></a>2. lambda 表达式</h3><h3 id="3-高阶函数"><a href="#3-高阶函数" class="headerlink" title="3. 高阶函数"></a>3. 高阶函数</h3><span id="more"></span>
@@ -1203,105 +1308,91 @@
       </tags>
   </entry>
   <entry>
-    <title>Python 变量</title>
-    <url>/2022/07/15/python-%E5%8F%98%E9%87%8F/</url>
-    <content><![CDATA[<h1 id="一-变量的作用"><a href="#一-变量的作用" class="headerlink" title="一.  变量的作用"></a>一.  变量的作用</h1><p>程序中，数据都是临时存储在内存中，为了更快速的查找或使用这个数据，通常我们把这个数据在内存中存储之后定义一个名称，这个名称就是变量。</p>
-<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/image-20190122123202213.png" class title="This is an test image">
-
-
-
-<blockquote>
-<p>变量就是一个存储数据的的时候当前数据所在的内存地址的名字而已。</p>
-</blockquote>
-<h1 id="二-定义变量"><a href="#二-定义变量" class="headerlink" title="二.  定义变量"></a>二.  定义变量</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">变量名 = 值</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>变量名自定义，要满足标识符命名规则。</p>
-</blockquote>
-<h2 id="2-1-标识符"><a href="#2-1-标识符" class="headerlink" title="2.1  标识符"></a>2.1  标识符</h2><p>标识符命名规则是Python中定义各种名字的时候的统一规范，具体如下：</p>
+    <title>Python 学生管理系统</title>
+    <url>/2022/10/09/python-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h1 id="一-需求分析"><a href="#一-需求分析" class="headerlink" title="一. 需求分析"></a>一. 需求分析</h1><p>简易的学生管理系统包括5个基础功能</p>
 <ul>
-<li>由数字、字母、下划线组成</li>
-<li>不能数字开头</li>
-<li>不能使用内置关键字</li>
-<li>严格区分大小写</li>
+<li>添加学员</li>
+<li>删除学员</li>
+<li>修改学员</li>
+<li>查询学员</li>
+<li>显示所有学员学员<span id="more"></span></li>
 </ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">False     None    True   and      as       assert   break     class  </span><br><span class="line">continue  def     del    elif     else     except   finally   for</span><br><span class="line">from      global  if     import   in       is       lambda    nonlocal</span><br><span class="line">not       or      pass   raise    return   try      while     with  </span><br><span class="line">yield</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<h2 id="2-2-命名习惯"><a href="#2-2-命名习惯" class="headerlink" title="2.2 命名习惯"></a>2.2 命名习惯</h2><ul>
-<li>见名知义。</li>
-<li>大驼峰：即每个单词首字母都大写，例如：<code>MyName</code>。</li>
-<li>小驼峰：第二个（含）以后的单词首字母大写，例如：<code>myName</code>。</li>
-<li>下划线：例如：<code>my_name</code>。</li>
-</ul>
-<h2 id="2-3-使用变量"><a href="#2-3-使用变量" class="headerlink" title="2.3 使用变量"></a>2.3 使用变量</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">my_name = <span class="string">&#x27;Adams&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(my_name)</span><br><span class="line"></span><br><span class="line">schoolName = <span class="string">&#x27;NJIT&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(schoolName)</span><br></pre></td></tr></table></figure>
+<h1 id="二-代码"><a href="#二-代码" class="headerlink" title="二.代码"></a>二.代码</h1><p>废话不多说，先上完整代码！</p>
+<p>（此系统默认用户名不可重复）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#系统主页</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">info_print</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;请选择功能------------&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;1、添加学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;2、删除学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;3、修改学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;4、查询学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;5、显示所有学员学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;6、退出系统&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;-&#x27;</span>*<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#等待存储所有学员信息</span></span><br><span class="line">info = []</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;添加学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    new_id = <span class="built_in">input</span>(<span class="string">&quot;请输入您的学号：&quot;</span>)</span><br><span class="line">    new_name = <span class="built_in">input</span>(<span class="string">&quot;请输入您的姓名：&quot;</span>)</span><br><span class="line">    new_tel = <span class="built_in">input</span>(<span class="string">&quot;请输入您的手机号：&quot;</span>)</span><br><span class="line">    <span class="keyword">global</span> info</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="keyword">if</span> new_name == i[<span class="string">&quot;name&quot;</span>]:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;此用户名已被占用&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">    <span class="comment">#学员信息的字典</span></span><br><span class="line">    dict_info = &#123;&#125;</span><br><span class="line">    <span class="comment">#新增字典数据</span></span><br><span class="line">    dict_info[<span class="string">&quot;id&quot;</span>] = new_id</span><br><span class="line">    dict_info[<span class="string">&quot;name&quot;</span>] = new_name</span><br><span class="line">    dict_info[<span class="string">&quot;tel&quot;</span>] = new_tel</span><br><span class="line">    <span class="comment">#print(dict_info)</span></span><br><span class="line">    info.append(dict_info)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">del_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;删除学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    del_name = <span class="built_in">input</span>(<span class="string">&quot;请输入想要删除的学员姓名：&quot;</span>)</span><br><span class="line">    <span class="keyword">global</span> info</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="keyword">if</span> del_name == i[<span class="string">&quot;name&quot;</span>]:</span><br><span class="line">            info.remove(i)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;此用户名不存在。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">modify_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;修改学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    modify_name = <span class="built_in">input</span>(<span class="string">&quot;请输入修改学员的姓名：&quot;</span>)</span><br><span class="line">    <span class="keyword">global</span> info</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="keyword">if</span> modify_name == i[<span class="string">&quot;name&quot;</span>]:</span><br><span class="line">            i[<span class="string">&quot;tel&quot;</span>] = <span class="built_in">input</span>(<span class="string">&quot;请输入新的手机号：&quot;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;此用户名不存在。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">search_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;查找学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    search_name = <span class="built_in">input</span>(<span class="string">&quot;请输入查询学员的姓名：&quot;</span>)</span><br><span class="line">    <span class="keyword">global</span> info</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="keyword">if</span> search_name == i[<span class="string">&quot;name&quot;</span>]:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;查找到的学员信息如下------&quot;</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;search_name&#125;</span>的学号：<span class="subst">&#123;i[<span class="string">&#x27;id&#x27;</span>]&#125;</span>\n&quot;</span></span><br><span class="line">                  <span class="string">f&quot;<span class="subst">&#123;search_name&#125;</span>的手机号：<span class="subst">&#123;i[<span class="string">&#x27;tel&#x27;</span>]&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;此用户名不存在&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示全部学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">all_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;显示全部学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;学号\t姓名\t手机号&quot;</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;i[<span class="string">&#x27;id&#x27;</span>]&#125;</span>\t<span class="subst">&#123;i[<span class="string">&#x27;name&#x27;</span>]&#125;</span>\t<span class="subst">&#123;i[<span class="string">&#x27;tel&#x27;</span>]&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    info_print()</span><br><span class="line">    user_name = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请选择功能序号：&quot;</span>))</span><br><span class="line">    <span class="keyword">if</span> user_name == <span class="number">1</span>:</span><br><span class="line">        <span class="comment">#print(&quot;添加\n&quot;)</span></span><br><span class="line">        add_info()</span><br><span class="line">        <span class="built_in">print</span>(info)</span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">2</span>:</span><br><span class="line">        del_info()</span><br><span class="line">        <span class="built_in">print</span>(info)</span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">3</span>:</span><br><span class="line">        modify_info()</span><br><span class="line">        <span class="built_in">print</span>(info)</span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">4</span>:</span><br><span class="line">        search_info()</span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">5</span>:</span><br><span class="line">        all_info()</span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">6</span>:</span><br><span class="line">        exit_flag = <span class="built_in">input</span>(<span class="string">&quot;确定退出吗？yes or no?:&quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> exit_flag == <span class="string">&quot;yes&quot;</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;抱歉，您的输入有误\n&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="三-界面设计"><a href="#三-界面设计" class="headerlink" title="三. 界面设计"></a>三. 界面设计</h1><p>主页包含5个基础功能 + 退出系统， 一共六个模块</p>
+<blockquote>
+<p>注意：便于多次调用，所以主页用函数封装。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">info_print</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;请选择功能------------&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;1、添加学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;2、删除学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;3、修改学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;4、查询学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;5、显示所有学员学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;6、退出系统&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;-&#x27;</span>*<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
 
-<h2 id="2-4-认识bug"><a href="#2-4-认识bug" class="headerlink" title="2.4 认识bug"></a>2.4 认识bug</h2><p>所谓bug，就是程序中的错误。如果程序有错误，需要程序员排查问题，纠正错误。</p>
-<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/03.png" class title="This is an test image">
+<img src="/2022/10/09/python-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/01.png" class title="This is an test image">
 
-<h1 id="三-Debug工具"><a href="#三-Debug工具" class="headerlink" title="三. Debug工具"></a>三. Debug工具</h1><p>Debug工具是PyCharm IDE中集成的用来调试程序的工具，在这里程序员可以查看程序的执行细节和流程或者调解bug。</p>
-<p>Debug工具使用步骤：</p>
+<h1 id="四-整体框架"><a href="#四-整体框架" class="headerlink" title="四. 整体框架"></a>四. 整体框架</h1><p>用户输入功能序号，调用相应的模块来完成操作</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="comment">#显示主页</span></span><br><span class="line">    info_print()</span><br><span class="line">    <span class="comment">#接受功能序号</span></span><br><span class="line">    user_name = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请选择功能序号：&quot;</span>))</span><br><span class="line">    <span class="comment">#添加</span></span><br><span class="line">    <span class="keyword">if</span> user_name == <span class="number">1</span>:</span><br><span class="line">        add_info()</span><br><span class="line">        <span class="built_in">print</span>(info)</span><br><span class="line">    <span class="comment">#删除</span></span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">2</span>:</span><br><span class="line">        del_info()</span><br><span class="line">        <span class="built_in">print</span>(info)</span><br><span class="line">    <span class="comment">#修改</span></span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">3</span>:</span><br><span class="line">        modify_info()</span><br><span class="line">        <span class="built_in">print</span>(info)</span><br><span class="line">    <span class="comment">#查询</span></span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">4</span>:</span><br><span class="line">        search_info()</span><br><span class="line">    <span class="comment">#显示全部</span></span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">5</span>:</span><br><span class="line">        all_info()</span><br><span class="line">    <span class="comment">#退出系统</span></span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">6</span>:</span><br><span class="line">        exit_flag = <span class="built_in">input</span>(<span class="string">&quot;确定退出吗？yes or no?:&quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> exit_flag == <span class="string">&quot;yes&quot;</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="comment">#错误输入</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;抱歉，您的输入有误\n&quot;</span>)</span><br></pre></td></tr></table></figure>
+
 <ol>
-<li>打断点</li>
-<li>Debug调试</li>
+<li>因为在每次操作后，都要回到主页进行下一步操作，所以使用<code>while True:</code></li>
+<li>通过if函数来调用调用不同的版块</li>
+<li>为了提高代码可读性，所以将每个功能模块封装成函数</li>
+<li>优化代码，加入错误输入 and 退出系统确定功能，更加人性化</li>
 </ol>
-<h2 id="3-1-打断点"><a href="#3-1-打断点" class="headerlink" title="3.1 打断点"></a>3.1 打断点</h2><ul>
-<li>断点位置</li>
-</ul>
-<p>目标要调试的代码块的第一行代码即可，即一个断点即可。</p>
-<ul>
-<li>打断点的方法</li>
-</ul>
-<p>单击目标代码的行号右侧空白位置。</p>
-<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/2.png" class title="This is an test image">
+<h1 id="五-函数"><a href="#五-函数" class="headerlink" title="五. 函数"></a>五. 函数</h1><p>每个学员信息存储在字典中，所有学员信息存储在列表中。</p>
+<p>此系统默认用户名不可重复</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#等待存储所有学员信息</span></span><br><span class="line">info = []</span><br></pre></td></tr></table></figure>
+<h2 id="5-1-添加"><a href="#5-1-添加" class="headerlink" title="5.1 添加"></a>5.1 添加</h2><ol>
+<li>存储输入数据</li>
+<li>检测用户名是否被占用</li>
+<li>没占用–创建新字典<code>dict_info</code>，存储输入的数据，并将新字典加入学员信息列表<code>info</code></li>
+<li>已占用–提示信息，返回主页</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#添加学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;添加学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    new_id = <span class="built_in">input</span>(<span class="string">&quot;请输入您的学号：&quot;</span>)</span><br><span class="line">    new_name = <span class="built_in">input</span>(<span class="string">&quot;请输入您的姓名：&quot;</span>)</span><br><span class="line">    new_tel = <span class="built_in">input</span>(<span class="string">&quot;请输入您的手机号：&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 涉及到修改全局变量info，用global声名</span></span><br><span class="line">    <span class="keyword">global</span> info</span><br><span class="line">	<span class="comment">#遍历列表中的元素</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="keyword">if</span> new_name == i[<span class="string">&quot;name&quot;</span>]:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;此用户名已被占用&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">    <span class="comment">#学员信息的字典</span></span><br><span class="line">    dict_info = &#123;&#125;</span><br><span class="line">    <span class="comment">#新增字典数据</span></span><br><span class="line">    dict_info[<span class="string">&quot;id&quot;</span>] = new_id</span><br><span class="line">    dict_info[<span class="string">&quot;name&quot;</span>] = new_name</span><br><span class="line">    dict_info[<span class="string">&quot;tel&quot;</span>] = new_tel</span><br><span class="line">    <span class="comment">#print(dict_info)</span></span><br><span class="line">    info.append(dict_info)</span><br></pre></td></tr></table></figure>
 
-<h2 id="3-2-Debug调试"><a href="#3-2-Debug调试" class="headerlink" title="3.2 Debug调试"></a>3.2 Debug调试</h2><p>打成功断点后，在文件内部任意位置 — 右键 – Debug’文件名’ — 即可调出Debug工具面板 – 单击Step Over&#x2F;F8，即可按步执行代码。</p>
-<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/1.png" class title="This is an test image">
+<img src="/2022/10/09/python-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/02.png" class title="This is an test image">
 
-<h3 id="3-2-1-Debug输出面板分类"><a href="#3-2-1-Debug输出面板分类" class="headerlink" title="3.2.1 Debug输出面板分类"></a>3.2.1 Debug输出面板分类</h3><ul>
-<li>Debugger<ul>
-<li>显示变量和变量的细节</li>
-</ul>
-</li>
-<li>Console<ul>
-<li>输出内容</li>
-</ul>
-</li>
-</ul>
-<h1 id="四-认识数据类型"><a href="#四-认识数据类型" class="headerlink" title="四. 认识数据类型"></a>四. 认识数据类型</h1><p><strong>在 Python 里为了应对不同的业务需求，也把数据分为不同的类型。</strong></p>
-<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/image-20190111124628584-7181988.png" class title="This is an test image">
+<h2 id="5-2-删除"><a href="#5-2-删除" class="headerlink" title="5.2 删除"></a>5.2 删除</h2><ol>
+<li>接收删除学员姓名</li>
+<li>检测姓名是否存在</li>
+<li>存在–删除数据，返回主页</li>
+<li>不存在，提示信息</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">del_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;删除学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    del_name = <span class="built_in">input</span>(<span class="string">&quot;请输入想要删除的学员姓名：&quot;</span>)</span><br><span class="line">    <span class="comment"># 涉及到修改全局变量info，用global声名</span></span><br><span class="line">    <span class="keyword">global</span> info</span><br><span class="line">    <span class="comment">#遍历列表中的元素</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="keyword">if</span> del_name == i[<span class="string">&quot;name&quot;</span>]:</span><br><span class="line">            info.remove(i)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;此用户名不存在。&quot;</span>)</span><br></pre></td></tr></table></figure>
+<img src="/2022/10/09/python-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/03.png" class title="This is an test image">
 
-<blockquote>
-<p>检测数据类型的方法：<code>type()</code></p>
+<h2 id="5-3-修改"><a href="#5-3-修改" class="headerlink" title="5.3 修改"></a>5.3 修改</h2><ol>
+<li>接收修改学员姓名</li>
+<li>检测姓名是否存在</li>
+<li>存在–修改该字典对应key的value，返回主页</li>
+<li>不存在，提示信息</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 修改学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">modify_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;修改学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    modify_name = <span class="built_in">input</span>(<span class="string">&quot;请输入修改学员的姓名：&quot;</span>)</span><br><span class="line">    <span class="keyword">global</span> info</span><br><span class="line">    <span class="comment">#遍历列表中的元素</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="keyword">if</span> modify_name == i[<span class="string">&quot;name&quot;</span>]:</span><br><span class="line">            i[<span class="string">&quot;tel&quot;</span>] = <span class="built_in">input</span>(<span class="string">&quot;请输入新的手机号：&quot;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;此用户名不存在。&quot;</span>)</span><br></pre></td></tr></table></figure>
+<img src="/2022/10/09/python-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/04.png" class title="This is an test image">
+
+<h2 id="5-4-查询"><a href="#5-4-查询" class="headerlink" title="5.4 查询"></a>5.4 查询</h2><ol>
+<li>接收查询学员姓名</li>
+<li>检测姓名是否存在</li>
+<li>存在–显示该字典对应key的value，返回主页</li>
+<li>不存在，提示信息</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查询学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">search_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;查找学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    search_name = <span class="built_in">input</span>(<span class="string">&quot;请输入查询学员的姓名：&quot;</span>)</span><br><span class="line">    <span class="keyword">global</span> info</span><br><span class="line">    <span class="comment">#遍历列表中的元素</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="keyword">if</span> search_name == i[<span class="string">&quot;name&quot;</span>]:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;查找到的学员信息如下------&quot;</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;search_name&#125;</span>的学号：<span class="subst">&#123;i[<span class="string">&#x27;id&#x27;</span>]&#125;</span>\n&quot;</span></span><br><span class="line">                  <span class="string">f&quot;<span class="subst">&#123;search_name&#125;</span>的手机号：<span class="subst">&#123;i[<span class="string">&#x27;tel&#x27;</span>]&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;此用户名不存在&quot;</span>)</span><br></pre></td></tr></table></figure>
+<img src="/2022/10/09/python-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/05.png" class title="This is an test image">
+
+<h2 id="5-5-显示全部"><a href="#5-5-显示全部" class="headerlink" title="5.5 显示全部"></a>5.5 显示全部</h2><p>通过遍历循环，输出学员信息列表中所有元素</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示全部学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">all_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;显示全部学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;学号\t姓名\t手机号&quot;</span>)</span><br><span class="line">    <span class="comment">#遍历列表中的元素</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;i[<span class="string">&#x27;id&#x27;</span>]&#125;</span>\t<span class="subst">&#123;i[<span class="string">&#x27;name&#x27;</span>]&#125;</span>\t<span class="subst">&#123;i[<span class="string">&#x27;tel&#x27;</span>]&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/10/09/python-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/06.png" class title="This is an test image">
+
+<h1 id="六-退出系统"><a href="#六-退出系统" class="headerlink" title="六. 退出系统"></a>六. 退出系统</h1><blockquote>
+<p>退出系统核心为break，break是退出距离最近的循环，封装在函数里容易产生错误</p>
+<p>直接写，代码更加简化</p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))  <span class="comment"># &lt;class &#x27;int&#x27;&gt; -- 整型</span></span><br><span class="line"></span><br><span class="line">b = <span class="number">1.1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(b))  <span class="comment"># &lt;class &#x27;float&#x27;&gt; -- 浮点型</span></span><br><span class="line"></span><br><span class="line">c = <span class="literal">True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(c))  <span class="comment"># &lt;class &#x27;bool&#x27;&gt; -- 布尔型</span></span><br><span class="line"></span><br><span class="line">d = <span class="string">&#x27;12345&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(d))  <span class="comment"># &lt;class &#x27;str&#x27;&gt; -- 字符串</span></span><br><span class="line"></span><br><span class="line">e = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(e))  <span class="comment"># &lt;class &#x27;list&#x27;&gt; -- 列表</span></span><br><span class="line"></span><br><span class="line">f = (<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(f))  <span class="comment"># &lt;class &#x27;tuple&#x27;&gt; -- 元组</span></span><br><span class="line"></span><br><span class="line">h = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(h))  <span class="comment"># &lt;class &#x27;set&#x27;&gt; -- 集合</span></span><br><span class="line"></span><br><span class="line">g = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;TOM&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(g))  <span class="comment"># &lt;class &#x27;dict&#x27;&gt; -- 字典</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line">   <span class="keyword">elif</span> user_name == <span class="number">6</span>:</span><br><span class="line">       exit_flag = <span class="built_in">input</span>(<span class="string">&quot;确定退出吗？yes or no?:&quot;</span>)</span><br><span class="line">       <span class="keyword">if</span> exit_flag == <span class="string">&quot;yes&quot;</span>:</span><br><span class="line">           <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
-<li>定义变量的语法</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">变量名 = 值</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>标识符<ul>
-<li>由数字、字母、下划线组成</li>
-<li>不能数字开头</li>
-<li>不能使用内置关键字</li>
-<li>严格区分大小写</li>
-</ul>
-</li>
-<li>数据类型<ul>
-<li>整型：int</li>
-<li>浮点型：float</li>
-<li>字符串：str</li>
-<li>布尔型：bool</li>
-<li>元组：tuple</li>
-<li>集合：set</li>
-<li>字典：dict</li>
-</ul>
-</li>
-</ul>
+<img src="/2022/10/09/python-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/07.png" class title="This is an test image">
 ]]></content>
       <categories>
-        <category>Python基础</category>
+        <category>Python小项目</category>
       </categories>
       <tags>
         <tag>Python</tag>
@@ -1499,91 +1590,75 @@
       </tags>
   </entry>
   <entry>
-    <title>Python 学生管理系统</title>
-    <url>/2022/10/09/python-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<h1 id="一-需求分析"><a href="#一-需求分析" class="headerlink" title="一. 需求分析"></a>一. 需求分析</h1><p>简易的学生管理系统包括5个基础功能</p>
-<ul>
-<li>添加学员</li>
-<li>删除学员</li>
-<li>修改学员</li>
-<li>查询学员</li>
-<li>显示所有学员学员<span id="more"></span></li>
-</ul>
-<h1 id="二-代码"><a href="#二-代码" class="headerlink" title="二.代码"></a>二.代码</h1><p>废话不多说，先上完整代码！</p>
-<p>（此系统默认用户名不可重复）</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#系统主页</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">info_print</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;请选择功能------------&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;1、添加学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;2、删除学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;3、修改学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;4、查询学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;5、显示所有学员学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;6、退出系统&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;-&#x27;</span>*<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#等待存储所有学员信息</span></span><br><span class="line">info = []</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;添加学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    new_id = <span class="built_in">input</span>(<span class="string">&quot;请输入您的学号：&quot;</span>)</span><br><span class="line">    new_name = <span class="built_in">input</span>(<span class="string">&quot;请输入您的姓名：&quot;</span>)</span><br><span class="line">    new_tel = <span class="built_in">input</span>(<span class="string">&quot;请输入您的手机号：&quot;</span>)</span><br><span class="line">    <span class="keyword">global</span> info</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="keyword">if</span> new_name == i[<span class="string">&quot;name&quot;</span>]:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;此用户名已被占用&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">    <span class="comment">#学员信息的字典</span></span><br><span class="line">    dict_info = &#123;&#125;</span><br><span class="line">    <span class="comment">#新增字典数据</span></span><br><span class="line">    dict_info[<span class="string">&quot;id&quot;</span>] = new_id</span><br><span class="line">    dict_info[<span class="string">&quot;name&quot;</span>] = new_name</span><br><span class="line">    dict_info[<span class="string">&quot;tel&quot;</span>] = new_tel</span><br><span class="line">    <span class="comment">#print(dict_info)</span></span><br><span class="line">    info.append(dict_info)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">del_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;删除学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    del_name = <span class="built_in">input</span>(<span class="string">&quot;请输入想要删除的学员姓名：&quot;</span>)</span><br><span class="line">    <span class="keyword">global</span> info</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="keyword">if</span> del_name == i[<span class="string">&quot;name&quot;</span>]:</span><br><span class="line">            info.remove(i)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;此用户名不存在。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">modify_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;修改学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    modify_name = <span class="built_in">input</span>(<span class="string">&quot;请输入修改学员的姓名：&quot;</span>)</span><br><span class="line">    <span class="keyword">global</span> info</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="keyword">if</span> modify_name == i[<span class="string">&quot;name&quot;</span>]:</span><br><span class="line">            i[<span class="string">&quot;tel&quot;</span>] = <span class="built_in">input</span>(<span class="string">&quot;请输入新的手机号：&quot;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;此用户名不存在。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">search_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;查找学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    search_name = <span class="built_in">input</span>(<span class="string">&quot;请输入查询学员的姓名：&quot;</span>)</span><br><span class="line">    <span class="keyword">global</span> info</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="keyword">if</span> search_name == i[<span class="string">&quot;name&quot;</span>]:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;查找到的学员信息如下------&quot;</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;search_name&#125;</span>的学号：<span class="subst">&#123;i[<span class="string">&#x27;id&#x27;</span>]&#125;</span>\n&quot;</span></span><br><span class="line">                  <span class="string">f&quot;<span class="subst">&#123;search_name&#125;</span>的手机号：<span class="subst">&#123;i[<span class="string">&#x27;tel&#x27;</span>]&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;此用户名不存在&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示全部学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">all_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;显示全部学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;学号\t姓名\t手机号&quot;</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;i[<span class="string">&#x27;id&#x27;</span>]&#125;</span>\t<span class="subst">&#123;i[<span class="string">&#x27;name&#x27;</span>]&#125;</span>\t<span class="subst">&#123;i[<span class="string">&#x27;tel&#x27;</span>]&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    info_print()</span><br><span class="line">    user_name = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请选择功能序号：&quot;</span>))</span><br><span class="line">    <span class="keyword">if</span> user_name == <span class="number">1</span>:</span><br><span class="line">        <span class="comment">#print(&quot;添加\n&quot;)</span></span><br><span class="line">        add_info()</span><br><span class="line">        <span class="built_in">print</span>(info)</span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">2</span>:</span><br><span class="line">        del_info()</span><br><span class="line">        <span class="built_in">print</span>(info)</span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">3</span>:</span><br><span class="line">        modify_info()</span><br><span class="line">        <span class="built_in">print</span>(info)</span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">4</span>:</span><br><span class="line">        search_info()</span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">5</span>:</span><br><span class="line">        all_info()</span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">6</span>:</span><br><span class="line">        exit_flag = <span class="built_in">input</span>(<span class="string">&quot;确定退出吗？yes or no?:&quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> exit_flag == <span class="string">&quot;yes&quot;</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;抱歉，您的输入有误\n&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="三-界面设计"><a href="#三-界面设计" class="headerlink" title="三. 界面设计"></a>三. 界面设计</h1><p>主页包含5个基础功能 + 退出系统， 一共六个模块</p>
+    <title>Python 数据序列-元组</title>
+    <url>/2022/08/07/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%85%83%E7%BB%84/</url>
+    <content><![CDATA[<h1 id="一-元组"><a href="#一-元组" class="headerlink" title="一. 元组"></a>一. 元组</h1><p>一个元组可以存储多个数据，元组内的数据是不能修改的。</p>
+<p>元组特点：定义元组使用小括号，且逗号隔开各个数据，数据可以是不同的数据类型。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 多个数据元组</span></span><br><span class="line">t1 = (<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 单个数据元组</span></span><br><span class="line">t2 = (<span class="number">10</span>,)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>注意：便于多次调用，所以主页用函数封装。</p>
+<p>注意：如果定义的元组只有一个数据，那么这个数据后面也好添加逗号，否则数据类型为唯一的这个数据的数据类型！！！！</p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">info_print</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;请选择功能------------&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;1、添加学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;2、删除学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;3、修改学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;4、查询学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;5、显示所有学员学员&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;6、退出系统&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;-&#x27;</span>*<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">t2 = (<span class="number">10</span>,)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(t2))  <span class="comment"># tuple</span></span><br><span class="line"></span><br><span class="line">t3 = (<span class="number">20</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(t3))  <span class="comment"># int</span></span><br><span class="line"></span><br><span class="line">t4 = (<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(t4))  <span class="comment"># str</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 
-<img src="/2022/10/09/python-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/01.png" class title="This is an test image">
 
-<h1 id="四-整体框架"><a href="#四-整体框架" class="headerlink" title="四. 整体框架"></a>四. 整体框架</h1><p>用户输入功能序号，调用相应的模块来完成操作</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="comment">#显示主页</span></span><br><span class="line">    info_print()</span><br><span class="line">    <span class="comment">#接受功能序号</span></span><br><span class="line">    user_name = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请选择功能序号：&quot;</span>))</span><br><span class="line">    <span class="comment">#添加</span></span><br><span class="line">    <span class="keyword">if</span> user_name == <span class="number">1</span>:</span><br><span class="line">        add_info()</span><br><span class="line">        <span class="built_in">print</span>(info)</span><br><span class="line">    <span class="comment">#删除</span></span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">2</span>:</span><br><span class="line">        del_info()</span><br><span class="line">        <span class="built_in">print</span>(info)</span><br><span class="line">    <span class="comment">#修改</span></span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">3</span>:</span><br><span class="line">        modify_info()</span><br><span class="line">        <span class="built_in">print</span>(info)</span><br><span class="line">    <span class="comment">#查询</span></span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">4</span>:</span><br><span class="line">        search_info()</span><br><span class="line">    <span class="comment">#显示全部</span></span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">5</span>:</span><br><span class="line">        all_info()</span><br><span class="line">    <span class="comment">#退出系统</span></span><br><span class="line">    <span class="keyword">elif</span> user_name == <span class="number">6</span>:</span><br><span class="line">        exit_flag = <span class="built_in">input</span>(<span class="string">&quot;确定退出吗？yes or no?:&quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> exit_flag == <span class="string">&quot;yes&quot;</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="comment">#错误输入</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;抱歉，您的输入有误\n&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="二-元组的常见操作"><a href="#二-元组的常见操作" class="headerlink" title="二. 元组的常见操作"></a>二. 元组的常见操作</h1><p>元组数据不支持修改，只支持查找</p>
+<ul>
+<li>按下标查找数据</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(tuple1[<span class="number">0</span>])  <span class="comment"># aa</span></span><br></pre></td></tr></table></figure>
 
-<ol>
-<li>因为在每次操作后，都要回到主页进行下一步操作，所以使用<code>while True:</code></li>
-<li>通过if函数来调用调用不同的版块</li>
-<li>为了提高代码可读性，所以将每个功能模块封装成函数</li>
-<li>优化代码，加入错误输入 and 退出系统确定功能，更加人性化</li>
-</ol>
-<h1 id="五-函数"><a href="#五-函数" class="headerlink" title="五. 函数"></a>五. 函数</h1><p>每个学员信息存储在字典中，所有学员信息存储在列表中。</p>
-<p>此系统默认用户名不可重复</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#等待存储所有学员信息</span></span><br><span class="line">info = []</span><br></pre></td></tr></table></figure>
-<h2 id="5-1-添加"><a href="#5-1-添加" class="headerlink" title="5.1 添加"></a>5.1 添加</h2><ol>
-<li>存储输入数据</li>
-<li>检测用户名是否被占用</li>
-<li>没占用–创建新字典<code>dict_info</code>，存储输入的数据，并将新字典加入学员信息列表<code>info</code></li>
-<li>已占用–提示信息，返回主页</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#添加学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;添加学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    new_id = <span class="built_in">input</span>(<span class="string">&quot;请输入您的学号：&quot;</span>)</span><br><span class="line">    new_name = <span class="built_in">input</span>(<span class="string">&quot;请输入您的姓名：&quot;</span>)</span><br><span class="line">    new_tel = <span class="built_in">input</span>(<span class="string">&quot;请输入您的手机号：&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 涉及到修改全局变量info，用global声名</span></span><br><span class="line">    <span class="keyword">global</span> info</span><br><span class="line">	<span class="comment">#遍历列表中的元素</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="keyword">if</span> new_name == i[<span class="string">&quot;name&quot;</span>]:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;此用户名已被占用&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">    <span class="comment">#学员信息的字典</span></span><br><span class="line">    dict_info = &#123;&#125;</span><br><span class="line">    <span class="comment">#新增字典数据</span></span><br><span class="line">    dict_info[<span class="string">&quot;id&quot;</span>] = new_id</span><br><span class="line">    dict_info[<span class="string">&quot;name&quot;</span>] = new_name</span><br><span class="line">    dict_info[<span class="string">&quot;tel&quot;</span>] = new_tel</span><br><span class="line">    <span class="comment">#print(dict_info)</span></span><br><span class="line">    info.append(dict_info)</span><br></pre></td></tr></table></figure>
 
-<img src="/2022/10/09/python-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/02.png" class title="This is an test image">
 
-<h2 id="5-2-删除"><a href="#5-2-删除" class="headerlink" title="5.2 删除"></a>5.2 删除</h2><ol>
-<li>接收删除学员姓名</li>
-<li>检测姓名是否存在</li>
-<li>存在–删除数据，返回主页</li>
-<li>不存在，提示信息</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">del_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;删除学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    del_name = <span class="built_in">input</span>(<span class="string">&quot;请输入想要删除的学员姓名：&quot;</span>)</span><br><span class="line">    <span class="comment"># 涉及到修改全局变量info，用global声名</span></span><br><span class="line">    <span class="keyword">global</span> info</span><br><span class="line">    <span class="comment">#遍历列表中的元素</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="keyword">if</span> del_name == i[<span class="string">&quot;name&quot;</span>]:</span><br><span class="line">            info.remove(i)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;此用户名不存在。&quot;</span>)</span><br></pre></td></tr></table></figure>
-<img src="/2022/10/09/python-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/03.png" class title="This is an test image">
+<ul>
+<li>index()：查找某个数据，如果数据存在返回对应的下标，否则报错，语法和列表、字符串的index方法相同。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(tuple1.index(<span class="string">&#x27;aa&#x27;</span>))  <span class="comment"># 0</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="5-3-修改"><a href="#5-3-修改" class="headerlink" title="5.3 修改"></a>5.3 修改</h2><ol>
-<li>接收修改学员姓名</li>
-<li>检测姓名是否存在</li>
-<li>存在–修改该字典对应key的value，返回主页</li>
-<li>不存在，提示信息</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 修改学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">modify_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;修改学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    modify_name = <span class="built_in">input</span>(<span class="string">&quot;请输入修改学员的姓名：&quot;</span>)</span><br><span class="line">    <span class="keyword">global</span> info</span><br><span class="line">    <span class="comment">#遍历列表中的元素</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="keyword">if</span> modify_name == i[<span class="string">&quot;name&quot;</span>]:</span><br><span class="line">            i[<span class="string">&quot;tel&quot;</span>] = <span class="built_in">input</span>(<span class="string">&quot;请输入新的手机号：&quot;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;此用户名不存在。&quot;</span>)</span><br></pre></td></tr></table></figure>
-<img src="/2022/10/09/python-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/04.png" class title="This is an test image">
 
-<h2 id="5-4-查询"><a href="#5-4-查询" class="headerlink" title="5.4 查询"></a>5.4 查询</h2><ol>
-<li>接收查询学员姓名</li>
-<li>检测姓名是否存在</li>
-<li>存在–显示该字典对应key的value，返回主页</li>
-<li>不存在，提示信息</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查询学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">search_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;查找学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    search_name = <span class="built_in">input</span>(<span class="string">&quot;请输入查询学员的姓名：&quot;</span>)</span><br><span class="line">    <span class="keyword">global</span> info</span><br><span class="line">    <span class="comment">#遍历列表中的元素</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="keyword">if</span> search_name == i[<span class="string">&quot;name&quot;</span>]:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;查找到的学员信息如下------&quot;</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;search_name&#125;</span>的学号：<span class="subst">&#123;i[<span class="string">&#x27;id&#x27;</span>]&#125;</span>\n&quot;</span></span><br><span class="line">                  <span class="string">f&quot;<span class="subst">&#123;search_name&#125;</span>的手机号：<span class="subst">&#123;i[<span class="string">&#x27;tel&#x27;</span>]&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;此用户名不存在&quot;</span>)</span><br></pre></td></tr></table></figure>
-<img src="/2022/10/09/python-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/05.png" class title="This is an test image">
 
-<h2 id="5-5-显示全部"><a href="#5-5-显示全部" class="headerlink" title="5.5 显示全部"></a>5.5 显示全部</h2><p>通过遍历循环，输出学员信息列表中所有元素</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示全部学员信息函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">all_info</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;显示全部学员&#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;学号\t姓名\t手机号&quot;</span>)</span><br><span class="line">    <span class="comment">#遍历列表中的元素</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> info:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;i[<span class="string">&#x27;id&#x27;</span>]&#125;</span>\t<span class="subst">&#123;i[<span class="string">&#x27;name&#x27;</span>]&#125;</span>\t<span class="subst">&#123;i[<span class="string">&#x27;tel&#x27;</span>]&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>count()：统计某个数据在当前元组出现的次数。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(tuple1.count(<span class="string">&#x27;bb&#x27;</span>))  <span class="comment"># 2</span></span><br></pre></td></tr></table></figure>
 
-<img src="/2022/10/09/python-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/06.png" class title="This is an test image">
 
-<h1 id="六-退出系统"><a href="#六-退出系统" class="headerlink" title="六. 退出系统"></a>六. 退出系统</h1><blockquote>
-<p>退出系统核心为break，break是退出距离最近的循环，封装在函数里容易产生错误</p>
-<p>直接写，代码更加简化</p>
+
+<ul>
+<li>len()：统计元组中数据的个数。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(tuple1))  <span class="comment"># 4</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：元组内的直接数据如果修改则立即报错！！！！！</p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line">   <span class="keyword">elif</span> user_name == <span class="number">6</span>:</span><br><span class="line">       exit_flag = <span class="built_in">input</span>(<span class="string">&quot;确定退出吗？yes or no?:&quot;</span>)</span><br><span class="line">       <span class="keyword">if</span> exit_flag == <span class="string">&quot;yes&quot;</span>:</span><br><span class="line">           <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line">tuple1[<span class="number">0</span>] = <span class="string">&#x27;aaa&#x27;</span></span><br></pre></td></tr></table></figure>
 
-<img src="/2022/10/09/python-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/07.png" class title="This is an test image">
+<blockquote>
+<p>但是如果元组里面有列表</p>
+<p>修改列表里面的数据则是支持的！！！！</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tuple2 = (<span class="number">10</span>, <span class="number">20</span>, [<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>], <span class="number">50</span>, <span class="number">30</span>)</span><br><span class="line"><span class="built_in">print</span>(tuple2[<span class="number">2</span>])  <span class="comment"># 访问到列表</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：(10, 20, [&#x27;aaaaa&#x27;, &#x27;bb&#x27;, &#x27;cc&#x27;], 50, 30)</span></span><br><span class="line">tuple2[<span class="number">2</span>][<span class="number">0</span>] = <span class="string">&#x27;aaaaa&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(tuple2)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三-总结"><a href="#三-总结" class="headerlink" title="三. 总结"></a>三. 总结</h1><ul>
+<li>定义元组</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">t1 = (<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>)</span><br><span class="line"></span><br><span class="line">t2 = (<span class="number">10</span>,)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>常用操作方法<ul>
+<li>index()</li>
+<li>count()</li>
+<li>len()</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
-        <category>Python小项目</category>
+        <category>Python基础</category>
       </categories>
       <tags>
         <tag>Python</tag>
@@ -1839,81 +1914,6 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name_list = [[<span class="string">&#x27;小明&#x27;</span>, <span class="string">&#x27;小红&#x27;</span>, <span class="string">&#x27;小绿&#x27;</span>], [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>], [<span class="string">&#x27;张三&#x27;</span>, <span class="string">&#x27;李四&#x27;</span>, <span class="string">&#x27;王五&#x27;</span>]]</span><br><span class="line"><span class="built_in">print</span>(name_list[<span class="number">2</span>][<span class="number">1</span>])</span><br><span class="line"><span class="comment"># 结果：李四</span></span><br></pre></td></tr></table></figure>
 
-]]></content>
-      <categories>
-        <category>Python基础</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 数据序列-元组</title>
-    <url>/2022/08/07/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%85%83%E7%BB%84/</url>
-    <content><![CDATA[<h1 id="一-元组"><a href="#一-元组" class="headerlink" title="一. 元组"></a>一. 元组</h1><p>一个元组可以存储多个数据，元组内的数据是不能修改的。</p>
-<p>元组特点：定义元组使用小括号，且逗号隔开各个数据，数据可以是不同的数据类型。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 多个数据元组</span></span><br><span class="line">t1 = (<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 单个数据元组</span></span><br><span class="line">t2 = (<span class="number">10</span>,)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：如果定义的元组只有一个数据，那么这个数据后面也好添加逗号，否则数据类型为唯一的这个数据的数据类型！！！！</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">t2 = (<span class="number">10</span>,)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(t2))  <span class="comment"># tuple</span></span><br><span class="line"></span><br><span class="line">t3 = (<span class="number">20</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(t3))  <span class="comment"># int</span></span><br><span class="line"></span><br><span class="line">t4 = (<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(t4))  <span class="comment"># str</span></span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-
-
-<h1 id="二-元组的常见操作"><a href="#二-元组的常见操作" class="headerlink" title="二. 元组的常见操作"></a>二. 元组的常见操作</h1><p>元组数据不支持修改，只支持查找</p>
-<ul>
-<li>按下标查找数据</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(tuple1[<span class="number">0</span>])  <span class="comment"># aa</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>index()：查找某个数据，如果数据存在返回对应的下标，否则报错，语法和列表、字符串的index方法相同。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(tuple1.index(<span class="string">&#x27;aa&#x27;</span>))  <span class="comment"># 0</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>count()：统计某个数据在当前元组出现的次数。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(tuple1.count(<span class="string">&#x27;bb&#x27;</span>))  <span class="comment"># 2</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>len()：统计元组中数据的个数。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(tuple1))  <span class="comment"># 4</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：元组内的直接数据如果修改则立即报错！！！！！</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line">tuple1[<span class="number">0</span>] = <span class="string">&#x27;aaa&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>但是如果元组里面有列表</p>
-<p>修改列表里面的数据则是支持的！！！！</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tuple2 = (<span class="number">10</span>, <span class="number">20</span>, [<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>], <span class="number">50</span>, <span class="number">30</span>)</span><br><span class="line"><span class="built_in">print</span>(tuple2[<span class="number">2</span>])  <span class="comment"># 访问到列表</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：(10, 20, [&#x27;aaaaa&#x27;, &#x27;bb&#x27;, &#x27;cc&#x27;], 50, 30)</span></span><br><span class="line">tuple2[<span class="number">2</span>][<span class="number">0</span>] = <span class="string">&#x27;aaaaa&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(tuple2)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="三-总结"><a href="#三-总结" class="headerlink" title="三. 总结"></a>三. 总结</h1><ul>
-<li>定义元组</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">t1 = (<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>)</span><br><span class="line"></span><br><span class="line">t2 = (<span class="number">10</span>,)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>常用操作方法<ul>
-<li>index()</li>
-<li>count()</li>
-<li>len()</li>
-</ul>
-</li>
-</ul>
 ]]></content>
       <categories>
         <category>Python基础</category>
@@ -2385,51 +2385,290 @@
       </tags>
   </entry>
   <entry>
-    <title>Python 注释</title>
-    <url>/2022/07/10/python-%E6%B3%A8%E9%87%8A/</url>
-    <content><![CDATA[<h1 id="一-注释的作用"><a href="#一-注释的作用" class="headerlink" title="一. 注释的作用"></a>一. 注释的作用</h1><ul>
-<li>通过用自己熟悉的语言，在程序中对某些代码进行标注说明，这就是注释的作用，能够大大增强程序的可读性。<span id="more"></span></li>
-</ul>
-<h1 id="二-注释的分类及语法"><a href="#二-注释的分类及语法" class="headerlink" title="二. 注释的分类及语法"></a>二. 注释的分类及语法</h1><p>注释分为两类：单行注释 和 多行注释。</p>
-<ul>
-<li>单行注释</li>
-</ul>
-<p>只能注释一行内容，语法如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 注释内容</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>多行注释</li>
-</ul>
-<p>可以注释多行内容，一般用在注释一段代码的情况， 语法如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	第一行注释</span></span><br><span class="line"><span class="string">	第二行注释</span></span><br><span class="line"><span class="string">	第三行注释</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">	注释1</span></span><br><span class="line"><span class="string">	注释2</span></span><br><span class="line"><span class="string">	注释3</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>快捷键： ctrl + &#x2F;</p>
-</blockquote>
-<h2 id="2-1-示例"><a href="#2-1-示例" class="headerlink" title="2.1 示例"></a>2.1 示例</h2><ul>
-<li>单行注释</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输出hello world</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)  <span class="comment"># 输出(简单的说明可以放到一行代码的后面，一般习惯代码后面添加两个空格再书写注释文字)</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>多行注释</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello world</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello reader</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：解释器不执行任何的注释内容。</p>
-</blockquote>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
-<li>注释的作用</li>
-</ul>
-<p>用人类熟悉的语言对代码进行解释说明，方便后期维护。</p>
-<ul>
-<li>注释的分类<ul>
-<li>单行： <code># 注释内容</code>，快捷键ctrl+&#x2F;</li>
-<li>多行：<code>&quot;&quot;&quot; 注释内容 &quot;&quot;&quot;</code> 或 <code>&#39;&#39;&#39; 注释内容 &#39;&#39;&#39;</code></li>
+    <title>Python 文件操作</title>
+    <url>/2022/08/24/python-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><ul>
+<li>文件操作的作用</li>
+<li>文件的基本操作<ul>
+<li>打开</li>
+<li>读写</li>
+<li>关闭</li>
 </ul>
 </li>
-<li>解释器不执行注释内容</li>
+<li>文件备份</li>
+<li>文件和文件夹的操作<span id="more"></span></li>
+</ul>
+<h1 id="一-文件的基本操作"><a href="#一-文件的基本操作" class="headerlink" title="一. 文件的基本操作"></a>一. 文件的基本操作</h1><h2 id="1-1-文件操作步骤"><a href="#1-1-文件操作步骤" class="headerlink" title="1.1 文件操作步骤"></a>1.1 文件操作步骤</h2><ol>
+<li>打开文件</li>
+<li>读写等操作</li>
+<li>关闭文件</li>
+</ol>
+<blockquote>
+<p>注意：可以只打开和关闭文件，不进行任何读写操作。</p>
+</blockquote>
+<h3 id="1-1-1-打开"><a href="#1-1-1-打开" class="headerlink" title="1.1.1  打开"></a>1.1.1  打开</h3><p>在python，使用open函数，可以打开一个已经存在的文件，或者创建一个新文件，语法如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">open</span>(name, mode)</span><br></pre></td></tr></table></figure>
+
+<p>name：是要打开的目标文件名的字符串(可以包含文件所在的具体路径)。</p>
+<p>mode：设置打开文件的模式(访问模式)：只读、写入、追加等。</p>
+<h4 id="1-1-1-1-打开文件模式"><a href="#1-1-1-1-打开文件模式" class="headerlink" title="1.1.1.1 打开文件模式"></a>1.1.1.1 打开文件模式</h4><table>
+<thead>
+<tr>
+<th align="center">模式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">r</td>
+<td>以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td align="center">rb</td>
+<td>以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td align="center">r+</td>
+<td>打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td align="center">rb+</td>
+<td>以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td align="center">w</td>
+<td>打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td align="center">wb</td>
+<td>以二进制格式打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td align="center">w+</td>
+<td>打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td align="center">wb+</td>
+<td>以二进制格式打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td align="center">a</td>
+<td>打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td align="center">ab</td>
+<td>以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td align="center">a+</td>
+<td>打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+<tr>
+<td align="center">ab+</td>
+<td>以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+</tbody></table>
+<h4 id="1-1-1-2-代码演示"><a href="#1-1-1-2-代码演示" class="headerlink" title="1.1.1.2 代码演示"></a>1.1.1.2 代码演示</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：此时的<code>f</code>是<code>open</code>函数的文件对象。</p>
+</blockquote>
+<h3 id="1-1-2-文件对象方法"><a href="#1-1-2-文件对象方法" class="headerlink" title="1.1.2 文件对象方法"></a>1.1.2 文件对象方法</h3><h5 id="1-1-1-1-写"><a href="#1-1-1-1-写" class="headerlink" title="1.1.1.1 写"></a>1.1.1.1 写</h5><ul>
+<li>语法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">对象对象.write(<span class="string">&#x27;内容&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>体验</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 打开文件</span></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.文件写入</span></span><br><span class="line">f.write(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 关闭文件</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：</p>
+<ol>
+<li><code>w	</code>和<code>a</code>模式：如果文件不存在则创建该文件；如果文件存在，<code>w</code>模式先清空再写入，<code>a</code>模式直接末尾追加。</li>
+<li><code>r</code>模式：如果文件不存在则报错。</li>
+</ol>
+</blockquote>
+<h5 id="1-1-2-2-读"><a href="#1-1-2-2-读" class="headerlink" title="1.1.2.2 读"></a>1.1.2.2 读</h5><ul>
+<li>read()</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">文件对象.read(num)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>num表示要从文件中读取的数据的长度（单位是字节），如果没有传入num，那么就表示读取文件中所有的数据。</p>
+</blockquote>
+<ul>
+<li>readlines()</li>
+</ul>
+<p>readlines可以按照行的方式把整个文件中的内容进行一次性读取，并且返回的是一个列表，其中每一行的数据为一个元素。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>)</span><br><span class="line">content = f.readlines()</span><br><span class="line"></span><br><span class="line"><span class="comment"># [&#x27;hello world\n&#x27;, &#x27;abcdefg\n&#x27;, &#x27;aaa\n&#x27;, &#x27;bbb\n&#x27;, &#x27;ccc&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(content)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭文件</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>readline()</li>
+</ul>
+<p>readline()一次读取一行内容。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>)</span><br><span class="line"></span><br><span class="line">content = f.readline()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;第一行：<span class="subst">&#123;content&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line">content = f.readline()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;第二行：<span class="subst">&#123;content&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭文件</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/24/python-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/01.png" class title="This is an test image">
+
+
+
+<h5 id="1-1-2-3-seek"><a href="#1-1-2-3-seek" class="headerlink" title="1.1.2.3 seek()"></a>1.1.2.3 seek()</h5><p>作用：用来移动文件指针。</p>
+<p>语法如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">文件对象.seek(偏移量, 起始位置)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>起始位置：</p>
+<ul>
+<li>0：文件开头</li>
+<li>1：当前位置</li>
+<li>2：文件结尾</li>
+</ul>
+</blockquote>
+<p>可以通过seek,让文件以a+模式或者w+模式打开时指针从头读取文件内容</p>
+<h3 id="1-1-3-关闭"><a href="#1-1-3-关闭" class="headerlink" title="1.1.3 关闭"></a>1.1.3 关闭</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">文件对象.close()</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三-文件备份"><a href="#三-文件备份" class="headerlink" title="三. 文件备份"></a>三. 文件备份</h1><p>需求：用户输入当前目录下任意文件名，程序完成对该文件的备份功能(备份文件名为xx[备份]后缀，例如：test[备份].txt)。</p>
+<h2 id="3-1-步骤"><a href="#3-1-步骤" class="headerlink" title="3.1 步骤"></a>3.1 步骤</h2><ol>
+<li>接收用户输入的文件名</li>
+<li>规划备份文件名（拆分+重组）</li>
+<li>备份文件写入数据</li>
+</ol>
+<h2 id="3-2-代码实现"><a href="#3-2-代码实现" class="headerlink" title="3.2 代码实现"></a>3.2 代码实现</h2><ol>
+<li>接收用户输入目标文件名</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">old_name = <span class="built_in">input</span>(<span class="string">&#x27;请输入您要备份的文件名：&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="2">
+<li><p>规划备份文件名——通多文件切片完成</p>
+<p>1.1 提取目标文件后缀</p>
+<p>2.2 组织备份的文件名，xx[备份]后缀</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1.1 提取文件后缀点的下标</span></span><br><span class="line">index = old_name.rfind(<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># print(index)  # 后缀中.的下标</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># print(old_name[:index])  # 源文件名（无后缀）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.2 组织新文件名 旧文件名 + [备份] + 后缀</span></span><br><span class="line">new_name = old_name[:index] + <span class="string">&#x27;[备份]&#x27;</span> + old_name[index:]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印新文件名（带后缀）</span></span><br><span class="line"><span class="comment"># print(new_name)</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>备份文件写入数据</p>
+<p>3.1 打开源文件 和 备份文件</p>
+<p>3.2 将源文件数据写入备份文件</p>
+<p>3.3 关闭文件</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 3.1 打开文件</span></span><br><span class="line">old_f = <span class="built_in">open</span>(old_name, <span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">new_f = <span class="built_in">open</span>(new_name, <span class="string">&#x27;wb&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.2 将源文件数据写入备份文件</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    con = old_f.read(<span class="number">1024</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(con) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    new_f.write(con)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.3 关闭文件</span></span><br><span class="line">old_f.close()</span><br><span class="line">new_f.close()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-3-代码优化"><a href="#3-3-代码优化" class="headerlink" title="3.3 代码优化"></a>3.3 代码优化</h2><p>如果用户输入<code>.txt</code>，这是一个无效文件，程序如何更改才能限制只有有效的文件名才能备份？</p>
+<p>答：添加条件判断即可。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">old_name = <span class="built_in">input</span>(<span class="string">&#x27;请输入您要备份的文件名：&#x27;</span>)</span><br><span class="line"></span><br><span class="line">index = old_name.rfind(<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重点</span></span><br><span class="line"><span class="keyword">if</span> index &gt; <span class="number">0</span>:</span><br><span class="line">    postfix = old_name[index:]</span><br><span class="line"></span><br><span class="line">new_name = old_name[:index] + <span class="string">&#x27;[备份]&#x27;</span> + postfix</span><br><span class="line"></span><br><span class="line">old_f = <span class="built_in">open</span>(old_name, <span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">new_f = <span class="built_in">open</span>(new_name, <span class="string">&#x27;wb&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    con = old_f.read(<span class="number">1024</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(con) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    new_f.write(con)</span><br><span class="line"></span><br><span class="line">old_f.close()</span><br><span class="line">new_f.close()</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="四-文件和文件夹的操作"><a href="#四-文件和文件夹的操作" class="headerlink" title="四. 文件和文件夹的操作"></a>四. 文件和文件夹的操作</h1><p>在Python中文件和文件夹的操作要借助os模块里面的相关功能，具体步骤如下：</p>
+<ol>
+<li>导入os模块</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>使用<code>os</code>模块相关功能</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.函数名()</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-1-文件重命名"><a href="#4-1-文件重命名" class="headerlink" title="4.1 文件重命名"></a>4.1 文件重命名</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.rename(目标文件名, 新文件名)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-2-删除文件"><a href="#4-2-删除文件" class="headerlink" title="4.2 删除文件"></a>4.2 删除文件</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.remove(目标文件名)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-3-创建文件夹"><a href="#4-3-创建文件夹" class="headerlink" title="4.3 创建文件夹"></a>4.3 创建文件夹</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.mkdir(文件夹名字)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-4-删除文件夹"><a href="#4-4-删除文件夹" class="headerlink" title="4.4 删除文件夹"></a>4.4 删除文件夹</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.rmdir(文件夹名字)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-5-获取当前目录"><a href="#4-5-获取当前目录" class="headerlink" title="4.5 获取当前目录"></a>4.5 获取当前目录</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.getcwd()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-6-改变默认目录"><a href="#4-6-改变默认目录" class="headerlink" title="4.6 改变默认目录"></a>4.6 改变默认目录</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.chdir(目录)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-7-获取目录列表"><a href="#4-7-获取目录列表" class="headerlink" title="4.7 获取目录列表"></a>4.7 获取目录列表</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.listdir(目录)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="五-应用案例"><a href="#五-应用案例" class="headerlink" title="五.应用案例"></a>五.应用案例</h1><p>需求：<strong>批量</strong>修改文件名，既可添加指定字符串，又能删除指定字符串。</p>
+<ul>
+<li>步骤</li>
+</ul>
+<ol>
+<li>设置添加删除字符串的的标识</li>
+<li>获取指定目录的所有文件</li>
+<li>将原有文件名添加&#x2F;删除指定字符串，构造新名字</li>
+<li>os.rename()重命名</li>
+</ol>
+<ul>
+<li>代码</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置重命名标识：如果为1则添加指定字符，flag取值为2则删除指定字符</span></span><br><span class="line">flag = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取指定目录</span></span><br><span class="line">dir_name = <span class="string">&#x27;./&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取指定目录的文件列表</span></span><br><span class="line">file_list = os.listdir(dir_name)</span><br><span class="line"><span class="comment"># print(file_list)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历文件列表内的文件</span></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> file_list:</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 添加指定字符</span></span><br><span class="line">    <span class="keyword">if</span> flag == <span class="number">1</span>:</span><br><span class="line">        new_name = <span class="string">&#x27;Python-&#x27;</span> + name</span><br><span class="line">    <span class="comment"># 删除指定字符</span></span><br><span class="line">    <span class="keyword">elif</span> flag == <span class="number">2</span>:</span><br><span class="line">        num = <span class="built_in">len</span>(<span class="string">&#x27;Python-&#x27;</span>)</span><br><span class="line">        new_name = name[num:]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 打印新文件名，测试程序正确性</span></span><br><span class="line">    <span class="built_in">print</span>(new_name)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 重命名</span></span><br><span class="line">    os.rename(dir_name+name, dir_name+new_name)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="六-总结"><a href="#六-总结" class="headerlink" title="六. 总结"></a>六. 总结</h1><ul>
+<li><p>文件操作步骤</p>
+<ul>
+<li>打开</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">文件对象 = <span class="built_in">open</span>(目标文件, 访问模式)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>操作</p>
+<ul>
+<li>读</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">文件对象.read()</span><br><span class="line">文件对象.readlines()</span><br><span class="line">文件对象.readline()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>写</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">文件对象.write()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>seek()</li>
+</ul>
+</li>
+<li><p>关闭</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">文件对象.close()</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>主访问模式</p>
+<ul>
+<li>w：写，文件不存在则新建该文件</li>
+<li>r：读，文件不存在则报错</li>
+<li>a：追加</li>
+</ul>
+</li>
+<li><p>文件和文件夹操作</p>
+<ul>
+<li>重命名：os.rename()</li>
+<li>获取当前目录：os.getcwd()</li>
+<li>获取目录列表：os.listdir()</li>
+</ul>
+</li>
 </ul>
 ]]></content>
       <categories>
@@ -2520,6 +2759,61 @@
 <li>eval()</li>
 </ul>
 </li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python基础</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 注释</title>
+    <url>/2022/07/10/python-%E6%B3%A8%E9%87%8A/</url>
+    <content><![CDATA[<h1 id="一-注释的作用"><a href="#一-注释的作用" class="headerlink" title="一. 注释的作用"></a>一. 注释的作用</h1><ul>
+<li>通过用自己熟悉的语言，在程序中对某些代码进行标注说明，这就是注释的作用，能够大大增强程序的可读性。<span id="more"></span></li>
+</ul>
+<h1 id="二-注释的分类及语法"><a href="#二-注释的分类及语法" class="headerlink" title="二. 注释的分类及语法"></a>二. 注释的分类及语法</h1><p>注释分为两类：单行注释 和 多行注释。</p>
+<ul>
+<li>单行注释</li>
+</ul>
+<p>只能注释一行内容，语法如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 注释内容</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多行注释</li>
+</ul>
+<p>可以注释多行内容，一般用在注释一段代码的情况， 语法如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	第一行注释</span></span><br><span class="line"><span class="string">	第二行注释</span></span><br><span class="line"><span class="string">	第三行注释</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">	注释1</span></span><br><span class="line"><span class="string">	注释2</span></span><br><span class="line"><span class="string">	注释3</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>快捷键： ctrl + &#x2F;</p>
+</blockquote>
+<h2 id="2-1-示例"><a href="#2-1-示例" class="headerlink" title="2.1 示例"></a>2.1 示例</h2><ul>
+<li>单行注释</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输出hello world</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)  <span class="comment"># 输出(简单的说明可以放到一行代码的后面，一般习惯代码后面添加两个空格再书写注释文字)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多行注释</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello world</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello reader</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：解释器不执行任何的注释内容。</p>
+</blockquote>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>注释的作用</li>
+</ul>
+<p>用人类熟悉的语言对代码进行解释说明，方便后期维护。</p>
+<ul>
+<li>注释的分类<ul>
+<li>单行： <code># 注释内容</code>，快捷键ctrl+&#x2F;</li>
+<li>多行：<code>&quot;&quot;&quot; 注释内容 &quot;&quot;&quot;</code> 或 <code>&#39;&#39;&#39; 注释内容 &#39;&#39;&#39;</code></li>
+</ul>
+</li>
+<li>解释器不执行注释内容</li>
 </ul>
 ]]></content>
       <categories>
