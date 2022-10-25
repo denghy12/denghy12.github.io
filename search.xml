@@ -169,29 +169,59 @@
 <span id="more"></span>
 <h1 id="三-标签选择器"><a href="#三-标签选择器" class="headerlink" title="三. 标签选择器"></a>三. 标签选择器</h1><p>根据标签来选择标签，<strong>以标签开头</strong>，此种选择器影响范围大，一般用来做一些通用设置。</p>
 <p><strong>示例代码</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">p</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">p</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">color</span>: <span class="built_in">rgb</span>(<span class="number">170</span>, <span class="number">55</span>, <span class="number">55</span>);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 标签选择器，就是以标签名开头，根据标签名来选择html文件中的标签没给标签添加样式 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2022/10/24/css-%E9%80%89%E6%8B%A9%E5%99%A8/01.png" class title="This is an test image">
+
+
 
 <h1 id="四-类选择器"><a href="#四-类选择器" class="headerlink" title="四. 类选择器"></a>四. 类选择器</h1><p>根据类名来选择标签，<strong>以 . 开头</strong>, 一个类选择器可应用于多个标签上，一个标签上也可以使用多个类选择器，多个类选择器需要使用空格分割，应用灵活，可复用，是css中应用最多的一种选择器。</p>
 <p><strong>示例代码</strong></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">    <span class="selector-class">.blue</span>&#123;<span class="attribute">color</span>:blue&#125;</span><br><span class="line">    <span class="selector-class">.big</span>&#123;<span class="attribute">font-size</span>:<span class="number">20px</span>&#125;</span><br><span class="line">    <span class="selector-class">.box</span>&#123;<span class="attribute">width</span>:<span class="number">100px</span>;<span class="attribute">height</span>:<span class="number">100px</span>;<span class="attribute">background</span>:gold&#125; </span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">div</span> class=&quot;blue&quot;&gt;这是一个<span class="selector-tag">div</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">&lt;<span class="selector-tag">h3</span> class=&quot;blue big box&quot;&gt;这是一个标题&lt;/<span class="selector-tag">h3</span>&gt;</span><br><span class="line">&lt;<span class="selector-tag">p</span> class=&quot;blue box&quot;&gt;这是一个段落&lt;/<span class="selector-tag">p</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">    &lt;style&gt;</span><br><span class="line">        <span class="comment">/* 类选择器 */</span></span><br><span class="line">        <span class="comment">/* 类选择器优先级高于标签选择器 */</span></span><br><span class="line">        <span class="comment">/* p &#123;</span></span><br><span class="line"><span class="comment">            color: red;</span></span><br><span class="line"><span class="comment">        &#125; */</span></span><br><span class="line">        <span class="selector-class">.mp</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: yellow;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.mmp</span> &#123;</span><br><span class="line">            <span class="attribute">background-color</span>: blue;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">p</span>&gt;hello&lt;/<span class="selector-tag">p</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">p</span> class=&quot;mp&quot;&gt;soga&lt;/<span class="selector-tag">p</span>&gt;</span><br><span class="line">    &lt;!-- 这里的标签选择了两个类选择器 --&gt;</span><br><span class="line">    &lt;<span class="selector-tag">p</span> class=&quot;mp mmp&quot;&gt;soga sodisinei&lt;/<span class="selector-tag">p</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/10/24/css-%E9%80%89%E6%8B%A9%E5%99%A8/02.png" class title="This is an test image">
+
+
 
 <h1 id="五-层级选择器-后代选择器"><a href="#五-层级选择器-后代选择器" class="headerlink" title="五. 层级选择器(后代选择器)"></a>五. 层级选择器(后代选择器)</h1><p>根据层级关系选择后代标签，<strong>以选择器1 选择器2开头</strong>，主要应用在标签嵌套的结构中，减少命名。</p>
 <p><strong>示例代码</strong></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">    <span class="selector-tag">div</span> <span class="selector-tag">p</span>&#123;</span><br><span class="line">        <span class="attribute">color</span>: red;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.con</span>&#123;<span class="attribute">width</span>:<span class="number">300px</span>;<span class="attribute">height</span>:<span class="number">80px</span>;<span class="attribute">background</span>:green&#125;</span><br><span class="line">    <span class="selector-class">.con</span> <span class="selector-tag">span</span>&#123;<span class="attribute">color</span>:red&#125;</span><br><span class="line">    <span class="selector-class">.con</span> <span class="selector-class">.pink</span>&#123;<span class="attribute">color</span>:pink&#125;</span><br><span class="line">    <span class="selector-class">.con</span> <span class="selector-class">.gold</span>&#123;<span class="attribute">color</span>:gold&#125;    </span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">div</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">p</span>&gt;hello&lt;/<span class="selector-tag">p</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">div</span> class=&quot;con&quot;&gt;</span><br><span class="line">    &lt;<span class="selector-tag">span</span>&gt;哈哈&lt;/<span class="selector-tag">span</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">a</span> href=&quot;#&quot; class=&quot;pink&quot;&gt;百度&lt;/<span class="selector-tag">a</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">a</span> href=&quot;#&quot; class=&quot;gold&quot;&gt;谷歌&lt;/<span class="selector-tag">a</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">&lt;<span class="selector-tag">span</span>&gt;你好&lt;/<span class="selector-tag">span</span>&gt;</span><br><span class="line">&lt;<span class="selector-tag">a</span> href=&quot;#&quot; class=&quot;pink&quot;&gt;新浪&lt;/<span class="selector-tag">a</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">    &lt;style&gt;</span><br><span class="line">        <span class="comment">/* 层级选择器要有层级关系，根据层级关系获得子标签，给子标签添加样式 */</span></span><br><span class="line">        <span class="selector-tag">div</span> <span class="selector-tag">div</span>&#123;</span><br><span class="line">            <span class="attribute">color</span>: green;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="selector-tag">div</span> <span class="selector-class">.box2</span>&#123; </span><br><span class="line">            <span class="attribute">color</span>: blue;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/* div div p&#123;</span></span><br><span class="line"><span class="comment">            color: red;</span></span><br><span class="line"><span class="comment">        &#125; */</span></span><br><span class="line"></span><br><span class="line">        <span class="selector-tag">div</span> <span class="selector-tag">p</span>&#123;</span><br><span class="line">            <span class="attribute">color</span>: aqua;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">div</span>&gt;哈哈&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line"></span><br><span class="line">        &lt;<span class="selector-tag">div</span> class=&quot;box2&quot;&gt;嘻嘻&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">div</span>&gt;</span><br><span class="line">            &lt;<span class="selector-tag">p</span>&gt;hello&lt;/<span class="selector-tag">p</span>&gt;</span><br><span class="line">        &lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">    &lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span>&gt;哈哈&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">    &lt;!-- 层级选择器不一定是父子关系，祖孙标签也可以找到，完成添加样式的操作 --&gt;</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br></pre></td></tr></table></figure>
 
 <p><strong>注意点: 这个层级关系不一定是父子关系，也有可能是祖孙关系，只要有后代关系都适用于这个层级选择器</strong></p>
+<img src="/2022/10/24/css-%E9%80%89%E6%8B%A9%E5%99%A8/03.png" class title="This is an test image">
+
+
+
 <h1 id="六-id选择器"><a href="#六-id选择器" class="headerlink" title="六. id选择器"></a>六. id选择器</h1><p>根据id选择标签，以#开头, 元素的id名称不能重复，所以id选择器只能对应于页面上一个元素，不能复用，id名一般给程序使用，所以不推荐使用id作为选择器。</p>
 <p><strong>示例代码</strong></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">    <span class="selector-id">#box</span>&#123;<span class="attribute">color</span>:red&#125; </span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">p</span> id=&quot;box&quot;&gt;这是一个段落标签&lt;/<span class="selector-tag">p</span>&gt;   &lt;!-- 对应以上一条样式，其它元素不允许应用此样式 --&gt;</span><br><span class="line">&lt;<span class="selector-tag">p</span>&gt;这是第二个段落标签&lt;/<span class="selector-tag">p</span>&gt; &lt;!-- 无法应用以上样式，每个标签只能有唯一的id名 --&gt;</span><br><span class="line">&lt;<span class="selector-tag">p</span>&gt;这是第三个段落标签&lt;/<span class="selector-tag">p</span>&gt; &lt;!-- 无法应用以上样式，每个标签只能有唯一的id名  --&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">    &lt;style&gt;</span><br><span class="line">        <span class="comment">/* id选择器，以#开头，根据html中的标签，给标签添加样式 */</span></span><br><span class="line">        <span class="selector-id">#myid1</span>&#123;</span><br><span class="line">            <span class="attribute">color</span>: blue;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">p</span> id=&quot;myid1&quot;&gt;哈哈&lt;/<span class="selector-tag">p</span>&gt;</span><br><span class="line">    &lt;!-- 错误示例，在<span class="selector-tag">html</span>中标签的id是唯一的，不能重复，后续js会根据id获取对应的标签对象 --&gt;</span><br><span class="line">    &lt;<span class="selector-tag">p</span> id=&quot;myid1&quot;&gt;嘻嘻&lt;/<span class="selector-tag">p</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br></pre></td></tr></table></figure>
 
 <p><strong>注意点: 虽然给其它标签设置id&#x3D;“box”也可以设置样式，但是不推荐这样做，因为id是唯一的，以后js通过id只能获取一个唯一的标签对象。</strong></p>
+<img src="/2022/10/24/css-%E9%80%89%E6%8B%A9%E5%99%A8/04.png" class title="This is an test image">
+
+
+
 <h1 id="七-组选择器"><a href="#七-组选择器" class="headerlink" title="七. 组选择器"></a>七. 组选择器</h1><p>根据组合的选择器选择不同的标签，<strong>以 , 分割开</strong>, 如果有公共的样式设置，可以使用组选择器。</p>
 <p><strong>示例代码</strong></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">    <span class="selector-class">.box1</span>,<span class="selector-class">.box2</span>,<span class="selector-class">.box3</span>&#123;<span class="attribute">width</span>:<span class="number">100px</span>;<span class="attribute">height</span>:<span class="number">100px</span>&#125;</span><br><span class="line">    <span class="selector-class">.box1</span>&#123;<span class="attribute">background</span>:red&#125;</span><br><span class="line">    <span class="selector-class">.box2</span>&#123;<span class="attribute">background</span>:pink&#125;</span><br><span class="line">    <span class="selector-class">.box2</span>&#123;<span class="attribute">background</span>:gold&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">div</span> class=&quot;box1&quot;&gt;这是第一个<span class="selector-tag">div</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">&lt;<span class="selector-tag">div</span> class=&quot;box2&quot;&gt;这是第二个<span class="selector-tag">div</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">&lt;<span class="selector-tag">div</span> class=&quot;box3&quot;&gt;这是第三个<span class="selector-tag">div</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">    &lt;style&gt;</span><br><span class="line">        <span class="comment">/* 组选择器就是多个选择器的组合，把功能的代码可以放到组选择器里面 */</span></span><br><span class="line">        <span class="selector-class">.box1</span>, <span class="selector-class">.box2</span>, <span class="selector-class">.box3</span>&#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/* 提示：在css里面出现相同的组选择器，后面的不会覆盖前面的，</span></span><br><span class="line"><span class="comment">        后面的选择器会在前面的选择器的基础上进行追加样式 */</span></span><br><span class="line">        <span class="selector-class">.box1</span>&#123;</span><br><span class="line">            <span class="attribute">background-color</span>: red;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.box2</span>&#123;</span><br><span class="line">            <span class="attribute">background-color</span>: green;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.box3</span>&#123;</span><br><span class="line">            <span class="attribute">background-color</span>: blue;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;!-- <span class="selector-tag">div</span><span class="selector-class">.box</span>*<span class="number">3</span> --&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span> class=&quot;box1&quot;&gt;&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span> class=&quot;box2&quot;&gt;&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span> class=&quot;box3&quot;&gt;&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/10/24/css-%E9%80%89%E6%8B%A9%E5%99%A8/05.png" class title="This is an test image">
+
+
 
 <h1 id="八-伪类选择器"><a href="#八-伪类选择器" class="headerlink" title="八. 伪类选择器"></a>八. 伪类选择器</h1><p>用于向选择器添加特殊的效果, <strong>以 : 分割开</strong>, 当用户和网站交互的时候改变显示效果可以使用伪类选择器</p>
 <p><strong>示例代码</strong></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">    <span class="selector-class">.box1</span>&#123;<span class="attribute">width</span>:<span class="number">100px</span>;<span class="attribute">height</span>:<span class="number">100px</span>;<span class="attribute">background</span>:gold;&#125;</span><br><span class="line">    <span class="selector-class">.box1</span><span class="selector-pseudo">:hover</span>&#123;<span class="attribute">width</span>:<span class="number">300px</span>;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">div</span> class=&quot;box1&quot;&gt;这是第一个<span class="selector-tag">div</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">    &lt;style&gt;</span><br><span class="line">        <span class="selector-tag">div</span>&#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: green;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/* 伪类选择器就是给其他选择器添加特殊效果，表现形式选择器后面加上冒号再跟上伪类的名字 */</span></span><br><span class="line">        <span class="selector-tag">div</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: red;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/* hover——鼠标悬浮 */</span></span><br><span class="line">    &lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span>&gt;哈哈&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>鼠标放在空白处：</p>
+<img src="/2022/10/24/css-%E9%80%89%E6%8B%A9%E5%99%A8/06.png" class title="This is an test image">
+
+
+
+<p>鼠标悬浮后：</p>
+<img src="/2022/10/24/css-%E9%80%89%E6%8B%A9%E5%99%A8/07.png" class title="This is an test image">
+
+
 
 <h1 id="九-小结"><a href="#九-小结" class="headerlink" title="九. 小结"></a>九. 小结</h1><ul>
 <li>css 选择器就是用来选择标签设置样式的</li>
@@ -924,6 +954,184 @@
       </tags>
   </entry>
   <entry>
+    <title>Python 函数（二）</title>
+    <url>/2022/08/19/python-%E5%87%BD%E6%95%B02/</url>
+    <content><![CDATA[<h1 id="一-变量作用域"><a href="#一-变量作用域" class="headerlink" title="一. 变量作用域"></a>一. 变量作用域</h1><p>变量作用域指的是变量生效的范围，主要分为两类：局部变量和全局变量。</p>
+<ul>
+<li>局部变量</li>
+</ul>
+<p>所谓局部变量是定义在函数体内部的变量，即只在函数体内部生效。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">testA</span>():</span><br><span class="line">    a = <span class="number">100</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">testA()  <span class="comment"># 100</span></span><br><span class="line"><span class="built_in">print</span>(a)  <span class="comment"># 报错：name &#x27;a&#x27; is not defined</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>变量a是定义在<code>testA</code>函数内部的变量，在函数外部访问则立即报错。</p>
+</blockquote>
+<span id="more"></span>
+<p>局部变量的作用：在函数体内部，临时保存数据，即当函数调用完成后，则销毁局部变量。</p>
+<ul>
+<li>全局变量</li>
+</ul>
+<p>所谓全局变量，指的是在函数体内、外都能生效的变量。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义全局变量a</span></span><br><span class="line">a = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">testA</span>():</span><br><span class="line">    <span class="built_in">print</span>(a)  <span class="comment"># 访问全局变量a，并打印变量a存储的数据</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">testB</span>():</span><br><span class="line">    <span class="built_in">print</span>(a)  <span class="comment"># 访问全局变量a，并打印变量a存储的数据</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">testA()  <span class="comment"># 100</span></span><br><span class="line">testB()  <span class="comment"># 100</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="如何在函数体内部修改全局变量？？"><a href="#如何在函数体内部修改全局变量？？" class="headerlink" title="如何在函数体内部修改全局变量？？"></a>如何在函数体内部修改全局变量？？</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">testA</span>():</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">testB</span>():</span><br><span class="line">    <span class="comment"># global 关键字声明a是全局变量</span></span><br><span class="line">    <span class="keyword">global</span> a</span><br><span class="line">    a = <span class="number">200</span></span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">testA()  <span class="comment"># 100</span></span><br><span class="line">testB()  <span class="comment"># 200</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;全局变量a = <span class="subst">&#123;a&#125;</span>&#x27;</span>)  <span class="comment"># 全局变量a = 200</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="二-多函数程序执行流程"><a href="#二-多函数程序执行流程" class="headerlink" title="二. 多函数程序执行流程"></a>二. 多函数程序执行流程</h1><p>一般在实际开发过程中，一个程序往往由多个函数（后面知识中会讲解类）组成，并且多个函数共享某些数据，如下所示：</p>
+<ul>
+<li>共用全局变量</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 定义全局变量</span></span><br><span class="line">glo_num = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test1</span>():</span><br><span class="line">    <span class="keyword">global</span> glo_num</span><br><span class="line">    <span class="comment"># 修改全局变量</span></span><br><span class="line">    glo_num = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test2</span>():</span><br><span class="line">    <span class="comment"># 调用test1函数中修改后的全局变量</span></span><br><span class="line">    <span class="built_in">print</span>(glo_num)</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 调用test1函数，执行函数内部代码：声明和修改全局变量</span></span><br><span class="line">test1()</span><br><span class="line"><span class="comment"># 3. 调用test2函数，执行函数内部代码：打印</span></span><br><span class="line">test2()  <span class="comment"># 100</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>返回值作为参数传递</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test1</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">50</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test2</span>(<span class="params">num</span>):</span><br><span class="line">    <span class="built_in">print</span>(num)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 保存函数test1的返回值</span></span><br><span class="line">result = test1()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.将函数返回值所在变量作为参数传递到test2函数</span></span><br><span class="line">test2(result)  <span class="comment"># 50</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="三-函数的返回值"><a href="#三-函数的返回值" class="headerlink" title="三. 函数的返回值"></a>三. 函数的返回值</h1><p>思考：如果一个函数如些两个return (如下所示)，程序如何执行？</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">return_num</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result = return_num()</span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
+
+<p>答：只执行了第一个return，原因是因为return可以退出当前函数，导致return下方的代码不执行。</p>
+<p>如果一个函数要有多个返回值，以如下格式书写。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">return_num</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>, <span class="number">2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result = return_num()</span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># (1, 2)</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：</p>
+<ol>
+<li><code>return a, b</code>写法，返回多个数据的时候，默认是元组类型。</li>
+<li>return后面可以连接列表、元组或字典，以返回多个值。</li>
+</ol>
+</blockquote>
+<h1 id="四-函数的参数"><a href="#四-函数的参数" class="headerlink" title="四. 函数的参数"></a>四. 函数的参数</h1><h2 id="4-1-位置参数"><a href="#4-1-位置参数" class="headerlink" title="4.1 位置参数"></a>4.1 位置参数</h2><p>位置参数：调用函数时根据函数定义的参数位置来传递参数。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name, age, gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;您的名字是<span class="subst">&#123;name&#125;</span>, 年龄是<span class="subst">&#123;age&#125;</span>, 性别是<span class="subst">&#123;gender&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">user_info(<span class="string">&#x27;TOM&#x27;</span>, <span class="number">20</span>, <span class="string">&#x27;男&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：传递和定义参数的顺序及个数必须一致。</p>
+</blockquote>
+<h2 id="4-2-关键字参数"><a href="#4-2-关键字参数" class="headerlink" title="4.2 关键字参数"></a>4.2 关键字参数</h2><p>函数调用，通过“键&#x3D;值”形式加以指定。可以让函数更加清晰、容易使用，同时也清除了参数的顺序需求。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name, age, gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;您的名字是<span class="subst">&#123;name&#125;</span>, 年龄是<span class="subst">&#123;age&#125;</span>, 性别是<span class="subst">&#123;gender&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">user_info(<span class="string">&#x27;Rose&#x27;</span>, age=<span class="number">20</span>, gender=<span class="string">&#x27;女&#x27;</span>)</span><br><span class="line">user_info(<span class="string">&#x27;小明&#x27;</span>, gender=<span class="string">&#x27;男&#x27;</span>, age=<span class="number">16</span>)</span><br></pre></td></tr></table></figure>
+
+<p>注意：<strong>函数调用时，如果有位置参数时，位置参数必须在关键字参数的前面，但关键字参数之间不存在先后顺序。</strong></p>
+<h2 id="4-3-缺省参数"><a href="#4-3-缺省参数" class="headerlink" title="4.3 缺省参数"></a>4.3 缺省参数</h2><p>缺省参数也叫默认参数，用于定义函数，为参数提供默认值，调用函数时可不传该默认参数的值（注意：所有位置参数必须出现在默认参数前，包括函数定义和调用）。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name, age, gender=<span class="string">&#x27;男&#x27;</span></span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;您的名字是<span class="subst">&#123;name&#125;</span>, 年龄是<span class="subst">&#123;age&#125;</span>, 性别是<span class="subst">&#123;gender&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">user_info(<span class="string">&#x27;TOM&#x27;</span>, <span class="number">20</span>)</span><br><span class="line">user_info(<span class="string">&#x27;Rose&#x27;</span>, <span class="number">18</span>, <span class="string">&#x27;女&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：函数调用时，如果为缺省参数传值则修改默认参数值；否则使用这个默认值。</p>
+</blockquote>
+<h2 id="4-4-不定长参数"><a href="#4-4-不定长参数" class="headerlink" title="4.4 不定长参数"></a>4.4 不定长参数</h2><p>不定长参数也叫可变参数。用于不确定调用的时候会传递多少个参数(不传参也可以)的场景。此时，可用包裹(packing)位置参数，或者包裹关键字参数，来进行参数传递，会显得非常方便。</p>
+<ul>
+<li>包裹位置传递</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">*args</span>):</span><br><span class="line">    <span class="built_in">print</span>(args)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># (&#x27;TOM&#x27;,)</span></span><br><span class="line">user_info(<span class="string">&#x27;TOM&#x27;</span>)</span><br><span class="line"><span class="comment"># (&#x27;TOM&#x27;, 18)</span></span><br><span class="line">user_info(<span class="string">&#x27;TOM&#x27;</span>, <span class="number">18</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：传进的所有参数都会被args变量收集，它会根据传进参数的位置合并为一个元组(tuple)，args是元组类型，这就是包裹位置传递。</p>
+</blockquote>
+<ul>
+<li>包裹关键字传递</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">**kwargs</span>):</span><br><span class="line">    <span class="built_in">print</span>(kwargs)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># &#123;&#x27;name&#x27;: &#x27;TOM&#x27;, &#x27;age&#x27;: 18, &#x27;id&#x27;: 110&#125;</span></span><br><span class="line">user_info(name=<span class="string">&#x27;TOM&#x27;</span>, age=<span class="number">18</span>, <span class="built_in">id</span>=<span class="number">110</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>综上：无论是包裹位置传递还是包裹关键字传递，都是一个组包的过程。</p>
+</blockquote>
+<h1 id="五-拆包和交换变量值"><a href="#五-拆包和交换变量值" class="headerlink" title="五. 拆包和交换变量值"></a>五. 拆包和交换变量值</h1><h2 id="5-1-拆包"><a href="#5-1-拆包" class="headerlink" title="5.1 拆包"></a>5.1 拆包</h2><ul>
+<li>拆包：元组</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">return_num</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">100</span>, <span class="number">200</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">num1, num2 = return_num()</span><br><span class="line"><span class="built_in">print</span>(num1)  <span class="comment"># 100</span></span><br><span class="line"><span class="built_in">print</span>(num2)  <span class="comment"># 200</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>拆包：字典</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;TOM&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">18</span>&#125;</span><br><span class="line">a, b = dict1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对字典进行拆包，取出来的是字典的key</span></span><br><span class="line"><span class="built_in">print</span>(a)  <span class="comment"># name</span></span><br><span class="line"><span class="built_in">print</span>(b)  <span class="comment"># age</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(dict1[a])  <span class="comment"># TOM</span></span><br><span class="line"><span class="built_in">print</span>(dict1[b])  <span class="comment"># 18</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-2-交换变量值"><a href="#5-2-交换变量值" class="headerlink" title="5.2 交换变量值"></a>5.2 交换变量值</h2><p>需求：有变量<code>a = 10</code>和<code>b = 20</code>，交换两个变量的值。</p>
+<ul>
+<li>方法一</li>
+</ul>
+<p>借助第三变量存储数据。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 定义中间变量</span></span><br><span class="line">c = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 将a的数据存储到c</span></span><br><span class="line">c = a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 将b的数据20赋值到a，此时a = 20</span></span><br><span class="line">a = b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 将之前c的数据10赋值到b，此时b = 10</span></span><br><span class="line">b = c</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)  <span class="comment"># 20</span></span><br><span class="line"><span class="built_in">print</span>(b)  <span class="comment"># 10</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方法二（多数用这个）</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a, b = <span class="number">1</span>, <span class="number">2</span></span><br><span class="line">a, b = b, a</span><br><span class="line"><span class="built_in">print</span>(a)  <span class="comment"># 2</span></span><br><span class="line"><span class="built_in">print</span>(b)  <span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="六-引用"><a href="#六-引用" class="headerlink" title="六. 引用"></a>六. 引用</h1><h2 id="6-1-了解引用"><a href="#6-1-了解引用" class="headerlink" title="6.1 了解引用"></a>6.1 了解引用</h2><p>在python中，值是靠引用来传递来的。</p>
+<p><strong>我们可以用<code>id()</code>来判断两个变量是否为同一个值的引用。</strong> 我们可以将id值理解为那块内存的地址标识。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. int类型</span></span><br><span class="line">a = <span class="number">1</span></span><br><span class="line">b = a</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(b)  <span class="comment"># 1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))  <span class="comment"># 140708464157520</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b))  <span class="comment"># 140708464157520</span></span><br><span class="line"></span><br><span class="line">a = <span class="number">2</span></span><br><span class="line"><span class="built_in">print</span>(b)  <span class="comment"># 1,说明int类型为不可变类型 </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))  <span class="comment"># 140708464157552，此时得到是的数据2的内存地址</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b))  <span class="comment"># 140708464157520</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 列表</span></span><br><span class="line">aa = [<span class="number">10</span>, <span class="number">20</span>]</span><br><span class="line">bb = aa</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(aa))  <span class="comment"># 2325297783432</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(bb))  <span class="comment"># 2325297783432</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">aa.append(<span class="number">30</span>)</span><br><span class="line"><span class="built_in">print</span>(bb)  <span class="comment"># [10, 20, 30], 列表为可变类型</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(aa))  <span class="comment"># 2325297783432</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(bb))  <span class="comment"># 2325297783432</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-2-引用当做实参"><a href="#6-2-引用当做实参" class="headerlink" title="6.2 引用当做实参"></a>6.2 引用当做实参</h2><p>代码如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test1</span>(<span class="params">a</span>):</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"></span><br><span class="line">    a += a</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># int：计算前后id值不同</span></span><br><span class="line">b = <span class="number">100</span></span><br><span class="line">test1(b)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列表：计算前后id值相同</span></span><br><span class="line">c = [<span class="number">11</span>, <span class="number">22</span>]</span><br><span class="line">test1(c)</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/19/python-%E5%87%BD%E6%95%B02/01.png" class title="This is an test image">
+
+
+
+<h1 id="七-可变和不可变类型"><a href="#七-可变和不可变类型" class="headerlink" title="七. 可变和不可变类型"></a>七. 可变和不可变类型</h1><p>所谓可变类型与不可变类型是指：数据能够直接进行修改，如果能直接修改那么就是可变，否则是不可变.</p>
+<ul>
+<li>可变类型<ul>
+<li>列表</li>
+<li>字典</li>
+<li>集合</li>
+</ul>
+</li>
+<li>不可变类型<ul>
+<li>整型</li>
+<li>浮点型</li>
+<li>字符串</li>
+<li>元组</li>
+</ul>
+</li>
+</ul>
+<h1 id="八-总结"><a href="#八-总结" class="headerlink" title="八. 总结"></a>八. 总结</h1><ul>
+<li>变量作用域<ul>
+<li>全局：函数体内外都能生效</li>
+<li>局部：当前函数体内部生效</li>
+</ul>
+</li>
+<li>函数多返回值写法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> 表达式<span class="number">1</span>, 表达式<span class="number">2.</span>..</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>函数的参数<ul>
+<li>位置参数<ul>
+<li>形参和实参的个数和书写顺序必须一致</li>
+</ul>
+</li>
+<li>关键字参数<ul>
+<li>写法： <code>key=value</code></li>
+<li>特点：形参和实参的书写顺序可以不一致；关键字参数必须书写在位置参数的后面</li>
+</ul>
+</li>
+<li>缺省参数<ul>
+<li>缺省参数就是默认参数</li>
+<li>写法：<code>key=vlaue</code></li>
+</ul>
+</li>
+<li>不定长位置参数<ul>
+<li>收集所有位置参数，返回一个元组</li>
+</ul>
+</li>
+<li>不定长关键字参数<ul>
+<li>收集所有关键字参数，返回一个字典</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>引用：Python中，数据的传递都是通过引用</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python基础</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python 函数加强</title>
     <url>/2022/08/21/python-%E5%87%BD%E6%95%B0%E5%8A%A0%E5%BC%BA/</url>
     <content><![CDATA[<h1 id="函数加强"><a href="#函数加强" class="headerlink" title="函数加强"></a>函数加强</h1><h3 id="1-递归"><a href="#1-递归" class="headerlink" title="1. 递归"></a>1. 递归</h3><h3 id="2-lambda-表达式"><a href="#2-lambda-表达式" class="headerlink" title="2. lambda 表达式"></a>2. lambda 表达式</h3><h3 id="3-高阶函数"><a href="#3-高阶函数" class="headerlink" title="3. 高阶函数"></a>3. 高阶函数</h3><span id="more"></span>
@@ -1180,184 +1388,6 @@
 <li>字典：dict</li>
 </ul>
 </li>
-</ul>
-]]></content>
-      <categories>
-        <category>Python基础</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 函数（二）</title>
-    <url>/2022/08/19/python-%E5%87%BD%E6%95%B02/</url>
-    <content><![CDATA[<h1 id="一-变量作用域"><a href="#一-变量作用域" class="headerlink" title="一. 变量作用域"></a>一. 变量作用域</h1><p>变量作用域指的是变量生效的范围，主要分为两类：局部变量和全局变量。</p>
-<ul>
-<li>局部变量</li>
-</ul>
-<p>所谓局部变量是定义在函数体内部的变量，即只在函数体内部生效。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">testA</span>():</span><br><span class="line">    a = <span class="number">100</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">testA()  <span class="comment"># 100</span></span><br><span class="line"><span class="built_in">print</span>(a)  <span class="comment"># 报错：name &#x27;a&#x27; is not defined</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>变量a是定义在<code>testA</code>函数内部的变量，在函数外部访问则立即报错。</p>
-</blockquote>
-<span id="more"></span>
-<p>局部变量的作用：在函数体内部，临时保存数据，即当函数调用完成后，则销毁局部变量。</p>
-<ul>
-<li>全局变量</li>
-</ul>
-<p>所谓全局变量，指的是在函数体内、外都能生效的变量。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义全局变量a</span></span><br><span class="line">a = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">testA</span>():</span><br><span class="line">    <span class="built_in">print</span>(a)  <span class="comment"># 访问全局变量a，并打印变量a存储的数据</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">testB</span>():</span><br><span class="line">    <span class="built_in">print</span>(a)  <span class="comment"># 访问全局变量a，并打印变量a存储的数据</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">testA()  <span class="comment"># 100</span></span><br><span class="line">testB()  <span class="comment"># 100</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="如何在函数体内部修改全局变量？？"><a href="#如何在函数体内部修改全局变量？？" class="headerlink" title="如何在函数体内部修改全局变量？？"></a>如何在函数体内部修改全局变量？？</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">testA</span>():</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">testB</span>():</span><br><span class="line">    <span class="comment"># global 关键字声明a是全局变量</span></span><br><span class="line">    <span class="keyword">global</span> a</span><br><span class="line">    a = <span class="number">200</span></span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">testA()  <span class="comment"># 100</span></span><br><span class="line">testB()  <span class="comment"># 200</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;全局变量a = <span class="subst">&#123;a&#125;</span>&#x27;</span>)  <span class="comment"># 全局变量a = 200</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="二-多函数程序执行流程"><a href="#二-多函数程序执行流程" class="headerlink" title="二. 多函数程序执行流程"></a>二. 多函数程序执行流程</h1><p>一般在实际开发过程中，一个程序往往由多个函数（后面知识中会讲解类）组成，并且多个函数共享某些数据，如下所示：</p>
-<ul>
-<li>共用全局变量</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 定义全局变量</span></span><br><span class="line">glo_num = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test1</span>():</span><br><span class="line">    <span class="keyword">global</span> glo_num</span><br><span class="line">    <span class="comment"># 修改全局变量</span></span><br><span class="line">    glo_num = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test2</span>():</span><br><span class="line">    <span class="comment"># 调用test1函数中修改后的全局变量</span></span><br><span class="line">    <span class="built_in">print</span>(glo_num)</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 调用test1函数，执行函数内部代码：声明和修改全局变量</span></span><br><span class="line">test1()</span><br><span class="line"><span class="comment"># 3. 调用test2函数，执行函数内部代码：打印</span></span><br><span class="line">test2()  <span class="comment"># 100</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>返回值作为参数传递</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test1</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">50</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test2</span>(<span class="params">num</span>):</span><br><span class="line">    <span class="built_in">print</span>(num)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 保存函数test1的返回值</span></span><br><span class="line">result = test1()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.将函数返回值所在变量作为参数传递到test2函数</span></span><br><span class="line">test2(result)  <span class="comment"># 50</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="三-函数的返回值"><a href="#三-函数的返回值" class="headerlink" title="三. 函数的返回值"></a>三. 函数的返回值</h1><p>思考：如果一个函数如些两个return (如下所示)，程序如何执行？</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">return_num</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result = return_num()</span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
-
-<p>答：只执行了第一个return，原因是因为return可以退出当前函数，导致return下方的代码不执行。</p>
-<p>如果一个函数要有多个返回值，以如下格式书写。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">return_num</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>, <span class="number">2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result = return_num()</span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># (1, 2)</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：</p>
-<ol>
-<li><code>return a, b</code>写法，返回多个数据的时候，默认是元组类型。</li>
-<li>return后面可以连接列表、元组或字典，以返回多个值。</li>
-</ol>
-</blockquote>
-<h1 id="四-函数的参数"><a href="#四-函数的参数" class="headerlink" title="四. 函数的参数"></a>四. 函数的参数</h1><h2 id="4-1-位置参数"><a href="#4-1-位置参数" class="headerlink" title="4.1 位置参数"></a>4.1 位置参数</h2><p>位置参数：调用函数时根据函数定义的参数位置来传递参数。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name, age, gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;您的名字是<span class="subst">&#123;name&#125;</span>, 年龄是<span class="subst">&#123;age&#125;</span>, 性别是<span class="subst">&#123;gender&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">user_info(<span class="string">&#x27;TOM&#x27;</span>, <span class="number">20</span>, <span class="string">&#x27;男&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：传递和定义参数的顺序及个数必须一致。</p>
-</blockquote>
-<h2 id="4-2-关键字参数"><a href="#4-2-关键字参数" class="headerlink" title="4.2 关键字参数"></a>4.2 关键字参数</h2><p>函数调用，通过“键&#x3D;值”形式加以指定。可以让函数更加清晰、容易使用，同时也清除了参数的顺序需求。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name, age, gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;您的名字是<span class="subst">&#123;name&#125;</span>, 年龄是<span class="subst">&#123;age&#125;</span>, 性别是<span class="subst">&#123;gender&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">user_info(<span class="string">&#x27;Rose&#x27;</span>, age=<span class="number">20</span>, gender=<span class="string">&#x27;女&#x27;</span>)</span><br><span class="line">user_info(<span class="string">&#x27;小明&#x27;</span>, gender=<span class="string">&#x27;男&#x27;</span>, age=<span class="number">16</span>)</span><br></pre></td></tr></table></figure>
-
-<p>注意：<strong>函数调用时，如果有位置参数时，位置参数必须在关键字参数的前面，但关键字参数之间不存在先后顺序。</strong></p>
-<h2 id="4-3-缺省参数"><a href="#4-3-缺省参数" class="headerlink" title="4.3 缺省参数"></a>4.3 缺省参数</h2><p>缺省参数也叫默认参数，用于定义函数，为参数提供默认值，调用函数时可不传该默认参数的值（注意：所有位置参数必须出现在默认参数前，包括函数定义和调用）。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name, age, gender=<span class="string">&#x27;男&#x27;</span></span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;您的名字是<span class="subst">&#123;name&#125;</span>, 年龄是<span class="subst">&#123;age&#125;</span>, 性别是<span class="subst">&#123;gender&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">user_info(<span class="string">&#x27;TOM&#x27;</span>, <span class="number">20</span>)</span><br><span class="line">user_info(<span class="string">&#x27;Rose&#x27;</span>, <span class="number">18</span>, <span class="string">&#x27;女&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：函数调用时，如果为缺省参数传值则修改默认参数值；否则使用这个默认值。</p>
-</blockquote>
-<h2 id="4-4-不定长参数"><a href="#4-4-不定长参数" class="headerlink" title="4.4 不定长参数"></a>4.4 不定长参数</h2><p>不定长参数也叫可变参数。用于不确定调用的时候会传递多少个参数(不传参也可以)的场景。此时，可用包裹(packing)位置参数，或者包裹关键字参数，来进行参数传递，会显得非常方便。</p>
-<ul>
-<li>包裹位置传递</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">*args</span>):</span><br><span class="line">    <span class="built_in">print</span>(args)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># (&#x27;TOM&#x27;,)</span></span><br><span class="line">user_info(<span class="string">&#x27;TOM&#x27;</span>)</span><br><span class="line"><span class="comment"># (&#x27;TOM&#x27;, 18)</span></span><br><span class="line">user_info(<span class="string">&#x27;TOM&#x27;</span>, <span class="number">18</span>)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：传进的所有参数都会被args变量收集，它会根据传进参数的位置合并为一个元组(tuple)，args是元组类型，这就是包裹位置传递。</p>
-</blockquote>
-<ul>
-<li>包裹关键字传递</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">**kwargs</span>):</span><br><span class="line">    <span class="built_in">print</span>(kwargs)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># &#123;&#x27;name&#x27;: &#x27;TOM&#x27;, &#x27;age&#x27;: 18, &#x27;id&#x27;: 110&#125;</span></span><br><span class="line">user_info(name=<span class="string">&#x27;TOM&#x27;</span>, age=<span class="number">18</span>, <span class="built_in">id</span>=<span class="number">110</span>)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>综上：无论是包裹位置传递还是包裹关键字传递，都是一个组包的过程。</p>
-</blockquote>
-<h1 id="五-拆包和交换变量值"><a href="#五-拆包和交换变量值" class="headerlink" title="五. 拆包和交换变量值"></a>五. 拆包和交换变量值</h1><h2 id="5-1-拆包"><a href="#5-1-拆包" class="headerlink" title="5.1 拆包"></a>5.1 拆包</h2><ul>
-<li>拆包：元组</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">return_num</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">100</span>, <span class="number">200</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">num1, num2 = return_num()</span><br><span class="line"><span class="built_in">print</span>(num1)  <span class="comment"># 100</span></span><br><span class="line"><span class="built_in">print</span>(num2)  <span class="comment"># 200</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>拆包：字典</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;TOM&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">18</span>&#125;</span><br><span class="line">a, b = dict1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对字典进行拆包，取出来的是字典的key</span></span><br><span class="line"><span class="built_in">print</span>(a)  <span class="comment"># name</span></span><br><span class="line"><span class="built_in">print</span>(b)  <span class="comment"># age</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(dict1[a])  <span class="comment"># TOM</span></span><br><span class="line"><span class="built_in">print</span>(dict1[b])  <span class="comment"># 18</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="5-2-交换变量值"><a href="#5-2-交换变量值" class="headerlink" title="5.2 交换变量值"></a>5.2 交换变量值</h2><p>需求：有变量<code>a = 10</code>和<code>b = 20</code>，交换两个变量的值。</p>
-<ul>
-<li>方法一</li>
-</ul>
-<p>借助第三变量存储数据。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 定义中间变量</span></span><br><span class="line">c = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 将a的数据存储到c</span></span><br><span class="line">c = a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 将b的数据20赋值到a，此时a = 20</span></span><br><span class="line">a = b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 将之前c的数据10赋值到b，此时b = 10</span></span><br><span class="line">b = c</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)  <span class="comment"># 20</span></span><br><span class="line"><span class="built_in">print</span>(b)  <span class="comment"># 10</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>方法二（多数用这个）</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a, b = <span class="number">1</span>, <span class="number">2</span></span><br><span class="line">a, b = b, a</span><br><span class="line"><span class="built_in">print</span>(a)  <span class="comment"># 2</span></span><br><span class="line"><span class="built_in">print</span>(b)  <span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="六-引用"><a href="#六-引用" class="headerlink" title="六. 引用"></a>六. 引用</h1><h2 id="6-1-了解引用"><a href="#6-1-了解引用" class="headerlink" title="6.1 了解引用"></a>6.1 了解引用</h2><p>在python中，值是靠引用来传递来的。</p>
-<p><strong>我们可以用<code>id()</code>来判断两个变量是否为同一个值的引用。</strong> 我们可以将id值理解为那块内存的地址标识。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. int类型</span></span><br><span class="line">a = <span class="number">1</span></span><br><span class="line">b = a</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(b)  <span class="comment"># 1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))  <span class="comment"># 140708464157520</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b))  <span class="comment"># 140708464157520</span></span><br><span class="line"></span><br><span class="line">a = <span class="number">2</span></span><br><span class="line"><span class="built_in">print</span>(b)  <span class="comment"># 1,说明int类型为不可变类型 </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))  <span class="comment"># 140708464157552，此时得到是的数据2的内存地址</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b))  <span class="comment"># 140708464157520</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 列表</span></span><br><span class="line">aa = [<span class="number">10</span>, <span class="number">20</span>]</span><br><span class="line">bb = aa</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(aa))  <span class="comment"># 2325297783432</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(bb))  <span class="comment"># 2325297783432</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">aa.append(<span class="number">30</span>)</span><br><span class="line"><span class="built_in">print</span>(bb)  <span class="comment"># [10, 20, 30], 列表为可变类型</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(aa))  <span class="comment"># 2325297783432</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(bb))  <span class="comment"># 2325297783432</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="6-2-引用当做实参"><a href="#6-2-引用当做实参" class="headerlink" title="6.2 引用当做实参"></a>6.2 引用当做实参</h2><p>代码如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test1</span>(<span class="params">a</span>):</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"></span><br><span class="line">    a += a</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># int：计算前后id值不同</span></span><br><span class="line">b = <span class="number">100</span></span><br><span class="line">test1(b)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列表：计算前后id值相同</span></span><br><span class="line">c = [<span class="number">11</span>, <span class="number">22</span>]</span><br><span class="line">test1(c)</span><br></pre></td></tr></table></figure>
-
-<img src="/2022/08/19/python-%E5%87%BD%E6%95%B02/01.png" class title="This is an test image">
-
-
-
-<h1 id="七-可变和不可变类型"><a href="#七-可变和不可变类型" class="headerlink" title="七. 可变和不可变类型"></a>七. 可变和不可变类型</h1><p>所谓可变类型与不可变类型是指：数据能够直接进行修改，如果能直接修改那么就是可变，否则是不可变.</p>
-<ul>
-<li>可变类型<ul>
-<li>列表</li>
-<li>字典</li>
-<li>集合</li>
-</ul>
-</li>
-<li>不可变类型<ul>
-<li>整型</li>
-<li>浮点型</li>
-<li>字符串</li>
-<li>元组</li>
-</ul>
-</li>
-</ul>
-<h1 id="八-总结"><a href="#八-总结" class="headerlink" title="八. 总结"></a>八. 总结</h1><ul>
-<li>变量作用域<ul>
-<li>全局：函数体内外都能生效</li>
-<li>局部：当前函数体内部生效</li>
-</ul>
-</li>
-<li>函数多返回值写法</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> 表达式<span class="number">1</span>, 表达式<span class="number">2.</span>..</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>函数的参数<ul>
-<li>位置参数<ul>
-<li>形参和实参的个数和书写顺序必须一致</li>
-</ul>
-</li>
-<li>关键字参数<ul>
-<li>写法： <code>key=value</code></li>
-<li>特点：形参和实参的书写顺序可以不一致；关键字参数必须书写在位置参数的后面</li>
-</ul>
-</li>
-<li>缺省参数<ul>
-<li>缺省参数就是默认参数</li>
-<li>写法：<code>key=vlaue</code></li>
-</ul>
-</li>
-<li>不定长位置参数<ul>
-<li>收集所有位置参数，返回一个元组</li>
-</ul>
-</li>
-<li>不定长关键字参数<ul>
-<li>收集所有关键字参数，返回一个字典</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>引用：Python中，数据的传递都是通过引用</li>
 </ul>
 ]]></content>
       <categories>
@@ -2445,61 +2475,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Python 注释</title>
-    <url>/2022/07/10/python-%E6%B3%A8%E9%87%8A/</url>
-    <content><![CDATA[<h1 id="一-注释的作用"><a href="#一-注释的作用" class="headerlink" title="一. 注释的作用"></a>一. 注释的作用</h1><ul>
-<li>通过用自己熟悉的语言，在程序中对某些代码进行标注说明，这就是注释的作用，能够大大增强程序的可读性。<span id="more"></span></li>
-</ul>
-<h1 id="二-注释的分类及语法"><a href="#二-注释的分类及语法" class="headerlink" title="二. 注释的分类及语法"></a>二. 注释的分类及语法</h1><p>注释分为两类：单行注释 和 多行注释。</p>
-<ul>
-<li>单行注释</li>
-</ul>
-<p>只能注释一行内容，语法如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 注释内容</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>多行注释</li>
-</ul>
-<p>可以注释多行内容，一般用在注释一段代码的情况， 语法如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	第一行注释</span></span><br><span class="line"><span class="string">	第二行注释</span></span><br><span class="line"><span class="string">	第三行注释</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">	注释1</span></span><br><span class="line"><span class="string">	注释2</span></span><br><span class="line"><span class="string">	注释3</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>快捷键： ctrl + &#x2F;</p>
-</blockquote>
-<h2 id="2-1-示例"><a href="#2-1-示例" class="headerlink" title="2.1 示例"></a>2.1 示例</h2><ul>
-<li>单行注释</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输出hello world</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)  <span class="comment"># 输出(简单的说明可以放到一行代码的后面，一般习惯代码后面添加两个空格再书写注释文字)</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>多行注释</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello world</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello reader</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：解释器不执行任何的注释内容。</p>
-</blockquote>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
-<li>注释的作用</li>
-</ul>
-<p>用人类熟悉的语言对代码进行解释说明，方便后期维护。</p>
-<ul>
-<li>注释的分类<ul>
-<li>单行： <code># 注释内容</code>，快捷键ctrl+&#x2F;</li>
-<li>多行：<code>&quot;&quot;&quot; 注释内容 &quot;&quot;&quot;</code> 或 <code>&#39;&#39;&#39; 注释内容 &#39;&#39;&#39;</code></li>
-</ul>
-</li>
-<li>解释器不执行注释内容</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Python基础</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python 文件操作</title>
     <url>/2022/08/24/python-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><ul>
@@ -2784,6 +2759,61 @@
 <li>获取目录列表：os.listdir()</li>
 </ul>
 </li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python基础</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 注释</title>
+    <url>/2022/07/10/python-%E6%B3%A8%E9%87%8A/</url>
+    <content><![CDATA[<h1 id="一-注释的作用"><a href="#一-注释的作用" class="headerlink" title="一. 注释的作用"></a>一. 注释的作用</h1><ul>
+<li>通过用自己熟悉的语言，在程序中对某些代码进行标注说明，这就是注释的作用，能够大大增强程序的可读性。<span id="more"></span></li>
+</ul>
+<h1 id="二-注释的分类及语法"><a href="#二-注释的分类及语法" class="headerlink" title="二. 注释的分类及语法"></a>二. 注释的分类及语法</h1><p>注释分为两类：单行注释 和 多行注释。</p>
+<ul>
+<li>单行注释</li>
+</ul>
+<p>只能注释一行内容，语法如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 注释内容</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多行注释</li>
+</ul>
+<p>可以注释多行内容，一般用在注释一段代码的情况， 语法如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	第一行注释</span></span><br><span class="line"><span class="string">	第二行注释</span></span><br><span class="line"><span class="string">	第三行注释</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">	注释1</span></span><br><span class="line"><span class="string">	注释2</span></span><br><span class="line"><span class="string">	注释3</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>快捷键： ctrl + &#x2F;</p>
+</blockquote>
+<h2 id="2-1-示例"><a href="#2-1-示例" class="headerlink" title="2.1 示例"></a>2.1 示例</h2><ul>
+<li>单行注释</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输出hello world</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)  <span class="comment"># 输出(简单的说明可以放到一行代码的后面，一般习惯代码后面添加两个空格再书写注释文字)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多行注释</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello world</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello reader</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：解释器不执行任何的注释内容。</p>
+</blockquote>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>注释的作用</li>
+</ul>
+<p>用人类熟悉的语言对代码进行解释说明，方便后期维护。</p>
+<ul>
+<li>注释的分类<ul>
+<li>单行： <code># 注释内容</code>，快捷键ctrl+&#x2F;</li>
+<li>多行：<code>&quot;&quot;&quot; 注释内容 &quot;&quot;&quot;</code> 或 <code>&#39;&#39;&#39; 注释内容 &#39;&#39;&#39;</code></li>
+</ul>
+</li>
+<li>解释器不执行注释内容</li>
 </ul>
 ]]></content>
       <categories>
