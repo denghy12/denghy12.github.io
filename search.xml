@@ -248,24 +248,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/07/05/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>html 列表标签</title>
     <url>/2022/10/14/html-%E5%88%97%E8%A1%A8%E6%A0%87%E7%AD%BE/</url>
     <content><![CDATA[<h1 id="一-列表标签的种类"><a href="#一-列表标签的种类" class="headerlink" title="一. 列表标签的种类"></a>一. 列表标签的种类</h1><ul>
@@ -290,6 +272,24 @@
       <tags>
         <tag>html</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/07/05/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>html 基本结构</title>
@@ -347,46 +347,6 @@
 <li>编写 html 标签建议使用小写</li>
 <li>根据书写形式，html 标签分为双标签和单标签</li>
 <li>单标签没有标签内容，双标签可以嵌套其它标签和承载文本内容</li>
-</ul>
-]]></content>
-      <categories>
-        <category>html</category>
-      </categories>
-      <tags>
-        <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>html 资源路径</title>
-    <url>/2022/10/14/html-%E8%B5%84%E6%BA%90%E8%B7%AF%E5%BE%84/</url>
-    <content><![CDATA[<p>当我们使用img标签显示图片的时候，需要指定图片的资源路径，比如:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/1.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>这里的src属性就是设置图片的资源路径的，资源路径可以分为相对路径和绝对路径。</p>
-<blockquote>
-<p>..&#x2F;将遍历到所在目录的父目录<br>用于打开同级别文件夹下的文件<br>先用..&#x2F;返回父目录，再打开另一个文件夹</p>
-</blockquote>
-<h3 id="1-相对路径"><a href="#1-相对路径" class="headerlink" title="1. 相对路径"></a>1. 相对路径</h3><blockquote>
-<p>从当前操作 html 的文档所在目录算起的路径叫做相对路径</p>
-</blockquote>
-<span id="more"></span>
-<p>演示:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 相对路径方式1 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./img/1.jpg&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 相对路径方式2 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/1.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="2-绝对路径"><a href="#2-绝对路径" class="headerlink" title="2. 绝对路径"></a>2. 绝对路径</h3><blockquote>
-<p>从根目录算起的路径叫做绝对路径，Windows 的根目录是指定的盘符，mac OS 和Linux 是&#x2F;</p>
-</blockquote>
-<p>演示:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 绝对路径 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;D:\My Code\HTML\my first html\img\1.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>提示:</p>
-<p>一般都会使用相对路径，绝对路径的操作在其它电脑上打开会有可能出现资源文件找不到的问题</p>
-<h3 id="3-小结"><a href="#3-小结" class="headerlink" title="3. 小结"></a>3. 小结</h3><ul>
-<li>相对路径和绝对路径是 html 标签使用资源文件的两种方式，一般使用相对路径。</li>
-<li>相对路径是从当前操作的 html 文档所在目录算起的路径</li>
-<li>绝对 路径是从根目录算起的路径</li>
 </ul>
 ]]></content>
       <categories>
@@ -522,6 +482,46 @@
       </categories>
       <tags>
         <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>html 资源路径</title>
+    <url>/2022/10/14/html-%E8%B5%84%E6%BA%90%E8%B7%AF%E5%BE%84/</url>
+    <content><![CDATA[<p>当我们使用img标签显示图片的时候，需要指定图片的资源路径，比如:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/1.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这里的src属性就是设置图片的资源路径的，资源路径可以分为相对路径和绝对路径。</p>
+<blockquote>
+<p>..&#x2F;将遍历到所在目录的父目录<br>用于打开同级别文件夹下的文件<br>先用..&#x2F;返回父目录，再打开另一个文件夹</p>
+</blockquote>
+<h3 id="1-相对路径"><a href="#1-相对路径" class="headerlink" title="1. 相对路径"></a>1. 相对路径</h3><blockquote>
+<p>从当前操作 html 的文档所在目录算起的路径叫做相对路径</p>
+</blockquote>
+<span id="more"></span>
+<p>演示:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 相对路径方式1 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./img/1.jpg&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 相对路径方式2 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/1.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-绝对路径"><a href="#2-绝对路径" class="headerlink" title="2. 绝对路径"></a>2. 绝对路径</h3><blockquote>
+<p>从根目录算起的路径叫做绝对路径，Windows 的根目录是指定的盘符，mac OS 和Linux 是&#x2F;</p>
+</blockquote>
+<p>演示:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 绝对路径 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;D:\My Code\HTML\my first html\img\1.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>提示:</p>
+<p>一般都会使用相对路径，绝对路径的操作在其它电脑上打开会有可能出现资源文件找不到的问题</p>
+<h3 id="3-小结"><a href="#3-小结" class="headerlink" title="3. 小结"></a>3. 小结</h3><ul>
+<li>相对路径和绝对路径是 html 标签使用资源文件的两种方式，一般使用相对路径。</li>
+<li>相对路径是从当前操作的 html 文档所在目录算起的路径</li>
+<li>绝对 路径是从根目录算起的路径</li>
+</ul>
+]]></content>
+      <categories>
+        <category>html</category>
+      </categories>
+      <tags>
+        <tag>html</tag>
       </tags>
   </entry>
   <entry>
@@ -1244,111 +1244,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Python 变量</title>
-    <url>/2022/07/15/python-%E5%8F%98%E9%87%8F/</url>
-    <content><![CDATA[<h1 id="一-变量的作用"><a href="#一-变量的作用" class="headerlink" title="一.  变量的作用"></a>一.  变量的作用</h1><p>程序中，数据都是临时存储在内存中，为了更快速的查找或使用这个数据，通常我们把这个数据在内存中存储之后定义一个名称，这个名称就是变量。</p>
-<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/image-20190122123202213.png" class title="This is an test image">
-
-
-
-<blockquote>
-<p>变量就是一个存储数据的的时候当前数据所在的内存地址的名字而已。</p>
-</blockquote>
-<h1 id="二-定义变量"><a href="#二-定义变量" class="headerlink" title="二.  定义变量"></a>二.  定义变量</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">变量名 = 值</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>变量名自定义，要满足标识符命名规则。</p>
-</blockquote>
-<h2 id="2-1-标识符"><a href="#2-1-标识符" class="headerlink" title="2.1  标识符"></a>2.1  标识符</h2><p>标识符命名规则是Python中定义各种名字的时候的统一规范，具体如下：</p>
-<ul>
-<li>由数字、字母、下划线组成</li>
-<li>不能数字开头</li>
-<li>不能使用内置关键字</li>
-<li>严格区分大小写</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">False     None    True   and      as       assert   break     class  </span><br><span class="line">continue  def     del    elif     else     except   finally   for</span><br><span class="line">from      global  if     import   in       is       lambda    nonlocal</span><br><span class="line">not       or      pass   raise    return   try      while     with  </span><br><span class="line">yield</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<h2 id="2-2-命名习惯"><a href="#2-2-命名习惯" class="headerlink" title="2.2 命名习惯"></a>2.2 命名习惯</h2><ul>
-<li>见名知义。</li>
-<li>大驼峰：即每个单词首字母都大写，例如：<code>MyName</code>。</li>
-<li>小驼峰：第二个（含）以后的单词首字母大写，例如：<code>myName</code>。</li>
-<li>下划线：例如：<code>my_name</code>。</li>
-</ul>
-<h2 id="2-3-使用变量"><a href="#2-3-使用变量" class="headerlink" title="2.3 使用变量"></a>2.3 使用变量</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">my_name = <span class="string">&#x27;Adams&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(my_name)</span><br><span class="line"></span><br><span class="line">schoolName = <span class="string">&#x27;NJIT&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(schoolName)</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-4-认识bug"><a href="#2-4-认识bug" class="headerlink" title="2.4 认识bug"></a>2.4 认识bug</h2><p>所谓bug，就是程序中的错误。如果程序有错误，需要程序员排查问题，纠正错误。</p>
-<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/03.png" class title="This is an test image">
-
-<h1 id="三-Debug工具"><a href="#三-Debug工具" class="headerlink" title="三. Debug工具"></a>三. Debug工具</h1><p>Debug工具是PyCharm IDE中集成的用来调试程序的工具，在这里程序员可以查看程序的执行细节和流程或者调解bug。</p>
-<p>Debug工具使用步骤：</p>
-<ol>
-<li>打断点</li>
-<li>Debug调试</li>
-</ol>
-<h2 id="3-1-打断点"><a href="#3-1-打断点" class="headerlink" title="3.1 打断点"></a>3.1 打断点</h2><ul>
-<li>断点位置</li>
-</ul>
-<p>目标要调试的代码块的第一行代码即可，即一个断点即可。</p>
-<ul>
-<li>打断点的方法</li>
-</ul>
-<p>单击目标代码的行号右侧空白位置。</p>
-<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/2.png" class title="This is an test image">
-
-<h2 id="3-2-Debug调试"><a href="#3-2-Debug调试" class="headerlink" title="3.2 Debug调试"></a>3.2 Debug调试</h2><p>打成功断点后，在文件内部任意位置 — 右键 – Debug’文件名’ — 即可调出Debug工具面板 – 单击Step Over&#x2F;F8，即可按步执行代码。</p>
-<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/1.png" class title="This is an test image">
-
-<h3 id="3-2-1-Debug输出面板分类"><a href="#3-2-1-Debug输出面板分类" class="headerlink" title="3.2.1 Debug输出面板分类"></a>3.2.1 Debug输出面板分类</h3><ul>
-<li>Debugger<ul>
-<li>显示变量和变量的细节</li>
-</ul>
-</li>
-<li>Console<ul>
-<li>输出内容</li>
-</ul>
-</li>
-</ul>
-<h1 id="四-认识数据类型"><a href="#四-认识数据类型" class="headerlink" title="四. 认识数据类型"></a>四. 认识数据类型</h1><p><strong>在 Python 里为了应对不同的业务需求，也把数据分为不同的类型。</strong></p>
-<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/image-20190111124628584-7181988.png" class title="This is an test image">
-
-<blockquote>
-<p>检测数据类型的方法：<code>type()</code></p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))  <span class="comment"># &lt;class &#x27;int&#x27;&gt; -- 整型</span></span><br><span class="line"></span><br><span class="line">b = <span class="number">1.1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(b))  <span class="comment"># &lt;class &#x27;float&#x27;&gt; -- 浮点型</span></span><br><span class="line"></span><br><span class="line">c = <span class="literal">True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(c))  <span class="comment"># &lt;class &#x27;bool&#x27;&gt; -- 布尔型</span></span><br><span class="line"></span><br><span class="line">d = <span class="string">&#x27;12345&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(d))  <span class="comment"># &lt;class &#x27;str&#x27;&gt; -- 字符串</span></span><br><span class="line"></span><br><span class="line">e = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(e))  <span class="comment"># &lt;class &#x27;list&#x27;&gt; -- 列表</span></span><br><span class="line"></span><br><span class="line">f = (<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(f))  <span class="comment"># &lt;class &#x27;tuple&#x27;&gt; -- 元组</span></span><br><span class="line"></span><br><span class="line">h = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(h))  <span class="comment"># &lt;class &#x27;set&#x27;&gt; -- 集合</span></span><br><span class="line"></span><br><span class="line">g = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;TOM&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(g))  <span class="comment"># &lt;class &#x27;dict&#x27;&gt; -- 字典</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
-<li>定义变量的语法</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">变量名 = 值</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>标识符<ul>
-<li>由数字、字母、下划线组成</li>
-<li>不能数字开头</li>
-<li>不能使用内置关键字</li>
-<li>严格区分大小写</li>
-</ul>
-</li>
-<li>数据类型<ul>
-<li>整型：int</li>
-<li>浮点型：float</li>
-<li>字符串：str</li>
-<li>布尔型：bool</li>
-<li>元组：tuple</li>
-<li>集合：set</li>
-<li>字典：dict</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Python基础</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python 函数加强</title>
     <url>/2022/08/21/python-%E5%87%BD%E6%95%B0%E5%8A%A0%E5%BC%BA/</url>
     <content><![CDATA[<h1 id="函数加强"><a href="#函数加强" class="headerlink" title="函数加强"></a>函数加强</h1><h3 id="1-递归"><a href="#1-递归" class="headerlink" title="1. 递归"></a>1. 递归</h3><h3 id="2-lambda-表达式"><a href="#2-lambda-表达式" class="headerlink" title="2. lambda 表达式"></a>2. lambda 表达式</h3><h3 id="3-高阶函数"><a href="#3-高阶函数" class="headerlink" title="3. 高阶函数"></a>3. 高阶函数</h3><span id="more"></span>
@@ -1498,6 +1393,111 @@
 <li>filter()</li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python基础</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 变量</title>
+    <url>/2022/07/15/python-%E5%8F%98%E9%87%8F/</url>
+    <content><![CDATA[<h1 id="一-变量的作用"><a href="#一-变量的作用" class="headerlink" title="一.  变量的作用"></a>一.  变量的作用</h1><p>程序中，数据都是临时存储在内存中，为了更快速的查找或使用这个数据，通常我们把这个数据在内存中存储之后定义一个名称，这个名称就是变量。</p>
+<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/image-20190122123202213.png" class title="This is an test image">
+
+
+
+<blockquote>
+<p>变量就是一个存储数据的的时候当前数据所在的内存地址的名字而已。</p>
+</blockquote>
+<h1 id="二-定义变量"><a href="#二-定义变量" class="headerlink" title="二.  定义变量"></a>二.  定义变量</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">变量名 = 值</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>变量名自定义，要满足标识符命名规则。</p>
+</blockquote>
+<h2 id="2-1-标识符"><a href="#2-1-标识符" class="headerlink" title="2.1  标识符"></a>2.1  标识符</h2><p>标识符命名规则是Python中定义各种名字的时候的统一规范，具体如下：</p>
+<ul>
+<li>由数字、字母、下划线组成</li>
+<li>不能数字开头</li>
+<li>不能使用内置关键字</li>
+<li>严格区分大小写</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">False     None    True   and      as       assert   break     class  </span><br><span class="line">continue  def     del    elif     else     except   finally   for</span><br><span class="line">from      global  if     import   in       is       lambda    nonlocal</span><br><span class="line">not       or      pass   raise    return   try      while     with  </span><br><span class="line">yield</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h2 id="2-2-命名习惯"><a href="#2-2-命名习惯" class="headerlink" title="2.2 命名习惯"></a>2.2 命名习惯</h2><ul>
+<li>见名知义。</li>
+<li>大驼峰：即每个单词首字母都大写，例如：<code>MyName</code>。</li>
+<li>小驼峰：第二个（含）以后的单词首字母大写，例如：<code>myName</code>。</li>
+<li>下划线：例如：<code>my_name</code>。</li>
+</ul>
+<h2 id="2-3-使用变量"><a href="#2-3-使用变量" class="headerlink" title="2.3 使用变量"></a>2.3 使用变量</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">my_name = <span class="string">&#x27;Adams&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(my_name)</span><br><span class="line"></span><br><span class="line">schoolName = <span class="string">&#x27;NJIT&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(schoolName)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-4-认识bug"><a href="#2-4-认识bug" class="headerlink" title="2.4 认识bug"></a>2.4 认识bug</h2><p>所谓bug，就是程序中的错误。如果程序有错误，需要程序员排查问题，纠正错误。</p>
+<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/03.png" class title="This is an test image">
+
+<h1 id="三-Debug工具"><a href="#三-Debug工具" class="headerlink" title="三. Debug工具"></a>三. Debug工具</h1><p>Debug工具是PyCharm IDE中集成的用来调试程序的工具，在这里程序员可以查看程序的执行细节和流程或者调解bug。</p>
+<p>Debug工具使用步骤：</p>
+<ol>
+<li>打断点</li>
+<li>Debug调试</li>
+</ol>
+<h2 id="3-1-打断点"><a href="#3-1-打断点" class="headerlink" title="3.1 打断点"></a>3.1 打断点</h2><ul>
+<li>断点位置</li>
+</ul>
+<p>目标要调试的代码块的第一行代码即可，即一个断点即可。</p>
+<ul>
+<li>打断点的方法</li>
+</ul>
+<p>单击目标代码的行号右侧空白位置。</p>
+<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/2.png" class title="This is an test image">
+
+<h2 id="3-2-Debug调试"><a href="#3-2-Debug调试" class="headerlink" title="3.2 Debug调试"></a>3.2 Debug调试</h2><p>打成功断点后，在文件内部任意位置 — 右键 – Debug’文件名’ — 即可调出Debug工具面板 – 单击Step Over&#x2F;F8，即可按步执行代码。</p>
+<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/1.png" class title="This is an test image">
+
+<h3 id="3-2-1-Debug输出面板分类"><a href="#3-2-1-Debug输出面板分类" class="headerlink" title="3.2.1 Debug输出面板分类"></a>3.2.1 Debug输出面板分类</h3><ul>
+<li>Debugger<ul>
+<li>显示变量和变量的细节</li>
+</ul>
+</li>
+<li>Console<ul>
+<li>输出内容</li>
+</ul>
+</li>
+</ul>
+<h1 id="四-认识数据类型"><a href="#四-认识数据类型" class="headerlink" title="四. 认识数据类型"></a>四. 认识数据类型</h1><p><strong>在 Python 里为了应对不同的业务需求，也把数据分为不同的类型。</strong></p>
+<img src="/2022/07/15/python-%E5%8F%98%E9%87%8F/image-20190111124628584-7181988.png" class title="This is an test image">
+
+<blockquote>
+<p>检测数据类型的方法：<code>type()</code></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))  <span class="comment"># &lt;class &#x27;int&#x27;&gt; -- 整型</span></span><br><span class="line"></span><br><span class="line">b = <span class="number">1.1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(b))  <span class="comment"># &lt;class &#x27;float&#x27;&gt; -- 浮点型</span></span><br><span class="line"></span><br><span class="line">c = <span class="literal">True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(c))  <span class="comment"># &lt;class &#x27;bool&#x27;&gt; -- 布尔型</span></span><br><span class="line"></span><br><span class="line">d = <span class="string">&#x27;12345&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(d))  <span class="comment"># &lt;class &#x27;str&#x27;&gt; -- 字符串</span></span><br><span class="line"></span><br><span class="line">e = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(e))  <span class="comment"># &lt;class &#x27;list&#x27;&gt; -- 列表</span></span><br><span class="line"></span><br><span class="line">f = (<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(f))  <span class="comment"># &lt;class &#x27;tuple&#x27;&gt; -- 元组</span></span><br><span class="line"></span><br><span class="line">h = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(h))  <span class="comment"># &lt;class &#x27;set&#x27;&gt; -- 集合</span></span><br><span class="line"></span><br><span class="line">g = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;TOM&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(g))  <span class="comment"># &lt;class &#x27;dict&#x27;&gt; -- 字典</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>定义变量的语法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">变量名 = 值</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>标识符<ul>
+<li>由数字、字母、下划线组成</li>
+<li>不能数字开头</li>
+<li>不能使用内置关键字</li>
+<li>严格区分大小写</li>
+</ul>
+</li>
+<li>数据类型<ul>
+<li>整型：int</li>
+<li>浮点型：float</li>
+<li>字符串：str</li>
+<li>布尔型：bool</li>
+<li>元组：tuple</li>
+<li>集合：set</li>
+<li>字典：dict</li>
 </ul>
 </li>
 </ul>
@@ -3026,42 +3026,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Python 输入</title>
-    <url>/2022/07/19/python-%E8%BE%93%E5%85%A5/</url>
-    <content><![CDATA[<h1 id="一-输入"><a href="#一-输入" class="headerlink" title="一. 输入"></a>一. 输入</h1><p>在Python中，程序接收用户输入的数据的功能即是输入。</p>
-<h2 id="1-2-输入的语法"><a href="#1-2-输入的语法" class="headerlink" title="1.2 输入的语法"></a>1.2 输入的语法</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">input</span>(<span class="string">&quot;提示信息&quot;</span>)</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<h2 id="1-3-输入的特点"><a href="#1-3-输入的特点" class="headerlink" title="1.3 输入的特点"></a>1.3 输入的特点</h2><ul>
-<li>当程序执行到<code>input</code>，等待用户输入，输入完成之后才继续向下执行。</li>
-<li>在Python中，<code>input</code>接收用户输入后，一般存储到变量，方便使用。</li>
-<li>在Python中，<code>input</code>会把接收到的任意用户输入的数据都当做字符串处理。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">password = <span class="built_in">input</span>(<span class="string">&#x27;请输入密码:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(password)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(password))</span><br></pre></td></tr></table></figure>
-
-<p>此时输入密码：1111</p>
-<p>控制台输出结果如下：</p>
-<img src="/2022/07/19/python-%E8%BE%93%E5%85%A5/1111.png" class title="This is an test image">
-
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
-<li>输入功能<ul>
-<li>input(‘提示文字’)</li>
-</ul>
-</li>
-<li>输入的特点<ul>
-<li>一般将input接收的数据存储到变量</li>
-<li>input接收的任何数据默认都是字符串数据类型</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Python基础</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python 输出</title>
     <url>/2022/07/16/python-%E8%BE%93%E5%87%BA/</url>
     <content><![CDATA[<h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><p>作用：程序输出内容给用户</p>
@@ -3170,6 +3134,42 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;内容&#x27;</span>, end=<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
 
+]]></content>
+      <categories>
+        <category>Python基础</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 输入</title>
+    <url>/2022/07/19/python-%E8%BE%93%E5%85%A5/</url>
+    <content><![CDATA[<h1 id="一-输入"><a href="#一-输入" class="headerlink" title="一. 输入"></a>一. 输入</h1><p>在Python中，程序接收用户输入的数据的功能即是输入。</p>
+<h2 id="1-2-输入的语法"><a href="#1-2-输入的语法" class="headerlink" title="1.2 输入的语法"></a>1.2 输入的语法</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">input</span>(<span class="string">&quot;提示信息&quot;</span>)</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h2 id="1-3-输入的特点"><a href="#1-3-输入的特点" class="headerlink" title="1.3 输入的特点"></a>1.3 输入的特点</h2><ul>
+<li>当程序执行到<code>input</code>，等待用户输入，输入完成之后才继续向下执行。</li>
+<li>在Python中，<code>input</code>接收用户输入后，一般存储到变量，方便使用。</li>
+<li>在Python中，<code>input</code>会把接收到的任意用户输入的数据都当做字符串处理。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">password = <span class="built_in">input</span>(<span class="string">&#x27;请输入密码:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(password)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(password))</span><br></pre></td></tr></table></figure>
+
+<p>此时输入密码：1111</p>
+<p>控制台输出结果如下：</p>
+<img src="/2022/07/19/python-%E8%BE%93%E5%85%A5/1111.png" class title="This is an test image">
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>输入功能<ul>
+<li>input(‘提示文字’)</li>
+</ul>
+</li>
+<li>输入的特点<ul>
+<li>一般将input接收的数据存储到变量</li>
+<li>input接收的任何数据默认都是字符串数据类型</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>Python基础</category>
