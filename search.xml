@@ -397,6 +397,40 @@
       </tags>
   </entry>
   <entry>
+    <title>MySQL 分页查询</title>
+    <url>/2022/10/27/mysql-%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2/</url>
+    <content><![CDATA[<h1 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h1><h3 id="1-分页查询的介绍"><a href="#1-分页查询的介绍" class="headerlink" title="1. 分页查询的介绍"></a>1. 分页查询的介绍</h3><p>当我们在京东购物，浏览商品列表的时候，由于数据特别多，一页显示不完，一页一页的进行显示，这就是分页查询</p>
+<h3 id="2-分页查询的语法"><a href="#2-分页查询的语法" class="headerlink" title="2. 分页查询的语法"></a>2. 分页查询的语法</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名 limit <span class="keyword">start</span>,count</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明:</strong></p>
+<ol>
+<li>limit是分页查询关键字</li>
+<li>start表示开始行索引，默认是0</li>
+<li>count表示查询条数</li>
+</ol>
+<span id="more"></span>
+
+<p><strong>例1：查询前3行男生信息:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> gender<span class="operator">=</span><span class="number">1</span> limit <span class="number">0</span>,<span class="number">3</span>;</span><br><span class="line">简写</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> gender<span class="operator">=</span><span class="number">1</span> limit <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-分页查询案例"><a href="#3-分页查询案例" class="headerlink" title="3. 分页查询案例"></a>3. 分页查询案例</h3><p>已知每页显示m条数据，求第n页显示的数据</p>
+<p>提示: 关键是求每页的开始行索引</p>
+<p><strong>查询学生表，获取第n页数据的SQL语句:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students limit (n<span class="number">-1</span>)<span class="operator">*</span>m,m </span><br><span class="line">第一个为开始页数“下标”，从<span class="number">0</span>开始，第二个为一页的数据个数</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-小结"><a href="#4-小结" class="headerlink" title="4. 小结"></a>4. 小结</h3><ul>
+<li>使用 limit 关键字可以限制数据显示数量，通过 limit 关键可以完成分页查询</li>
+<li>limit 关键字后面的第一个参数是开始行索引(默认是0，不写就是0)，第二个参数是查询条数</li>
+</ul>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL sql语句</title>
     <url>/2022/10/11/mysql-sql%E8%AF%AD%E5%8F%A5/</url>
     <content><![CDATA[<h1 id="一-MySQL数据库的介绍"><a href="#一-MySQL数据库的介绍" class="headerlink" title="一. MySQL数据库的介绍"></a>一. MySQL数据库的介绍</h1><p>MySQL是一个关系型数据库管理系统，在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件，它是由瑞典MySQL AB 公司开发，目前属于 Oracle 旗下产品，MySQL 是最流行的关系型数据库管理系统中的一个。</p>
@@ -633,30 +667,42 @@
       </tags>
   </entry>
   <entry>
-    <title>MySQL 分页查询</title>
-    <url>/2022/10/27/mysql-%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2/</url>
-    <content><![CDATA[<h1 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h1><h3 id="1-分页查询的介绍"><a href="#1-分页查询的介绍" class="headerlink" title="1. 分页查询的介绍"></a>1. 分页查询的介绍</h3><p>当我们在京东购物，浏览商品列表的时候，由于数据特别多，一页显示不完，一页一页的进行显示，这就是分页查询</p>
-<h3 id="2-分页查询的语法"><a href="#2-分页查询的语法" class="headerlink" title="2. 分页查询的语法"></a>2. 分页查询的语法</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名 limit <span class="keyword">start</span>,count</span><br></pre></td></tr></table></figure>
-
-<p><strong>说明:</strong></p>
+    <title>MySQL 聚合函数</title>
+    <url>/2022/10/27/mysql-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h1><h3 id="1-聚合函数的介绍"><a href="#1-聚合函数的介绍" class="headerlink" title="1. 聚合函数的介绍"></a>1. 聚合函数的介绍</h3><p>聚合函数又叫组函数，通常是对表中的数据进行统计和计算，一般结合分组(group by)来使用，用于统计和计算分组数据。</p>
+<p><strong>常用的聚合函数:</strong></p>
 <ol>
-<li>limit是分页查询关键字</li>
-<li>start表示开始行索引，默认是0</li>
-<li>count表示查询条数</li>
+<li>count(col): 表示求指定列的总行数</li>
+<li>max(col): 表示求指定列的最大值</li>
+<li>min(col): 表示求指定列的最小值</li>
+<li>sum(col): 表示求指定列的和</li>
+<li>avg(col): 表示求指定列的平均值</li>
 </ol>
 <span id="more"></span>
 
-<p><strong>例1：查询前3行男生信息:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> gender<span class="operator">=</span><span class="number">1</span> limit <span class="number">0</span>,<span class="number">3</span>;</span><br><span class="line">简写</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> gender<span class="operator">=</span><span class="number">1</span> limit <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="2-求总行数"><a href="#2-求总行数" class="headerlink" title="2. 求总行数"></a>2. 求总行数</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 返回非NULL数据的总行数.</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(height) <span class="keyword">from</span> students; </span><br><span class="line"><span class="comment">-- 返回总行数，包含null值记录;</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">from</span> students;</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-分页查询案例"><a href="#3-分页查询案例" class="headerlink" title="3. 分页查询案例"></a>3. 分页查询案例</h3><p>已知每页显示m条数据，求第n页显示的数据</p>
-<p>提示: 关键是求每页的开始行索引</p>
-<p><strong>查询学生表，获取第n页数据的SQL语句:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students limit (n<span class="number">-1</span>)<span class="operator">*</span>m,m </span><br><span class="line">第一个为开始页数“下标”，从<span class="number">0</span>开始，第二个为一页的数据个数</span><br></pre></td></tr></table></figure>
+<h3 id="3-求最大值"><a href="#3-求最大值" class="headerlink" title="3. 求最大值"></a>3. 求最大值</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 查询女生的编号最大值</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">max</span>(id) <span class="keyword">from</span> students <span class="keyword">where</span> gender <span class="operator">=</span> <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
 
-<h3 id="4-小结"><a href="#4-小结" class="headerlink" title="4. 小结"></a>4. 小结</h3><ul>
-<li>使用 limit 关键字可以限制数据显示数量，通过 limit 关键可以完成分页查询</li>
-<li>limit 关键字后面的第一个参数是开始行索引(默认是0，不写就是0)，第二个参数是查询条数</li>
+<h3 id="4-求最小值"><a href="#4-求最小值" class="headerlink" title="4. 求最小值"></a>4. 求最小值</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 查询未删除的学生最小编号</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">min</span>(id) <span class="keyword">from</span> students <span class="keyword">where</span> is_delete <span class="operator">=</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-求和"><a href="#5-求和" class="headerlink" title="5. 求和"></a>5. 求和</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 查询男生的总身高</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">sum</span>(height) <span class="keyword">from</span> students <span class="keyword">where</span> gender <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"><span class="comment">-- 平均身高</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">sum</span>(height) <span class="operator">/</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">from</span> students <span class="keyword">where</span> gender <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-求平均值"><a href="#6-求平均值" class="headerlink" title="6. 求平均值"></a>6. 求平均值</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 求男生的平均身高, 聚合函数不统计null值，平均身高有误</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(height) <span class="keyword">from</span> students <span class="keyword">where</span> gender <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"><span class="comment">-- 求男生的平均身高, 包含身高是null的</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(ifnull(height,<span class="number">0</span>)) <span class="keyword">from</span> students <span class="keyword">where</span> gender <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明</strong></p>
+<ul>
+<li>ifnull函数: 表示判断指定字段的值是否为null，如果为空使用自己提供的值。</li>
+</ul>
+<h3 id="7-聚合函数的特点"><a href="#7-聚合函数的特点" class="headerlink" title="7. 聚合函数的特点"></a>7. 聚合函数的特点</h3><ul>
+<li>聚合函数默认忽略字段为null的记录 要想列值为null的记录也参与计算，必须使用ifnull函数对null值做替换。</li>
+</ul>
+<h3 id="8-小结"><a href="#8-小结" class="headerlink" title="8. 小结"></a>8. 小结</h3><ul>
+<li>count(col): 表示求指定列的总行数</li>
+<li>max(col): 表示求指定列的最大值</li>
+<li>min(col): 表示求指定列的最小值</li>
+<li>sum(col): 表示求指定列的和</li>
+<li>avg(col): 表示求指定列的平均值</li>
 </ul>
 ]]></content>
       <categories>
