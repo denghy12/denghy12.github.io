@@ -209,7 +209,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-10-27 18:26:26 / 修改时间：18:29:41" itemprop="dateCreated datePublished" datetime="2022-10-27T18:26:26+08:00">2022-10-27</time>
+              <time title="创建时间：2022-10-27 18:26:26 / 修改时间：18:32:11" itemprop="dateCreated datePublished" datetime="2022-10-27T18:26:26+08:00">2022-10-27</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -232,8 +232,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="where条件查询"><a href="#where条件查询" class="headerlink" title="where条件查询"></a>where条件查询</h1><hr>
-<h3 id="1-where条件查询的介绍"><a href="#1-where条件查询的介绍" class="headerlink" title="1. where条件查询的介绍"></a>1. where条件查询的介绍</h3><p>使用where条件查询可以对表中的数据进行筛选，条件成立的记录会出现在结果集中。</p>
+          <h1 id="where条件查询"><a href="#where条件查询" class="headerlink" title="where条件查询"></a>where条件查询</h1><h3 id="1-where条件查询的介绍"><a href="#1-where条件查询的介绍" class="headerlink" title="1. where条件查询的介绍"></a>1. where条件查询的介绍</h3><p>使用where条件查询可以对表中的数据进行筛选，条件成立的记录会出现在结果集中。</p>
 <p><strong>where语句支持的运算符:</strong></p>
 <ol>
 <li>比较运算符</li>
@@ -242,93 +241,14 @@
 <li>范围查询</li>
 <li>空判断</li>
 </ol>
-<p><strong>where条件查询语法格式如下:</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名 <span class="keyword">where</span> 条件;</span><br><span class="line">例：</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-比较运算符查询"><a href="#2-比较运算符查询" class="headerlink" title="2. 比较运算符查询"></a>2. 比较运算符查询</h3><ol>
-<li>等于: &#x3D;</li>
-<li>大于: &gt;</li>
-<li>大于等于: &gt;&#x3D;</li>
-<li>小于: &lt;</li>
-<li>小于等于: &lt;&#x3D;</li>
-<li>不等于: !&#x3D; 或 &lt;&gt;</li>
-</ol>
-<p><strong>例1：查询编号大于3的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&gt;</span> <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例2：查询编号不大于4的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&lt;=</span> <span class="number">4</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例3：查询姓名不是“黄蓉”的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="operator">!=</span> <span class="string">&#x27;黄蓉&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例4：查询没被删除的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> is_delete<span class="operator">=</span><span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-逻辑运算符查询"><a href="#3-逻辑运算符查询" class="headerlink" title="3. 逻辑运算符查询"></a>3. 逻辑运算符查询</h3><ol>
-<li>and</li>
-<li>or</li>
-<li>not</li>
-</ol>
-<p><strong>例1：查询编号大于3的女同学:</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&gt;</span> <span class="number">3</span> <span class="keyword">and</span> gender<span class="operator">=</span><span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例2：查询编号小于4或没被删除的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&lt;</span> <span class="number">4</span> <span class="keyword">or</span> is_delete<span class="operator">=</span><span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例3：查询年龄不在10岁到15岁之间的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> <span class="keyword">not</span> (age <span class="operator">&gt;=</span> <span class="number">10</span> <span class="keyword">and</span> age <span class="operator">&lt;=</span> <span class="number">15</span>);</span><br></pre></td></tr></table></figure>
-
-<p><strong>说明:</strong></p>
-<ul>
-<li>多个条件判断想要作为一个整体，可以结合‘()’。</li>
-</ul>
-<h3 id="4-模糊查询"><a href="#4-模糊查询" class="headerlink" title="4. 模糊查询"></a>4. 模糊查询</h3><ol>
-<li>like是模糊查询关键字</li>
-<li>%表示任意多个任意字符</li>
-<li>_表示一个任意字符</li>
-</ol>
-<p><strong>例1：查询姓黄的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;黄%&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例2：查询姓黄并且“名”是一个字的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;黄_&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例3：查询姓黄或叫靖的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;黄%&#x27;</span> <span class="keyword">or</span> name <span class="keyword">like</span> <span class="string">&#x27;%靖&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-范围查询"><a href="#5-范围查询" class="headerlink" title="5. 范围查询"></a>5. 范围查询</h3><ol>
-<li>between .. and .. 表示在一个连续的范围内查询</li>
-<li>in 表示在一个非连续的范围内查询</li>
-</ol>
-<p><strong>例1：查询编号为3至8的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="keyword">between</span> <span class="number">3</span> <span class="keyword">and</span> <span class="number">8</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例2：查询编号不是3至8的男生:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from students where (not id between 3 and 8) and gender=&#x27;男&#x27;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="6-空判断查询"><a href="#6-空判断查询" class="headerlink" title="6. 空判断查询"></a>6. 空判断查询</h3><ol>
-<li>判断为空使用: is null</li>
-<li>判断非空使用: is not null</li>
-</ol>
-<p><strong>例1：查询没有填写身高的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> height <span class="keyword">is</span> <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意:</strong></p>
-<ol>
-<li>不能使用 where height &#x3D; null 判断为空</li>
-<li>不能使用 where height !&#x3D; null 判断非空</li>
-<li>null 不等于 ‘’ 空字符串</li>
-</ol>
-<h3 id="7-小结"><a href="#7-小结" class="headerlink" title="7. 小结"></a>7. 小结</h3><ul>
-<li>常见的比较运算符有 &gt;,&lt;,&gt;&#x3D;,&lt;&#x3D;,!&#x3D;</li>
-<li>逻辑运算符and表示多个条件同时成立则为真，or表示多个条件有一个成立则为真，not表示对条件取反</li>
-<li>like和%结合使用表示任意多个任意字符，like和_结合使用表示一个任意字符</li>
-<li>between-and限制连续性范围 in限制非连续性范围</li>
-<li>判断为空使用: is null</li>
-<li>判断非空使用: is not null</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/10/27/mysql-where%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
