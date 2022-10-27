@@ -248,6 +248,24 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/07/05/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>html 列表标签</title>
     <url>/2022/10/14/html-%E5%88%97%E8%A1%A8%E6%A0%87%E7%AD%BE/</url>
     <content><![CDATA[<h1 id="一-列表标签的种类"><a href="#一-列表标签的种类" class="headerlink" title="一. 列表标签的种类"></a>一. 列表标签的种类</h1><ul>
@@ -272,24 +290,6 @@
       <tags>
         <tag>html</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/07/05/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>html 基本结构</title>
@@ -347,6 +347,46 @@
 <li>编写 html 标签建议使用小写</li>
 <li>根据书写形式，html 标签分为双标签和单标签</li>
 <li>单标签没有标签内容，双标签可以嵌套其它标签和承载文本内容</li>
+</ul>
+]]></content>
+      <categories>
+        <category>html</category>
+      </categories>
+      <tags>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>html 资源路径</title>
+    <url>/2022/10/14/html-%E8%B5%84%E6%BA%90%E8%B7%AF%E5%BE%84/</url>
+    <content><![CDATA[<p>当我们使用img标签显示图片的时候，需要指定图片的资源路径，比如:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/1.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这里的src属性就是设置图片的资源路径的，资源路径可以分为相对路径和绝对路径。</p>
+<blockquote>
+<p>..&#x2F;将遍历到所在目录的父目录<br>用于打开同级别文件夹下的文件<br>先用..&#x2F;返回父目录，再打开另一个文件夹</p>
+</blockquote>
+<h3 id="1-相对路径"><a href="#1-相对路径" class="headerlink" title="1. 相对路径"></a>1. 相对路径</h3><blockquote>
+<p>从当前操作 html 的文档所在目录算起的路径叫做相对路径</p>
+</blockquote>
+<span id="more"></span>
+<p>演示:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 相对路径方式1 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./img/1.jpg&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 相对路径方式2 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/1.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-绝对路径"><a href="#2-绝对路径" class="headerlink" title="2. 绝对路径"></a>2. 绝对路径</h3><blockquote>
+<p>从根目录算起的路径叫做绝对路径，Windows 的根目录是指定的盘符，mac OS 和Linux 是&#x2F;</p>
+</blockquote>
+<p>演示:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 绝对路径 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;D:\My Code\HTML\my first html\img\1.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>提示:</p>
+<p>一般都会使用相对路径，绝对路径的操作在其它电脑上打开会有可能出现资源文件找不到的问题</p>
+<h3 id="3-小结"><a href="#3-小结" class="headerlink" title="3. 小结"></a>3. 小结</h3><ul>
+<li>相对路径和绝对路径是 html 标签使用资源文件的两种方式，一般使用相对路径。</li>
+<li>相对路径是从当前操作的 html 文档所在目录算起的路径</li>
+<li>绝对 路径是从根目录算起的路径</li>
 </ul>
 ]]></content>
       <categories>
@@ -485,46 +525,6 @@
       </tags>
   </entry>
   <entry>
-    <title>html 资源路径</title>
-    <url>/2022/10/14/html-%E8%B5%84%E6%BA%90%E8%B7%AF%E5%BE%84/</url>
-    <content><![CDATA[<p>当我们使用img标签显示图片的时候，需要指定图片的资源路径，比如:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/1.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>这里的src属性就是设置图片的资源路径的，资源路径可以分为相对路径和绝对路径。</p>
-<blockquote>
-<p>..&#x2F;将遍历到所在目录的父目录<br>用于打开同级别文件夹下的文件<br>先用..&#x2F;返回父目录，再打开另一个文件夹</p>
-</blockquote>
-<h3 id="1-相对路径"><a href="#1-相对路径" class="headerlink" title="1. 相对路径"></a>1. 相对路径</h3><blockquote>
-<p>从当前操作 html 的文档所在目录算起的路径叫做相对路径</p>
-</blockquote>
-<span id="more"></span>
-<p>演示:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 相对路径方式1 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./img/1.jpg&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 相对路径方式2 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/1.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="2-绝对路径"><a href="#2-绝对路径" class="headerlink" title="2. 绝对路径"></a>2. 绝对路径</h3><blockquote>
-<p>从根目录算起的路径叫做绝对路径，Windows 的根目录是指定的盘符，mac OS 和Linux 是&#x2F;</p>
-</blockquote>
-<p>演示:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 绝对路径 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;D:\My Code\HTML\my first html\img\1.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>提示:</p>
-<p>一般都会使用相对路径，绝对路径的操作在其它电脑上打开会有可能出现资源文件找不到的问题</p>
-<h3 id="3-小结"><a href="#3-小结" class="headerlink" title="3. 小结"></a>3. 小结</h3><ul>
-<li>相对路径和绝对路径是 html 标签使用资源文件的两种方式，一般使用相对路径。</li>
-<li>相对路径是从当前操作的 html 文档所在目录算起的路径</li>
-<li>绝对 路径是从根目录算起的路径</li>
-</ul>
-]]></content>
-      <categories>
-        <category>html</category>
-      </categories>
-      <tags>
-        <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL where条件语句</title>
     <url>/2022/10/27/mysql-where%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5/</url>
     <content><![CDATA[<h1 id="where条件查询"><a href="#where条件查询" class="headerlink" title="where条件查询"></a>where条件查询</h1><h3 id="1-where条件查询的介绍"><a href="#1-where条件查询的介绍" class="headerlink" title="1. where条件查询的介绍"></a>1. where条件查询的介绍</h3><p>使用where条件查询可以对表中的数据进行筛选，条件成立的记录会出现在结果集中。</p>
@@ -624,6 +624,38 @@
 <li>判断为空使用: is null</li>
 <li>判断非空使用: is not null</li>
 </ul>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL 排序</title>
+    <url>/2022/10/27/mysql-%E6%8E%92%E5%BA%8F/</url>
+    <content><![CDATA[<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h3 id="1-排序查询语法"><a href="#1-排序查询语法" class="headerlink" title="1. 排序查询语法"></a>1. 排序查询语法</h3><p>排序查询语法：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名 <span class="keyword">order</span> <span class="keyword">by</span> 列<span class="number">1</span> <span class="keyword">asc</span><span class="operator">|</span><span class="keyword">desc</span> [,列<span class="number">2</span> <span class="keyword">asc</span><span class="operator">|</span><span class="keyword">desc</span>,...]</span><br></pre></td></tr></table></figure>
+
+<p><strong>语法说明:</strong></p>
+<ol>
+<li>先按照列1进行排序，如果列1的值相同时，则按照 列2 排序，以此类推</li>
+<li>asc从小到大排列，即升序（不写默认asc）</li>
+<li>desc从大到小排序，即降序</li>
+<li>默认按照列值从小到大排列（即asc关键字）</li>
+</ol>
+<p><strong>例1：查询未删除男生信息，按学号降序:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> gender<span class="operator">=</span><span class="number">1</span> <span class="keyword">and</span> is_delete<span class="operator">=</span><span class="number">0</span> <span class="keyword">order</span> <span class="keyword">by</span> id <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例2：显示所有的学生信息，先按照年龄从大–&gt;小排序，当年龄相同时 按照身高从高–&gt;矮排序:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students  <span class="keyword">order</span> <span class="keyword">by</span> age <span class="keyword">desc</span>,height <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-小结"><a href="#2-小结" class="headerlink" title="2. 小结"></a>2. 小结</h3><ol>
+<li>排序使用 order by 关键字</li>
+<li>asc 表示升序 （不写默认asc）</li>
+<li>desc 表示降序</li>
+</ol>
 ]]></content>
       <categories>
         <category>MySQL</category>
@@ -3026,6 +3058,42 @@
       </tags>
   </entry>
   <entry>
+    <title>Python 输入</title>
+    <url>/2022/07/19/python-%E8%BE%93%E5%85%A5/</url>
+    <content><![CDATA[<h1 id="一-输入"><a href="#一-输入" class="headerlink" title="一. 输入"></a>一. 输入</h1><p>在Python中，程序接收用户输入的数据的功能即是输入。</p>
+<h2 id="1-2-输入的语法"><a href="#1-2-输入的语法" class="headerlink" title="1.2 输入的语法"></a>1.2 输入的语法</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">input</span>(<span class="string">&quot;提示信息&quot;</span>)</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h2 id="1-3-输入的特点"><a href="#1-3-输入的特点" class="headerlink" title="1.3 输入的特点"></a>1.3 输入的特点</h2><ul>
+<li>当程序执行到<code>input</code>，等待用户输入，输入完成之后才继续向下执行。</li>
+<li>在Python中，<code>input</code>接收用户输入后，一般存储到变量，方便使用。</li>
+<li>在Python中，<code>input</code>会把接收到的任意用户输入的数据都当做字符串处理。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">password = <span class="built_in">input</span>(<span class="string">&#x27;请输入密码:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(password)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(password))</span><br></pre></td></tr></table></figure>
+
+<p>此时输入密码：1111</p>
+<p>控制台输出结果如下：</p>
+<img src="/2022/07/19/python-%E8%BE%93%E5%85%A5/1111.png" class title="This is an test image">
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>输入功能<ul>
+<li>input(‘提示文字’)</li>
+</ul>
+</li>
+<li>输入的特点<ul>
+<li>一般将input接收的数据存储到变量</li>
+<li>input接收的任何数据默认都是字符串数据类型</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python基础</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python 输出</title>
     <url>/2022/07/16/python-%E8%BE%93%E5%87%BA/</url>
     <content><![CDATA[<h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><p>作用：程序输出内容给用户</p>
@@ -3134,42 +3202,6 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;内容&#x27;</span>, end=<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
 
-]]></content>
-      <categories>
-        <category>Python基础</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 输入</title>
-    <url>/2022/07/19/python-%E8%BE%93%E5%85%A5/</url>
-    <content><![CDATA[<h1 id="一-输入"><a href="#一-输入" class="headerlink" title="一. 输入"></a>一. 输入</h1><p>在Python中，程序接收用户输入的数据的功能即是输入。</p>
-<h2 id="1-2-输入的语法"><a href="#1-2-输入的语法" class="headerlink" title="1.2 输入的语法"></a>1.2 输入的语法</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">input</span>(<span class="string">&quot;提示信息&quot;</span>)</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<h2 id="1-3-输入的特点"><a href="#1-3-输入的特点" class="headerlink" title="1.3 输入的特点"></a>1.3 输入的特点</h2><ul>
-<li>当程序执行到<code>input</code>，等待用户输入，输入完成之后才继续向下执行。</li>
-<li>在Python中，<code>input</code>接收用户输入后，一般存储到变量，方便使用。</li>
-<li>在Python中，<code>input</code>会把接收到的任意用户输入的数据都当做字符串处理。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">password = <span class="built_in">input</span>(<span class="string">&#x27;请输入密码:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(password)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(password))</span><br></pre></td></tr></table></figure>
-
-<p>此时输入密码：1111</p>
-<p>控制台输出结果如下：</p>
-<img src="/2022/07/19/python-%E8%BE%93%E5%85%A5/1111.png" class title="This is an test image">
-
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
-<li>输入功能<ul>
-<li>input(‘提示文字’)</li>
-</ul>
-</li>
-<li>输入的特点<ul>
-<li>一般将input接收的数据存储到变量</li>
-<li>input接收的任何数据默认都是字符串数据类型</li>
-</ul>
-</li>
-</ul>
 ]]></content>
       <categories>
         <category>Python基础</category>

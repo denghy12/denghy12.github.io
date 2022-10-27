@@ -184,6 +184,94 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/10/27/mysql-%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwx2.sinaimg.cn%2Fmw690%2F002Ywxupgy1h35r6zau4jj60p00zdaea02.jpg&refer=http%3A%2F%2Fwx2.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668178729&t=3402b55b5a0800099c88dfc112af46e1">
+      <meta itemprop="name" content="阿邓(Adams)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿邓的blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/10/27/mysql-%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">MySQL 排序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-10-27 19:31:55 / 修改时间：19:33:45" itemprop="dateCreated datePublished" datetime="2022-10-27T19:31:55+08:00">2022-10-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h3 id="1-排序查询语法"><a href="#1-排序查询语法" class="headerlink" title="1. 排序查询语法"></a>1. 排序查询语法</h3><p>排序查询语法：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名 <span class="keyword">order</span> <span class="keyword">by</span> 列<span class="number">1</span> <span class="keyword">asc</span><span class="operator">|</span><span class="keyword">desc</span> [,列<span class="number">2</span> <span class="keyword">asc</span><span class="operator">|</span><span class="keyword">desc</span>,...]</span><br></pre></td></tr></table></figure>
+
+<p><strong>语法说明:</strong></p>
+<ol>
+<li>先按照列1进行排序，如果列1的值相同时，则按照 列2 排序，以此类推</li>
+<li>asc从小到大排列，即升序（不写默认asc）</li>
+<li>desc从大到小排序，即降序</li>
+<li>默认按照列值从小到大排列（即asc关键字）</li>
+</ol>
+<p><strong>例1：查询未删除男生信息，按学号降序:</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> gender<span class="operator">=</span><span class="number">1</span> <span class="keyword">and</span> is_delete<span class="operator">=</span><span class="number">0</span> <span class="keyword">order</span> <span class="keyword">by</span> id <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例2：显示所有的学生信息，先按照年龄从大–&gt;小排序，当年龄相同时 按照身高从高–&gt;矮排序:</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students  <span class="keyword">order</span> <span class="keyword">by</span> age <span class="keyword">desc</span>,height <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-小结"><a href="#2-小结" class="headerlink" title="2. 小结"></a>2. 小结</h3><ol>
+<li>排序使用 order by 关键字</li>
+<li>asc 表示升序 （不写默认asc）</li>
+<li>desc 表示降序</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/10/27/mysql-where%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -944,96 +1032,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://denghy12.github.io/2022/08/24/python-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwx2.sinaimg.cn%2Fmw690%2F002Ywxupgy1h35r6zau4jj60p00zdaea02.jpg&refer=http%3A%2F%2Fwx2.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668178729&t=3402b55b5a0800099c88dfc112af46e1">
-      <meta itemprop="name" content="阿邓(Adams)">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="阿邓的blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/08/24/python-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">Python 文件操作</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-08-24 14:35:43" itemprop="dateCreated datePublished" datetime="2022-08-24T14:35:43+08:00">2022-08-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-24 15:14:29" itemprop="dateModified" datetime="2022-10-24T15:14:29+08:00">2022-10-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Python基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><ul>
-<li>文件操作的作用</li>
-<li>文件的基本操作<ul>
-<li>打开</li>
-<li>读写</li>
-<li>关闭</li>
-</ul>
-</li>
-<li>文件备份</li>
-<li>文件和文件夹的操作</li></ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/08/24/python-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1105,7 +1103,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
