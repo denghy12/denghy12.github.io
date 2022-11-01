@@ -1,6 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CSS 引入方式</title>
+    <url>/2022/10/14/css-%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="一-css-的定义"><a href="#一-css-的定义" class="headerlink" title="一. css 的定义"></a>一. css 的定义</h1><p> css(Cascading Style Sheet)层叠样式表，它是用来美化页面的一种语言。</p>
+<h1 id="二-css-的作用"><a href="#二-css-的作用" class="headerlink" title="二. css 的作用"></a>二. css 的作用</h1><p>css(Cascading Style Sheet)层叠样式表，它是用来美化页面的一种语言。<br>美化界面, 比如: 设置标签文字大小、颜色、字体加粗等样式。<br>控制页面布局, 比如: 设置浮动、定位等样式。</p>
+<span id="more"></span>
+
+<h1 id="三-css-的基本语法"><a href="#三-css-的基本语法" class="headerlink" title="三. css 的基本语法"></a>三. css 的基本语法</h1><p>选择器{</p>
+<p>样式规则</p>
+<p>}</p>
+<p>样式规则：</p>
+<p>属性名1：属性值1;</p>
+<p>属性名2：属性值2;</p>
+<p>属性名3：属性值3;</p>
+<p>…</p>
+<p>选择器:是用来选择标签的，选出来以后给标签加样式。</p>
+<p>代码示例:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">div&#123; </span><br><span class="line">    width:100px; </span><br><span class="line">    height:100px; </span><br><span class="line">    background:gold; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>说明</p>
+<p>css 是由两个主要的部分构成：选择器和一条或多条样式规则，注意:样式规则需要放到大括号里面。</p>
+<h1 id="四-css的三种引入方式"><a href="#四-css的三种引入方式" class="headerlink" title="四. css的三种引入方式"></a>四. css的三种引入方式</h1><blockquote>
+<ol>
+<li>行内式</li>
+<li>内嵌式（内部样式）</li>
+<li>外链式</li>
+</ol>
+</blockquote>
+<h3 id="4-1-行内式"><a href="#4-1-行内式" class="headerlink" title="4.1 行内式"></a>4.1 行内式</h3><blockquote>
+<p>直接在标签的 style 属性中添加 css 样式</p>
+</blockquote>
+<p>演示</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;width:100px; height:100px; background:red &quot;</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>优点：方便、直观。 缺点：缺乏可重用性。</p>
+<h3 id="4-2-内嵌式（内部样式）"><a href="#4-2-内嵌式（内部样式）" class="headerlink" title="4.2 内嵌式（内部样式）"></a>4.2 内嵌式（内部样式）</h3><blockquote>
+<p>在<code>&lt;head&gt;</code>标签内加入<code>&lt;style&gt;</code>标签，在<code>&lt;style&gt;</code>标签中编写css代码。</p>
+</blockquote>
+<p>演示</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">      <span class="selector-tag">h3</span>&#123;</span></span><br><span class="line"><span class="language-css">         <span class="attribute">color</span>:red;</span></span><br><span class="line"><span class="language-css">      &#125;</span></span><br><span class="line"><span class="language-css">   </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>优点：在同一个页面内部便于复用和维护。 缺点：在多个页面之间的可重用性不够高。</p>
+<h3 id="4-3-外链式"><a href="#4-3-外链式" class="headerlink" title="4.3 外链式"></a>4.3 外链式</h3><blockquote>
+<p>将css代码写在一个单独的.css文件中，在<code>&lt;head&gt;</code>标签中使用<code>&lt;link&gt;</code>标签直接引入该文件到页面中。</p>
+</blockquote>
+<p>演示</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;css/main.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>优点：使得css样式与html页面分离，便于整个页面系统的规划和维护，可重用性高。 缺点：css代码由于分离到单独的css文件，容易出现css代码过于集中，若维护不当则极容易造成混乱。</p>
+<h1 id="五-css引入方式选择"><a href="#五-css引入方式选择" class="headerlink" title="五. css引入方式选择"></a>五. css引入方式选择</h1><ol>
+<li>行内式几乎不用</li>
+<li>内嵌式在学习css样式的阶段使用</li>
+<li>外链式在公司开发的阶段使用，可以对 css 样式和 html 页面分别进行开发。</li>
+</ol>
+<h1 id="六-css引入方式选择"><a href="#六-css引入方式选择" class="headerlink" title="六. css引入方式选择"></a>六. css引入方式选择</h1><ol>
+<li>行内式几乎不用</li>
+<li>内嵌式在学习css样式的阶段使用</li>
+<li>外链式在公司开发的阶段使用，可以对 css 样式和 html 页面分别进行开发。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MarkDown语法</title>
     <url>/2022/07/06/MarkDown%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><p>&#x3D;&#x3D;(2) 字体&#x3D;&#x3D;</p>
@@ -87,70 +154,47 @@
       </tags>
   </entry>
   <entry>
-    <title>CSS 引入方式</title>
-    <url>/2022/10/14/css-%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="一-css-的定义"><a href="#一-css-的定义" class="headerlink" title="一. css 的定义"></a>一. css 的定义</h1><p> css(Cascading Style Sheet)层叠样式表，它是用来美化页面的一种语言。</p>
-<h1 id="二-css-的作用"><a href="#二-css-的作用" class="headerlink" title="二. css 的作用"></a>二. css 的作用</h1><p>css(Cascading Style Sheet)层叠样式表，它是用来美化页面的一种语言。<br>美化界面, 比如: 设置标签文字大小、颜色、字体加粗等样式。<br>控制页面布局, 比如: 设置浮动、定位等样式。</p>
+    <title>Hello World</title>
+    <url>/2022/07/05/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>html 列表标签</title>
+    <url>/2022/10/14/html-%E5%88%97%E8%A1%A8%E6%A0%87%E7%AD%BE/</url>
+    <content><![CDATA[<h1 id="一-列表标签的种类"><a href="#一-列表标签的种类" class="headerlink" title="一. 列表标签的种类"></a>一. 列表标签的种类</h1><ul>
+<li>无序列表标签(ul标签)</li>
+<li>有序列表标签(ol标签)</li>
+</ul>
+<h1 id="二-无序列表"><a href="#二-无序列表" class="headerlink" title="二. 无序列表"></a>二. 无序列表</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- ul标签定义无序列表 --&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;!-- li标签定义列表项目 --&gt;</span><br><span class="line">    &lt;li&gt;列表标题一&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;列表标题二&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;列表标题三&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
 <span id="more"></span>
+<h1 id="三-有序列表"><a href="#三-有序列表" class="headerlink" title="三. 有序列表"></a>三. 有序列表</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- ol标签定义有序列表 --&gt;</span><br><span class="line">&lt;ol&gt;</span><br><span class="line">    &lt;!-- li标签定义列表项目 --&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;列表标题一&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;列表标题二&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;列表标题三&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure>
 
-<h1 id="三-css-的基本语法"><a href="#三-css-的基本语法" class="headerlink" title="三. css 的基本语法"></a>三. css 的基本语法</h1><p>选择器{</p>
-<p>样式规则</p>
-<p>}</p>
-<p>样式规则：</p>
-<p>属性名1：属性值1;</p>
-<p>属性名2：属性值2;</p>
-<p>属性名3：属性值3;</p>
-<p>…</p>
-<p>选择器:是用来选择标签的，选出来以后给标签加样式。</p>
-<p>代码示例:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">div&#123; </span><br><span class="line">    width:100px; </span><br><span class="line">    height:100px; </span><br><span class="line">    background:gold; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="四-小结"><a href="#四-小结" class="headerlink" title="四. 小结"></a>四. 小结</h1><img src="/2022/10/14/html-%E5%88%97%E8%A1%A8%E6%A0%87%E7%AD%BE/01.png" class title="This is an test image">
 
-<p>说明</p>
-<p>css 是由两个主要的部分构成：选择器和一条或多条样式规则，注意:样式规则需要放到大括号里面。</p>
-<h1 id="四-css的三种引入方式"><a href="#四-css的三种引入方式" class="headerlink" title="四. css的三种引入方式"></a>四. css的三种引入方式</h1><blockquote>
-<ol>
-<li>行内式</li>
-<li>内嵌式（内部样式）</li>
-<li>外链式</li>
-</ol>
-</blockquote>
-<h3 id="4-1-行内式"><a href="#4-1-行内式" class="headerlink" title="4.1 行内式"></a>4.1 行内式</h3><blockquote>
-<p>直接在标签的 style 属性中添加 css 样式</p>
-</blockquote>
-<p>演示</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;width:100px; height:100px; background:red &quot;</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>优点：方便、直观。 缺点：缺乏可重用性。</p>
-<h3 id="4-2-内嵌式（内部样式）"><a href="#4-2-内嵌式（内部样式）" class="headerlink" title="4.2 内嵌式（内部样式）"></a>4.2 内嵌式（内部样式）</h3><blockquote>
-<p>在<code>&lt;head&gt;</code>标签内加入<code>&lt;style&gt;</code>标签，在<code>&lt;style&gt;</code>标签中编写css代码。</p>
-</blockquote>
-<p>演示</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">      <span class="selector-tag">h3</span>&#123;</span></span><br><span class="line"><span class="language-css">         <span class="attribute">color</span>:red;</span></span><br><span class="line"><span class="language-css">      &#125;</span></span><br><span class="line"><span class="language-css">   </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>优点：在同一个页面内部便于复用和维护。 缺点：在多个页面之间的可重用性不够高。</p>
-<h3 id="4-3-外链式"><a href="#4-3-外链式" class="headerlink" title="4.3 外链式"></a>4.3 外链式</h3><blockquote>
-<p>将css代码写在一个单独的.css文件中，在<code>&lt;head&gt;</code>标签中使用<code>&lt;link&gt;</code>标签直接引入该文件到页面中。</p>
-</blockquote>
-<p>演示</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;css/main.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>优点：使得css样式与html页面分离，便于整个页面系统的规划和维护，可重用性高。 缺点：css代码由于分离到单独的css文件，容易出现css代码过于集中，若维护不当则极容易造成混乱。</p>
-<h1 id="五-css引入方式选择"><a href="#五-css引入方式选择" class="headerlink" title="五. css引入方式选择"></a>五. css引入方式选择</h1><ol>
-<li>行内式几乎不用</li>
-<li>内嵌式在学习css样式的阶段使用</li>
-<li>外链式在公司开发的阶段使用，可以对 css 样式和 html 页面分别进行开发。</li>
-</ol>
-<h1 id="六-css引入方式选择"><a href="#六-css引入方式选择" class="headerlink" title="六. css引入方式选择"></a>六. css引入方式选择</h1><ol>
-<li>行内式几乎不用</li>
-<li>内嵌式在学习css样式的阶段使用</li>
-<li>外链式在公司开发的阶段使用，可以对 css 样式和 html 页面分别进行开发。</li>
-</ol>
+<ul>
+<li>列表标签有无序列表标签(ul标签)和有序列表标签(ol标签)</li>
+<li>列表项目对顺序有要求的时候使用ol标签</li>
+<li>列表项目对顺序无要求的时候使用ul标签</li>
+</ul>
 ]]></content>
       <categories>
-        <category>css</category>
+        <category>html</category>
       </categories>
       <tags>
-        <tag>css</tag>
+        <tag>html</tag>
       </tags>
   </entry>
   <entry>
@@ -248,50 +292,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/07/05/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>html 列表标签</title>
-    <url>/2022/10/14/html-%E5%88%97%E8%A1%A8%E6%A0%87%E7%AD%BE/</url>
-    <content><![CDATA[<h1 id="一-列表标签的种类"><a href="#一-列表标签的种类" class="headerlink" title="一. 列表标签的种类"></a>一. 列表标签的种类</h1><ul>
-<li>无序列表标签(ul标签)</li>
-<li>有序列表标签(ol标签)</li>
-</ul>
-<h1 id="二-无序列表"><a href="#二-无序列表" class="headerlink" title="二. 无序列表"></a>二. 无序列表</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- ul标签定义无序列表 --&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;!-- li标签定义列表项目 --&gt;</span><br><span class="line">    &lt;li&gt;列表标题一&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;列表标题二&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;列表标题三&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<h1 id="三-有序列表"><a href="#三-有序列表" class="headerlink" title="三. 有序列表"></a>三. 有序列表</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- ol标签定义有序列表 --&gt;</span><br><span class="line">&lt;ol&gt;</span><br><span class="line">    &lt;!-- li标签定义列表项目 --&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;列表标题一&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;列表标题二&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;列表标题三&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure>
-
-<h1 id="四-小结"><a href="#四-小结" class="headerlink" title="四. 小结"></a>四. 小结</h1><img src="/2022/10/14/html-%E5%88%97%E8%A1%A8%E6%A0%87%E7%AD%BE/01.png" class title="This is an test image">
-
-<ul>
-<li>列表标签有无序列表标签(ul标签)和有序列表标签(ol标签)</li>
-<li>列表项目对顺序有要求的时候使用ol标签</li>
-<li>列表项目对顺序无要求的时候使用ul标签</li>
-</ul>
-]]></content>
-      <categories>
-        <category>html</category>
-      </categories>
-      <tags>
-        <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>html 基本结构</title>
     <url>/2022/10/12/html-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/</url>
     <content><![CDATA[<h1 id="一-html的定义"><a href="#一-html的定义" class="headerlink" title="一. html的定义"></a>一. html的定义</h1><p>HTML 的全称为：HyperText Mark-up Language, 指的是超文本标记语言。<br>标记：就是标签, &lt;标签名称&gt; &lt;&#x2F;标签名称&gt;, 比如: <code>&lt;html&gt;&lt;/html&gt;、&lt;h1&gt;&lt;/h1&gt; </code>等，标签大多数都是成对出现的。<br>所谓超文本，有两层含义:<br>因为网页中还可以图片、视频、音频等内容(超越文本限制)<br>它还可以在网页中跳转到另一个网页，与世界各地主机的网页链接(超链接文本)</p>
@@ -305,6 +305,46 @@
 </ol>
 <h1 id="三-浏览网页文件"><a href="#三-浏览网页文件" class="headerlink" title="三.浏览网页文件"></a>三.浏览网页文件</h1><p>网页文件的后缀是.htm或者.htm, 一个html文件就是一个网页，html文件用编辑器打开显示的是文本，可以用文本的方式编辑它，如果用浏览器打开，浏览器会按照标签描述内容将文件渲染成网页。</p>
 <h1 id="四-总结"><a href="#四-总结" class="headerlink" title="四. 总结"></a>四. 总结</h1><img src="/2022/10/12/html-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/01.png" class title="This is an test image">]]></content>
+      <categories>
+        <category>html</category>
+      </categories>
+      <tags>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>html 资源路径</title>
+    <url>/2022/10/14/html-%E8%B5%84%E6%BA%90%E8%B7%AF%E5%BE%84/</url>
+    <content><![CDATA[<p>当我们使用img标签显示图片的时候，需要指定图片的资源路径，比如:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/1.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这里的src属性就是设置图片的资源路径的，资源路径可以分为相对路径和绝对路径。</p>
+<blockquote>
+<p>..&#x2F;将遍历到所在目录的父目录<br>用于打开同级别文件夹下的文件<br>先用..&#x2F;返回父目录，再打开另一个文件夹</p>
+</blockquote>
+<h3 id="1-相对路径"><a href="#1-相对路径" class="headerlink" title="1. 相对路径"></a>1. 相对路径</h3><blockquote>
+<p>从当前操作 html 的文档所在目录算起的路径叫做相对路径</p>
+</blockquote>
+<span id="more"></span>
+<p>演示:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 相对路径方式1 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./img/1.jpg&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 相对路径方式2 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/1.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-绝对路径"><a href="#2-绝对路径" class="headerlink" title="2. 绝对路径"></a>2. 绝对路径</h3><blockquote>
+<p>从根目录算起的路径叫做绝对路径，Windows 的根目录是指定的盘符，mac OS 和Linux 是&#x2F;</p>
+</blockquote>
+<p>演示:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 绝对路径 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;D:\My Code\HTML\my first html\img\1.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>提示:</p>
+<p>一般都会使用相对路径，绝对路径的操作在其它电脑上打开会有可能出现资源文件找不到的问题</p>
+<h3 id="3-小结"><a href="#3-小结" class="headerlink" title="3. 小结"></a>3. 小结</h3><ul>
+<li>相对路径和绝对路径是 html 标签使用资源文件的两种方式，一般使用相对路径。</li>
+<li>相对路径是从当前操作的 html 文档所在目录算起的路径</li>
+<li>绝对 路径是从根目录算起的路径</li>
+</ul>
+]]></content>
       <categories>
         <category>html</category>
       </categories>
@@ -357,43 +397,111 @@
       </tags>
   </entry>
   <entry>
-    <title>html 资源路径</title>
-    <url>/2022/10/14/html-%E8%B5%84%E6%BA%90%E8%B7%AF%E5%BE%84/</url>
-    <content><![CDATA[<p>当我们使用img标签显示图片的时候，需要指定图片的资源路径，比如:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/1.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>这里的src属性就是设置图片的资源路径的，资源路径可以分为相对路径和绝对路径。</p>
-<blockquote>
-<p>..&#x2F;将遍历到所在目录的父目录<br>用于打开同级别文件夹下的文件<br>先用..&#x2F;返回父目录，再打开另一个文件夹</p>
-</blockquote>
-<h3 id="1-相对路径"><a href="#1-相对路径" class="headerlink" title="1. 相对路径"></a>1. 相对路径</h3><blockquote>
-<p>从当前操作 html 的文档所在目录算起的路径叫做相对路径</p>
-</blockquote>
+    <title>MySQL where条件语句</title>
+    <url>/2022/10/27/mysql-where%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5/</url>
+    <content><![CDATA[<h1 id="where条件查询"><a href="#where条件查询" class="headerlink" title="where条件查询"></a>where条件查询</h1><h3 id="1-where条件查询的介绍"><a href="#1-where条件查询的介绍" class="headerlink" title="1. where条件查询的介绍"></a>1. where条件查询的介绍</h3><p>使用where条件查询可以对表中的数据进行筛选，条件成立的记录会出现在结果集中。</p>
+<p><strong>where语句支持的运算符:</strong></p>
+<ol>
+<li>比较运算符</li>
+<li>逻辑运算符</li>
+<li>模糊查询</li>
+<li>范围查询</li>
+<li>空判断</li>
+</ol>
 <span id="more"></span>
-<p>演示:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 相对路径方式1 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./img/1.jpg&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 相对路径方式2 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/1.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<p><strong>where条件查询语法格式如下:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名 <span class="keyword">where</span> 条件;</span><br><span class="line">例：</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
 
+<h3 id="2-比较运算符查询"><a href="#2-比较运算符查询" class="headerlink" title="2. 比较运算符查询"></a>2. 比较运算符查询</h3><ol>
+<li>等于: &#x3D;</li>
+<li>大于: &gt;</li>
+<li>大于等于: &gt;&#x3D;</li>
+<li>小于: &lt;</li>
+<li>小于等于: &lt;&#x3D;</li>
+<li>不等于: !&#x3D; 或 &lt;&gt;</li>
+</ol>
+<p><strong>例1：查询编号大于3的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&gt;</span> <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-绝对路径"><a href="#2-绝对路径" class="headerlink" title="2. 绝对路径"></a>2. 绝对路径</h3><blockquote>
-<p>从根目录算起的路径叫做绝对路径，Windows 的根目录是指定的盘符，mac OS 和Linux 是&#x2F;</p>
-</blockquote>
-<p>演示:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 绝对路径 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;D:\My Code\HTML\my first html\img\1.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>例2：查询编号不大于4的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&lt;=</span> <span class="number">4</span>;</span><br></pre></td></tr></table></figure>
 
-<p>提示:</p>
-<p>一般都会使用相对路径，绝对路径的操作在其它电脑上打开会有可能出现资源文件找不到的问题</p>
-<h3 id="3-小结"><a href="#3-小结" class="headerlink" title="3. 小结"></a>3. 小结</h3><ul>
-<li>相对路径和绝对路径是 html 标签使用资源文件的两种方式，一般使用相对路径。</li>
-<li>相对路径是从当前操作的 html 文档所在目录算起的路径</li>
-<li>绝对 路径是从根目录算起的路径</li>
+<p><strong>例3：查询姓名不是“黄蓉”的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="operator">!=</span> <span class="string">&#x27;黄蓉&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例4：查询没被删除的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> is_delete<span class="operator">=</span><span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-逻辑运算符查询"><a href="#3-逻辑运算符查询" class="headerlink" title="3. 逻辑运算符查询"></a>3. 逻辑运算符查询</h3><ol>
+<li>and</li>
+<li>or</li>
+<li>not</li>
+</ol>
+<p><strong>例1：查询编号大于3的女同学:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&gt;</span> <span class="number">3</span> <span class="keyword">and</span> gender<span class="operator">=</span><span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例2：查询编号小于4或没被删除的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&lt;</span> <span class="number">4</span> <span class="keyword">or</span> is_delete<span class="operator">=</span><span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例3：查询年龄不在10岁到15岁之间的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> <span class="keyword">not</span> (age <span class="operator">&gt;=</span> <span class="number">10</span> <span class="keyword">and</span> age <span class="operator">&lt;=</span> <span class="number">15</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明:</strong></p>
+<ul>
+<li>多个条件判断想要作为一个整体，可以结合‘()’。</li>
+</ul>
+<h3 id="4-模糊查询"><a href="#4-模糊查询" class="headerlink" title="4. 模糊查询"></a>4. 模糊查询</h3><ol>
+<li>like是模糊查询关键字</li>
+<li>%表示任意多个任意字符</li>
+<li>_表示一个任意字符</li>
+</ol>
+<p><strong>例1：查询姓黄的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;黄%&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例2：查询姓黄并且“名”是一个字的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;黄_&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例3：查询姓黄或叫靖的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;黄%&#x27;</span> <span class="keyword">or</span> name <span class="keyword">like</span> <span class="string">&#x27;%靖&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-范围查询"><a href="#5-范围查询" class="headerlink" title="5. 范围查询"></a>5. 范围查询</h3><ol>
+<li>between .. and .. 表示在一个连续的范围内查询</li>
+<li>in 表示在一个非连续的范围内查询</li>
+</ol>
+<p><strong>例1：查询编号为3至8的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="keyword">between</span> <span class="number">3</span> <span class="keyword">and</span> <span class="number">8</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例2：查询编号不是3至8的男生:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select * from students where (not id between 3 and 8) and gender=&#x27;男&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-空判断查询"><a href="#6-空判断查询" class="headerlink" title="6. 空判断查询"></a>6. 空判断查询</h3><ol>
+<li>判断为空使用: is null</li>
+<li>判断非空使用: is not null</li>
+</ol>
+<p><strong>例1：查询没有填写身高的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> height <span class="keyword">is</span> <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意:</strong></p>
+<ol>
+<li>不能使用 where height &#x3D; null 判断为空</li>
+<li>不能使用 where height !&#x3D; null 判断非空</li>
+<li>null 不等于 ‘’ 空字符串</li>
+</ol>
+<h3 id="7-小结"><a href="#7-小结" class="headerlink" title="7. 小结"></a>7. 小结</h3><ul>
+<li>常见的比较运算符有 &gt;,&lt;,&gt;&#x3D;,&lt;&#x3D;,!&#x3D;</li>
+<li>逻辑运算符and表示多个条件同时成立则为真，or表示多个条件有一个成立则为真，not表示对条件取反</li>
+<li>like和%结合使用表示任意多个任意字符，like和_结合使用表示一个任意字符</li>
+<li>between-and限制连续性范围 in限制非连续性范围</li>
+<li>判断为空使用: is null</li>
+<li>判断非空使用: is not null</li>
 </ul>
 ]]></content>
       <categories>
-        <category>html</category>
+        <category>MySQL</category>
       </categories>
       <tags>
-        <tag>html</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -525,114 +633,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MySQL where条件语句</title>
-    <url>/2022/10/27/mysql-where%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5/</url>
-    <content><![CDATA[<h1 id="where条件查询"><a href="#where条件查询" class="headerlink" title="where条件查询"></a>where条件查询</h1><h3 id="1-where条件查询的介绍"><a href="#1-where条件查询的介绍" class="headerlink" title="1. where条件查询的介绍"></a>1. where条件查询的介绍</h3><p>使用where条件查询可以对表中的数据进行筛选，条件成立的记录会出现在结果集中。</p>
-<p><strong>where语句支持的运算符:</strong></p>
-<ol>
-<li>比较运算符</li>
-<li>逻辑运算符</li>
-<li>模糊查询</li>
-<li>范围查询</li>
-<li>空判断</li>
-</ol>
-<span id="more"></span>
-
-<p><strong>where条件查询语法格式如下:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名 <span class="keyword">where</span> 条件;</span><br><span class="line">例：</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-比较运算符查询"><a href="#2-比较运算符查询" class="headerlink" title="2. 比较运算符查询"></a>2. 比较运算符查询</h3><ol>
-<li>等于: &#x3D;</li>
-<li>大于: &gt;</li>
-<li>大于等于: &gt;&#x3D;</li>
-<li>小于: &lt;</li>
-<li>小于等于: &lt;&#x3D;</li>
-<li>不等于: !&#x3D; 或 &lt;&gt;</li>
-</ol>
-<p><strong>例1：查询编号大于3的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&gt;</span> <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例2：查询编号不大于4的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&lt;=</span> <span class="number">4</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例3：查询姓名不是“黄蓉”的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="operator">!=</span> <span class="string">&#x27;黄蓉&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例4：查询没被删除的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> is_delete<span class="operator">=</span><span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-逻辑运算符查询"><a href="#3-逻辑运算符查询" class="headerlink" title="3. 逻辑运算符查询"></a>3. 逻辑运算符查询</h3><ol>
-<li>and</li>
-<li>or</li>
-<li>not</li>
-</ol>
-<p><strong>例1：查询编号大于3的女同学:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&gt;</span> <span class="number">3</span> <span class="keyword">and</span> gender<span class="operator">=</span><span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例2：查询编号小于4或没被删除的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&lt;</span> <span class="number">4</span> <span class="keyword">or</span> is_delete<span class="operator">=</span><span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例3：查询年龄不在10岁到15岁之间的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> <span class="keyword">not</span> (age <span class="operator">&gt;=</span> <span class="number">10</span> <span class="keyword">and</span> age <span class="operator">&lt;=</span> <span class="number">15</span>);</span><br></pre></td></tr></table></figure>
-
-<p><strong>说明:</strong></p>
-<ul>
-<li>多个条件判断想要作为一个整体，可以结合‘()’。</li>
-</ul>
-<h3 id="4-模糊查询"><a href="#4-模糊查询" class="headerlink" title="4. 模糊查询"></a>4. 模糊查询</h3><ol>
-<li>like是模糊查询关键字</li>
-<li>%表示任意多个任意字符</li>
-<li>_表示一个任意字符</li>
-</ol>
-<p><strong>例1：查询姓黄的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;黄%&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例2：查询姓黄并且“名”是一个字的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;黄_&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例3：查询姓黄或叫靖的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;黄%&#x27;</span> <span class="keyword">or</span> name <span class="keyword">like</span> <span class="string">&#x27;%靖&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-范围查询"><a href="#5-范围查询" class="headerlink" title="5. 范围查询"></a>5. 范围查询</h3><ol>
-<li>between .. and .. 表示在一个连续的范围内查询</li>
-<li>in 表示在一个非连续的范围内查询</li>
-</ol>
-<p><strong>例1：查询编号为3至8的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="keyword">between</span> <span class="number">3</span> <span class="keyword">and</span> <span class="number">8</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例2：查询编号不是3至8的男生:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select * from students where (not id between 3 and 8) and gender=&#x27;男&#x27;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="6-空判断查询"><a href="#6-空判断查询" class="headerlink" title="6. 空判断查询"></a>6. 空判断查询</h3><ol>
-<li>判断为空使用: is null</li>
-<li>判断非空使用: is not null</li>
-</ol>
-<p><strong>例1：查询没有填写身高的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> height <span class="keyword">is</span> <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意:</strong></p>
-<ol>
-<li>不能使用 where height &#x3D; null 判断为空</li>
-<li>不能使用 where height !&#x3D; null 判断非空</li>
-<li>null 不等于 ‘’ 空字符串</li>
-</ol>
-<h3 id="7-小结"><a href="#7-小结" class="headerlink" title="7. 小结"></a>7. 小结</h3><ul>
-<li>常见的比较运算符有 &gt;,&lt;,&gt;&#x3D;,&lt;&#x3D;,!&#x3D;</li>
-<li>逻辑运算符and表示多个条件同时成立则为真，or表示多个条件有一个成立则为真，not表示对条件取反</li>
-<li>like和%结合使用表示任意多个任意字符，like和_结合使用表示一个任意字符</li>
-<li>between-and限制连续性范围 in限制非连续性范围</li>
-<li>判断为空使用: is null</li>
-<li>判断非空使用: is not null</li>
-</ul>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL 分组查询</title>
     <url>/2022/10/31/mysql-%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2/</url>
     <content><![CDATA[<h1 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h1><h3 id="1-分组查询介绍"><a href="#1-分组查询介绍" class="headerlink" title="1. 分组查询介绍"></a>1. 分组查询介绍</h3><p>分组查询就是将查询结果按照指定字段进行分组，字段中数据相等的分为一组。</p>
@@ -665,6 +665,45 @@
 <li>聚合函数在和 group by 结合使用时, 聚合函数统计和计算的是每个分组的数据</li>
 <li>having 是对分组数据进行条件过滤</li>
 <li>with rollup在最后记录后面新增一行，显示select查询时聚合函数的统计和计算结果</li>
+</ul>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL 内连接</title>
+    <url>/2022/11/01/mysql-%E5%86%85%E8%BF%9E%E6%8E%A5/</url>
+    <content><![CDATA[<h1 id="连接查询-内连接"><a href="#连接查询-内连接" class="headerlink" title="连接查询-内连接"></a>连接查询-内连接</h1><h3 id="1-连接查询的介绍"><a href="#1-连接查询的介绍" class="headerlink" title="1. 连接查询的介绍"></a>1. 连接查询的介绍</h3><p>连接查询可以实现多个表的查询，当查询的字段数据来自不同的表就可以使用连接查询来完成。</p>
+<p>连接查询可以分为:</p>
+<ol>
+<li>内连接查询</li>
+<li>左连接查询</li>
+<li>右连接查询</li>
+<li>自连接查询</li>
+</ol>
+<span id="more"></span>
+<h3 id="2-内连接查询"><a href="#2-内连接查询" class="headerlink" title="2. 内连接查询"></a>2. 内连接查询</h3><p>查询两个表中符合条件的共有记录</p>
+<p><strong>内连接查询效果图:</strong></p>
+<img src="/2022/11/01/mysql-%E5%86%85%E8%BF%9E%E6%8E%A5/01.png" class title="This is an test image">
+
+<p><strong>内连接查询语法格式:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段 <span class="keyword">from</span> 表<span class="number">1</span> <span class="keyword">inner</span> <span class="keyword">join</span> 表<span class="number">2</span> <span class="keyword">on</span> 表<span class="number">1.</span>字段<span class="number">1</span> <span class="operator">=</span> 表<span class="number">2.</span>字段<span class="number">2</span></span><br><span class="line"></span><br><span class="line"># <span class="keyword">inner</span> <span class="keyword">join</span> 可简写为 <span class="keyword">join</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>说明:</strong></p>
+<ul>
+<li>inner join 就是内连接查询关键字</li>
+<li>on 就是连接查询条件</li>
+</ul>
+<p><strong>例1：使用内连接查询学生表与班级表:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">as</span> s <span class="keyword">inner</span> <span class="keyword">join</span> classes <span class="keyword">as</span> c <span class="keyword">on</span> s.cls_id <span class="operator">=</span> c.id;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-小结"><a href="#3-小结" class="headerlink" title="3. 小结"></a>3. 小结</h3><ul>
+<li>内连接使用inner join .. on .., on 表示两个表的连接查询条件</li>
+<li>内连接根据连接查询条件取出两个表的 “交集”</li>
 </ul>
 ]]></content>
       <categories>
@@ -743,6 +782,67 @@
       </tags>
   </entry>
   <entry>
+    <title>MySQL 外连接</title>
+    <url>/2022/11/01/mysql-%E5%A4%96%E8%BF%9E%E6%8E%A5/</url>
+    <content><![CDATA[<h1 id="连接查询-外连接"><a href="#连接查询-外连接" class="headerlink" title="连接查询-外连接"></a>连接查询-外连接</h1><h1 id="外连接"><a href="#外连接" class="headerlink" title="外连接"></a>外连接</h1><ul>
+<li>外连接可以分为<strong>左外连接</strong>和<strong>右外连接</strong>。</li>
+<li>左外连接又称为<strong>左连接</strong>，使用<code>LEFT JOIN</code>关键字连接两个表，并使用<code>ON</code>子句来设置连接条件。</li>
+<li>右外连接又称为<strong>右连接</strong>，右连接是左连接的<strong>反向连接</strong>。使用<code>RIGHT JOIN</code>关键字连接两个表，并使用<code>ON</code>子句来设置连接条件。</li>
+</ul>
+<h1 id="1-左连接查询"><a href="#1-左连接查询" class="headerlink" title="1. 左连接查询"></a>1. 左连接查询</h1><p>以左表为主根据条件查询右表数据，如果根据条件查询右表数据不存在使用null值填充</p>
+<p><strong>左连接查询效果图:</strong></p>
+<img src="/2022/11/01/mysql-%E5%A4%96%E8%BF%9E%E6%8E%A5/01.png" class title="This is an test image">
+
+<p><strong>左连接查询语法格式:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段 <span class="keyword">from</span> 表<span class="number">1</span> <span class="keyword">left</span> <span class="keyword">join</span> 表<span class="number">2</span> <span class="keyword">on</span> 表<span class="number">1.</span>字段<span class="number">1</span> <span class="operator">=</span> 表<span class="number">2.</span>字段<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+<p><strong>说明:</strong></p>
+<ul>
+<li>left join 就是左连接查询关键字</li>
+<li>on 就是连接查询条件</li>
+<li>表1 是左表</li>
+<li>表2 是右表</li>
+</ul>
+<p><strong>例1：使用左连接查询学生表与班级表:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">as</span> s <span class="keyword">left</span> <span class="keyword">join</span> classes <span class="keyword">as</span> c <span class="keyword">on</span> s.cls_id <span class="operator">=</span> c.id;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="2-右连接查询"><a href="#2-右连接查询" class="headerlink" title="2. 右连接查询"></a>2. 右连接查询</h1><p>以右表为主根据条件查询左表数据，如果根据条件查询左表数据不存在使用null值填充</p>
+<p><strong>右连接查询效果图:</strong></p>
+<img src="/2022/11/01/mysql-%E5%A4%96%E8%BF%9E%E6%8E%A5/02.png" class title="This is an test image">
+
+<p><strong>右连接查询语法格式:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段 <span class="keyword">from</span> 表<span class="number">1</span> <span class="keyword">right</span> <span class="keyword">join</span> 表<span class="number">2</span> <span class="keyword">on</span> 表<span class="number">1.</span>字段<span class="number">1</span> <span class="operator">=</span> 表<span class="number">2.</span>字段<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>说明:</strong></p>
+<ul>
+<li>right join 就是右连接查询关键字</li>
+<li>on 就是连接查询条件</li>
+<li>表1 是左表</li>
+<li>表2 是右表</li>
+</ul>
+<p><strong>例1：使用右连接查询学生表与班级表:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">as</span> s <span class="keyword">right</span> <span class="keyword">join</span> classes <span class="keyword">as</span> c <span class="keyword">on</span> s.cls_id <span class="operator">=</span> c.id;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="3-小结"><a href="#3-小结" class="headerlink" title="3. 小结"></a>3. 小结</h1><ul>
+<li>左连接使用left join .. on .., on 表示两个表的连接查询条件</li>
+<li>左连接以左表为主根据条件查询右表数据，右表数据不存在使用null值填充。</li>
+<li>右连接使用right join .. on .., on 表示两个表的连接查询条件</li>
+<li>右连接以右表为主根据条件查询左表数据，左表数据不存在使用null值填充。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL 聚合函数</title>
     <url>/2022/10/27/mysql-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h1 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h1><h3 id="1-聚合函数的介绍"><a href="#1-聚合函数的介绍" class="headerlink" title="1. 聚合函数的介绍"></a>1. 聚合函数的介绍</h3><p>聚合函数又叫组函数，通常是对表中的数据进行统计和计算，一般结合分组(group by)来使用，用于统计和计算分组数据。</p>
@@ -809,122 +909,6 @@
 <li>Python交互式代码仅储存在内存中</li>
 <li>Python交互式清空需关闭项目</li>
 </ul>
-]]></content>
-      <categories>
-        <category>Python基础</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python if语句</title>
-    <url>/2022/07/27/python-if%E8%AF%AD%E5%8F%A5/</url>
-    <content><![CDATA[<h1 id="一-if-语法"><a href="#一-if-语法" class="headerlink" title="一. if 语法"></a>一. if 语法</h1><h2 id="1-1-语法"><a href="#1-1-语法" class="headerlink" title="1.1 语法"></a>1.1 语法</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件:</span><br><span class="line">    条件成立执行的代码<span class="number">1</span></span><br><span class="line">    条件成立执行的代码<span class="number">2</span></span><br><span class="line">    ......</span><br></pre></td></tr></table></figure>
-
-
-<span id="more"></span>
-<h1 id="二-if…else…"><a href="#二-if…else…" class="headerlink" title="二. if…else…"></a>二. if…else…</h1><p>作用：条件成立执行if下方的代码; 条件不成立执行else下方的代码。</p>
-<h2 id="2-1-语法"><a href="#2-1-语法" class="headerlink" title="2.1 语法"></a>2.1 语法</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件:</span><br><span class="line">    条件成立执行的代码<span class="number">1</span></span><br><span class="line">    条件成立执行的代码<span class="number">2</span></span><br><span class="line">    ......</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    条件不成立执行的代码<span class="number">1</span></span><br><span class="line">    条件不成立执行的代码<span class="number">2</span></span><br><span class="line">    ......</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="三、多重判断"><a href="#三、多重判断" class="headerlink" title="三、多重判断"></a>三、多重判断</h1><h2 id="3-1-语法"><a href="#3-1-语法" class="headerlink" title="3.1 语法"></a>3.1 语法</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件<span class="number">1</span>:</span><br><span class="line">    条件<span class="number">1</span>成立执行的代码<span class="number">1</span></span><br><span class="line">    条件<span class="number">1</span>成立执行的代码<span class="number">2</span></span><br><span class="line">    ......</span><br><span class="line"><span class="keyword">elif</span> 条件<span class="number">2</span>：</span><br><span class="line">	条件<span class="number">2</span>成立执行的代码<span class="number">1</span></span><br><span class="line">    条件<span class="number">2</span>成立执行的代码<span class="number">2</span></span><br><span class="line">    ......</span><br><span class="line">......</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    以上条件都不成立执行执行的代码</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>多重判断也可以和else配合使用。一般else放到整个if语句的最后，表示以上条件都不成立的时候执行的代码。</p>
-</blockquote>
-<h1 id="四、if嵌套"><a href="#四、if嵌套" class="headerlink" title="四、if嵌套"></a>四、if嵌套</h1><h2 id="4-1-语法"><a href="#4-1-语法" class="headerlink" title="4.1 语法"></a>4.1 语法</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件<span class="number">1</span>：</span><br><span class="line">	条件<span class="number">1</span>成立执行的代码</span><br><span class="line">    条件<span class="number">1</span>成立执行的代码</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> 条件<span class="number">2</span>：</span><br><span class="line">    	条件<span class="number">2</span>成立执行的代码</span><br><span class="line">        条件<span class="number">2</span>成立执行的代码</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：条件2的if也是处于条件1成立执行的代码的缩进关系内部。</p>
-</blockquote>
-<h1 id="五-三目运算符"><a href="#五-三目运算符" class="headerlink" title="五.  三目运算符"></a>五.  三目运算符</h1><p>三目运算符也叫三元运算符。</p>
-<h2 id="5-1-语法"><a href="#5-1-语法" class="headerlink" title="5.1 语法"></a>5.1 语法</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">值<span class="number">1</span> <span class="keyword">if</span> 条件 <span class="keyword">else</span> 值<span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="5-2-示例"><a href="#5-2-示例" class="headerlink" title="5.2 示例"></a>5.2 示例</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line">c = a <span class="keyword">if</span> a &gt; b <span class="keyword">else</span> b</span><br><span class="line"><span class="built_in">print</span>(c)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="六-实例–猜拳游戏"><a href="#六-实例–猜拳游戏" class="headerlink" title="六. 实例–猜拳游戏"></a>六. 实例–猜拳游戏</h1><p>需求分析：</p>
-<ul>
-<li><p>参与游戏的角色</p>
-<ul>
-<li>玩家<ul>
-<li>手动出拳</li>
-</ul>
-</li>
-<li>电脑<ul>
-<li>随机出拳</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>判断输赢</p>
-<ul>
-<li>玩家获胜</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>玩家</th>
-<th>电脑</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>石头</td>
-<td>剪刀</td>
-</tr>
-<tr>
-<td>剪刀</td>
-<td>布</td>
-</tr>
-<tr>
-<td>布</td>
-<td>石头</td>
-</tr>
-</tbody></table>
-<ul>
-<li>平局<ul>
-<li>玩家出拳 和 电脑出拳相同</li>
-</ul>
-</li>
-<li>电脑获胜</li>
-</ul>
-</li>
-</ul>
-<p>随机做法：</p>
-<pre><code> 1. 导出random模块
- 2. random.randint(开始,结束)
-</code></pre>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">提示：0-石头，1-剪刀，2-布</span></span><br><span class="line"><span class="string">1. 出拳</span></span><br><span class="line"><span class="string">玩家输入出拳</span></span><br><span class="line"><span class="string">电脑随机出拳</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">2. 判断输赢</span></span><br><span class="line"><span class="string">玩家获胜</span></span><br><span class="line"><span class="string">平局</span></span><br><span class="line"><span class="string">电脑获胜</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入random模块</span></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算电脑出拳的随机数字</span></span><br><span class="line">computer = random.randint(<span class="number">0</span>, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(computer)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换数据类型并赋值</span></span><br><span class="line">player = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请出拳：0-石头，1-剪刀，2-布：&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 玩家胜利 p0:c1 或 p1:c2 或 p2:c0</span></span><br><span class="line"><span class="keyword">if</span> (player == <span class="number">0</span> <span class="keyword">and</span> computer == <span class="number">1</span>) <span class="keyword">or</span> (player == <span class="number">1</span> <span class="keyword">and</span> computer == <span class="number">2</span>) <span class="keyword">or</span> (player == <span class="number">2</span> <span class="keyword">and</span> computer == <span class="number">0</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;玩家获胜&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 平局：玩家 == 电脑</span></span><br><span class="line"><span class="keyword">elif</span> player == computer:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;平局&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 玩家失败</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;电脑获胜&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
-<li>if语句语法</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件:</span><br><span class="line">    条件成立执行的代码</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>if…else…</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件:</span><br><span class="line">    条件成立执行的代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    条件不成立执行的代码</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>多重判断</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件<span class="number">1</span>:</span><br><span class="line">    条件<span class="number">1</span>成立执行的代码</span><br><span class="line"><span class="keyword">elif</span> 条件<span class="number">2</span>:</span><br><span class="line">    条件<span class="number">2</span>成立执行的代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    以上条件都不成立执行的代码</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>if嵌套</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件<span class="number">1</span>:</span><br><span class="line">    条件<span class="number">1</span>成立执行的代码</span><br><span class="line">    <span class="keyword">if</span> 条件<span class="number">2</span>:</span><br><span class="line">        条件<span class="number">2</span>成立执行的代码</span><br><span class="line">        ....</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>三目运算符</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">值<span class="number">1</span> <span class="keyword">if</span> 条件 <span class="keyword">else</span> 值<span class="number">2</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Python基础</category>
@@ -1088,6 +1072,122 @@
       </tags>
   </entry>
   <entry>
+    <title>Python if语句</title>
+    <url>/2022/07/27/python-if%E8%AF%AD%E5%8F%A5/</url>
+    <content><![CDATA[<h1 id="一-if-语法"><a href="#一-if-语法" class="headerlink" title="一. if 语法"></a>一. if 语法</h1><h2 id="1-1-语法"><a href="#1-1-语法" class="headerlink" title="1.1 语法"></a>1.1 语法</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件:</span><br><span class="line">    条件成立执行的代码<span class="number">1</span></span><br><span class="line">    条件成立执行的代码<span class="number">2</span></span><br><span class="line">    ......</span><br></pre></td></tr></table></figure>
+
+
+<span id="more"></span>
+<h1 id="二-if…else…"><a href="#二-if…else…" class="headerlink" title="二. if…else…"></a>二. if…else…</h1><p>作用：条件成立执行if下方的代码; 条件不成立执行else下方的代码。</p>
+<h2 id="2-1-语法"><a href="#2-1-语法" class="headerlink" title="2.1 语法"></a>2.1 语法</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件:</span><br><span class="line">    条件成立执行的代码<span class="number">1</span></span><br><span class="line">    条件成立执行的代码<span class="number">2</span></span><br><span class="line">    ......</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    条件不成立执行的代码<span class="number">1</span></span><br><span class="line">    条件不成立执行的代码<span class="number">2</span></span><br><span class="line">    ......</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三、多重判断"><a href="#三、多重判断" class="headerlink" title="三、多重判断"></a>三、多重判断</h1><h2 id="3-1-语法"><a href="#3-1-语法" class="headerlink" title="3.1 语法"></a>3.1 语法</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件<span class="number">1</span>:</span><br><span class="line">    条件<span class="number">1</span>成立执行的代码<span class="number">1</span></span><br><span class="line">    条件<span class="number">1</span>成立执行的代码<span class="number">2</span></span><br><span class="line">    ......</span><br><span class="line"><span class="keyword">elif</span> 条件<span class="number">2</span>：</span><br><span class="line">	条件<span class="number">2</span>成立执行的代码<span class="number">1</span></span><br><span class="line">    条件<span class="number">2</span>成立执行的代码<span class="number">2</span></span><br><span class="line">    ......</span><br><span class="line">......</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    以上条件都不成立执行执行的代码</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>多重判断也可以和else配合使用。一般else放到整个if语句的最后，表示以上条件都不成立的时候执行的代码。</p>
+</blockquote>
+<h1 id="四、if嵌套"><a href="#四、if嵌套" class="headerlink" title="四、if嵌套"></a>四、if嵌套</h1><h2 id="4-1-语法"><a href="#4-1-语法" class="headerlink" title="4.1 语法"></a>4.1 语法</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件<span class="number">1</span>：</span><br><span class="line">	条件<span class="number">1</span>成立执行的代码</span><br><span class="line">    条件<span class="number">1</span>成立执行的代码</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> 条件<span class="number">2</span>：</span><br><span class="line">    	条件<span class="number">2</span>成立执行的代码</span><br><span class="line">        条件<span class="number">2</span>成立执行的代码</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：条件2的if也是处于条件1成立执行的代码的缩进关系内部。</p>
+</blockquote>
+<h1 id="五-三目运算符"><a href="#五-三目运算符" class="headerlink" title="五.  三目运算符"></a>五.  三目运算符</h1><p>三目运算符也叫三元运算符。</p>
+<h2 id="5-1-语法"><a href="#5-1-语法" class="headerlink" title="5.1 语法"></a>5.1 语法</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">值<span class="number">1</span> <span class="keyword">if</span> 条件 <span class="keyword">else</span> 值<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-2-示例"><a href="#5-2-示例" class="headerlink" title="5.2 示例"></a>5.2 示例</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line">c = a <span class="keyword">if</span> a &gt; b <span class="keyword">else</span> b</span><br><span class="line"><span class="built_in">print</span>(c)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="六-实例–猜拳游戏"><a href="#六-实例–猜拳游戏" class="headerlink" title="六. 实例–猜拳游戏"></a>六. 实例–猜拳游戏</h1><p>需求分析：</p>
+<ul>
+<li><p>参与游戏的角色</p>
+<ul>
+<li>玩家<ul>
+<li>手动出拳</li>
+</ul>
+</li>
+<li>电脑<ul>
+<li>随机出拳</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>判断输赢</p>
+<ul>
+<li>玩家获胜</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>玩家</th>
+<th>电脑</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>石头</td>
+<td>剪刀</td>
+</tr>
+<tr>
+<td>剪刀</td>
+<td>布</td>
+</tr>
+<tr>
+<td>布</td>
+<td>石头</td>
+</tr>
+</tbody></table>
+<ul>
+<li>平局<ul>
+<li>玩家出拳 和 电脑出拳相同</li>
+</ul>
+</li>
+<li>电脑获胜</li>
+</ul>
+</li>
+</ul>
+<p>随机做法：</p>
+<pre><code> 1. 导出random模块
+ 2. random.randint(开始,结束)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">提示：0-石头，1-剪刀，2-布</span></span><br><span class="line"><span class="string">1. 出拳</span></span><br><span class="line"><span class="string">玩家输入出拳</span></span><br><span class="line"><span class="string">电脑随机出拳</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">2. 判断输赢</span></span><br><span class="line"><span class="string">玩家获胜</span></span><br><span class="line"><span class="string">平局</span></span><br><span class="line"><span class="string">电脑获胜</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入random模块</span></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算电脑出拳的随机数字</span></span><br><span class="line">computer = random.randint(<span class="number">0</span>, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(computer)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换数据类型并赋值</span></span><br><span class="line">player = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请出拳：0-石头，1-剪刀，2-布：&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 玩家胜利 p0:c1 或 p1:c2 或 p2:c0</span></span><br><span class="line"><span class="keyword">if</span> (player == <span class="number">0</span> <span class="keyword">and</span> computer == <span class="number">1</span>) <span class="keyword">or</span> (player == <span class="number">1</span> <span class="keyword">and</span> computer == <span class="number">2</span>) <span class="keyword">or</span> (player == <span class="number">2</span> <span class="keyword">and</span> computer == <span class="number">0</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;玩家获胜&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 平局：玩家 == 电脑</span></span><br><span class="line"><span class="keyword">elif</span> player == computer:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;平局&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 玩家失败</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;电脑获胜&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>if语句语法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件:</span><br><span class="line">    条件成立执行的代码</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>if…else…</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件:</span><br><span class="line">    条件成立执行的代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    条件不成立执行的代码</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多重判断</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件<span class="number">1</span>:</span><br><span class="line">    条件<span class="number">1</span>成立执行的代码</span><br><span class="line"><span class="keyword">elif</span> 条件<span class="number">2</span>:</span><br><span class="line">    条件<span class="number">2</span>成立执行的代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    以上条件都不成立执行的代码</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>if嵌套</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件<span class="number">1</span>:</span><br><span class="line">    条件<span class="number">1</span>成立执行的代码</span><br><span class="line">    <span class="keyword">if</span> 条件<span class="number">2</span>:</span><br><span class="line">        条件<span class="number">2</span>成立执行的代码</span><br><span class="line">        ....</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>三目运算符</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">值<span class="number">1</span> <span class="keyword">if</span> 条件 <span class="keyword">else</span> 值<span class="number">2</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Python基础</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python 函数（一）</title>
     <url>/2022/08/17/python-%E5%87%BD%E6%95%B01/</url>
     <content><![CDATA[<h1 id="一-函数的作用"><a href="#一-函数的作用" class="headerlink" title="一. 函数的作用"></a>一. 函数的作用</h1><p>函数就是将一段具有独立功能的代码块 整合到一个整体并命名，在需要的位置调用这个名称即可完成对应的需求。</p>
@@ -1211,6 +1311,167 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot; 函数说明文档 &quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>函数嵌套调用：一个函数内部嵌套调用另外一个函数</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python基础</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 函数加强</title>
+    <url>/2022/08/21/python-%E5%87%BD%E6%95%B0%E5%8A%A0%E5%BC%BA/</url>
+    <content><![CDATA[<h1 id="函数加强"><a href="#函数加强" class="headerlink" title="函数加强"></a>函数加强</h1><h3 id="1-递归"><a href="#1-递归" class="headerlink" title="1. 递归"></a>1. 递归</h3><h3 id="2-lambda-表达式"><a href="#2-lambda-表达式" class="headerlink" title="2. lambda 表达式"></a>2. lambda 表达式</h3><h3 id="3-高阶函数"><a href="#3-高阶函数" class="headerlink" title="3. 高阶函数"></a>3. 高阶函数</h3><span id="more"></span>
+
+<h1 id="一-递归"><a href="#一-递归" class="headerlink" title="一.  递归"></a>一.  递归</h1><h2 id="1-1-递归的应用场景"><a href="#1-1-递归的应用场景" class="headerlink" title="1.1 递归的应用场景"></a>1.1 递归的应用场景</h2><p>递归是一种编程思想，应用场景：</p>
+<ol>
+<li>在我们日常开发中，如果要遍历一个文件夹下面所有的文件，通常会使用递归来实现；</li>
+</ol>
+<h2 id="1-2-递归的特点"><a href="#1-2-递归的特点" class="headerlink" title="1.2 递归的特点"></a>1.2 递归的特点</h2><ul>
+<li><p>函数内部自己调用自己</p>
+</li>
+<li><p>必须有出口</p>
+<p><strong>代码演示</strong></p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 3 + 2 + 1</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sum_numbers</span>(<span class="params">num</span>):</span><br><span class="line">    <span class="comment"># 1.如果是1，直接返回1 -- 出口</span></span><br><span class="line">    <span class="keyword">if</span> num == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="comment"># 2.如果不是1，重复执行累加并返回结果</span></span><br><span class="line">    <span class="keyword">return</span> num + sum_numbers(num-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sum_result = sum_numbers(<span class="number">3</span>)</span><br><span class="line"><span class="comment"># 输出结果为6</span></span><br><span class="line"><span class="built_in">print</span>(sum_result)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>执行结果</li>
+</ul>
+<h1 id="二-lambda-表达式"><a href="#二-lambda-表达式" class="headerlink" title="二. lambda 表达式"></a>二. lambda 表达式</h1><h2 id="2-1-lambda的应用场景"><a href="#2-1-lambda的应用场景" class="headerlink" title="2.1 lambda的应用场景"></a>2.1 lambda的应用场景</h2><p>如果一个函数有一个返回值，并且只有一句代码，可以使用 lambda简化。</p>
+<h2 id="2-2-lambda语法"><a href="#2-2-lambda语法" class="headerlink" title="2.2 lambda语法"></a>2.2 lambda语法</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span> 参数列表 ： 表达式</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意</p>
+</blockquote>
+<ul>
+<li>lambda表达式的参数可有可无，函数的参数在lambda表达式中完全适用。</li>
+<li>lambda表达式能接收任何数量的参数但只能返回一个表达式的值。</li>
+</ul>
+<h3 id="函数对比——计算a-b"><a href="#函数对比——计算a-b" class="headerlink" title="函数对比——计算a + b"></a>函数对比——计算a + b</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line">result = add(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># lambda表达式</span></span><br><span class="line">fn1 = <span class="keyword">lambda</span> a, b: a + b</span><br><span class="line"><span class="built_in">print</span>(fn1(<span class="number">1</span>, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：直接打印lambda表达式，输出的是此lambda的内存地址</p>
+</blockquote>
+<h2 id="2-4-lambda的参数形式"><a href="#2-4-lambda的参数形式" class="headerlink" title="2.4 lambda的参数形式"></a>2.4 lambda的参数形式</h2><h3 id="2-4-1-无参数"><a href="#2-4-1-无参数" class="headerlink" title="2.4.1.无参数"></a>2.4.1.无参数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fn1 = <span class="keyword">lambda</span>: <span class="number">100</span></span><br><span class="line"><span class="built_in">print</span>(fn1())</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4-2-一个参数"><a href="#2-4-2-一个参数" class="headerlink" title="2.4.2.一个参数"></a>2.4.2.一个参数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fn1 = <span class="keyword">lambda</span> a: a</span><br><span class="line"><span class="built_in">print</span>(fn1(<span class="string">&#x27;hello world&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4-3-默认参数"><a href="#2-4-3-默认参数" class="headerlink" title="2.4.3.默认参数"></a>2.4.3.默认参数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fn1 = <span class="keyword">lambda</span> a, b, c=<span class="number">100</span>: a + b + c</span><br><span class="line"><span class="built_in">print</span>(fn1(<span class="number">10</span>, <span class="number">20</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4-4-可变参数：-args"><a href="#2-4-4-可变参数：-args" class="headerlink" title="2.4.4.可变参数：*args"></a>2.4.4.可变参数：*args</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fn1 = <span class="keyword">lambda</span> *args: args</span><br><span class="line"><span class="built_in">print</span>(fn1(<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：这里的可变参数传入到lambda之后，返回值为元组。</p>
+</blockquote>
+<h3 id="2-4-5-可变参数：-kwargs"><a href="#2-4-5-可变参数：-kwargs" class="headerlink" title="2.4.5.可变参数：**kwargs"></a>2.4.5.可变参数：**kwargs</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fn1 = <span class="keyword">lambda</span> **kwargs: kwargs</span><br><span class="line"><span class="built_in">print</span>(fn1(name=<span class="string">&#x27;python&#x27;</span>, age=<span class="number">20</span>))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：这里的可变参数传入到lambda之后，返回值为字典。</p>
+</blockquote>
+<h2 id="2-5-lambda的应用"><a href="#2-5-lambda的应用" class="headerlink" title="2.5 lambda的应用"></a>2.5 lambda的应用</h2><h3 id="2-5-1-带判断的lambda"><a href="#2-5-1-带判断的lambda" class="headerlink" title="2.5.1. 带判断的lambda"></a>2.5.1. 带判断的lambda</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fn1 = <span class="keyword">lambda</span> a, b: a <span class="keyword">if</span> a &gt; b <span class="keyword">else</span> b</span><br><span class="line"><span class="built_in">print</span>(fn1(<span class="number">1000</span>, <span class="number">500</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-5-2-列表数据按字典key的值排序"><a href="#2-5-2-列表数据按字典key的值排序" class="headerlink" title="2.5.2. 列表数据按字典key的值排序"></a>2.5.2. 列表数据按字典key的值排序</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">students = [</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;TOM&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;ROSE&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">19</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Jack&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">22</span>&#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按name值升序排列</span></span><br><span class="line">students.sort(key=<span class="keyword">lambda</span> x: x[<span class="string">&#x27;name&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(students)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按name值降序排列</span></span><br><span class="line">students.sort(key=<span class="keyword">lambda</span> x: x[<span class="string">&#x27;name&#x27;</span>], reverse=<span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(students)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按age值升序排列</span></span><br><span class="line">students.sort(key=<span class="keyword">lambda</span> x: x[<span class="string">&#x27;age&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(students)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三-高阶函数"><a href="#三-高阶函数" class="headerlink" title="三. 高阶函数"></a>三. 高阶函数</h1><p>把函数作为参数传入，这样的函数称为高阶函数，高阶函数是函数式编程的体现。函数式编程就是指这种高度抽象的编程范式。</p>
+<h2 id="3-1-体验高阶函数"><a href="#3-1-体验高阶函数" class="headerlink" title="3.1 体验高阶函数"></a>3.1 体验高阶函数</h2><p>在Python中，<code>abs()</code>函数可以完成对数字求绝对值计算。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">abs</span>(-<span class="number">10</span>)  <span class="comment"># 10</span></span><br></pre></td></tr></table></figure>
+
+<p><code>round()</code>函数可以完成对数字的四舍五入计算。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">round</span>(<span class="number">1.2</span>)  <span class="comment"># 1</span></span><br><span class="line"><span class="built_in">round</span>(<span class="number">1.9</span>)  <span class="comment"># 2</span></span><br></pre></td></tr></table></figure>
+
+<p>需求：任意两个数字，按照指定要求整理数字后再进行求和计算。</p>
+<ul>
+<li>方法1</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">add_num</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">abs</span>(a) + <span class="built_in">abs</span>(b)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result = add_num(-<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 3</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方法2</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sum_num</span>(<span class="params">a, b, f</span>):</span><br><span class="line">    <span class="keyword">return</span> f(a) + f(b)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result = sum_num(-<span class="number">1</span>, <span class="number">2</span>, <span class="built_in">abs</span>)</span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 3</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：两种方法对比之后，发现，方法2的代码会更加简洁，函数灵活性更高。</p>
+</blockquote>
+<p>函数式编程大量使用函数，减少了代码的重复，因此程序比较短，开发速度较快。</p>
+<h2 id="3-2-内置高阶函数"><a href="#3-2-内置高阶函数" class="headerlink" title="3.2 内置高阶函数"></a>3.2 内置高阶函数</h2><h3 id="3-2-1-map"><a href="#3-2-1-map" class="headerlink" title="3.2.1 map()"></a>3.2.1 map()</h3><p>map(func, lst)，将传入的函数变量func作用到lst变量的每个元素中，并将结果组成新的列表(Python2)&#x2F;迭代器(Python3)返回。</p>
+<p>需求：计算<code>list1</code>序列中各个数字的2次方。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line">result = <span class="built_in">map</span>(<span class="keyword">lambda</span> x: x**<span class="number">2</span>,list1)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># &lt;map object at 0x0000013769653198&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(result))  <span class="comment"># [1, 4, 9, 16, 25]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-2-2-reduce"><a href="#3-2-2-reduce" class="headerlink" title="3.2.2 reduce()"></a>3.2.2 reduce()</h3><p>reduce(func，lst)，其中func必须有两个参数。每次func计算的结果继续和序列的下一个元素做累积计算。</p>
+<blockquote>
+<p>注意：reduce()传入的参数func必须接收2个参数。</p>
+</blockquote>
+<p>需求：计算<code>list1</code>序列中各个数字的累加和。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> functools</span><br><span class="line"></span><br><span class="line">list1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line">result = functools.reduce(<span class="keyword">lambda</span> a, b: a+b,list1)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 15</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-2-3-filter"><a href="#3-2-3-filter" class="headerlink" title="3.2.3 filter()"></a>3.2.3 filter()</h3><p>filter(func, lst)函数用于<strong>过滤</strong>序列, 过滤掉不符合条件的元素, 返回一个 filter 对象。如果要转换为列表, 可以使用 list() 来转换。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result = <span class="built_in">filter</span>(<span class="keyword">lambda</span> x: x % <span class="number">2</span> == <span class="number">0</span>, list1)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># &lt;filter object at 0x0000017AF9DC3198&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(result))  <span class="comment"># [2, 4, 6, 8, 10]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="四-总结"><a href="#四-总结" class="headerlink" title="四. 总结"></a>四. 总结</h1><ul>
+<li><p>递归</p>
+<ul>
+<li>函数内部自己调用自己</li>
+<li>必须有出口</li>
+</ul>
+</li>
+<li><p>lambda</p>
+<ul>
+<li>语法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span> 参数列表: 表达式</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>lambda的参数形式</p>
+<ul>
+<li>无参数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span>: 表达式</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>一个参数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span> 参数: 表达式</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>默认参数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span> key=value: 表达式</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>不定长位置参数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span> *args: 表达式</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>不定长关键字参数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span> **kwargs: 表达式</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>高阶函数</p>
+<ul>
+<li>作用：把函数作为参数传入，化简代码</li>
+<li>内置高阶函数<ul>
+<li>map()</li>
+<li>reduce()</li>
+<li>filter()</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 ]]></content>
@@ -1390,167 +1651,6 @@
 </ul>
 </li>
 <li>引用：Python中，数据的传递都是通过引用</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Python基础</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 函数加强</title>
-    <url>/2022/08/21/python-%E5%87%BD%E6%95%B0%E5%8A%A0%E5%BC%BA/</url>
-    <content><![CDATA[<h1 id="函数加强"><a href="#函数加强" class="headerlink" title="函数加强"></a>函数加强</h1><h3 id="1-递归"><a href="#1-递归" class="headerlink" title="1. 递归"></a>1. 递归</h3><h3 id="2-lambda-表达式"><a href="#2-lambda-表达式" class="headerlink" title="2. lambda 表达式"></a>2. lambda 表达式</h3><h3 id="3-高阶函数"><a href="#3-高阶函数" class="headerlink" title="3. 高阶函数"></a>3. 高阶函数</h3><span id="more"></span>
-
-<h1 id="一-递归"><a href="#一-递归" class="headerlink" title="一.  递归"></a>一.  递归</h1><h2 id="1-1-递归的应用场景"><a href="#1-1-递归的应用场景" class="headerlink" title="1.1 递归的应用场景"></a>1.1 递归的应用场景</h2><p>递归是一种编程思想，应用场景：</p>
-<ol>
-<li>在我们日常开发中，如果要遍历一个文件夹下面所有的文件，通常会使用递归来实现；</li>
-</ol>
-<h2 id="1-2-递归的特点"><a href="#1-2-递归的特点" class="headerlink" title="1.2 递归的特点"></a>1.2 递归的特点</h2><ul>
-<li><p>函数内部自己调用自己</p>
-</li>
-<li><p>必须有出口</p>
-<p><strong>代码演示</strong></p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 3 + 2 + 1</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sum_numbers</span>(<span class="params">num</span>):</span><br><span class="line">    <span class="comment"># 1.如果是1，直接返回1 -- 出口</span></span><br><span class="line">    <span class="keyword">if</span> num == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="comment"># 2.如果不是1，重复执行累加并返回结果</span></span><br><span class="line">    <span class="keyword">return</span> num + sum_numbers(num-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sum_result = sum_numbers(<span class="number">3</span>)</span><br><span class="line"><span class="comment"># 输出结果为6</span></span><br><span class="line"><span class="built_in">print</span>(sum_result)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>执行结果</li>
-</ul>
-<h1 id="二-lambda-表达式"><a href="#二-lambda-表达式" class="headerlink" title="二. lambda 表达式"></a>二. lambda 表达式</h1><h2 id="2-1-lambda的应用场景"><a href="#2-1-lambda的应用场景" class="headerlink" title="2.1 lambda的应用场景"></a>2.1 lambda的应用场景</h2><p>如果一个函数有一个返回值，并且只有一句代码，可以使用 lambda简化。</p>
-<h2 id="2-2-lambda语法"><a href="#2-2-lambda语法" class="headerlink" title="2.2 lambda语法"></a>2.2 lambda语法</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span> 参数列表 ： 表达式</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意</p>
-</blockquote>
-<ul>
-<li>lambda表达式的参数可有可无，函数的参数在lambda表达式中完全适用。</li>
-<li>lambda表达式能接收任何数量的参数但只能返回一个表达式的值。</li>
-</ul>
-<h3 id="函数对比——计算a-b"><a href="#函数对比——计算a-b" class="headerlink" title="函数对比——计算a + b"></a>函数对比——计算a + b</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line">result = add(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># lambda表达式</span></span><br><span class="line">fn1 = <span class="keyword">lambda</span> a, b: a + b</span><br><span class="line"><span class="built_in">print</span>(fn1(<span class="number">1</span>, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：直接打印lambda表达式，输出的是此lambda的内存地址</p>
-</blockquote>
-<h2 id="2-4-lambda的参数形式"><a href="#2-4-lambda的参数形式" class="headerlink" title="2.4 lambda的参数形式"></a>2.4 lambda的参数形式</h2><h3 id="2-4-1-无参数"><a href="#2-4-1-无参数" class="headerlink" title="2.4.1.无参数"></a>2.4.1.无参数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fn1 = <span class="keyword">lambda</span>: <span class="number">100</span></span><br><span class="line"><span class="built_in">print</span>(fn1())</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-4-2-一个参数"><a href="#2-4-2-一个参数" class="headerlink" title="2.4.2.一个参数"></a>2.4.2.一个参数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fn1 = <span class="keyword">lambda</span> a: a</span><br><span class="line"><span class="built_in">print</span>(fn1(<span class="string">&#x27;hello world&#x27;</span>))</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-4-3-默认参数"><a href="#2-4-3-默认参数" class="headerlink" title="2.4.3.默认参数"></a>2.4.3.默认参数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fn1 = <span class="keyword">lambda</span> a, b, c=<span class="number">100</span>: a + b + c</span><br><span class="line"><span class="built_in">print</span>(fn1(<span class="number">10</span>, <span class="number">20</span>))</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-4-4-可变参数：-args"><a href="#2-4-4-可变参数：-args" class="headerlink" title="2.4.4.可变参数：*args"></a>2.4.4.可变参数：*args</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fn1 = <span class="keyword">lambda</span> *args: args</span><br><span class="line"><span class="built_in">print</span>(fn1(<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>))</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：这里的可变参数传入到lambda之后，返回值为元组。</p>
-</blockquote>
-<h3 id="2-4-5-可变参数：-kwargs"><a href="#2-4-5-可变参数：-kwargs" class="headerlink" title="2.4.5.可变参数：**kwargs"></a>2.4.5.可变参数：**kwargs</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fn1 = <span class="keyword">lambda</span> **kwargs: kwargs</span><br><span class="line"><span class="built_in">print</span>(fn1(name=<span class="string">&#x27;python&#x27;</span>, age=<span class="number">20</span>))</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：这里的可变参数传入到lambda之后，返回值为字典。</p>
-</blockquote>
-<h2 id="2-5-lambda的应用"><a href="#2-5-lambda的应用" class="headerlink" title="2.5 lambda的应用"></a>2.5 lambda的应用</h2><h3 id="2-5-1-带判断的lambda"><a href="#2-5-1-带判断的lambda" class="headerlink" title="2.5.1. 带判断的lambda"></a>2.5.1. 带判断的lambda</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fn1 = <span class="keyword">lambda</span> a, b: a <span class="keyword">if</span> a &gt; b <span class="keyword">else</span> b</span><br><span class="line"><span class="built_in">print</span>(fn1(<span class="number">1000</span>, <span class="number">500</span>))</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-5-2-列表数据按字典key的值排序"><a href="#2-5-2-列表数据按字典key的值排序" class="headerlink" title="2.5.2. 列表数据按字典key的值排序"></a>2.5.2. 列表数据按字典key的值排序</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">students = [</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;TOM&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;ROSE&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">19</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Jack&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">22</span>&#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按name值升序排列</span></span><br><span class="line">students.sort(key=<span class="keyword">lambda</span> x: x[<span class="string">&#x27;name&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(students)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按name值降序排列</span></span><br><span class="line">students.sort(key=<span class="keyword">lambda</span> x: x[<span class="string">&#x27;name&#x27;</span>], reverse=<span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(students)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按age值升序排列</span></span><br><span class="line">students.sort(key=<span class="keyword">lambda</span> x: x[<span class="string">&#x27;age&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(students)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="三-高阶函数"><a href="#三-高阶函数" class="headerlink" title="三. 高阶函数"></a>三. 高阶函数</h1><p>把函数作为参数传入，这样的函数称为高阶函数，高阶函数是函数式编程的体现。函数式编程就是指这种高度抽象的编程范式。</p>
-<h2 id="3-1-体验高阶函数"><a href="#3-1-体验高阶函数" class="headerlink" title="3.1 体验高阶函数"></a>3.1 体验高阶函数</h2><p>在Python中，<code>abs()</code>函数可以完成对数字求绝对值计算。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">abs</span>(-<span class="number">10</span>)  <span class="comment"># 10</span></span><br></pre></td></tr></table></figure>
-
-<p><code>round()</code>函数可以完成对数字的四舍五入计算。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">round</span>(<span class="number">1.2</span>)  <span class="comment"># 1</span></span><br><span class="line"><span class="built_in">round</span>(<span class="number">1.9</span>)  <span class="comment"># 2</span></span><br></pre></td></tr></table></figure>
-
-<p>需求：任意两个数字，按照指定要求整理数字后再进行求和计算。</p>
-<ul>
-<li>方法1</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">add_num</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">abs</span>(a) + <span class="built_in">abs</span>(b)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result = add_num(-<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 3</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>方法2</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sum_num</span>(<span class="params">a, b, f</span>):</span><br><span class="line">    <span class="keyword">return</span> f(a) + f(b)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result = sum_num(-<span class="number">1</span>, <span class="number">2</span>, <span class="built_in">abs</span>)</span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 3</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：两种方法对比之后，发现，方法2的代码会更加简洁，函数灵活性更高。</p>
-</blockquote>
-<p>函数式编程大量使用函数，减少了代码的重复，因此程序比较短，开发速度较快。</p>
-<h2 id="3-2-内置高阶函数"><a href="#3-2-内置高阶函数" class="headerlink" title="3.2 内置高阶函数"></a>3.2 内置高阶函数</h2><h3 id="3-2-1-map"><a href="#3-2-1-map" class="headerlink" title="3.2.1 map()"></a>3.2.1 map()</h3><p>map(func, lst)，将传入的函数变量func作用到lst变量的每个元素中，并将结果组成新的列表(Python2)&#x2F;迭代器(Python3)返回。</p>
-<p>需求：计算<code>list1</code>序列中各个数字的2次方。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line">result = <span class="built_in">map</span>(<span class="keyword">lambda</span> x: x**<span class="number">2</span>,list1)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># &lt;map object at 0x0000013769653198&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(result))  <span class="comment"># [1, 4, 9, 16, 25]</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="3-2-2-reduce"><a href="#3-2-2-reduce" class="headerlink" title="3.2.2 reduce()"></a>3.2.2 reduce()</h3><p>reduce(func，lst)，其中func必须有两个参数。每次func计算的结果继续和序列的下一个元素做累积计算。</p>
-<blockquote>
-<p>注意：reduce()传入的参数func必须接收2个参数。</p>
-</blockquote>
-<p>需求：计算<code>list1</code>序列中各个数字的累加和。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> functools</span><br><span class="line"></span><br><span class="line">list1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line">result = functools.reduce(<span class="keyword">lambda</span> a, b: a+b,list1)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 15</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="3-2-3-filter"><a href="#3-2-3-filter" class="headerlink" title="3.2.3 filter()"></a>3.2.3 filter()</h3><p>filter(func, lst)函数用于<strong>过滤</strong>序列, 过滤掉不符合条件的元素, 返回一个 filter 对象。如果要转换为列表, 可以使用 list() 来转换。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result = <span class="built_in">filter</span>(<span class="keyword">lambda</span> x: x % <span class="number">2</span> == <span class="number">0</span>, list1)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># &lt;filter object at 0x0000017AF9DC3198&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(result))  <span class="comment"># [2, 4, 6, 8, 10]</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="四-总结"><a href="#四-总结" class="headerlink" title="四. 总结"></a>四. 总结</h1><ul>
-<li><p>递归</p>
-<ul>
-<li>函数内部自己调用自己</li>
-<li>必须有出口</li>
-</ul>
-</li>
-<li><p>lambda</p>
-<ul>
-<li>语法</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span> 参数列表: 表达式</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>lambda的参数形式</p>
-<ul>
-<li>无参数</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span>: 表达式</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>一个参数</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span> 参数: 表达式</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>默认参数</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span> key=value: 表达式</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>不定长位置参数</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span> *args: 表达式</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>不定长关键字参数</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span> **kwargs: 表达式</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>高阶函数</p>
-<ul>
-<li>作用：把函数作为参数传入，化简代码</li>
-<li>内置高阶函数<ul>
-<li>map()</li>
-<li>reduce()</li>
-<li>filter()</li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 ]]></content>
       <categories>
@@ -1757,6 +1857,81 @@
       </tags>
   </entry>
   <entry>
+    <title>Python 推导式</title>
+    <url>/2022/08/15/python-%E6%8E%A8%E5%AF%BC%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="一-列表推导式"><a href="#一-列表推导式" class="headerlink" title="一. 列表推导式"></a>一. 列表推导式</h1><p>作用：用一个表达式创建一个有规律的列表或控制一个有规律列表。</p>
+<p>列表推导式又叫列表生成式。</p>
+<span id="more"></span>
+<h2 id="1-1-演示"><a href="#1-1-演示" class="headerlink" title="1.1 演示"></a>1.1 演示</h2><ul>
+<li>列表推导式</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)]</span><br><span class="line"><span class="built_in">print</span>(list1)</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-带if的列表推导式"><a href="#1-2-带if的列表推导式" class="headerlink" title="1.2 带if的列表推导式"></a>1.2 带if的列表推导式</h2><p>例1：创建0-10的偶数列表</p>
+<ul>
+<li>range()步长实现</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">10</span>, <span class="number">2</span>)]</span><br><span class="line"><span class="built_in">print</span>(list1)</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-3-多个for循环实现列表推导式"><a href="#1-3-多个for循环实现列表推导式" class="headerlink" title="1.3 多个for循环实现列表推导式"></a>1.3 多个for循环实现列表推导式</h2><p>需求：创建列表如下：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">[(1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>代码如下：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [(i, j) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">3</span>) <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>)]</span><br><span class="line"><span class="built_in">print</span>(list1)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="二-字典推导式"><a href="#二-字典推导式" class="headerlink" title="二. 字典推导式"></a>二. 字典推导式</h1><p>通过字典推导式合并为一个字典</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;age&#x27;</span>, <span class="string">&#x27;gender&#x27;</span>]</span><br><span class="line">list2 = [<span class="string">&#x27;Tom&#x27;</span>, <span class="number">20</span>, <span class="string">&#x27;man&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>字典推导式作用：快速合并列表为字典或提取字典中目标数据。</p>
+</blockquote>
+<h2 id="2-1-演示"><a href="#2-1-演示" class="headerlink" title="2.1 演示"></a>2.1 演示</h2><ol>
+<li>创建一个字典：字典key是1-5数字，value是这个数字的2次方。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;i: i**<span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">5</span>)&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1)  <span class="comment"># &#123;1: 1, 2: 4, 3: 9, 4: 16&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="2">
+<li>将两个列表合并为一个字典</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;age&#x27;</span>, <span class="string">&#x27;gender&#x27;</span>]</span><br><span class="line">list2 = [<span class="string">&#x27;Tom&#x27;</span>, <span class="number">20</span>, <span class="string">&#x27;man&#x27;</span>]</span><br><span class="line"></span><br><span class="line">dict1 = &#123;list1[i]: list2[i] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(list1))&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1)</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>提取字典中目标数据</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">counts = &#123;<span class="string">&#x27;MBP&#x27;</span>: <span class="number">268</span>, <span class="string">&#x27;HP&#x27;</span>: <span class="number">125</span>, <span class="string">&#x27;DELL&#x27;</span>: <span class="number">201</span>, <span class="string">&#x27;Lenovo&#x27;</span>: <span class="number">199</span>, <span class="string">&#x27;acer&#x27;</span>: <span class="number">99</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 需求：提取上述电脑数量大于等于200的字典数据</span></span><br><span class="line">count1 = &#123;key: value <span class="keyword">for</span> key, value <span class="keyword">in</span> counts.items() <span class="keyword">if</span> value &gt;= <span class="number">200</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(count1)  <span class="comment"># &#123;&#x27;MBP&#x27;: 268, &#x27;DELL&#x27;: 201&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三-集合推导式"><a href="#三-集合推导式" class="headerlink" title="三. 集合推导式"></a>三. 集合推导式</h1><p>需求：创建一个集合，数据为下方列表的2次方。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+
+<p>代码如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">set1 = &#123;i ** <span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> li43·st1&#125;</span><br><span class="line"><span class="built_in">print</span>(set1)  <span class="comment"># &#123;1, 4&#125;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：集合有数据去重功能。</p>
+</blockquote>
+<h1 id="四-总结"><a href="#四-总结" class="headerlink" title="四. 总结"></a>四. 总结</h1><ul>
+<li>推导式的作用：简化代码</li>
+<li>推导式写法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列表推导式</span></span><br><span class="line">[xx <span class="keyword">for</span> xx <span class="keyword">in</span> <span class="built_in">range</span>()]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 字典推导式</span></span><br><span class="line">&#123;xx1: xx2 <span class="keyword">for</span> ... <span class="keyword">in</span> ...&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 集合推导式</span></span><br><span class="line">&#123;xx <span class="keyword">for</span> xx <span class="keyword">in</span> ...&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Python基础</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python 循环</title>
     <url>/2022/07/31/python-%E5%BE%AA%E7%8E%AF/</url>
     <content><![CDATA[<h1 id="一-循环简介"><a href="#一-循环简介" class="headerlink" title="一. 循环简介"></a>一. 循环简介</h1><h2 id="1-1-循环的作用"><a href="#1-1-循环的作用" class="headerlink" title="1.1 循环的作用"></a>1.1 循环的作用</h2><p>循环的作用：让代码更高效的重复执行。</p>
@@ -1864,81 +2039,6 @@
 </ul>
 </li>
 </ul>
-]]></content>
-      <categories>
-        <category>Python基础</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 推导式</title>
-    <url>/2022/08/15/python-%E6%8E%A8%E5%AF%BC%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="一-列表推导式"><a href="#一-列表推导式" class="headerlink" title="一. 列表推导式"></a>一. 列表推导式</h1><p>作用：用一个表达式创建一个有规律的列表或控制一个有规律列表。</p>
-<p>列表推导式又叫列表生成式。</p>
-<span id="more"></span>
-<h2 id="1-1-演示"><a href="#1-1-演示" class="headerlink" title="1.1 演示"></a>1.1 演示</h2><ul>
-<li>列表推导式</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)]</span><br><span class="line"><span class="built_in">print</span>(list1)</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-2-带if的列表推导式"><a href="#1-2-带if的列表推导式" class="headerlink" title="1.2 带if的列表推导式"></a>1.2 带if的列表推导式</h2><p>例1：创建0-10的偶数列表</p>
-<ul>
-<li>range()步长实现</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">10</span>, <span class="number">2</span>)]</span><br><span class="line"><span class="built_in">print</span>(list1)</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-3-多个for循环实现列表推导式"><a href="#1-3-多个for循环实现列表推导式" class="headerlink" title="1.3 多个for循环实现列表推导式"></a>1.3 多个for循环实现列表推导式</h2><p>需求：创建列表如下：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">[(1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)]</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>代码如下：</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [(i, j) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">3</span>) <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>)]</span><br><span class="line"><span class="built_in">print</span>(list1)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="二-字典推导式"><a href="#二-字典推导式" class="headerlink" title="二. 字典推导式"></a>二. 字典推导式</h1><p>通过字典推导式合并为一个字典</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;age&#x27;</span>, <span class="string">&#x27;gender&#x27;</span>]</span><br><span class="line">list2 = [<span class="string">&#x27;Tom&#x27;</span>, <span class="number">20</span>, <span class="string">&#x27;man&#x27;</span>]</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>字典推导式作用：快速合并列表为字典或提取字典中目标数据。</p>
-</blockquote>
-<h2 id="2-1-演示"><a href="#2-1-演示" class="headerlink" title="2.1 演示"></a>2.1 演示</h2><ol>
-<li>创建一个字典：字典key是1-5数字，value是这个数字的2次方。</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;i: i**<span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">5</span>)&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1)  <span class="comment"># &#123;1: 1, 2: 4, 3: 9, 4: 16&#125;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ol start="2">
-<li>将两个列表合并为一个字典</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;age&#x27;</span>, <span class="string">&#x27;gender&#x27;</span>]</span><br><span class="line">list2 = [<span class="string">&#x27;Tom&#x27;</span>, <span class="number">20</span>, <span class="string">&#x27;man&#x27;</span>]</span><br><span class="line"></span><br><span class="line">dict1 = &#123;list1[i]: list2[i] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(list1))&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1)</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>提取字典中目标数据</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">counts = &#123;<span class="string">&#x27;MBP&#x27;</span>: <span class="number">268</span>, <span class="string">&#x27;HP&#x27;</span>: <span class="number">125</span>, <span class="string">&#x27;DELL&#x27;</span>: <span class="number">201</span>, <span class="string">&#x27;Lenovo&#x27;</span>: <span class="number">199</span>, <span class="string">&#x27;acer&#x27;</span>: <span class="number">99</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 需求：提取上述电脑数量大于等于200的字典数据</span></span><br><span class="line">count1 = &#123;key: value <span class="keyword">for</span> key, value <span class="keyword">in</span> counts.items() <span class="keyword">if</span> value &gt;= <span class="number">200</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(count1)  <span class="comment"># &#123;&#x27;MBP&#x27;: 268, &#x27;DELL&#x27;: 201&#125;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="三-集合推导式"><a href="#三-集合推导式" class="headerlink" title="三. 集合推导式"></a>三. 集合推导式</h1><p>需求：创建一个集合，数据为下方列表的2次方。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-
-<p>代码如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">set1 = &#123;i ** <span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> li43·st1&#125;</span><br><span class="line"><span class="built_in">print</span>(set1)  <span class="comment"># &#123;1, 4&#125;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：集合有数据去重功能。</p>
-</blockquote>
-<h1 id="四-总结"><a href="#四-总结" class="headerlink" title="四. 总结"></a>四. 总结</h1><ul>
-<li>推导式的作用：简化代码</li>
-<li>推导式写法</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列表推导式</span></span><br><span class="line">[xx <span class="keyword">for</span> xx <span class="keyword">in</span> <span class="built_in">range</span>()]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 字典推导式</span></span><br><span class="line">&#123;xx1: xx2 <span class="keyword">for</span> ... <span class="keyword">in</span> ...&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 集合推导式</span></span><br><span class="line">&#123;xx <span class="keyword">for</span> xx <span class="keyword">in</span> ...&#125;</span><br></pre></td></tr></table></figure>
-
 ]]></content>
       <categories>
         <category>Python基础</category>
@@ -2281,128 +2381,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Python 数据序列-字典</title>
-    <url>/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/</url>
-    <content><![CDATA[<h1 id="一-创建字典的语法"><a href="#一-创建字典的语法" class="headerlink" title="一. 创建字典的语法"></a>一. 创建字典的语法</h1><p>字典特点：</p>
-<ul>
-<li>符号为大括号</li>
-<li>数据为键值对形式出现</li>
-<li>各个键值对之间用逗号隔开</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 有数据字典</span></span><br><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 空字典</span></span><br><span class="line">dict2 = &#123;&#125;</span><br><span class="line"></span><br><span class="line">dict3 = <span class="built_in">dict</span>()</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：一般称冒号前面的为键(key)，简称k；冒号后面的为值(value)，简称v。</p>
-</blockquote>
-<span id="more"></span>
-<h1 id="二-字典常见操作"><a href="#二-字典常见操作" class="headerlink" title="二. 字典常见操作"></a>二. 字典常见操作</h1><h2 id="2-1-增-x2F-改"><a href="#2-1-增-x2F-改" class="headerlink" title="2.1 增&#x2F;改"></a>2.1 增&#x2F;改</h2><p>写法：字典序列[key] &#x3D; 值</p>
-<blockquote>
-<p>注意：如果key存在则修改这个key对应的值；如果key不存在则新增此键值对。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 增</span></span><br><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line">dict1[<span class="string">&#x27;name&#x27;</span>] = <span class="string">&#x27;Rose&#x27;</span></span><br><span class="line"><span class="comment"># 结果：&#123;&#x27;name&#x27;: &#x27;Rose&#x27;, &#x27;age&#x27;: 20, &#x27;gender&#x27;: &#x27;男&#x27;&#125;</span></span><br><span class="line"><span class="built_in">print</span>(dict1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#改</span></span><br><span class="line">dict1[<span class="string">&#x27;id&#x27;</span>] = <span class="number">110</span></span><br><span class="line"><span class="comment"># &#123;&#x27;name&#x27;: &#x27;Rose&#x27;, &#x27;age&#x27;: 20, &#x27;gender&#x27;: &#x27;男&#x27;, &#x27;id&#x27;: 110&#125;</span></span><br><span class="line"><span class="built_in">print</span>(dict1)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：字典为可变类型。</p>
-</blockquote>
-<h2 id="2-2-删"><a href="#2-2-删" class="headerlink" title="2.2 删"></a>2.2 删</h2><ul>
-<li>del() &#x2F; del：删除字典或删除字典中指定键值对。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> dict1[<span class="string">&#x27;gender&#x27;</span>]</span><br><span class="line"><span class="comment"># 结果：&#123;&#x27;name&#x27;: &#x27;Tom&#x27;, &#x27;age&#x27;: 20&#125;</span></span><br><span class="line"><span class="built_in">print</span>(dict1)</span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>clear()：清空字典</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line">dict1.clear()</span><br><span class="line"><span class="built_in">print</span>(dict1)  <span class="comment"># &#123;&#125;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-3-查"><a href="#2-3-查" class="headerlink" title="2.3 查"></a>2.3 查</h2><h3 id="2-3-1-key值查找"><a href="#2-3-1-key值查找" class="headerlink" title="2.3.1 key值查找"></a>2.3.1 key值查找</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1[<span class="string">&#x27;name&#x27;</span>])  <span class="comment"># Tom</span></span><br><span class="line"><span class="built_in">print</span>(dict1[<span class="string">&#x27;id&#x27;</span>])  <span class="comment"># 报错</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>如果当前查找的key存在，则返回对应的值；否则则报错。</p>
-</blockquote>
-<h3 id="2-3-2-get-–-查value"><a href="#2-3-2-get-–-查value" class="headerlink" title="2.3.2 get() – 查value"></a>2.3.2 get() – 查value</h3><ul>
-<li>语法</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字典序列.get(key, 默认值)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：如果当前查找的key不存在则返回第二个参数(默认值)，如果省略第二个参数，则返回None。</p>
-</blockquote>
-<ul>
-<li>快速体验</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1.get(<span class="string">&#x27;name&#x27;</span>))  <span class="comment"># Tom</span></span><br><span class="line"><span class="built_in">print</span>(dict1.get(<span class="string">&#x27;id&#x27;</span>, <span class="number">110</span>))  <span class="comment"># 110</span></span><br><span class="line"><span class="built_in">print</span>(dict1.get(<span class="string">&#x27;id&#x27;</span>))  <span class="comment"># None</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-3-3-keys-–-查找全部key"><a href="#2-3-3-keys-–-查找全部key" class="headerlink" title="2.3.3 keys() – 查找全部key"></a>2.3.3 keys() – 查找全部key</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1.keys())  <span class="comment"># dict_keys([&#x27;name&#x27;, &#x27;age&#x27;, &#x27;gender&#x27;])</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="2-3-4-values-–-查找全部value"><a href="#2-3-4-values-–-查找全部value" class="headerlink" title="2.3.4 values() – 查找全部value"></a>2.3.4 values() – 查找全部value</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1.values())  <span class="comment"># dict_values([&#x27;Tom&#x27;, 20, &#x27;男&#x27;])</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="2-3-5-items-–-以元组的形式输出"><a href="#2-3-5-items-–-以元组的形式输出" class="headerlink" title="2.3.5 items() – 以元组的形式输出"></a>2.3.5 items() – 以元组的形式输出</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1.items())  <span class="comment"># dict_items([(&#x27;name&#x27;, &#x27;Tom&#x27;), (&#x27;age&#x27;, 20), (&#x27;gender&#x27;, &#x27;男&#x27;)])</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="三-字典的循环遍历"><a href="#三-字典的循环遍历" class="headerlink" title="三. 字典的循环遍历"></a>三. 字典的循环遍历</h1><h2 id="3-1-遍历字典的key"><a href="#3-1-遍历字典的key" class="headerlink" title="3.1 遍历字典的key"></a>3.1 遍历字典的key</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> dict1.keys():</span><br><span class="line">    <span class="built_in">print</span>(key)</span><br></pre></td></tr></table></figure>
-
-<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/01.png" class title="This is an test image">
-
-
-
-<h2 id="3-2-遍历字典的value"><a href="#3-2-遍历字典的value" class="headerlink" title="3.2 遍历字典的value"></a>3.2 遍历字典的value</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> dict1.values():</span><br><span class="line">    <span class="built_in">print</span>(value)</span><br></pre></td></tr></table></figure>
-
-<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/02.png" class title="This is an test image">
-
-
-
-<h2 id="3-3-遍历字典的元素"><a href="#3-3-遍历字典的元素" class="headerlink" title="3.3 遍历字典的元素"></a>3.3 遍历字典的元素</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> dict1.items():</span><br><span class="line">    <span class="built_in">print</span>(item)</span><br></pre></td></tr></table></figure>
-
-<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/03.png" class title="This is an test image">
-
-
-
-<h2 id="3-4-遍历字典的键值对"><a href="#3-4-遍历字典的键值对" class="headerlink" title="3.4 遍历字典的键值对"></a>3.4 遍历字典的键值对</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> dict1.items():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;key&#125;</span> = <span class="subst">&#123;value&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/04.png" class title="This is an test image">
-
-
-
-<h1 id="四-总结"><a href="#四-总结" class="headerlink" title="四. 总结"></a>四. 总结</h1><ul>
-<li>定义字典</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Python&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">30</span>&#125;</span><br><span class="line"></span><br><span class="line">dict2 = &#123;&#125;</span><br><span class="line"></span><br><span class="line">dict3 = <span class="built_in">dict</span>()</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>常见操作<ul>
-<li>增&#x2F;改</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字典序列[key] = 值</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查找<ul>
-<li>字典序列[key]</li>
-<li>keys()</li>
-<li>values()</li>
-<li>items()</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Python基础</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python 数据序列-字符串</title>
     <url>/2022/08/02/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
     <content><![CDATA[<h1 id="一-认识字符串"><a href="#一-认识字符串" class="headerlink" title="一. 认识字符串"></a>一. 认识字符串</h1><p>字符串是 Python 中最常用的数据类型。</p>
@@ -2651,6 +2629,128 @@
       </tags>
   </entry>
   <entry>
+    <title>Python 数据序列-字典</title>
+    <url>/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/</url>
+    <content><![CDATA[<h1 id="一-创建字典的语法"><a href="#一-创建字典的语法" class="headerlink" title="一. 创建字典的语法"></a>一. 创建字典的语法</h1><p>字典特点：</p>
+<ul>
+<li>符号为大括号</li>
+<li>数据为键值对形式出现</li>
+<li>各个键值对之间用逗号隔开</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 有数据字典</span></span><br><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 空字典</span></span><br><span class="line">dict2 = &#123;&#125;</span><br><span class="line"></span><br><span class="line">dict3 = <span class="built_in">dict</span>()</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：一般称冒号前面的为键(key)，简称k；冒号后面的为值(value)，简称v。</p>
+</blockquote>
+<span id="more"></span>
+<h1 id="二-字典常见操作"><a href="#二-字典常见操作" class="headerlink" title="二. 字典常见操作"></a>二. 字典常见操作</h1><h2 id="2-1-增-x2F-改"><a href="#2-1-增-x2F-改" class="headerlink" title="2.1 增&#x2F;改"></a>2.1 增&#x2F;改</h2><p>写法：字典序列[key] &#x3D; 值</p>
+<blockquote>
+<p>注意：如果key存在则修改这个key对应的值；如果key不存在则新增此键值对。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 增</span></span><br><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line">dict1[<span class="string">&#x27;name&#x27;</span>] = <span class="string">&#x27;Rose&#x27;</span></span><br><span class="line"><span class="comment"># 结果：&#123;&#x27;name&#x27;: &#x27;Rose&#x27;, &#x27;age&#x27;: 20, &#x27;gender&#x27;: &#x27;男&#x27;&#125;</span></span><br><span class="line"><span class="built_in">print</span>(dict1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#改</span></span><br><span class="line">dict1[<span class="string">&#x27;id&#x27;</span>] = <span class="number">110</span></span><br><span class="line"><span class="comment"># &#123;&#x27;name&#x27;: &#x27;Rose&#x27;, &#x27;age&#x27;: 20, &#x27;gender&#x27;: &#x27;男&#x27;, &#x27;id&#x27;: 110&#125;</span></span><br><span class="line"><span class="built_in">print</span>(dict1)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：字典为可变类型。</p>
+</blockquote>
+<h2 id="2-2-删"><a href="#2-2-删" class="headerlink" title="2.2 删"></a>2.2 删</h2><ul>
+<li>del() &#x2F; del：删除字典或删除字典中指定键值对。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> dict1[<span class="string">&#x27;gender&#x27;</span>]</span><br><span class="line"><span class="comment"># 结果：&#123;&#x27;name&#x27;: &#x27;Tom&#x27;, &#x27;age&#x27;: 20&#125;</span></span><br><span class="line"><span class="built_in">print</span>(dict1)</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>clear()：清空字典</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line">dict1.clear()</span><br><span class="line"><span class="built_in">print</span>(dict1)  <span class="comment"># &#123;&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-3-查"><a href="#2-3-查" class="headerlink" title="2.3 查"></a>2.3 查</h2><h3 id="2-3-1-key值查找"><a href="#2-3-1-key值查找" class="headerlink" title="2.3.1 key值查找"></a>2.3.1 key值查找</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1[<span class="string">&#x27;name&#x27;</span>])  <span class="comment"># Tom</span></span><br><span class="line"><span class="built_in">print</span>(dict1[<span class="string">&#x27;id&#x27;</span>])  <span class="comment"># 报错</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果当前查找的key存在，则返回对应的值；否则则报错。</p>
+</blockquote>
+<h3 id="2-3-2-get-–-查value"><a href="#2-3-2-get-–-查value" class="headerlink" title="2.3.2 get() – 查value"></a>2.3.2 get() – 查value</h3><ul>
+<li>语法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字典序列.get(key, 默认值)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：如果当前查找的key不存在则返回第二个参数(默认值)，如果省略第二个参数，则返回None。</p>
+</blockquote>
+<ul>
+<li>快速体验</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1.get(<span class="string">&#x27;name&#x27;</span>))  <span class="comment"># Tom</span></span><br><span class="line"><span class="built_in">print</span>(dict1.get(<span class="string">&#x27;id&#x27;</span>, <span class="number">110</span>))  <span class="comment"># 110</span></span><br><span class="line"><span class="built_in">print</span>(dict1.get(<span class="string">&#x27;id&#x27;</span>))  <span class="comment"># None</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-3-keys-–-查找全部key"><a href="#2-3-3-keys-–-查找全部key" class="headerlink" title="2.3.3 keys() – 查找全部key"></a>2.3.3 keys() – 查找全部key</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1.keys())  <span class="comment"># dict_keys([&#x27;name&#x27;, &#x27;age&#x27;, &#x27;gender&#x27;])</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-3-4-values-–-查找全部value"><a href="#2-3-4-values-–-查找全部value" class="headerlink" title="2.3.4 values() – 查找全部value"></a>2.3.4 values() – 查找全部value</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1.values())  <span class="comment"># dict_values([&#x27;Tom&#x27;, 20, &#x27;男&#x27;])</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-3-5-items-–-以元组的形式输出"><a href="#2-3-5-items-–-以元组的形式输出" class="headerlink" title="2.3.5 items() – 以元组的形式输出"></a>2.3.5 items() – 以元组的形式输出</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(dict1.items())  <span class="comment"># dict_items([(&#x27;name&#x27;, &#x27;Tom&#x27;), (&#x27;age&#x27;, 20), (&#x27;gender&#x27;, &#x27;男&#x27;)])</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三-字典的循环遍历"><a href="#三-字典的循环遍历" class="headerlink" title="三. 字典的循环遍历"></a>三. 字典的循环遍历</h1><h2 id="3-1-遍历字典的key"><a href="#3-1-遍历字典的key" class="headerlink" title="3.1 遍历字典的key"></a>3.1 遍历字典的key</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> dict1.keys():</span><br><span class="line">    <span class="built_in">print</span>(key)</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/01.png" class title="This is an test image">
+
+
+
+<h2 id="3-2-遍历字典的value"><a href="#3-2-遍历字典的value" class="headerlink" title="3.2 遍历字典的value"></a>3.2 遍历字典的value</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> dict1.values():</span><br><span class="line">    <span class="built_in">print</span>(value)</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/02.png" class title="This is an test image">
+
+
+
+<h2 id="3-3-遍历字典的元素"><a href="#3-3-遍历字典的元素" class="headerlink" title="3.3 遍历字典的元素"></a>3.3 遍历字典的元素</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> dict1.items():</span><br><span class="line">    <span class="built_in">print</span>(item)</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/03.png" class title="This is an test image">
+
+
+
+<h2 id="3-4-遍历字典的键值对"><a href="#3-4-遍历字典的键值对" class="headerlink" title="3.4 遍历字典的键值对"></a>3.4 遍历字典的键值对</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;男&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> dict1.items():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;key&#125;</span> = <span class="subst">&#123;value&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/09/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E5%AD%97%E5%85%B8/04.png" class title="This is an test image">
+
+
+
+<h1 id="四-总结"><a href="#四-总结" class="headerlink" title="四. 总结"></a>四. 总结</h1><ul>
+<li>定义字典</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Python&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">30</span>&#125;</span><br><span class="line"></span><br><span class="line">dict2 = &#123;&#125;</span><br><span class="line"></span><br><span class="line">dict3 = <span class="built_in">dict</span>()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>常见操作<ul>
+<li>增&#x2F;改</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字典序列[key] = 值</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查找<ul>
+<li>字典序列[key]</li>
+<li>keys()</li>
+<li>values()</li>
+<li>items()</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python基础</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python 数据序列-集合</title>
     <url>/2022/08/11/python-%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97-%E9%9B%86%E5%90%88/</url>
     <content><![CDATA[<h1 id="一-创建集合"><a href="#一-创建集合" class="headerlink" title="一. 创建集合"></a>一. 创建集合</h1><p>创建集合使用<code>&#123;&#125;</code>或<code>set()</code>， 但是如果要创建空集合只能使用<code>set()</code>，因为<code>&#123;&#125;</code>用来创建空字典。</p>
@@ -2731,6 +2831,151 @@
 <li>discard()</li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python基础</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 注释</title>
+    <url>/2022/07/10/python-%E6%B3%A8%E9%87%8A/</url>
+    <content><![CDATA[<h1 id="一-注释的作用"><a href="#一-注释的作用" class="headerlink" title="一. 注释的作用"></a>一. 注释的作用</h1><ul>
+<li>通过用自己熟悉的语言，在程序中对某些代码进行标注说明，这就是注释的作用，能够大大增强程序的可读性。<span id="more"></span></li>
+</ul>
+<h1 id="二-注释的分类及语法"><a href="#二-注释的分类及语法" class="headerlink" title="二. 注释的分类及语法"></a>二. 注释的分类及语法</h1><p>注释分为两类：单行注释 和 多行注释。</p>
+<ul>
+<li>单行注释</li>
+</ul>
+<p>只能注释一行内容，语法如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 注释内容</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多行注释</li>
+</ul>
+<p>可以注释多行内容，一般用在注释一段代码的情况， 语法如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	第一行注释</span></span><br><span class="line"><span class="string">	第二行注释</span></span><br><span class="line"><span class="string">	第三行注释</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">	注释1</span></span><br><span class="line"><span class="string">	注释2</span></span><br><span class="line"><span class="string">	注释3</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>快捷键： ctrl + &#x2F;</p>
+</blockquote>
+<h2 id="2-1-示例"><a href="#2-1-示例" class="headerlink" title="2.1 示例"></a>2.1 示例</h2><ul>
+<li>单行注释</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输出hello world</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)  <span class="comment"># 输出(简单的说明可以放到一行代码的后面，一般习惯代码后面添加两个空格再书写注释文字)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多行注释</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello world</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello reader</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：解释器不执行任何的注释内容。</p>
+</blockquote>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>注释的作用</li>
+</ul>
+<p>用人类熟悉的语言对代码进行解释说明，方便后期维护。</p>
+<ul>
+<li>注释的分类<ul>
+<li>单行： <code># 注释内容</code>，快捷键ctrl+&#x2F;</li>
+<li>多行：<code>&quot;&quot;&quot; 注释内容 &quot;&quot;&quot;</code> 或 <code>&#39;&#39;&#39; 注释内容 &#39;&#39;&#39;</code></li>
+</ul>
+</li>
+<li>解释器不执行注释内容</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python基础</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 转换数据类型</title>
+    <url>/2022/07/19/python-%E8%BD%AC%E6%8D%A2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<h1 id="一-转换数据类型的作用"><a href="#一-转换数据类型的作用" class="headerlink" title="一. 转换数据类型的作用"></a>一. 转换数据类型的作用</h1><p>input()接收用户输入的数据都是字符串类型</p>
+<p>转换数据类型–将字符串类型  转换为程序中需要用到的数据类型。</p>
+<h1 id="二-转换数据类型的函数"><a href="#二-转换数据类型的函数" class="headerlink" title="二. 转换数据类型的函数"></a>二. 转换数据类型的函数</h1><table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">int(x)</td>
+<td align="center">将x转换为一个整数</td>
+</tr>
+<tr>
+<td align="center">float(x)</td>
+<td align="center">将x转换为一个浮点数</td>
+</tr>
+<tr>
+<td align="center">complex(real [,imag ])</td>
+<td align="center">创建一个复数，real为实部，imag为虚部</td>
+</tr>
+<tr>
+<td align="center">str(x)</td>
+<td align="center">将对象 x 转换为字符串</td>
+</tr>
+<tr>
+<td align="center">repr(x)</td>
+<td align="center">将对象 x 转换为表达式字符串</td>
+</tr>
+<tr>
+<td align="center">eval(str)</td>
+<td align="center">用来计算在字符串中的有效Python表达式,并返回一个对象</td>
+</tr>
+<tr>
+<td align="center">tuple(s)</td>
+<td align="center">将序列 s 转换为一个元组</td>
+</tr>
+<tr>
+<td align="center">list(s)</td>
+<td align="center">将序列 s 转换为一个列表</td>
+</tr>
+<tr>
+<td align="center">chr(x)</td>
+<td align="center">将一个整数转换为一个Unicode字符</td>
+</tr>
+<tr>
+<td align="center">ord(x)</td>
+<td align="center">将一个字符转换为它的ASCII整数值</td>
+</tr>
+<tr>
+<td align="center">hex(x)</td>
+<td align="center">将一个整数转换为一个十六进制字符串</td>
+</tr>
+<tr>
+<td align="center">oct(x)</td>
+<td align="center">将一个整数转换为一个八进制字符串</td>
+</tr>
+<tr>
+<td align="center">bin(x)</td>
+<td align="center">将一个整数转换为一个二进制字符串</td>
+</tr>
+</tbody></table>
+<span id="more"></span>
+<h1 id="三-方法"><a href="#三-方法" class="headerlink" title="三. 方法"></a>三. 方法</h1><p>需求：input接收用户输入，用户输入“1”，将这个数据1转换成整型。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 接收用户输入</span></span><br><span class="line">num = <span class="built_in">input</span>(<span class="string">&#x27;请输入您的学号：&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 打印结果</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;您的学号是<span class="subst">&#123;num&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 检测接收到的用户输入的数据类型 -- str类型</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 转换数据类型为整型 -- int类型</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">int</span>(num)))</span><br></pre></td></tr></table></figure>
+
+<h1 id="四-示例"><a href="#四-示例" class="headerlink" title="四. 示例"></a>四. 示例</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. float() -- 转换成浮点型</span></span><br><span class="line">num1 = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">float</span>(num1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">float</span>(num1)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. str() -- 转换成字符串类型</span></span><br><span class="line">num2 = <span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">str</span>(num2)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. tuple() -- 将一个序列转换成元组</span></span><br><span class="line">list1 = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">tuple</span>(list1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">tuple</span>(list1)))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. list() -- 将一个序列转换成列表</span></span><br><span class="line">t1 = (<span class="number">100</span>, <span class="number">200</span>, <span class="number">300</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(t1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">list</span>(t1)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. eval() -- 将字符串中的数据转换成Python表达式原本类型</span></span><br><span class="line"><span class="comment">#    eval()中的变量不可以是文字类型的字符串，如 &#x27;Hello world&#x27;</span></span><br><span class="line">str1 = <span class="string">&#x27;10&#x27;</span></span><br><span class="line">str2 = <span class="string">&#x27;[1, 2, 3]&#x27;</span></span><br><span class="line">str3 = <span class="string">&#x27;(1000, 2000, 3000)&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">eval</span>(str1)))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">eval</span>(str2)))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">eval</span>(str3)))</span><br></pre></td></tr></table></figure>
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>转换数据类型常用的函数<ul>
+<li>int()</li>
+<li>float()</li>
+<li>str()</li>
+<li>list()</li>
+<li>tuple()</li>
+<li>eval()</li>
 </ul>
 </li>
 </ul>
@@ -3025,151 +3270,6 @@
 <li>重命名：os.rename()</li>
 <li>获取当前目录：os.getcwd()</li>
 <li>获取目录列表：os.listdir()</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Python基础</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 注释</title>
-    <url>/2022/07/10/python-%E6%B3%A8%E9%87%8A/</url>
-    <content><![CDATA[<h1 id="一-注释的作用"><a href="#一-注释的作用" class="headerlink" title="一. 注释的作用"></a>一. 注释的作用</h1><ul>
-<li>通过用自己熟悉的语言，在程序中对某些代码进行标注说明，这就是注释的作用，能够大大增强程序的可读性。<span id="more"></span></li>
-</ul>
-<h1 id="二-注释的分类及语法"><a href="#二-注释的分类及语法" class="headerlink" title="二. 注释的分类及语法"></a>二. 注释的分类及语法</h1><p>注释分为两类：单行注释 和 多行注释。</p>
-<ul>
-<li>单行注释</li>
-</ul>
-<p>只能注释一行内容，语法如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 注释内容</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>多行注释</li>
-</ul>
-<p>可以注释多行内容，一般用在注释一段代码的情况， 语法如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	第一行注释</span></span><br><span class="line"><span class="string">	第二行注释</span></span><br><span class="line"><span class="string">	第三行注释</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">	注释1</span></span><br><span class="line"><span class="string">	注释2</span></span><br><span class="line"><span class="string">	注释3</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>快捷键： ctrl + &#x2F;</p>
-</blockquote>
-<h2 id="2-1-示例"><a href="#2-1-示例" class="headerlink" title="2.1 示例"></a>2.1 示例</h2><ul>
-<li>单行注释</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输出hello world</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)  <span class="comment"># 输出(简单的说明可以放到一行代码的后面，一般习惯代码后面添加两个空格再书写注释文字)</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>多行注释</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello world</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello reader</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：解释器不执行任何的注释内容。</p>
-</blockquote>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
-<li>注释的作用</li>
-</ul>
-<p>用人类熟悉的语言对代码进行解释说明，方便后期维护。</p>
-<ul>
-<li>注释的分类<ul>
-<li>单行： <code># 注释内容</code>，快捷键ctrl+&#x2F;</li>
-<li>多行：<code>&quot;&quot;&quot; 注释内容 &quot;&quot;&quot;</code> 或 <code>&#39;&#39;&#39; 注释内容 &#39;&#39;&#39;</code></li>
-</ul>
-</li>
-<li>解释器不执行注释内容</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Python基础</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 转换数据类型</title>
-    <url>/2022/07/19/python-%E8%BD%AC%E6%8D%A2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[<h1 id="一-转换数据类型的作用"><a href="#一-转换数据类型的作用" class="headerlink" title="一. 转换数据类型的作用"></a>一. 转换数据类型的作用</h1><p>input()接收用户输入的数据都是字符串类型</p>
-<p>转换数据类型–将字符串类型  转换为程序中需要用到的数据类型。</p>
-<h1 id="二-转换数据类型的函数"><a href="#二-转换数据类型的函数" class="headerlink" title="二. 转换数据类型的函数"></a>二. 转换数据类型的函数</h1><table>
-<thead>
-<tr>
-<th align="center">函数</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">int(x)</td>
-<td align="center">将x转换为一个整数</td>
-</tr>
-<tr>
-<td align="center">float(x)</td>
-<td align="center">将x转换为一个浮点数</td>
-</tr>
-<tr>
-<td align="center">complex(real [,imag ])</td>
-<td align="center">创建一个复数，real为实部，imag为虚部</td>
-</tr>
-<tr>
-<td align="center">str(x)</td>
-<td align="center">将对象 x 转换为字符串</td>
-</tr>
-<tr>
-<td align="center">repr(x)</td>
-<td align="center">将对象 x 转换为表达式字符串</td>
-</tr>
-<tr>
-<td align="center">eval(str)</td>
-<td align="center">用来计算在字符串中的有效Python表达式,并返回一个对象</td>
-</tr>
-<tr>
-<td align="center">tuple(s)</td>
-<td align="center">将序列 s 转换为一个元组</td>
-</tr>
-<tr>
-<td align="center">list(s)</td>
-<td align="center">将序列 s 转换为一个列表</td>
-</tr>
-<tr>
-<td align="center">chr(x)</td>
-<td align="center">将一个整数转换为一个Unicode字符</td>
-</tr>
-<tr>
-<td align="center">ord(x)</td>
-<td align="center">将一个字符转换为它的ASCII整数值</td>
-</tr>
-<tr>
-<td align="center">hex(x)</td>
-<td align="center">将一个整数转换为一个十六进制字符串</td>
-</tr>
-<tr>
-<td align="center">oct(x)</td>
-<td align="center">将一个整数转换为一个八进制字符串</td>
-</tr>
-<tr>
-<td align="center">bin(x)</td>
-<td align="center">将一个整数转换为一个二进制字符串</td>
-</tr>
-</tbody></table>
-<span id="more"></span>
-<h1 id="三-方法"><a href="#三-方法" class="headerlink" title="三. 方法"></a>三. 方法</h1><p>需求：input接收用户输入，用户输入“1”，将这个数据1转换成整型。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 接收用户输入</span></span><br><span class="line">num = <span class="built_in">input</span>(<span class="string">&#x27;请输入您的学号：&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 打印结果</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;您的学号是<span class="subst">&#123;num&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 检测接收到的用户输入的数据类型 -- str类型</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 转换数据类型为整型 -- int类型</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">int</span>(num)))</span><br></pre></td></tr></table></figure>
-
-<h1 id="四-示例"><a href="#四-示例" class="headerlink" title="四. 示例"></a>四. 示例</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. float() -- 转换成浮点型</span></span><br><span class="line">num1 = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">float</span>(num1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">float</span>(num1)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. str() -- 转换成字符串类型</span></span><br><span class="line">num2 = <span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">str</span>(num2)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. tuple() -- 将一个序列转换成元组</span></span><br><span class="line">list1 = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">tuple</span>(list1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">tuple</span>(list1)))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. list() -- 将一个序列转换成列表</span></span><br><span class="line">t1 = (<span class="number">100</span>, <span class="number">200</span>, <span class="number">300</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(t1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">list</span>(t1)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. eval() -- 将字符串中的数据转换成Python表达式原本类型</span></span><br><span class="line"><span class="comment">#    eval()中的变量不可以是文字类型的字符串，如 &#x27;Hello world&#x27;</span></span><br><span class="line">str1 = <span class="string">&#x27;10&#x27;</span></span><br><span class="line">str2 = <span class="string">&#x27;[1, 2, 3]&#x27;</span></span><br><span class="line">str3 = <span class="string">&#x27;(1000, 2000, 3000)&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">eval</span>(str1)))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">eval</span>(str2)))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">eval</span>(str3)))</span><br></pre></td></tr></table></figure>
-
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
-<li>转换数据类型常用的函数<ul>
-<li>int()</li>
-<li>float()</li>
-<li>str()</li>
-<li>list()</li>
-<li>tuple()</li>
-<li>eval()</li>
 </ul>
 </li>
 </ul>
