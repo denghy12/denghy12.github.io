@@ -397,40 +397,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MySQL 分页查询</title>
-    <url>/2022/10/27/mysql-%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2/</url>
-    <content><![CDATA[<h1 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h1><h3 id="1-分页查询的介绍"><a href="#1-分页查询的介绍" class="headerlink" title="1. 分页查询的介绍"></a>1. 分页查询的介绍</h3><p>当我们在京东购物，浏览商品列表的时候，由于数据特别多，一页显示不完，一页一页的进行显示，这就是分页查询</p>
-<h3 id="2-分页查询的语法"><a href="#2-分页查询的语法" class="headerlink" title="2. 分页查询的语法"></a>2. 分页查询的语法</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名 limit <span class="keyword">start</span>,count</span><br></pre></td></tr></table></figure>
-
-<p><strong>说明:</strong></p>
-<ol>
-<li>limit是分页查询关键字</li>
-<li>start表示开始行索引，默认是0</li>
-<li>count表示查询条数</li>
-</ol>
-<span id="more"></span>
-
-<p><strong>例1：查询前3行男生信息:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> gender<span class="operator">=</span><span class="number">1</span> limit <span class="number">0</span>,<span class="number">3</span>;</span><br><span class="line">简写</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> gender<span class="operator">=</span><span class="number">1</span> limit <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-分页查询案例"><a href="#3-分页查询案例" class="headerlink" title="3. 分页查询案例"></a>3. 分页查询案例</h3><p>已知每页显示m条数据，求第n页显示的数据</p>
-<p>提示: 关键是求每页的开始行索引</p>
-<p><strong>查询学生表，获取第n页数据的SQL语句:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students limit (n<span class="number">-1</span>)<span class="operator">*</span>m,m </span><br><span class="line">第一个为开始页数“下标”，从<span class="number">0</span>开始，第二个为一页的数据个数</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-小结"><a href="#4-小结" class="headerlink" title="4. 小结"></a>4. 小结</h3><ul>
-<li>使用 limit 关键字可以限制数据显示数量，通过 limit 关键可以完成分页查询</li>
-<li>limit 关键字后面的第一个参数是开始行索引(默认是0，不写就是0)，第二个参数是查询条数</li>
-</ul>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL sql语句</title>
     <url>/2022/10/11/mysql-sql%E8%AF%AD%E5%8F%A5/</url>
     <content><![CDATA[<h1 id="一-MySQL数据库的介绍"><a href="#一-MySQL数据库的介绍" class="headerlink" title="一. MySQL数据库的介绍"></a>一. MySQL数据库的介绍</h1><p>MySQL是一个关系型数据库管理系统，在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件，它是由瑞典MySQL AB 公司开发，目前属于 Oracle 旗下产品，MySQL 是最流行的关系型数据库管理系统中的一个。</p>
@@ -667,6 +633,116 @@
       </tags>
   </entry>
   <entry>
+    <title>MySQL 分组查询</title>
+    <url>/2022/10/31/mysql-%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2/</url>
+    <content><![CDATA[<h1 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h1><h3 id="1-分组查询介绍"><a href="#1-分组查询介绍" class="headerlink" title="1. 分组查询介绍"></a>1. 分组查询介绍</h3><p>分组查询就是将查询结果按照指定字段进行分组，字段中数据相等的分为一组。</p>
+<p><strong>分组查询基本的语法格式如下：</strong></p>
+<p>GROUP BY 列名 [HAVING 条件表达式] [WITH ROLLUP]</p>
+<p><strong>说明:</strong></p>
+<ul>
+<li>列名: 是指按照指定字段的值进行分组。</li>
+<li>HAVING 条件表达式: 用来过滤分组后的数据。</li>
+<li>WITH ROLLUP：在所有记录的最后加上一条记录，显示select查询时聚合函数的统计和计算结果</li>
+</ul>
+<span id="more"></span>
+<h3 id="2-group-by的使用"><a href="#2-group-by的使用" class="headerlink" title="2. group by的使用"></a>2. group by的使用</h3><p>group by可用于单个字段分组，也可用于多个字段分组</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 根据gender字段来分组</span></span><br><span class="line"><span class="keyword">select</span> gender <span class="keyword">from</span> students <span class="keyword">group</span> <span class="keyword">by</span> gender;</span><br><span class="line"><span class="comment">-- 根据name和gender字段进行分组</span></span><br><span class="line"><span class="keyword">select</span> name, gender <span class="keyword">from</span> students <span class="keyword">group</span> <span class="keyword">by</span> name, gender;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-group-by-group-concat-的使用"><a href="#3-group-by-group-concat-的使用" class="headerlink" title="3. group by + group_concat()的使用"></a>3. group by + group_concat()的使用</h3><p>group_concat(字段名): 统计每个分组指定字段的信息集合，每个信息之间使用逗号进行分割</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 根据gender字段进行分组， 查询gender字段和分组的name字段信息</span></span><br><span class="line"><span class="keyword">select</span> gender,group_concat(name) <span class="keyword">from</span> students <span class="keyword">group</span> <span class="keyword">by</span> gender;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-group-by-聚合函数的使用"><a href="#4-group-by-聚合函数的使用" class="headerlink" title="4. group by + 聚合函数的使用"></a>4. group by + 聚合函数的使用</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 统计不同性别的人的平均年龄</span></span><br><span class="line"><span class="keyword">select</span> gender,<span class="built_in">avg</span>(age) <span class="keyword">from</span> students <span class="keyword">group</span> <span class="keyword">by</span> gender;</span><br><span class="line"><span class="comment">-- 统计不同性别的人的个数</span></span><br><span class="line"><span class="keyword">select</span> gender,<span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">from</span> students <span class="keyword">group</span> <span class="keyword">by</span> gender;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-group-by-having的使用"><a href="#5-group-by-having的使用" class="headerlink" title="5. group by + having的使用"></a>5. group by + having的使用</h3><p>having作用和where类似都是过滤数据的，但having是过滤分组数据的，只能用于group by</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 根据gender字段进行分组，统计分组条数大于2的</span></span><br><span class="line"><span class="keyword">select</span> gender,<span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">from</span> students <span class="keyword">group</span> <span class="keyword">by</span> gender <span class="keyword">having</span> <span class="built_in">count</span>(<span class="operator">*</span>)<span class="operator">&gt;</span><span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-group-by-with-rollup的使用"><a href="#6-group-by-with-rollup的使用" class="headerlink" title="6. group by + with rollup的使用"></a>6. group by + with rollup的使用</h3><p>with rollup的作用是：在最后记录后面新增一行，显示select查询时聚合函数的统计和计算结果</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 根据gender字段进行分组，汇总总人数</span></span><br><span class="line"><span class="keyword">select</span> gender,<span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">from</span> students <span class="keyword">group</span> <span class="keyword">by</span> gender <span class="keyword">with</span> <span class="keyword">rollup</span>;</span><br><span class="line"><span class="comment">-- 根据gender字段进行分组，汇总所有人的年龄</span></span><br><span class="line"><span class="keyword">select</span> gender,group_concat(age) <span class="keyword">from</span> students <span class="keyword">group</span> <span class="keyword">by</span> gender <span class="keyword">with</span> <span class="keyword">rollup</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-小结"><a href="#7-小结" class="headerlink" title="7. 小结"></a>7. 小结</h3><ul>
+<li>group by 根据指定的一个或者多个字段对数据进行分组</li>
+<li>group_concat(字段名)函数是统计每个分组指定字段的信息集合</li>
+<li>聚合函数在和 group by 结合使用时, 聚合函数统计和计算的是每个分组的数据</li>
+<li>having 是对分组数据进行条件过滤</li>
+<li>with rollup在最后记录后面新增一行，显示select查询时聚合函数的统计和计算结果</li>
+</ul>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL 分页查询</title>
+    <url>/2022/10/27/mysql-%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2/</url>
+    <content><![CDATA[<h1 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h1><h3 id="1-分页查询的介绍"><a href="#1-分页查询的介绍" class="headerlink" title="1. 分页查询的介绍"></a>1. 分页查询的介绍</h3><p>当我们在京东购物，浏览商品列表的时候，由于数据特别多，一页显示不完，一页一页的进行显示，这就是分页查询</p>
+<h3 id="2-分页查询的语法"><a href="#2-分页查询的语法" class="headerlink" title="2. 分页查询的语法"></a>2. 分页查询的语法</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名 limit <span class="keyword">start</span>,count</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明:</strong></p>
+<ol>
+<li>limit是分页查询关键字</li>
+<li>start表示开始行索引，默认是0</li>
+<li>count表示查询条数</li>
+</ol>
+<span id="more"></span>
+
+<p><strong>例1：查询前3行男生信息:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> gender<span class="operator">=</span><span class="number">1</span> limit <span class="number">0</span>,<span class="number">3</span>;</span><br><span class="line">简写</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> gender<span class="operator">=</span><span class="number">1</span> limit <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-分页查询案例"><a href="#3-分页查询案例" class="headerlink" title="3. 分页查询案例"></a>3. 分页查询案例</h3><p>已知每页显示m条数据，求第n页显示的数据</p>
+<p>提示: 关键是求每页的开始行索引</p>
+<p><strong>查询学生表，获取第n页数据的SQL语句:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students limit (n<span class="number">-1</span>)<span class="operator">*</span>m,m </span><br><span class="line">第一个为开始页数“下标”，从<span class="number">0</span>开始，第二个为一页的数据个数</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-小结"><a href="#4-小结" class="headerlink" title="4. 小结"></a>4. 小结</h3><ul>
+<li>使用 limit 关键字可以限制数据显示数量，通过 limit 关键可以完成分页查询</li>
+<li>limit 关键字后面的第一个参数是开始行索引(默认是0，不写就是0)，第二个参数是查询条数</li>
+</ul>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL 排序</title>
+    <url>/2022/10/27/mysql-%E6%8E%92%E5%BA%8F/</url>
+    <content><![CDATA[<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h3 id="1-排序查询语法"><a href="#1-排序查询语法" class="headerlink" title="1. 排序查询语法"></a>1. 排序查询语法</h3><p>排序查询语法：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名 <span class="keyword">order</span> <span class="keyword">by</span> 列<span class="number">1</span> <span class="keyword">asc</span><span class="operator">|</span><span class="keyword">desc</span> [,列<span class="number">2</span> <span class="keyword">asc</span><span class="operator">|</span><span class="keyword">desc</span>,...]</span><br></pre></td></tr></table></figure>
+
+<p><strong>语法说明:</strong></p>
+<ol>
+<li>先按照列1进行排序，如果列1的值相同时，则按照 列2 排序，以此类推</li>
+<li>asc从小到大排列，即升序（不写默认asc）</li>
+<li>desc从大到小排序，即降序</li>
+<li>默认按照列值从小到大排列（即asc关键字）</li>
+</ol>
+<span id="more"></span>
+
+<p><strong>例1：查询未删除男生信息，按学号降序:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> gender<span class="operator">=</span><span class="number">1</span> <span class="keyword">and</span> is_delete<span class="operator">=</span><span class="number">0</span> <span class="keyword">order</span> <span class="keyword">by</span> id <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例2：显示所有的学生信息，先按照年龄从大–&gt;小排序，当年龄相同时 按照身高从高–&gt;矮排序:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students  <span class="keyword">order</span> <span class="keyword">by</span> age <span class="keyword">desc</span>,height <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-小结"><a href="#2-小结" class="headerlink" title="2. 小结"></a>2. 小结</h3><ol>
+<li>排序使用 order by 关键字</li>
+<li>asc 表示升序 （不写默认asc）</li>
+<li>desc 表示降序</li>
+</ol>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL 聚合函数</title>
     <url>/2022/10/27/mysql-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h1 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h1><h3 id="1-聚合函数的介绍"><a href="#1-聚合函数的介绍" class="headerlink" title="1. 聚合函数的介绍"></a>1. 聚合函数的介绍</h3><p>聚合函数又叫组函数，通常是对表中的数据进行统计和计算，一般结合分组(group by)来使用，用于统计和计算分组数据。</p>
@@ -704,40 +780,6 @@
 <li>sum(col): 表示求指定列的和</li>
 <li>avg(col): 表示求指定列的平均值</li>
 </ul>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL 排序</title>
-    <url>/2022/10/27/mysql-%E6%8E%92%E5%BA%8F/</url>
-    <content><![CDATA[<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h3 id="1-排序查询语法"><a href="#1-排序查询语法" class="headerlink" title="1. 排序查询语法"></a>1. 排序查询语法</h3><p>排序查询语法：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名 <span class="keyword">order</span> <span class="keyword">by</span> 列<span class="number">1</span> <span class="keyword">asc</span><span class="operator">|</span><span class="keyword">desc</span> [,列<span class="number">2</span> <span class="keyword">asc</span><span class="operator">|</span><span class="keyword">desc</span>,...]</span><br></pre></td></tr></table></figure>
-
-<p><strong>语法说明:</strong></p>
-<ol>
-<li>先按照列1进行排序，如果列1的值相同时，则按照 列2 排序，以此类推</li>
-<li>asc从小到大排列，即升序（不写默认asc）</li>
-<li>desc从大到小排序，即降序</li>
-<li>默认按照列值从小到大排列（即asc关键字）</li>
-</ol>
-<span id="more"></span>
-
-<p><strong>例1：查询未删除男生信息，按学号降序:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> gender<span class="operator">=</span><span class="number">1</span> <span class="keyword">and</span> is_delete<span class="operator">=</span><span class="number">0</span> <span class="keyword">order</span> <span class="keyword">by</span> id <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例2：显示所有的学生信息，先按照年龄从大–&gt;小排序，当年龄相同时 按照身高从高–&gt;矮排序:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students  <span class="keyword">order</span> <span class="keyword">by</span> age <span class="keyword">desc</span>,height <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-小结"><a href="#2-小结" class="headerlink" title="2. 小结"></a>2. 小结</h3><ol>
-<li>排序使用 order by 关键字</li>
-<li>asc 表示升序 （不写默认asc）</li>
-<li>desc 表示降序</li>
-</ol>
 ]]></content>
       <categories>
         <category>MySQL</category>
