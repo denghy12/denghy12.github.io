@@ -397,6 +397,114 @@
       </tags>
   </entry>
   <entry>
+    <title>MySQL where条件语句</title>
+    <url>/2022/10/27/mysql-where%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5/</url>
+    <content><![CDATA[<h1 id="where条件查询"><a href="#where条件查询" class="headerlink" title="where条件查询"></a>where条件查询</h1><h3 id="1-where条件查询的介绍"><a href="#1-where条件查询的介绍" class="headerlink" title="1. where条件查询的介绍"></a>1. where条件查询的介绍</h3><p>使用where条件查询可以对表中的数据进行筛选，条件成立的记录会出现在结果集中。</p>
+<p><strong>where语句支持的运算符:</strong></p>
+<ol>
+<li>比较运算符</li>
+<li>逻辑运算符</li>
+<li>模糊查询</li>
+<li>范围查询</li>
+<li>空判断</li>
+</ol>
+<span id="more"></span>
+
+<p><strong>where条件查询语法格式如下:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名 <span class="keyword">where</span> 条件;</span><br><span class="line">例：</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-比较运算符查询"><a href="#2-比较运算符查询" class="headerlink" title="2. 比较运算符查询"></a>2. 比较运算符查询</h3><ol>
+<li>等于: &#x3D;</li>
+<li>大于: &gt;</li>
+<li>大于等于: &gt;&#x3D;</li>
+<li>小于: &lt;</li>
+<li>小于等于: &lt;&#x3D;</li>
+<li>不等于: !&#x3D; 或 &lt;&gt;</li>
+</ol>
+<p><strong>例1：查询编号大于3的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&gt;</span> <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例2：查询编号不大于4的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&lt;=</span> <span class="number">4</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例3：查询姓名不是“黄蓉”的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="operator">!=</span> <span class="string">&#x27;黄蓉&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例4：查询没被删除的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> is_delete<span class="operator">=</span><span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-逻辑运算符查询"><a href="#3-逻辑运算符查询" class="headerlink" title="3. 逻辑运算符查询"></a>3. 逻辑运算符查询</h3><ol>
+<li>and</li>
+<li>or</li>
+<li>not</li>
+</ol>
+<p><strong>例1：查询编号大于3的女同学:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&gt;</span> <span class="number">3</span> <span class="keyword">and</span> gender<span class="operator">=</span><span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例2：查询编号小于4或没被删除的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&lt;</span> <span class="number">4</span> <span class="keyword">or</span> is_delete<span class="operator">=</span><span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例3：查询年龄不在10岁到15岁之间的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> <span class="keyword">not</span> (age <span class="operator">&gt;=</span> <span class="number">10</span> <span class="keyword">and</span> age <span class="operator">&lt;=</span> <span class="number">15</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明:</strong></p>
+<ul>
+<li>多个条件判断想要作为一个整体，可以结合‘()’。</li>
+</ul>
+<h3 id="4-模糊查询"><a href="#4-模糊查询" class="headerlink" title="4. 模糊查询"></a>4. 模糊查询</h3><ol>
+<li>like是模糊查询关键字</li>
+<li>%表示任意多个任意字符</li>
+<li>_表示一个任意字符</li>
+</ol>
+<p><strong>例1：查询姓黄的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;黄%&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例2：查询姓黄并且“名”是一个字的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;黄_&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例3：查询姓黄或叫靖的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;黄%&#x27;</span> <span class="keyword">or</span> name <span class="keyword">like</span> <span class="string">&#x27;%靖&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-范围查询"><a href="#5-范围查询" class="headerlink" title="5. 范围查询"></a>5. 范围查询</h3><ol>
+<li>between .. and .. 表示在一个连续的范围内查询</li>
+<li>in 表示在一个非连续的范围内查询</li>
+</ol>
+<p><strong>例1：查询编号为3至8的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="keyword">between</span> <span class="number">3</span> <span class="keyword">and</span> <span class="number">8</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例2：查询编号不是3至8的男生:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select * from students where (not id between 3 and 8) and gender=&#x27;男&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-空判断查询"><a href="#6-空判断查询" class="headerlink" title="6. 空判断查询"></a>6. 空判断查询</h3><ol>
+<li>判断为空使用: is null</li>
+<li>判断非空使用: is not null</li>
+</ol>
+<p><strong>例1：查询没有填写身高的学生:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> height <span class="keyword">is</span> <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意:</strong></p>
+<ol>
+<li>不能使用 where height &#x3D; null 判断为空</li>
+<li>不能使用 where height !&#x3D; null 判断非空</li>
+<li>null 不等于 ‘’ 空字符串</li>
+</ol>
+<h3 id="7-小结"><a href="#7-小结" class="headerlink" title="7. 小结"></a>7. 小结</h3><ul>
+<li>常见的比较运算符有 &gt;,&lt;,&gt;&#x3D;,&lt;&#x3D;,!&#x3D;</li>
+<li>逻辑运算符and表示多个条件同时成立则为真，or表示多个条件有一个成立则为真，not表示对条件取反</li>
+<li>like和%结合使用表示任意多个任意字符，like和_结合使用表示一个任意字符</li>
+<li>between-and限制连续性范围 in限制非连续性范围</li>
+<li>判断为空使用: is null</li>
+<li>判断非空使用: is not null</li>
+</ul>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL sql语句</title>
     <url>/2022/10/11/mysql-sql%E8%AF%AD%E5%8F%A5/</url>
     <content><![CDATA[<h1 id="一-MySQL数据库的介绍"><a href="#一-MySQL数据库的介绍" class="headerlink" title="一. MySQL数据库的介绍"></a>一. MySQL数据库的介绍</h1><p>MySQL是一个关系型数据库管理系统，在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件，它是由瑞典MySQL AB 公司开发，目前属于 Oracle 旗下产品，MySQL 是最流行的关系型数据库管理系统中的一个。</p>
@@ -525,114 +633,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MySQL where条件语句</title>
-    <url>/2022/10/27/mysql-where%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5/</url>
-    <content><![CDATA[<h1 id="where条件查询"><a href="#where条件查询" class="headerlink" title="where条件查询"></a>where条件查询</h1><h3 id="1-where条件查询的介绍"><a href="#1-where条件查询的介绍" class="headerlink" title="1. where条件查询的介绍"></a>1. where条件查询的介绍</h3><p>使用where条件查询可以对表中的数据进行筛选，条件成立的记录会出现在结果集中。</p>
-<p><strong>where语句支持的运算符:</strong></p>
-<ol>
-<li>比较运算符</li>
-<li>逻辑运算符</li>
-<li>模糊查询</li>
-<li>范围查询</li>
-<li>空判断</li>
-</ol>
-<span id="more"></span>
-
-<p><strong>where条件查询语法格式如下:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名 <span class="keyword">where</span> 条件;</span><br><span class="line">例：</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-比较运算符查询"><a href="#2-比较运算符查询" class="headerlink" title="2. 比较运算符查询"></a>2. 比较运算符查询</h3><ol>
-<li>等于: &#x3D;</li>
-<li>大于: &gt;</li>
-<li>大于等于: &gt;&#x3D;</li>
-<li>小于: &lt;</li>
-<li>小于等于: &lt;&#x3D;</li>
-<li>不等于: !&#x3D; 或 &lt;&gt;</li>
-</ol>
-<p><strong>例1：查询编号大于3的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&gt;</span> <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例2：查询编号不大于4的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&lt;=</span> <span class="number">4</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例3：查询姓名不是“黄蓉”的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="operator">!=</span> <span class="string">&#x27;黄蓉&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例4：查询没被删除的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> is_delete<span class="operator">=</span><span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-逻辑运算符查询"><a href="#3-逻辑运算符查询" class="headerlink" title="3. 逻辑运算符查询"></a>3. 逻辑运算符查询</h3><ol>
-<li>and</li>
-<li>or</li>
-<li>not</li>
-</ol>
-<p><strong>例1：查询编号大于3的女同学:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&gt;</span> <span class="number">3</span> <span class="keyword">and</span> gender<span class="operator">=</span><span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例2：查询编号小于4或没被删除的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="operator">&lt;</span> <span class="number">4</span> <span class="keyword">or</span> is_delete<span class="operator">=</span><span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例3：查询年龄不在10岁到15岁之间的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> <span class="keyword">not</span> (age <span class="operator">&gt;=</span> <span class="number">10</span> <span class="keyword">and</span> age <span class="operator">&lt;=</span> <span class="number">15</span>);</span><br></pre></td></tr></table></figure>
-
-<p><strong>说明:</strong></p>
-<ul>
-<li>多个条件判断想要作为一个整体，可以结合‘()’。</li>
-</ul>
-<h3 id="4-模糊查询"><a href="#4-模糊查询" class="headerlink" title="4. 模糊查询"></a>4. 模糊查询</h3><ol>
-<li>like是模糊查询关键字</li>
-<li>%表示任意多个任意字符</li>
-<li>_表示一个任意字符</li>
-</ol>
-<p><strong>例1：查询姓黄的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;黄%&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例2：查询姓黄并且“名”是一个字的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;黄_&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例3：查询姓黄或叫靖的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;黄%&#x27;</span> <span class="keyword">or</span> name <span class="keyword">like</span> <span class="string">&#x27;%靖&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-范围查询"><a href="#5-范围查询" class="headerlink" title="5. 范围查询"></a>5. 范围查询</h3><ol>
-<li>between .. and .. 表示在一个连续的范围内查询</li>
-<li>in 表示在一个非连续的范围内查询</li>
-</ol>
-<p><strong>例1：查询编号为3至8的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> id <span class="keyword">between</span> <span class="number">3</span> <span class="keyword">and</span> <span class="number">8</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>例2：查询编号不是3至8的男生:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select * from students where (not id between 3 and 8) and gender=&#x27;男&#x27;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="6-空判断查询"><a href="#6-空判断查询" class="headerlink" title="6. 空判断查询"></a>6. 空判断查询</h3><ol>
-<li>判断为空使用: is null</li>
-<li>判断非空使用: is not null</li>
-</ol>
-<p><strong>例1：查询没有填写身高的学生:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> height <span class="keyword">is</span> <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意:</strong></p>
-<ol>
-<li>不能使用 where height &#x3D; null 判断为空</li>
-<li>不能使用 where height !&#x3D; null 判断非空</li>
-<li>null 不等于 ‘’ 空字符串</li>
-</ol>
-<h3 id="7-小结"><a href="#7-小结" class="headerlink" title="7. 小结"></a>7. 小结</h3><ul>
-<li>常见的比较运算符有 &gt;,&lt;,&gt;&#x3D;,&lt;&#x3D;,!&#x3D;</li>
-<li>逻辑运算符and表示多个条件同时成立则为真，or表示多个条件有一个成立则为真，not表示对条件取反</li>
-<li>like和%结合使用表示任意多个任意字符，like和_结合使用表示一个任意字符</li>
-<li>between-and限制连续性范围 in限制非连续性范围</li>
-<li>判断为空使用: is null</li>
-<li>判断非空使用: is not null</li>
-</ul>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL 内连接</title>
     <url>/2022/11/01/mysql-%E5%86%85%E8%BF%9E%E6%8E%A5/</url>
     <content><![CDATA[<h1 id="连接查询-内连接"><a href="#连接查询-内连接" class="headerlink" title="连接查询-内连接"></a>连接查询-内连接</h1><h3 id="1-连接查询的介绍"><a href="#1-连接查询的介绍" class="headerlink" title="1. 连接查询的介绍"></a>1. 连接查询的介绍</h3><p>连接查询可以实现多个表的查询，当查询的字段数据来自不同的表就可以使用连接查询来完成。</p>
@@ -662,40 +662,6 @@
 <h3 id="3-小结"><a href="#3-小结" class="headerlink" title="3. 小结"></a>3. 小结</h3><ul>
 <li>内连接使用inner join .. on .., on 表示两个表的连接查询条件</li>
 <li>内连接根据连接查询条件取出两个表的 “交集”</li>
-</ul>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL 分页查询</title>
-    <url>/2022/10/27/mysql-%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2/</url>
-    <content><![CDATA[<h1 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h1><h3 id="1-分页查询的介绍"><a href="#1-分页查询的介绍" class="headerlink" title="1. 分页查询的介绍"></a>1. 分页查询的介绍</h3><p>当我们在京东购物，浏览商品列表的时候，由于数据特别多，一页显示不完，一页一页的进行显示，这就是分页查询</p>
-<h3 id="2-分页查询的语法"><a href="#2-分页查询的语法" class="headerlink" title="2. 分页查询的语法"></a>2. 分页查询的语法</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名 limit <span class="keyword">start</span>,count</span><br></pre></td></tr></table></figure>
-
-<p><strong>说明:</strong></p>
-<ol>
-<li>limit是分页查询关键字</li>
-<li>start表示开始行索引，默认是0</li>
-<li>count表示查询条数</li>
-</ol>
-<span id="more"></span>
-
-<p><strong>例1：查询前3行男生信息:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> gender<span class="operator">=</span><span class="number">1</span> limit <span class="number">0</span>,<span class="number">3</span>;</span><br><span class="line">简写</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> gender<span class="operator">=</span><span class="number">1</span> limit <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-分页查询案例"><a href="#3-分页查询案例" class="headerlink" title="3. 分页查询案例"></a>3. 分页查询案例</h3><p>已知每页显示m条数据，求第n页显示的数据</p>
-<p>提示: 关键是求每页的开始行索引</p>
-<p><strong>查询学生表，获取第n页数据的SQL语句:</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students limit (n<span class="number">-1</span>)<span class="operator">*</span>m,m </span><br><span class="line">第一个为开始页数“下标”，从<span class="number">0</span>开始，第二个为一页的数据个数</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-小结"><a href="#4-小结" class="headerlink" title="4. 小结"></a>4. 小结</h3><ul>
-<li>使用 limit 关键字可以限制数据显示数量，通过 limit 关键可以完成分页查询</li>
-<li>limit 关键字后面的第一个参数是开始行索引(默认是0，不写就是0)，第二个参数是查询条数</li>
 </ul>
 ]]></content>
       <categories>
@@ -738,6 +704,40 @@
 <li>聚合函数在和 group by 结合使用时, 聚合函数统计和计算的是每个分组的数据</li>
 <li>having 是对分组数据进行条件过滤</li>
 <li>with rollup在最后记录后面新增一行，显示select查询时聚合函数的统计和计算结果</li>
+</ul>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL 分页查询</title>
+    <url>/2022/10/27/mysql-%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2/</url>
+    <content><![CDATA[<h1 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h1><h3 id="1-分页查询的介绍"><a href="#1-分页查询的介绍" class="headerlink" title="1. 分页查询的介绍"></a>1. 分页查询的介绍</h3><p>当我们在京东购物，浏览商品列表的时候，由于数据特别多，一页显示不完，一页一页的进行显示，这就是分页查询</p>
+<h3 id="2-分页查询的语法"><a href="#2-分页查询的语法" class="headerlink" title="2. 分页查询的语法"></a>2. 分页查询的语法</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名 limit <span class="keyword">start</span>,count</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明:</strong></p>
+<ol>
+<li>limit是分页查询关键字</li>
+<li>start表示开始行索引，默认是0</li>
+<li>count表示查询条数</li>
+</ol>
+<span id="more"></span>
+
+<p><strong>例1：查询前3行男生信息:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> gender<span class="operator">=</span><span class="number">1</span> limit <span class="number">0</span>,<span class="number">3</span>;</span><br><span class="line">简写</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">where</span> gender<span class="operator">=</span><span class="number">1</span> limit <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-分页查询案例"><a href="#3-分页查询案例" class="headerlink" title="3. 分页查询案例"></a>3. 分页查询案例</h3><p>已知每页显示m条数据，求第n页显示的数据</p>
+<p>提示: 关键是求每页的开始行索引</p>
+<p><strong>查询学生表，获取第n页数据的SQL语句:</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> students limit (n<span class="number">-1</span>)<span class="operator">*</span>m,m </span><br><span class="line">第一个为开始页数“下标”，从<span class="number">0</span>开始，第二个为一页的数据个数</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-小结"><a href="#4-小结" class="headerlink" title="4. 小结"></a>4. 小结</h3><ul>
+<li>使用 limit 关键字可以限制数据显示数量，通过 limit 关键可以完成分页查询</li>
+<li>limit 关键字后面的第一个参数是开始行索引(默认是0，不写就是0)，第二个参数是查询条数</li>
 </ul>
 ]]></content>
       <categories>
@@ -2854,61 +2854,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Python 注释</title>
-    <url>/2022/07/10/python-%E6%B3%A8%E9%87%8A/</url>
-    <content><![CDATA[<h1 id="一-注释的作用"><a href="#一-注释的作用" class="headerlink" title="一. 注释的作用"></a>一. 注释的作用</h1><ul>
-<li>通过用自己熟悉的语言，在程序中对某些代码进行标注说明，这就是注释的作用，能够大大增强程序的可读性。<span id="more"></span></li>
-</ul>
-<h1 id="二-注释的分类及语法"><a href="#二-注释的分类及语法" class="headerlink" title="二. 注释的分类及语法"></a>二. 注释的分类及语法</h1><p>注释分为两类：单行注释 和 多行注释。</p>
-<ul>
-<li>单行注释</li>
-</ul>
-<p>只能注释一行内容，语法如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 注释内容</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>多行注释</li>
-</ul>
-<p>可以注释多行内容，一般用在注释一段代码的情况， 语法如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	第一行注释</span></span><br><span class="line"><span class="string">	第二行注释</span></span><br><span class="line"><span class="string">	第三行注释</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">	注释1</span></span><br><span class="line"><span class="string">	注释2</span></span><br><span class="line"><span class="string">	注释3</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>快捷键： ctrl + &#x2F;</p>
-</blockquote>
-<h2 id="2-1-示例"><a href="#2-1-示例" class="headerlink" title="2.1 示例"></a>2.1 示例</h2><ul>
-<li>单行注释</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输出hello world</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)  <span class="comment"># 输出(简单的说明可以放到一行代码的后面，一般习惯代码后面添加两个空格再书写注释文字)</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>多行注释</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello world</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello reader</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：解释器不执行任何的注释内容。</p>
-</blockquote>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
-<li>注释的作用</li>
-</ul>
-<p>用人类熟悉的语言对代码进行解释说明，方便后期维护。</p>
-<ul>
-<li>注释的分类<ul>
-<li>单行： <code># 注释内容</code>，快捷键ctrl+&#x2F;</li>
-<li>多行：<code>&quot;&quot;&quot; 注释内容 &quot;&quot;&quot;</code> 或 <code>&#39;&#39;&#39; 注释内容 &#39;&#39;&#39;</code></li>
-</ul>
-</li>
-<li>解释器不执行注释内容</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Python基础</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python 文件操作</title>
     <url>/2022/08/24/python-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><ul>
@@ -3193,6 +3138,61 @@
 <li>获取目录列表：os.listdir()</li>
 </ul>
 </li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python基础</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 注释</title>
+    <url>/2022/07/10/python-%E6%B3%A8%E9%87%8A/</url>
+    <content><![CDATA[<h1 id="一-注释的作用"><a href="#一-注释的作用" class="headerlink" title="一. 注释的作用"></a>一. 注释的作用</h1><ul>
+<li>通过用自己熟悉的语言，在程序中对某些代码进行标注说明，这就是注释的作用，能够大大增强程序的可读性。<span id="more"></span></li>
+</ul>
+<h1 id="二-注释的分类及语法"><a href="#二-注释的分类及语法" class="headerlink" title="二. 注释的分类及语法"></a>二. 注释的分类及语法</h1><p>注释分为两类：单行注释 和 多行注释。</p>
+<ul>
+<li>单行注释</li>
+</ul>
+<p>只能注释一行内容，语法如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 注释内容</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多行注释</li>
+</ul>
+<p>可以注释多行内容，一般用在注释一段代码的情况， 语法如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	第一行注释</span></span><br><span class="line"><span class="string">	第二行注释</span></span><br><span class="line"><span class="string">	第三行注释</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">	注释1</span></span><br><span class="line"><span class="string">	注释2</span></span><br><span class="line"><span class="string">	注释3</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>快捷键： ctrl + &#x2F;</p>
+</blockquote>
+<h2 id="2-1-示例"><a href="#2-1-示例" class="headerlink" title="2.1 示例"></a>2.1 示例</h2><ul>
+<li>单行注释</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输出hello world</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)  <span class="comment"># 输出(简单的说明可以放到一行代码的后面，一般习惯代码后面添加两个空格再书写注释文字)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多行注释</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello world</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    下面三行都是输出的作用，输出内容分别是：</span></span><br><span class="line"><span class="string">    hello Python</span></span><br><span class="line"><span class="string">    hello reader</span></span><br><span class="line"><span class="string">    hello denghy</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello reader&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello denghy&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：解释器不执行任何的注释内容。</p>
+</blockquote>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>注释的作用</li>
+</ul>
+<p>用人类熟悉的语言对代码进行解释说明，方便后期维护。</p>
+<ul>
+<li>注释的分类<ul>
+<li>单行： <code># 注释内容</code>，快捷键ctrl+&#x2F;</li>
+<li>多行：<code>&quot;&quot;&quot; 注释内容 &quot;&quot;&quot;</code> 或 <code>&#39;&#39;&#39; 注释内容 &#39;&#39;&#39;</code></li>
+</ul>
+</li>
+<li>解释器不执行注释内容</li>
 </ul>
 ]]></content>
       <categories>
